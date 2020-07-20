@@ -1,0 +1,131 @@
+.about-us {
+    margin: 108px auto auto auto;
+
+    &__wr {
+        position: relative;
+        margin-bottom: 550px;
+    }
+
+    &__info {
+        background: #ffffff;
+        -webkit-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+        padding: 107px 90px;
+        position: relative;
+        width: 60%;
+        height: auto;
+        margin: -200px auto;
+
+    }
+
+    &__subtitle {
+        font-size: 22px;
+        line-height: 30px;
+        opacity: 16%;
+    }
+}
+
+.about-us__first {
+    width: 50%;
+    border-bottom: 1px solid #91712B;
+    padding-bottom: 50px;
+}
+
+.about-us__title {
+    font-size: 54px;
+    font-weight: bold;
+    line-height: 72px;
+    color: #000000;
+}
+
+.about-us__second {
+    font-size: 22px;
+    line-height: 30px;
+    opacity: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-us__paragraph {
+    width: 100%;
+}
+
+.aboutus-goal__title {
+    font-size: 40px;
+    color: #000000;
+    text-align: center;
+    margin-top: 450px;
+    position: relative;
+
+    & span {
+        position: absolute;
+        font-size: 145px;
+        color: #000000;
+        opacity: 6%;
+        left: 46%;
+        top: -168%;
+    }
+}
+
+.about-us__goal {
+    margin-top: 140px;
+    display: flex;
+}
+
+.aboutus-goal__paragraph {
+    margin-top: 30px;
+}
+
+.aboutus-goal__paragraph p {
+    font-size: 22px;
+    line-height: 30px;
+    opacity: 60%;
+    margin: 70px;
+}
+
+.aboutus-goal__paragraph span {
+    font-size: 26px;
+    line-height: 35px;
+    text-transform: capitalize;
+}
+
+.about-us__since {
+    display: flex;
+    float: right;
+
+    & span {
+        font-size: 26px;
+        line-height: 35px;
+        text-transform: capitalize;
+        padding: 50px;
+    }
+}
+
+.aboutus-goal__img {
+    width: 100%;
+}
+
+@media(max-width: 990px) {
+    .about-us__wr {
+        margin-bottom: 100px;
+    }
+
+    .aboutus-goal__paragraph {
+        font-size: 19px;
+        line-height: 22px;
+        margin: 20px;
+    }
+
+    .about-us__info {
+        padding: 30px 20px;
+    }
+
+    .aboutus-goal__title {
+        font-size: 25px;
+
+        & span {
+            font-size: 90px;
+        }
+    }
+}

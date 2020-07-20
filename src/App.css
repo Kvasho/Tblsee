@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
+li {
+    list-style: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1,h2,h3,h4,h5 {
+    margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html {
+    font-size: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a:hover {
+    color: currentColor !important;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-outline-primary:hover {
+    color: currentColor !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media (max-width: 1700px) {
+	html {
+		font-size: 9px;
+	}
+}
+
+@media (max-width: 1530px) {
+	html {
+		font-size: 8px;
+	}
+}
+
+@media (max-width: 1350px) {
+	html {
+		font-size: 7px;
+	}
+}
+
+@media (max-width: 1250px) {
+	html {
+		font-size: 6px;
+	}
+}
+
+
+
+a:hover {
+    color: white;
+    text-decoration: none !important;
+}
+
+@font-face {
+    font-family: 'playfair-bold';
+    src: local('./Assets/Fonts/PlayfairDisplay-Bold.eot');
+    src: local('PlayfairDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+        local('./Assets/Fonts/PlayfairDisplay-Bold.woff2') format('woff2'),
+        local('./Assets/Fonts/PlayfairDisplay-Bold.woff') format('woff'),
+        local('./Assets/Fonts/PlayfairDisplay-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'playfair-normal';
+    src: local('./Assets/Fonts/PlayfairDisplay-Regular.eot');
+    src: local('./Assets/Fonts/PlayfairDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+        local('./Assets/Fonts/PlayfairDisplay-Regular.woff2') format('woff2'),
+        local('./Assets/Fonts/PlayfairDisplay-Regular.woff') format('woff'),
+        local('./Assets/Fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }

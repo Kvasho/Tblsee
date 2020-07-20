@@ -1,0 +1,42 @@
+.header {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-wr {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 140px);
+    margin: auto;
+    margin: 40px auto;
+}
+
+.book-now__white {
+    font-size: 15px;
+}
+
+@media (max-width: 1200px) {
+    .header-wr {
+        margin: 5px auto;
+        width: calc(100% - 40px);
+    }
+
+    .book-now__white {
+        font-size: 10px;
+    }
+
+    .header-burger_menu {
+        width: 15px;
+    }
+
+    .language-bar {
+        font-size: 15px;
+    }
+
+    .header-logo {
+        width: 75px;
+    }
+}

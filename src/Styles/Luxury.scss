@@ -1,0 +1,25 @@
+.luxury-restaurant {
+    margin-top: 300px;
+
+    & h4 {
+    text-align: right;
+    font-style: italic;
+    font-size: 42px;
+    color: #1D1111;
+    }
+
+    &__wr {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 100px;
+    }
+
+    &__img {
+      width: 60%;
+    }
+
+    &__half {
+        width: 30%;
+    }
+}
+

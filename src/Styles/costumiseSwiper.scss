@@ -1,3 +1,43 @@
 .swiper-container img {
     width: 100% !important;
+    height: 100% !important;
+}
+
+.swiper-div {
+    width: calc(100% - 500px);
+}
+
+.landing-btn__next, .landing-btn__prev {
+    background: none !important;
+    border: none !important;
+    font-size: 20px;
+}
+
+.landing-btn__next:focus, .landing-btn__prev:focus {
+    outline: none;
+}
+
+.landing-btn__next span, .landing-btn__prev span {
+    opacity: 60%;
+}
+
+.landing-swiper__controller {
+    width: calc(100% - 750px);
+    margin: auto;
+    justify-content: space-between;
+    display: flex;
+    margin-top: 12.5rem;
+
+    & h3 {
+        font-size: 54px;
+        font-weight: bold;
+    }
+
+    & a {
+        font-size: 21px;
+        color: #000000;
+        margin-right: 50px;
+        margin-top: 50px;
+        display: block;
+    }
 }

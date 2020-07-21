@@ -20,10 +20,13 @@ class Luxury extends Component {
           <>
           <HeaderBlack />
           <div className="container-own">
+
             <section className="luxury-restaurant">
               <Row md={1} lg={2}>
                 <Col>
-                  <img src = { LogoBlack } alt="Logo"/>
+                <div>
+                  <img src = { LogoBlack } alt="Logo"/>   
+                </div> 
                 </Col>
                 <Col>
                   <h4>Taste most delicious food in our restaurant</h4>
@@ -32,8 +35,8 @@ class Luxury extends Component {
             <div className="luxury-restaurant__wr">
                 <img src={LuxuryRestaurant1} alt="/" className="luxury-restaurant__img"/>
               <div className="luxury-restaurant__half">
-                <img src={LuxuryRestaurant2} alt="/" />
-                <img src={LuxuryRestaurant3} alt="/" style={{ marginTop: "33px" }}/>
+                <img src={LuxuryRestaurant2} alt="/" style={{ width: "100%" }}/>
+                <img src={LuxuryRestaurant3} alt="/" style={{ marginTop: "93px", width: "100%" }}/>
               </div>
             </div>
             </section>

@@ -31,6 +31,14 @@
     height: 80%;
 }
 
+.landing-carousel__explore {
+    font-size: 15px;
+    padding: 12px 25px;
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    color: #ffffff;
+}
+
 .carousel-indicators {
     display: none !important;
 }
@@ -46,6 +54,13 @@
 
 .btn {
     padding: 12px 25px !important;
+}
+
+.carousel__absolute {
+    position: absolute;
+    right: 15%;
+    bottom: 12%;
+    width: 18rem;
 }
 
 @media(max-width: 1200px) {

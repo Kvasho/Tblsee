@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
 import Swiper from 'react-id-swiper';
+import { Link } from 'react-router-dom';
+
+// CSS
 import 'swiper/swiper.scss';
 import '../Styles/costumiseSwiper.scss';
-import Image from "../Assets/Images/landing-gallery.jpg"
-import Image2 from "../Assets/Images/landing-gallery-2.jpg"
-import Image3 from "../Assets/Images/landing-gallery-3.jpg"
+import Image from "../Assets/Images/landing-swiper.jpg"
 
 
 
@@ -14,6 +15,7 @@ import Image3 from "../Assets/Images/landing-gallery-3.jpg"
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev"
         },
+        centeredSlides: true,
         spaceBetween:    props.spaceBetween,
         slidesPerView:   props.slidesPerView,
         slidesPerColumn: 1,
@@ -42,17 +44,20 @@ import Image3 from "../Assets/Images/landing-gallery-3.jpg"
               <img src={Image}/>
           </div>
           <div>
-              <img src={Image2}/>
-          </div>
-          <div>
-              <img src={Image2}/>
-          </div>
-          <div>
               <img src={Image}/>
           </div>
         </Swiper>
-        <button onClick={goPrev}>Prev</button>
-        <button onClick={goNext}>Next</button>
+        <div className={props.swiperController}>
+            <button onClick={goPrev} className={props.buttonPrevClass}>{props.prevButton} / <span>garden view</span></button>
+                <div>
+                    <h3>Mid-Range</h3>
+                    <div className="flex">
+                        <Link to="/rooms">SEE MORE</Link>
+                        <Link to="/">BOOK NOW</Link>
+                    </div>
+                </div>
+            <button onClick={ goNext } className={props.buttonNextClass}> <span>ciry view /</span> {props.nextButton} </button>
+        </div>
       </div>
     );
   };

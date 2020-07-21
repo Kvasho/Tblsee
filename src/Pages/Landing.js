@@ -48,12 +48,16 @@ const Landing = () => {
           been the ind</p>
         <div className="padding-right">
           <h3>Gallery</h3>
-          <img src={LandingGallery2} alt="Landing Gallery"/>
+          <div>
+            <img src={LandingGallery2} alt="Landing Gallery"/>
+            <img src={ LandingGallery3 } alt="*"/>
+          </div>
+          
         </div>
       </section>
       <section className="landing-gallery__second">
         <img src={ HotelRound } alt="badge" style={{ alignSelf: "flex-end" }}/>
-        <img src={ LandingGallery3 } alt="*"/>
+        
         <Link to="/gallery" className="landing-gallery__btn">See More</Link>
       </section>
       <section className="landing_eats container-own">
@@ -137,10 +141,16 @@ const Landing = () => {
           <img src= { LandingNeighborhood } alt="location" style={{ width: "29%", marginRight: "110px" }}/>
           <img src={LandingNeighborhood2} alt="location" style={{ height: "50%", marginTop: "9%", width: "29%" }}/>
       </section>
-      <section className="container-own">
+      <section>
         <Swiper 
-            slidesPerView = { 3 }
-            spaceBetween = { 248 }
+            containerClass   = "swiper-div"
+            slidesPerView    = { 3 }
+            spaceBetween     = { 248 }
+            buttonNextClass  = "landing-btn__next"
+            buttonPrevClass  = "landing-btn__prev"
+            swiperController = "landing-swiper__controller" 
+            prevButton       = "Prev"
+            nextButton       = "Next"
         />
       </section>
     </div>

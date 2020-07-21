@@ -23,3 +23,34 @@
     }
 }
 
+@media(max-width: 1100px) {
+    .luxury-restaurant .row {
+        display: block;
+    }
+
+    .luxury-restaurant .col {
+        width: fit-content;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+
+    .luxury-restaurant__wr {
+        display: block;
+    }
+
+    .luxury-restaurant__img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .luxury-restaurant__half {
+        display: flex;
+        width: 100%;
+
+        & img {
+            width: 50% !important;
+            margin-left: 5px;
+        }
+    }
+}
+

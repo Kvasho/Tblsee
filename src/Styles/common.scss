@@ -87,11 +87,13 @@ a {
 
 .language-bar {
     margin-left: 10rem;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .language-bar__white {
     color: #ffffff;
+    margin-left: 10rem;
+    font-size: 20px;
 }
 
 .header-burger_menu {
@@ -135,11 +137,16 @@ a {
     }
 }
 
+.pagination > li:first-child > a {
+    display: none;
+}
+
 .page-title {
     font-size: 8.4rem;
     font-weight: bold;
     word-spacing: 3rem;
-    margin-top: 15rem;
+    margin-top: 30rem;
+    margin-bottom: 7.5rem;
     text-align: center;
     text-transform: capitalize;
 }

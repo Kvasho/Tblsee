@@ -2,6 +2,7 @@ import React from 'react';
 import PageTitle from '../Components/PageTitle';
 import Wallpaper from '../Assets/Images/rooms-wallpaper.png';
 import aboutUsImg from "../Assets/Images/aboutus.png";
+import HeaderBlack from '../Components/HeaderBlack';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -12,6 +13,8 @@ import "../Styles/common.scss";
 
 const AboutUs = () => {
   return (
+    <>
+    <HeaderBlack />
     <div className="about-us">
       <div className="about-us__wr">      
         <PageTitle title="About Us"/>
@@ -71,6 +74,7 @@ const AboutUs = () => {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

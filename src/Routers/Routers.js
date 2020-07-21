@@ -15,7 +15,6 @@ import Footer from "../Components/Footer";
 const Routers = () => {
 		return (
 			<>
-			<Header/>
 			<Switch>
 				<Route
 					path = "/aboutUs"

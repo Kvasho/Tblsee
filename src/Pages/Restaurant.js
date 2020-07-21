@@ -10,9 +10,12 @@ import Shef from "../Assets/Images/shef.png";
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Header from '../Components/Header';
 
 const Restaurant = () => {
   return (
+    <>
+    <Header/>
     <div className="restaurant">
       <img src={RestaurantWallpaper} alt="restaurant wallpaper" className="restaurant-wallpaper"/>
       <div className="restaurant-gastronomy container-own">
@@ -103,6 +106,7 @@ const Restaurant = () => {
       galley of type and scrambled it to make a type specimen book. 
       It has sur</p>
     </div>
+    </>
   );
 }
 

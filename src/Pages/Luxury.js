@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import "../Styles/common.scss";
 import { Row,Col } from 'react-bootstrap';
 import '../Styles/Luxury.scss';
+import HeaderBlack from '../Components/HeaderBlack';
 
 import LogoBlack from '../Assets/icons/logo-black.svg';
 import LuxuryRestaurant1 from '../Assets/Images/luxury-restaurant-1.jpg';
@@ -16,6 +17,8 @@ class Luxury extends Component {
       }
       render() {
         return (
+          <>
+          <HeaderBlack />
           <div className="container-own">
             <section className="luxury-restaurant">
               <Row md={1} lg={2}>
@@ -35,6 +38,7 @@ class Luxury extends Component {
             </div>
             </section>
           </div>
+          </>
         );
       }
   }

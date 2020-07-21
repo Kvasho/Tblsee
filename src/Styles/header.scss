@@ -3,7 +3,7 @@
     height: auto;
     position: absolute;
     top: 0;
-    z-index: 1000;
+    z-index: 10;
 }
 
 .header-wr {
@@ -12,6 +12,14 @@
     width: calc(100% - 140px);
     margin: auto;
     margin: 40px auto;
+}
+
+.header-black {
+    z-index: -1;
+}
+
+.book-now {
+    color: #000000;
 }
 
 .book-now__white {

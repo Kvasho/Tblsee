@@ -17,9 +17,13 @@ import LandingGallery3 from "../Assets/Images/landing-gallery-3.jpg";
 import Eats from "../Assets/Images/eats.jpg";
 
 import "../Styles/common.scss";
+import Swiper from '../Components/swiper';
+import Header from '../Components/Header';
 
 const Landing = () => {
   return (
+    <>
+    <Header/>
     <div className="landing">
         <CarouselLanding luxuryCarousel={false}/>
       <h2 className="exploring-title">exploring</h2>
@@ -131,9 +135,10 @@ const Landing = () => {
           </Row>
       </section>
       <section className="landing-neighborhood">
-
+          <Swiper/>
       </section>
     </div>
+    </>
   );
 }
 

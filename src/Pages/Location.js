@@ -1,12 +1,15 @@
 import React from 'react';
 import PageTitle from '../Components/PageTitle';
 import Destination from '../Components/Destination';
+import HeaderBlack from '../Components/HeaderBlack';
 
 import "../Styles/Location.scss";
 import "../Styles/common.scss";
 
 const Location = () => {
   return (
+    <>
+    <HeaderBlack />
     <div className="location">
       <PageTitle title="urban & unique"/>
       <p className="location-paragraph">Lorem Ipsum is simply dummy 
@@ -23,6 +26,7 @@ const Location = () => {
       <Destination/>
       <Destination/>
   </div>
+  </>
   );
 }
 

@@ -20,7 +20,8 @@ class Header extends Component  {
   constructor(props) {
 		super(props);
 		this.state = {
-      burgerMenuOpen: true
+      burgerMenuOpen: true,
+      whiteHeader: false
     };
   }
 
@@ -38,23 +39,23 @@ class Header extends Component  {
   };
 
   render(){
-    const {burgerMenuOpen} = this.state;
+    const {whiteHeader,burgerMenuOpen} = this.state;
     return (     
       <>       
           {
             burgerMenuOpen ? 
-            <header className="header"> 
+            <header className="header header-black"> 
             <div className="header-wr">
             <div className="flex">
-             <img src={ BurgerMenuWhite } className="header-burger_menu" alt="Burger Menu" onClick={this.toggleClass}/>
-              <div className="language-bar__white" >EN</div>
+             <img src={ BurgerMenu } className="header-burger_menu" alt="Burger Menu" onClick={this.toggleClass}/>
+              <div className="language-bar" >EN</div>
        </div>
        <Link to="/">           
-             <img src={LogoWhite} className="header-logo" alt="website logo" onClick={this.whiteHeader}/> 
+             <img src={Logo} className="header-logo" alt="website logo" onClick={this.whiteHeader}/> 
        </Link>
        <Button 
          title="book now"
-         className="book-now__white"
+         className="book-now"
        />
      </div> </header>:
             

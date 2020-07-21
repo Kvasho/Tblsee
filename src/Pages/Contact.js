@@ -2,6 +2,7 @@ import React from 'react';
 
 import PageTitle from '../Components/PageTitle';
 import Input from '../Components/Input';
+import HeaderBlack from '../Components/HeaderBlack';
 
 import "../Styles/common.scss";
 import "../Styles/contact.scss";
@@ -12,6 +13,8 @@ import HotelRound from '../Assets/icons/tbilisee-hotel.svg';
 
 const Contact = () => {
   return (
+    <>
+    <HeaderBlack/>
     <div className="Contact">
         <PageTitle title="Contact Us"/>
         <div className="contact-form">
@@ -54,6 +57,7 @@ const Contact = () => {
             />
         </div>
     </div>
+    </>
   );
 }
 

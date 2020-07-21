@@ -23,19 +23,19 @@ const Footer = () => {
                 Lorem Ipsum has been the industry's standard dummy text</p>
                 <Row>
                   <Col className="locations">
-                    <div>
+                    <div className="width-full">
                      <h3>betlemi str.</h3>
                       <img src={Picture} height="400px" width="250px" alt="*"/>
                     </div>
                   </Col>
                   <Col className="locations">
-                    <div>
+                    <div className="width-full">
                      <h3>betlemi str.</h3>
                       <img src={Picture} height="400px" width="250px" alt="*"/>
                     </div>
                   </Col>
                   <Col className="locations">
-                    <div>
+                    <div className="width-full">
                      <h3>betlemi str.</h3>
                       <img src={Picture} height="400px" width="250px" alt="*"/>
                     </div>

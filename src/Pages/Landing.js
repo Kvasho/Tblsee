@@ -7,18 +7,17 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Figure from 'react-bootstrap/Figure'
 
-// Import Swiper styles
-import 'swiper/swiper.scss';
-
 import LandingGallery from "../Assets/Images/landing-gallery.jpg";
 import LandingGallery2 from '../Assets/Images/landing-gallery-2.jpg';
 import HotelRound from "../Assets/icons/tbilisee-hotel-round.svg";
 import LandingGallery3 from "../Assets/Images/landing-gallery-3.jpg";
 import Eats from "../Assets/Images/eats.jpg";
+import LandingNeighborhood from "../Assets/Images/landing-neighborhood.jpg"
+import LandingNeighborhood2 from "../Assets/Images/landing-neighborhood2.jpg"
 
 import "../Styles/common.scss";
-import Swiper from '../Components/swiper';
 import Header from '../Components/Header';
+import Swiper from '../Components/Swiper';
 
 const Landing = () => {
   return (
@@ -37,16 +36,7 @@ const Landing = () => {
             is simply dummy text of the printing and 
             typesetting industry. Lorem Ipsum has been the ind</p>
         </div>
-        <Figure>
-                <Figure.Image
-                  width={650}
-                  height={534}
-                  alt="171x180"
-                  src={ExploringImg}
-                  className="exploring-col"
-                />
-        </Figure>
-        {/* <img src={ExploringImg} alt="/" className="exploring-col"/> */}
+        <img src={ExploringImg} alt="/" className="exploring-col"/>
         <img src={ExploringImg} alt="/" className="exploring-col last-image" style={{ height: "50%", alignSelf: 'flex-end'}}/>
       </div>
       <section className="landing-gallery">
@@ -63,7 +53,7 @@ const Landing = () => {
       </section>
       <section className="landing-gallery__second">
         <img src={ HotelRound } alt="badge" style={{ alignSelf: "flex-end" }}/>
-        <img src={ LandingGallery3 }/>
+        <img src={ LandingGallery3 } alt="*"/>
         <Link to="/gallery" className="landing-gallery__btn">See More</Link>
       </section>
       <section className="landing_eats container-own">
@@ -135,7 +125,23 @@ const Landing = () => {
           </Row>
       </section>
       <section className="landing-neighborhood">
-          <Swiper/>
+          <div className="landing-neighborhood__txt">   
+              <h3>Neighborhood</h3>
+              <p>gallery-shi gadava dummy text of the printing and 
+                typesetting industry. Lorem Ipsum has been the industry's standard dummy 
+                text ever since the 1500s, Lorem Ipsum is simply 
+                dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the indust</p>
+                <Link to="/location" className="neighborhood-more">View More</Link>
+          </div>
+          <img src= { LandingNeighborhood } alt="location" style={{ width: "29%", marginRight: "110px" }}/>
+          <img src={LandingNeighborhood2} alt="location" style={{ height: "50%", marginTop: "9%", width: "29%" }}/>
+      </section>
+      <section className="container-own">
+        <Swiper 
+            slidesPerView = { 3 }
+            spaceBetween = { 248 }
+        />
       </section>
     </div>
     </>

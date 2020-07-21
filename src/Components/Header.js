@@ -10,9 +10,7 @@ import Button from './Button';
 import DropdownMenu from "./DropDownMenu";
 
 //Icons
-import BurgerMenu from "../Assets/icons/burger-menu-icon.svg";
 import BurgerMenuWhite from "../Assets/icons/white-burger-menu.svg";
-import Logo from "../Assets/icons/logo-black.svg";
 import LogoWhite from '../Assets/icons/white-logo.svg';
 
 
@@ -27,14 +25,6 @@ class Header extends Component  {
   toggleClass = () => {
     const currentState = this.state.burgerMenuOpen;
     this.setState({ burgerMenuOpen: !currentState });
-  };
-
-  blackHeader = () => {
-    this.setState({ whiteHeader: true })
-  };
-
-  whiteHeader = () => {
-    this.setState({ whiteHeader: false })
   };
 
   render(){
@@ -60,8 +50,7 @@ class Header extends Component  {
             
         <DropdownMenu 
           menuHandler  = { this.toggleClass } 
-          whiteHeader  = { this.whiteHeader } 
-          blackHeader  = { this.blackHeader }/>
+          burgerMenuOpen = {burgerMenuOpen}/>
           }     
     </>
   );

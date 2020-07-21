@@ -1,5 +1,6 @@
 .about-us {
     margin: 108px auto auto auto;
+    overflow: hidden;
 
     &__wr {
         position: relative;
@@ -8,9 +9,9 @@
 
     &__info {
         background: #ffffff;
-        -webkit-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
-        -moz-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
-        box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.15);
+        -moz-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.15);
+        box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.15);
         padding: 107px 90px;
         position: relative;
         width: 60%;
@@ -49,6 +50,7 @@
 
 .about-us__paragraph {
     width: 100%;
+    font-size: 22px;
 }
 
 .aboutus-goal__title {
@@ -106,7 +108,29 @@
     width: 100%;
 }
 
+@media(max-width: 1300px) {
+    .about-us__info {
+        width: 85%;
+        padding: 30px 23px;
+    }
+
+    .about-us__first {
+        padding-bottom: 1rem;
+    }
+
+    .about-us__paragraph {
+        font-size: 16px;
+    }
+
+    .rooms-wallpaper {
+        height: 400px;
+    }
+}
+
 @media(max-width: 990px) {
+    .about-us {
+        margin: auto;
+    }
     .about-us__wr {
         margin-bottom: 100px;
     }
@@ -128,4 +152,14 @@
             font-size: 90px;
         }
     }
+
+    .aboutus-goal__paragraph p {
+        font-size: 16px;
+        margin: 10px;
+    }
+
+    .aboutus-goal__title {
+        margin-top: 300px;
+    }
+
 }

@@ -6,7 +6,8 @@ import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import "../Styles/gallery.scss";
 import Image from "../Assets/Images/landing-gallery-2.jpg";
-import 'react-medium-image-zoom/dist/styles.css'
+import 'react-medium-image-zoom/dist/styles.css';
+import HeaderBlack from "../Components/HeaderBlack";
 
 const images = [
     {Image},
@@ -67,6 +68,8 @@ export default class App extends Component {
       console.log(this.state.data);
     const { photoIndex, isOpen, data } = this.state;
       return (
+        <>
+        <HeaderBlack/>
           <div className="container-own gallery">
               {isOpen && (
           <Lightbox
@@ -105,6 +108,7 @@ export default class App extends Component {
                   subContainerClassName={"pages pagination"}
                   activeClassName={"active"}/>
           </div>
+          </>
       )
   }
 }

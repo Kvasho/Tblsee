@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Route, Switch }    from "react-router-dom";
 
 import AboutUs from "../Pages/AboutUs";
@@ -9,7 +9,6 @@ import Location from "../Pages/Location";
 import Restaurant from "../Pages/Restaurant";
 import Rooms from "../Pages/Rooms";
 import Luxury from "../Pages/Luxury";
-import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 
 const Routers = () => {

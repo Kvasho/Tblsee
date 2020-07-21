@@ -21,8 +21,10 @@ const Footer = () => {
     <Col>
     <h3 className="footer-cell__title">socials</h3>
           <p className="footer-cell__subtitle">facebook, instagram, linkedin</p></Col>
-    <Col><h3 className="footer-cell__title">made by</h3>
-          <p className="footer-cell__subtitle">onesoul.io</p></Col>
+    <Col>
+      <h3 className="footer-cell__title">made by</h3>
+      <a href="https://www.onesoul.io" className="footer-cell__subtitle onesoul">onesoul.io</a>
+    </Col>
   </Row>
 
 </div>

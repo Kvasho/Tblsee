@@ -1,6 +1,7 @@
 import React from 'react';
 import PageTitle from '../Components/PageTitle';
 import Button from "../Components/Button";
+import HeaderBlack from "../Components/HeaderBlack";
 
 import RoomsWallpaper from "../Assets/Images/rooms-wallpaper.png";
 import RoomsTest1 from "../Assets/Images/rooms-test-1.png";
@@ -14,13 +15,15 @@ import { Figure } from 'react-bootstrap';
 
 const Rooms = () => {
   return (
+    <>
+    <HeaderBlack/>
     <div className="rooms container-own">
       <PageTitle title="Rooms"/>
       <img src={RoomsWallpaper} alt="Rooms Page wallpaper" className="rooms-wallpaper"/>
       <div className="rooms-luxury">
       <Row xs={1} md={2}>
         <Col>
-        <img src={RoomsTest1} alt="Luxury room" className="rooms-luxury__img"/>
+          <img src={RoomsTest1} alt="Luxury room" className="rooms-luxury__img"/>
         </Col>
         <Col>
         <div className="rooms-description">
@@ -74,6 +77,7 @@ const Rooms = () => {
         </Row>                      
       </div>
     </div>
+    </>
   );
 }
 

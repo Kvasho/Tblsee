@@ -1,6 +1,10 @@
+.contact {
+    overflow: hidden;
+}
+
 .contact-form {
     background: #F9F9F9;
-    width: 65%;
+    width: calc(100% - 400px);
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -16,6 +20,7 @@
     text-transform: capitalize;
     border: 1px solid #91712B;
     padding: 15px 60px;
+    margin-top: 40px;
 }
 
 .contact-title {
@@ -23,4 +28,44 @@
     line-height: 166px;
     text-align: center;
     margin-bottom: 60px;
+}
+
+@media(max-width: 1700px) {
+    .contactus {
+        padding: 65px 80px 70px 60px;
+    }
+}
+
+@media(max-width: 1600px) {
+    .contactus {
+        padding: 65px 100px 70px 80px;
+    }
+
+    .contact-form {
+        padding: 31px 90px 50px 460px;
+    }
+}
+
+@media(max-width: 1400px){
+    .contactus {
+        padding: 30px 30px 30px 30px;
+    }
+
+    .contact-form {
+        padding: 31px 90px 50px 338px;
+    }
+}
+
+@media(max-width: 1300px) {
+    .contact-form {
+        padding: 31px 90px 50px 250px;
+        width: calc(100% - 300px);
+    }
+}
+
+@media(max-width: 1000px) {
+    .contact-form {
+        padding: 20px;
+        width: calc(100% - 60px);
+    }
 }

@@ -15,7 +15,7 @@
 }
 
 .header-black {
-    z-index: -1;
+    z-index: 0;
 }
 
 .book-now {
@@ -24,6 +24,10 @@
 
 .book-now__white {
     font-size: 15px;
+}
+
+.book-now__white:hover {
+    color: #ffffff !important;
 }
 
 @media (max-width: 1200px) {

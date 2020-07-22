@@ -15,7 +15,7 @@ const AboutUs = () => {
   return (
     <>
     <HeaderBlack />
-    <div className="about-us">
+    <div className="about-us m-t-xs-10">
       <div className="about-us__wr">      
         <PageTitle title="About Us"/>
         <img src={Wallpaper} alt="wallpaper" className="rooms-wallpaper container-own"/>

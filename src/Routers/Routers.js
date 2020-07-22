@@ -1,14 +1,20 @@
 import React from "react";
+
+// PACKAGES
 import { Route, Switch }    from "react-router-dom";
 
-import AboutUs from "../Pages/AboutUs";
-import Contact from "../Pages/Contact";
-import Gallery from "../Pages/Gallery";
-import Landing from "../Pages/Landing";
-import Location from "../Pages/Location";
-import Restaurant from "../Pages/Restaurant";
-import Rooms from "../Pages/Rooms";
-import Luxury from "../Pages/Luxury";
+
+// PAGES
+import AboutUs from "../Pages/AboutUs/AboutUs";
+import Contact from "../Pages/Contact/Contact";
+import Gallery from "../Pages/Gallery/Gallery";
+import Landing from "../Pages/Landing/Landing";
+import Location from "../Pages/Location/Location";
+import Restaurant from "../Pages/Restaurant/Restaurant";
+import Rooms from "../Pages/Rooms/Rooms";
+import Luxury from "../Pages/Luxury/Luxury";
+
+// COMPONENTS
 import Footer from "../Components/Footer";
 
 const Routers = () => {

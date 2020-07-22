@@ -33,7 +33,7 @@
     &-gastronomy__paragraph, &-desert__paragraph {
         font-size: 37px;
         text-align: center;
-        opacity: 60%;
+        color: gray;
     }
 
     &-shef__img {
@@ -57,7 +57,7 @@
         position: absolute;
         font-size: 145px;
         color: #000000;
-        opacity: 6%;
+        color: gray;
         left: 50%;
         top: -172%;
     }
@@ -82,8 +82,7 @@
 
         & h5 {
             font-size: 27px;
-            opacity: 60%;
-            color: #000000;
+            color: gray;
         }
     }
 
@@ -103,7 +102,7 @@
     &__post {
         font-size: 18px;
         color: #000000;
-        opacity: 60%;
+        color: gray;
         padding-top: 10px;
         text-align: center;
     }
@@ -142,7 +141,7 @@
 
         & span {
             font-size: 67px;
-            opacity: 6%;
+            color: gray;
             left: 47%;
             top: -128%;
         }

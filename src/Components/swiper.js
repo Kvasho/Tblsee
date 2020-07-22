@@ -11,6 +11,10 @@ import Image from "../Assets/Images/landing-swiper.jpg"
 
   const ManipulatingComponentOutSideSwiper = (props) => {
     const params = {
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'progressbar',
+      },
         navigation:      {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev"

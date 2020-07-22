@@ -23,7 +23,7 @@
     &__subtitle {
         font-size: 22px;
         line-height: 30px;
-        opacity: 16%;
+        color: gray;
     }
 }
 
@@ -43,7 +43,7 @@
 .about-us__second {
     font-size: 22px;
     line-height: 30px;
-    opacity: 60%;
+    color: gray;
     display: flex;
     justify-content: space-between;
 }
@@ -64,7 +64,7 @@
         position: absolute;
         font-size: 145px;
         color: #000000;
-        opacity: 6%;
+        color: gray;
         left: 46%;
         top: -168%;
     }
@@ -82,7 +82,7 @@
 .aboutus-goal__paragraph p {
     font-size: 22px;
     line-height: 30px;
-    opacity: 60%;
+    color: gray;
     margin: 70px;
 }
 
@@ -109,6 +109,14 @@
 }
 
 @media(max-width: 1300px) {
+    .about-us .page-title {
+        margin-top: 15rem;
+        margin-bottom: -8.5rem;
+    }
+    .about-us__second .col {
+        margin-bottom: 0;
+    }
+
     .about-us__info {
         width: 85%;
         padding: 30px 23px;

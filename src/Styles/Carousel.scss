@@ -25,7 +25,7 @@
     position: absolute;
     display: block;
     z-index: 500;
-    bottom: -120px;
+    bottom: -13%;
     left: 50%;
     transform: translateX(-50%);
     height: 80%;
@@ -61,6 +61,21 @@
     right: 15%;
     bottom: 12%;
     width: 18rem;
+}
+
+@media(max-width: 1300px) {
+    .carousel-caption {
+        padding: 0;
+    }
+
+    .carousel-title {
+        font-size: 3rem;
+    }
+
+    .landing-carousel__explore {
+        font-size: 11px;
+        padding: 8px 11px;
+    }
 }
 
 @media(max-width: 1200px) {

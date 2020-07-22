@@ -1,17 +1,24 @@
 import React from 'react';
-import PageTitle from '../Components/PageTitle';
-import Button from "../Components/Button";
-import HeaderBlack from "../Components/HeaderBlack";
 
-import RoomsWallpaper from "../Assets/Images/rooms-wallpaper.png";
-import RoomsTest1 from "../Assets/Images/rooms-test-1.png";
-import TbiliseeRound from "../Assets/Images/tbilisee-hotel-round.png";
-
+// PACKAGES
+import {Link} from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
-import "../Styles/Rooms.scss";
 import { Figure } from 'react-bootstrap';
+
+// COMPONENTS
+import PageTitle from '../../Components/PageTitle';
+import Button from "../../Components/Button";
+import HeaderBlack from "../../Components/HeaderBlack";
+
+// IMAGES
+import RoomsWallpaper from "../../Assets/Images/rooms-wallpaper.png";
+import RoomsTest1 from "../../Assets/Images/rooms-test-1.png";
+import TbiliseeRound from "../../Assets/Images/tbilisee-hotel-round.png";
+
+// SCSS
+import "./Rooms.scss";
+
 
 const Rooms = () => {
   return (
@@ -36,10 +43,10 @@ const Rooms = () => {
             looked up one o</p>
             <div className="flex space-between margin-110">
               <span className="rooms-price">560$</span>
-              <Button 
+              <Link
+              to="/luxury"
                 className="see-more__btn"
-                title="see more"
-              />
+              >See More</Link>
             </div>
          </div>
         </Col>
@@ -59,10 +66,10 @@ const Rooms = () => {
             looked up one o</p>
             <div className="flex space-between margin-110">
               <span className="rooms-price">560$</span>
-              <Button 
+              <Link 
+                to="/luxury"
                 className="see-more__btn"
-                title="see more"
-              />
+                >See more</Link>
             </div>
          </div>
           </Col>

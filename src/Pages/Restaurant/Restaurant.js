@@ -1,16 +1,21 @@
 import React from 'react';
 
-import "../Styles/restaurant.scss";
-
-import RestaurantWallpaper from "../Assets/Images/restaurant-wallpaper.png";
-import Gastronomy from "../Assets/Images/gastronomy.png";
-import Desert from "../Assets/Images/desert.png";
-import Pizza from "../Assets/Images/pizza.png";
-import Shef from "../Assets/Images/shef.png";
-
+// PACKAGES
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Header from '../Components/Header';
+
+// COMPONENTS
+import Header from '../../Components/Header';
+
+// SCSS
+import "./restaurant.scss";
+
+// IMAGES
+import RestaurantWallpaper from "../../Assets/Images/restaurant-wallpaper.png";
+import Gastronomy from "../../Assets/Images/gastronomy.png";
+import Desert from "../../Assets/Images/desert.png";
+import Pizza from "../../Assets/Images/pizza.png";
+import Shef from "../../Assets/Images/shef.png";
 
 const Restaurant = () => {
   return (

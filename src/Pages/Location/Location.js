@@ -1,10 +1,12 @@
 import React from 'react';
-import PageTitle from '../Components/PageTitle';
-import Destination from '../Components/Destination';
-import HeaderBlack from '../Components/HeaderBlack';
 
-import "../Styles/Location.scss";
-import "../Styles/common.scss";
+// COMPONENTS
+import PageTitle from '../../Components/PageTitle';
+import Destination from '../../Components/Destination';
+import HeaderBlack from '../../Components/HeaderBlack';
+
+// SCSS
+import "./Location.scss";
 
 const Location = () => {
   return (

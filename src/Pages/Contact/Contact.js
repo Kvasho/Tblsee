@@ -1,15 +1,18 @@
 import React from 'react';
 
-import PageTitle from '../Components/PageTitle';
-import Input from '../Components/Input';
-import HeaderBlack from '../Components/HeaderBlack';
+// COMPONENTS
+import PageTitle from '../../Components/PageTitle';
+import Input from '../../Components/Input';
+import HeaderBlack from '../../Components/HeaderBlack';
+import Button from '../../Components/Button';
+import ContactUs from '../../Components/ContactUs';
 
-import "../Styles/common.scss";
-import "../Styles/contact.scss";
-import Button from '../Components/Button';
-import ContactUs from '../Components/ContactUs';
+// SCSS
+import "../../Styles/common.scss";
+import "./contact.scss";
 
-import HotelRound from '../Assets/icons/tbilisee-hotel.svg';
+// IMAGES
+import HotelRound from '../../Assets/icons/tbilisee-hotel.svg';
 
 const Contact = () => {
   return (

@@ -30,6 +30,25 @@
     margin-bottom: 60px;
 }
 
+.contact-input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #91712B;
+    background: transparent;
+    margin-bottom: 10rem;
+    font-size: 2rem;
+    padding-bottom: 8px;
+}
+
+.width-half {
+    width: 46%;
+}
+
+.width-full {
+    width: 100%;
+}
+
 @media(max-width: 1700px) {
     .contactus {
         padding: 65px 80px 70px 60px;
@@ -60,6 +79,7 @@
     .contact-form {
         padding: 31px 90px 50px 250px;
         width: calc(100% - 300px);
+        margin: 5rem auto 5rem auto;
     }
 }
 
@@ -67,5 +87,9 @@
     .contact-form {
         padding: 20px;
         width: calc(100% - 60px);
+    }
+
+    .contact-round__logo {
+        display: none;
     }
 }

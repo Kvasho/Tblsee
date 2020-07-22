@@ -1,5 +1,11 @@
+// Rooms
 .rooms {
     overflow: hidden;
+
+    & .page-title {
+        margin-top: 28rem;
+        margin-bottom: 8rem;
+    }
     
     &-wallpaper {
         width: 100%;
@@ -57,7 +63,7 @@
 
     &__paragraph {
         font-size: 22px;
-        opacity: 0.6;
+        color: gray;
         padding-top: 110px;
         line-height: 48px;
     }
@@ -66,12 +72,6 @@
 .rooms-midrange {
     margin-top: 170px;
     position: relative;
-}
-
-.tbilisee-round {
-    position: absolute;
-    top: -130px;
-    left: 550px;
 }
 
 .rooms-page-margin-bottom {
@@ -88,10 +88,6 @@
         font-size: 12rem;
     }
 
-    .rooms-luxury {
-        margin-top: 50px;
-    }
-
     .rooms-description__title {
         font-size: 50px;
     }
@@ -103,7 +99,8 @@
         line-height: 31px;
     }
 
-    .rooms-midrange {
+    .rooms-midrange, .rooms-luxury {
         margin-top: 50px;
+        margin-bottom: 5rem;
     }
 }

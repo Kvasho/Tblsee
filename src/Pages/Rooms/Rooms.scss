@@ -1,8 +1,14 @@
+// Rooms
 .rooms {
+    overflow: hidden;
+
+    & .page-title {
+        margin-top: 28rem;
+        margin-bottom: 8rem;
+    }
     
     &-wallpaper {
         width: 100%;
-        height: auto;
         display: block;
         margin: 90px auto auto auto;
     }
@@ -22,10 +28,22 @@
     &-price {
         font-size: 2.6rem;
     }
+
+    &-border {
+        position: absolute;
+        background-color: #ffffff;
+        border: 1px solid #A89562;
+        z-index: -1;
+        width: 700px;
+        height: 600px;
+        bottom: 35px;
+        left: 15px;
+    }
 }
 
 .rooms-description {
     width: 80%;
+    margin-left: 30px;
 
     &__subtitle {
         font-size: 14px;
@@ -45,7 +63,7 @@
 
     &__paragraph {
         font-size: 22px;
-        opacity: 0.6;
+        color: gray;
         padding-top: 110px;
         line-height: 48px;
     }
@@ -56,16 +74,33 @@
     position: relative;
 }
 
-.tbilisee-round {
-    position: absolute;
-    top: -130px;
-    left: 550px;
-}
-
 .rooms-page-margin-bottom {
     margin-bottom: 525px;
 }
 
 .rooms-luxury__img {
     width: 100%;
+    margin-left: 30px;
+}
+
+@media(max-width: 846px) {
+    .page-title {
+        font-size: 12rem;
+    }
+
+    .rooms-description__title {
+        font-size: 50px;
+    }
+
+    .rooms-description__paragraph {
+        font-size: 16px;
+        opacity: 0.6;
+        padding-top: 30px;
+        line-height: 31px;
+    }
+
+    .rooms-midrange, .rooms-luxury {
+        margin-top: 50px;
+        margin-bottom: 5rem;
+    }
 }

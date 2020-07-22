@@ -11,9 +11,7 @@ import DropdownMenu from "./DropDownMenu";
 
 //Icons
 import BurgerMenu from "../Assets/icons/burger-menu-icon.svg";
-import BurgerMenuWhite from "../Assets/icons/white-burger-menu.svg";
 import Logo from "../Assets/icons/logo-black.svg";
-import LogoWhite from '../Assets/icons/white-logo.svg';
 
 
 class Header extends Component  {

@@ -1,15 +1,17 @@
 import React from 'react';
-import PageTitle from '../Components/PageTitle';
-import Wallpaper from '../Assets/Images/rooms-wallpaper.png';
-import aboutUsImg from "../Assets/Images/aboutus.png";
-import HeaderBlack from '../Components/HeaderBlack';
 
+// COMPONENTS
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import HeaderBlack from '../../Components/HeaderBlack';
+import PageTitle from '../../Components/PageTitle';
+
+// IMAGES
+import Wallpaper from '../../Assets/Images/rooms-wallpaper.png';
+import aboutUsImg from "../../Assets/Images/aboutus.png";
 
 //SCSS
-import "../Styles/about-us.scss";
-import "../Styles/common.scss";
+import "./about-us.scss";
 
 const AboutUs = () => {
   return (

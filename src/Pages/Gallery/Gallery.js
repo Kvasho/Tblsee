@@ -1,12 +1,22 @@
-import React, {Component} from 'react'
-import axios from 'axios'
+import React, {Component} from 'react';
+
+// PACKAGES
+import axios from 'axios';
 import ReactPaginate from 'react-paginate';
-import PageTitle from '../Components/PageTitle';
 import Lightbox from 'react-image-lightbox';
+
+// COMPONENTS
+import PageTitle from '../../Components/PageTitle';
+import HeaderBlack from "../../Components/HeaderBlack";
+
+// IMAGES
+import Image from "../../Assets/Images/landing-gallery-2.jpg";
+
+// STYLES
 import 'react-image-lightbox/style.css';
-import "../Styles/gallery.scss";
-import Image from "../Assets/Images/landing-gallery-2.jpg";
-import 'react-medium-image-zoom/dist/styles.css'
+import "./gallery.scss";
+import 'react-medium-image-zoom/dist/styles.css';
+
 
 const images = [
     {Image},
@@ -67,6 +77,8 @@ export default class App extends Component {
       console.log(this.state.data);
     const { photoIndex, isOpen, data } = this.state;
       return (
+        <>
+        <HeaderBlack/>
           <div className="container-own gallery">
               {isOpen && (
           <Lightbox
@@ -105,6 +117,7 @@ export default class App extends Component {
                   subContainerClassName={"pages pagination"}
                   activeClassName={"active"}/>
           </div>
+          </>
       )
   }
 }

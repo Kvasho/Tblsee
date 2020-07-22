@@ -3,7 +3,7 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import "../Styles/Location.scss";
+import "../Pages/Location/Location.scss";
 import "../Styles/common.scss";
 
 import Picture from "../Assets/Images/aboutus.png";

@@ -9,7 +9,7 @@ import HeaderBlack from '../../Components/HeaderBlack';
 import Destination from "../../Components/Destination";
 import PageTitle from '../../Components/PageTitle';
 import Button from "../../Components/Button";
-import Swiper from '../../Components/Swiper';
+import Swiper from '../../Components/swiper';
 
 // SCSS
 import "../../Styles/common.scss";
@@ -31,6 +31,7 @@ class Luxury extends Component {
           <>
           <HeaderBlack />
           <div className="container-own luxury">
+            <div className="luxury-absolute"/>
             <PageTitle title="luxury"/>
             {/* <section className="luxury-swiper">
               <Swiper

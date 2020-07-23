@@ -13,9 +13,9 @@ const DropdownMenu = (props) => {
             <Link to="/aboutus">
                 <li className="dropdown-menu_item" onClick={() => props.menuHandler()}>about us</li>
             </Link>
-            <Link to="/gallery">
+            {/* <Link to="/gallery">
                 <li className="dropdown-menu_item" onClick={() => props.menuHandler()}>gallery</li>
-            </Link>
+            </Link> */}
             <Link to="/rooms">
                 <li className="dropdown-menu_item" onClick={() => props.menuHandler()}>rooms</li>
             </Link>

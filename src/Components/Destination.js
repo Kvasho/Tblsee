@@ -1,8 +1,5 @@
 import React from 'react';
 
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
 import "../Pages/Location/Location.scss";
 import "../Styles/common.scss";
 
@@ -10,37 +7,32 @@ import Picture from "../Assets/Images/aboutus.png";
 
 const Footer = () => {
   return (
-<div className="destination container-own">
-  <div className="destination-background"/>
-        <div className="full-height width-full">
-            <img src={Picture} className="destination-img" width="100%"
-    height="880px" alt="/"/>
-        </div>
-            <div className="full-height destination-content">
-              <h2>Narikala fortress</h2>
-              <p>Lorem Ipsum is simply dummy 
+<div className="destination container-own relative">      
+<div className="destination-background absolute"/>
+      <img src={Picture} className="destination-img full"/>
+            <div className="destination-content">
+              <div>
+              <h2 className="destination-content__title">Narikala fortress</h2>
+              <p className="destination-content__paragraph" style={{ marginTop: "30px", marginBottom: "30px"}}>Lorem Ipsum is simply dummy 
                 text of the printing and typesetting industry.
                 Lorem Ipsum has been the industry's standard dummy text</p>
-                <Row>
-                  <Col className="locations">
-                    <div className="width-full">
-                     <h3>betlemi str.</h3>
-                      <img src={Picture} height="400px" width="250px" alt="*"/>
-                    </div>
-                  </Col>
-                  <Col className="locations">
-                    <div className="width-full">
-                     <h3>betlemi str.</h3>
-                      <img src={Picture} height="400px" width="250px" alt="*"/>
-                    </div>
-                  </Col>
-                  <Col className="locations">
-                    <div className="width-full">
-                     <h3>betlemi str.</h3>
-                      <img src={Picture} height="400px" width="250px" alt="*"/>
-                    </div>
-                  </Col>
-                </Row>
+              <p className="destination-content__paragraph">90 min trip</p>
+              </div>
+              <div className="destination-cards">
+                <div className="destination-card">
+                <h3>betlemi str.</h3>
+                  <img src={Picture} className="destination-card__image"/> 
+                </div>
+                <div className="destination-card">
+                <h3>betlemi str.</h3>
+              <img src={Picture} className="destination-card__image"/> 
+                </div>
+                <div className="destination-card">
+                <h3>betlemi str.</h3>
+              <img src={Picture} className="destination-card__image"/> 
+                </div>
+                </div>                    
+                                     
             </div>
     </div>
   );

@@ -9,7 +9,7 @@ import Figure from 'react-bootstrap/Figure'
 // COMPONENTS
 import CarouselLanding from '../../Components/CarouselLanding';
 import Header from '../../Components/Header';
-import Swiper from '../../Components/Swiper';
+// import Swiper from '../../Components/swiper';
 
 // IMAGES
 import LandingGallery from "../../Assets/Images/landing-gallery.jpg";
@@ -19,8 +19,14 @@ import LandingGallery3 from "../../Assets/Images/landing-gallery-3.jpg";
 import Eats from "../../Assets/Images/eats.jpg";
 import LandingNeighborhood from "../../Assets/Images/landing-neighborhood.jpg"
 import LandingNeighborhood2 from "../../Assets/Images/landing-neighborhood2.jpg"
-import ExploringImg from '../../Assets/Images/rooms-test-1.png';
-
+import ExploringFull from '../../Assets/Images/exploring-full.jpg';
+import ExploringHalf from '../../Assets/Images/exploring-half.jpg';
+import galleryMedium from "../../Assets/Images/gallery-medium.jpg"
+import gallerySmall from "../../Assets/Images/gallery-small.jpg"
+import restaurant1 from '../../Assets/Images/restaurant1.jpg';
+import restaurant2 from '../../Assets/Images/restaurant2.jpg';
+import restaurant3 from '../../Assets/Images/restaurant3.jpg';
+import restaurant4 from '../../Assets/Images/restaurant4.jpg';
 // SCSS
 import "./Landing.scss";
 
@@ -31,8 +37,7 @@ const Landing = () => {
     <Header/>
     <div className="landing">
         <CarouselLanding luxuryCarousel={false}/>
-      <h2 className="exploring-title">exploring</h2>
-      
+      <h2 className="exploring-title">exploring</h2>      
         <section className="exploring container-own">
             <div>
               <h3>Tbilisi <span className="white">Hotel</span></h3>
@@ -44,10 +49,10 @@ const Landing = () => {
                 typesetting industry. Lorem Ipsum has been the ind</p>
             </div>
             <div>
-              <img src={ExploringImg} alt="/" className="exploring-image__full"/>
+              <img src={ExploringFull} alt="/" className="exploring-image__full"/>
             </div>
             <div className="relative">
-              <img src={ExploringImg} alt="/" className="exploring-image__half absolute"/>
+              <img src={ExploringHalf} alt="/" className="exploring-image__half absolute"/>
             </div>
         </section>
       <section className="landing-gallery">
@@ -63,13 +68,13 @@ const Landing = () => {
         </div>
         <div className="relative">
           <h3>Gallery</h3>
-          <img src={LandingGallery2} alt="Landing Gallery" className="landing-neighborhood__img absolute"/>
+          <img src={galleryMedium} alt="Landing Gallery" className="landing-neighborhood__img absolute"/>
         </div>
         <div className="relative">
           <img src={ HotelRound } alt="badge" className="absolute landing-gallery__round"/>
         </div>
         <div>
-          <img src={ LandingGallery3 } alt="*" className="landing-neighborhood__img2"/>
+          <img src={ gallerySmall } alt="*" className="landing-neighborhood__img2"/>
         </div>
         <div className="relative">
           <Link to="/gallery" className="landing-gallery__btn absolute">See More</Link>
@@ -100,7 +105,7 @@ const Landing = () => {
                   width={475}
                   height={534}
                   alt="171x180"
-                  src={Eats}
+                  src={restaurant1}
                   className="eats-img"
                 />
               </Figure>
@@ -109,7 +114,7 @@ const Landing = () => {
                   width={475}
                   height={534}
                   alt="171x180"
-                  src={Eats}
+                  src={restaurant2}
                 />
               </Figure>
             </Col>
@@ -119,7 +124,7 @@ const Landing = () => {
                   width={475}
                   height={534}
                   alt="171x180"
-                  src={Eats}
+                  src={restaurant3}
                   className="eats-img"
                 />
               </Figure>
@@ -128,7 +133,7 @@ const Landing = () => {
                   width={475}
                   height={534}
                   alt="171x180"
-                  src={Eats}
+                  src={restaurant4}
                   className="eats-img"
                 />
               </Figure>
@@ -158,18 +163,18 @@ const Landing = () => {
             <img src={LandingNeighborhood2}  alt="location" style={{ height: "50%", marginTop: "9%", width: "29%" }}/>
           </div>
           </section>
-      {/* <section>
-        <Swiper 
+      <section>
+        {/* <Swiper 
             containerClass   = "swiper-div"
-            slidesPerView    = { 3 }
-            spaceBetween     = { 248 }
+            slidesPerView    = { 1 }
+            spaceBetween     = { -100 }
             buttonNextClass  = "landing-btn__next"
             buttonPrevClass  = "landing-btn__prev"
             swiperController = "landing-swiper__controller" 
             prevButton       = "Prev"
             nextButton       = "Next"
-        />
-      </section> */}
+        /> */}
+      </section>
     </div>
     </>
   );

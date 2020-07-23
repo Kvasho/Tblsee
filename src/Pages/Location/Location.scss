@@ -1,45 +1,24 @@
+.location {
+    overflow: hidden;
+}
+
 .destination {
-    display: flex;
-    position: relative;
-    margin-bottom: 200px;
+    display: grid;
+    grid-template-rows: 100rem;
+    grid-template-columns: 2fr 3fr;
+    grid-gap: 40px;
+    margin-bottom: 33rem;
+    margin-top: 20rem;
+}
 
-    &-background {
-        width: 80%;
-        background-color: #81BACB;
-        height: 600px;
-        position: absolute;
-        bottom: -90px;
-        right: -70px;
-        opacity: 14%;
-        z-index: -1;
-    }
-
-    & .row {
-        position: absolute;
-        bottom: 0;
-        display: flex;
-        margin-bottom: -30px;
-    }
-
-    &-content {
-        padding: 100px;
-
-        & h2 {
-            font-size: 65px;
-            margin-bottom: 50px;
-        }
-
-        & p {
-            font-size: 30px;
-            margin-bottom: 50px;
-        }
-
-        & h3 {
-            font-size: 40px;
-            text-transform: capitalize;
-            margin-bottom: 20px;
-        }
-    }
+.destination-background {
+    width: 80%;
+    opacity: 25%;
+    z-index: -1;
+    background-color: #81BACB;
+    height: 70rem;
+    bottom: -12%;
+    right: -4%;
 }
 
 .location-paragraph {
@@ -49,6 +28,35 @@
     text-align: center;
 }
 
+.destination-content {
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+
+.destination-content__title {
+    font-size: 86px;
+}
+
+.destination-content__paragraph {
+    font-size: 30px;
+    width: 60%;
+}
+
+.destination-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.destination-card {
+    display: grid;
+    grid-template-rows: 20% 80%;
+}
+
+.destination-card__image {
+    width: 100%;
+    height: 80%;
+}
 .locations {
     margin: 0 30px 0 0;
 
@@ -65,51 +73,102 @@
     }
 }
 
-@media(max-width: 1400px) {
-    .destination {
-        display: block;
+.destination-card h3 {
+    font-size: 31px;
+    text-transform: capitalize;
+}
+
+.location-exploring {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15rem;
+
+    & h2 {
+        font-size: 10rem;
+        font-weight: bold;
+        margin-bottom: 10rem;
     }
 
-    .destination img {
-        height: 500px;
-    }
-
-    .destination-background {
-        display: none;
-    }
-
-    .destination .row {
-        position: relative;
-        display: block;
-    }
-
-    .destination-content h2 {
-        margin-bottom: 20px;
+    & p {
+        font-size: 3rem;
+        margin-bottom: 1rem;
     }
 }
 
-@media(max-width: 1000px) {
-    .destination-content p {
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
-    .destination-content h2 {
-        font-size: 40px;
-    }
-    .destination-content {
-        padding: 30px;
-    }
-    .location-paragraph {
-        font-size: 20px;
-        width: 90%;
-        margin: 10px auto;
-        text-align: center;
-    }
-    .row {
-        display: block;
+.location-culture {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15rem;
+
+    & h2 {
+        font-size: 10rem;
+        font-weight: bold;
+        margin-bottom: 10rem;
     }
 
-    .col {
-        margin-bottom: 50px;
+    & p {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.location-exploring__txt {
+    padding: 15rem;
+}
+
+.location-culture__txt {
+    padding: 15rem;
+}
+
+@media(max-width: 1200px) {
+    .location-exploring__txt, .location-culture__txt {
+        padding: 5rem;
+    }
+    .location-exploring {
+        display: block
+    }
+
+    .location-culture {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .location-culture img, .location-exploring img {
+        width: calc(100% - 10rem);
+        margin: auto;
+    }
+}
+
+@media(max-width: 1400px) {
+ .destination-content__title {
+     font-size: 60px;
+ }
+
+ .destination-content__paragraph {
+     font-size: 22px;
+     width: 90%;
+ }
+
+ &-exploring__txt {
+    padding: 15rem;
+}
+}
+
+@media(max-width: 1000px) {
+    .destination {
+        grid-template-rows: 50rem 180rem;
+        grid-template-columns: 1fr;
+    }
+    .location-paragraph {
+        width: 80%;
+    }
+
+    .destination-content {
+        grid-template-rows: 350px 250px;
+    }
+
+    .destination-cards {
+        grid-template-rows: 220px 220px 220px;
+        grid-template-columns: 1fr;
     }
 }

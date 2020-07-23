@@ -8,6 +8,10 @@ import HeaderBlack from '../../Components/HeaderBlack';
 // SCSS
 import "./Location.scss";
 
+// IMAGES 
+import locationExploring from '../../Assets/Images/location-exploring.jpg'
+import locationCulture from '../../Assets/Images/location-culture.jpg'
+
 const Location = () => {
   return (
     <>
@@ -27,6 +31,39 @@ const Location = () => {
       <Destination/>
       <Destination/>
       <Destination/>
+      <div className="location-exploring container-own">
+          <img src={locationExploring}/>
+          <div className="location-exploring__txt">
+              <h2>Exploring</h2>
+              <p>Lorem ipsum is placeholder text commonly used in the graphic, 
+                print, and publishing industries for previewing layouts and visual mockups
+              </p>
+              <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+               exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+               dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+            anim id est laborum..</p>
+          </div>
+      </div>
+      <div className="location-culture container-own">
+          
+          <div className="location-culture__txt">
+          <h2>Culture</h2>
+              <p>Lorem ipsum is placeholder text commonly used in the graphic, 
+                print, and publishing industries for previewing layouts and visual mockups
+              </p>
+              <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+               exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+               dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+            anim id est laborum..</p>
+          </div>
+          <img src={locationCulture}/>
+      </div>
   </div>
   </>
   );

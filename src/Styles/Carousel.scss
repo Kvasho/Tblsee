@@ -25,7 +25,7 @@
     position: absolute;
     display: block;
     z-index: 500;
-    bottom: -13%;
+    bottom: -10%;
     left: 50%;
     transform: translateX(-50%);
     height: 80%;
@@ -63,13 +63,33 @@
     width: 18rem;
 }
 
+.carousel-item.active, .carousel-item-next, .carousel-item-prev .carousel-inner {
+    height: auto!important;
+}
+
+@media(max-width: 2200px){
+    .carousel-door__one {
+        bottom: 0;
+    }
+}
+
+@media(max-width: 2300px) {
+    .carousel-caption {
+        padding: 10px;
+    }
+
+    .carousel-door__one {
+        bottom: -8%;
+    }
+}
+
 @media(max-width: 1300px) {
     .carousel-caption {
-        padding: 0;
+        padding-bottom: 0;
     }
 
     .carousel-title {
-        font-size: 3rem;
+        font-size: 6rem;
     }
 
     .landing-carousel__explore {

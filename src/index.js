@@ -5,6 +5,8 @@ import App from './App';
 import  "bootstrap/dist/css/bootstrap.css";
 import * as serviceWorker from './serviceWorker';
 
+window.$coreTbilisee = 'https://core.tbilisee.ge/';
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

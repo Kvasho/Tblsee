@@ -23,6 +23,32 @@ const CarouselLanding = () => {
       <button className="landing-carousel__explore">Explore</button>
     </Carousel.Caption>
   </Carousel.Item>
+  <Carousel.Item>
+                <img
+                className="d-block w-100"
+                src={Blocks}
+                alt="First slide"
+                />
+                <img src={Door1} alt="/" className="carousel-door__one"/>
+                <img src={RoundBadge} className="carousel__absolute"/> 
+    <Carousel.Caption>
+      <h1 className="carousel-title">Your Are In The Right Place</h1>
+      <button className="landing-carousel__explore">Explore</button>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+                <img
+                className="d-block w-100"
+                src={Blocks}
+                alt="First slide"
+                />
+                <img src={Door1} alt="/" className="carousel-door__one"/>
+                <img src={RoundBadge} className="carousel__absolute"/> 
+    <Carousel.Caption>
+      <h1 className="carousel-title">Your Are In The Right Place</h1>
+      <button className="landing-carousel__explore">Explore</button>
+    </Carousel.Caption>
+  </Carousel.Item>
 </Carousel>
     </div>
   );

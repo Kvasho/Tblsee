@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Suspense} from "react";
 
 // PACKAGES
 import { Route, Switch }    from "react-router-dom";

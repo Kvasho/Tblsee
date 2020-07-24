@@ -12,6 +12,28 @@
     height: 675px;
 }
 
+.landing-head__swiper {
+    height: 100vh;
+    width: 100%;
+    margin-bottom: 10rem;
+
+    & .swiper-container {
+        height: 100%;
+    }
+
+    & .swiper-container img {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media(max-width: 2100px){
+    .landing-head__swiper {
+        margin-bottom: 0;
+    }
+}
+
+
 // Exploring (Landing)
 .exploring {
     display: grid;
@@ -324,3 +346,10 @@
         display: none !important;
     }
 }
+
+// FOR DOOR 
+// @media(max-width: 2400px){
+//     .carousel-door__one {
+//         bottom: -6%;
+//     }
+// }

@@ -40,7 +40,7 @@ import "../Styles/common.scss";
       }
     };
     return (
-      <div className="relative">
+      <div className="relative luxury-swiper__wr">
         <Swiper ref={swiperRef} {...params} className="luxury-swiper__container">
           <div>
               <img src={Image} className="luxury-swiper__img"/>

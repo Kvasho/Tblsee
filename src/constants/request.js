@@ -1,0 +1,1 @@
+export const coreTbilisee = "https://core.tbilisee.ge/api/";

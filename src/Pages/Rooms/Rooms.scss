@@ -13,18 +13,6 @@
         margin: 90px auto auto auto;
     }
 
-    &-luxury {
-        display: flex;
-        margin-top: 170px;
-        justify-content: space-between;
-    }
-
-    &-midrange {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 50rem;
-    }
-
     &-price {
         font-size: 2.6rem;
     }
@@ -39,6 +27,14 @@
         bottom: 35px;
         left: 15px;
     }
+}
+
+.rooms-luxury {
+    display: grid;
+    grid-template-rows: 650px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16rem;
+    margin-top: 17rem;
 }
 
 .rooms-description {
@@ -64,8 +60,9 @@
     &__paragraph {
         font-size: 22px;
         color: gray;
-        padding-top: 110px;
+        padding-top: 65px;
         line-height: 48px;
+        margin-bottom: 25rem;
     }
 }
 
@@ -83,24 +80,23 @@
     margin-left: 30px;
 }
 
-@media(max-width: 846px) {
-    .page-title {
-        font-size: 12rem;
+@media(max-width: 1100px) {
+    .rooms-luxury {
+        display: grid;
+        grid-template-rows: 500px 500px;
+        grid-template-columns: 1fr;
     }
 
     .rooms-description__title {
         font-size: 50px;
+        padding: 0;
     }
 
     .rooms-description__paragraph {
         font-size: 16px;
-        opacity: 0.6;
+        color: gray;
         padding-top: 30px;
-        line-height: 31px;
-    }
-
-    .rooms-midrange, .rooms-luxury {
-        margin-top: 50px;
-        margin-bottom: 5rem;
+        line-height: 48px;
+        margin-bottom: 6rem;
     }
 }

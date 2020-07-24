@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
 
+import * as coreTbilisee from '../../constants/request';
+
 // PACKAGES
 import {Link} from "react-router-dom";
 import Row from 'react-bootstrap/Row';
@@ -15,21 +17,8 @@ import Header from '../../Components/Header';
 import Swiper from '../../Components/swiper';
 
 // IMAGES
-import LandingGallery from "../../Assets/Images/landing-gallery.jpg";
-import LandingGallery2 from '../../Assets/Images/landing-gallery-2.jpg';
 import HotelRound from "../../Assets/icons/tbilisee-hotel-round.svg";
-import LandingGallery3 from "../../Assets/Images/landing-gallery-3.jpg";
-import Eats from "../../Assets/Images/eats.jpg";
-import LandingNeighborhood from "../../Assets/Images/landing-neighborhood.jpg"
-import LandingNeighborhood2 from "../../Assets/Images/landing-neighborhood2.jpg"
-import ExploringFull from '../../Assets/Images/exploring-full.jpg';
-import ExploringHalf from '../../Assets/Images/exploring-half.jpg';
-import galleryMedium from "../../Assets/Images/gallery-medium.jpg"
-import gallerySmall from "../../Assets/Images/gallery-small.jpg"
-import restaurant1 from '../../Assets/Images/restaurant1.jpg';
-import restaurant2 from '../../Assets/Images/restaurant2.jpg';
-import restaurant3 from '../../Assets/Images/restaurant3.jpg';
-import restaurant4 from '../../Assets/Images/restaurant4.jpg';
+
 // SCSS
 import "./Landing.scss";
 
@@ -52,12 +41,15 @@ export default class Landing extends Component {
       return "loading"; //TODO: Need Loading State
     }
 
+    const Tbilisee = 'https://core.tbilisee.ge/';
     const {arrayLanding} = this.state;
   return (
     <>
     <Header/>
     <div className="landing">
-        <CarouselLanding luxuryCarousel={false}/>
+      <div className="landing-head__swiper">
+       <CarouselLanding doors={arrayLanding}/>
+      </div>       
       <h2  className="exploring-title">{arrayLanding.exploring.title_en}</h2>      
         <section data-aos="fade-up"
             data-aos-anchor-placement = "top-center" className="exploring container-own">
@@ -67,29 +59,29 @@ export default class Landing extends Component {
               <p>{arrayLanding.exploring.description_en}</p>
             </div>
             <div>
-              <img  src={arrayLanding.exploring.big_image} alt="/" className="exploring-image__full"/>
+              <img  src={Tbilisee + arrayLanding.exploring.big_image} alt="/" className="exploring-image__full"/>
             </div>
             <div className="relative">
-              <img  src={arrayLanding.exploring.medium_image} alt="/" className="exploring-image__half absolute"/>
+              <img  src={Tbilisee + arrayLanding.exploring.small_image} alt="/" className="exploring-image__half absolute"/>
             </div>
         </section>
       <section data-aos="fade-up"
             data-aos-anchor-placement = "top-center" className="landing-gallery">
         <div>
-          <img src={arrayLanding.gallery.big_image} alt="landing gallery" className="full"/>
+          <img src={Tbilisee + arrayLanding.gallery.big_image} alt="landing gallery" className="full"/>
         </div>
         <div>
           <p>{arrayLanding.gallery.description_en}</p>
         </div>
         <div className="relative">
           <h3>{arrayLanding.gallery.title_en}</h3>
-          <img src={arrayLanding.gallery.medium_image} alt="Landing Gallery" className="landing-neighborhood__img absolute"/>
+          <img src={Tbilisee + arrayLanding.gallery.medium_image} alt="Landing Gallery" className="landing-neighborhood__img absolute"/>
         </div>
         <div className="relative">
           <img src={ HotelRound } alt="badge" className="absolute landing-gallery__round"/>
         </div>
         <div>
-          <img src={arrayLanding.gallery.small_image} alt="*" className="landing-neighborhood__img2"/>
+          <img src={Tbilisee + arrayLanding.gallery.small_image} alt="*" className="landing-neighborhood__img2"/>
         </div>
         <div className="relative">
           <Link to="/gallery" className="landing-gallery__btn absolute">See More</Link>
@@ -124,65 +116,12 @@ export default class Landing extends Component {
                   width={475}
                   height={534}
                   alt="171x180"
-                  src={image}
+                  src={Tbilisee + image}
                   className="eats-img"
                 />
               </Figure>
               )
             }
-            {/* <Col>
-            
-              <Figure data-aos="fade-up"
-            data-aos-anchor-placement = "top-center">
-                <Figure.Image
-                  width={475}
-                  height={534}
-                  alt="171x180"
-                  src={restaurant1}
-                  className="eats-img"
-                />
-              </Figure>
-              <Figure data-aos="fade-up"
-            data-aos-anchor-placement = "top-center">
-                <Figure.Image
-                  width={475}
-                  height={534}
-                  alt="171x180"
-                  src={restaurant2}
-                />
-              </Figure>
-            </Col>
-            <Col lg={12} style={{ marginTop : "100px"}} className="eats-img__section">
-            <Figure data-aos="fade-up"
-            data-aos-anchor-placement = "top-center">
-                <Figure.Image
-                  width={475}
-                  height={534}
-                  alt="171x180"
-                  src={restaurant3}
-                  className="eats-img"
-                />
-              </Figure>
-              <Figure data-aos="fade-up"
-            data-aos-anchor-placement = "top-center">
-                <Figure.Image
-                  width={475}
-                  height={534}
-                  alt="171x180"
-                  src={restaurant4}
-                  className="eats-img"
-                />
-              </Figure>
-              <Figure data-aos="fade-up"
-            data-aos-anchor-placement = "top-center">
-                <Figure.Image
-                  width={475}
-                  height={534}
-                  alt="171x180"
-                  src={Eats}
-                />
-              </Figure>
-            </Col> */}
           </Row>
       </section>
       <section data-aos="fade-up"
@@ -193,8 +132,8 @@ export default class Landing extends Component {
                 <Link to="/location" className="neighborhood-more">View More</Link>
           </div>
             <div>
-            <img src= { arrayLanding.neighborhood.big_image } alt="location" style={{ width: "29%", marginRight: "110px" }}/>
-            <img src={arrayLanding.neighborhood.small_image}  alt="location" style={{ height: "50%", marginTop: "9%", width: "29%" }}/>
+            <img src= {Tbilisee +  arrayLanding.neighborhood.big_image } alt="location" style={{ width: "29%", marginRight: "110px" }}/>
+            <img src={Tbilisee + arrayLanding.neighborhood.small_image}  alt="location" style={{ height: "50%", marginTop: "9%", width: "29%" }}/>
           </div>
           </section>
     </div>

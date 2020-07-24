@@ -13,7 +13,7 @@ const Destination = (props) => {
       <img src={Picture} className="destination-img full"/>
             <div className="destination-content">
               <div>
-              <h2 className="destination-content__title">{props.arrayDestination.title_en}</h2>
+              <h2 className="destination-content__title">TITLE</h2>
               <p className="destination-content__paragraph" style={{ marginTop: "30px", marginBottom: "30px"}}>Lorem Ipsum is simply dummy 
                 text of the printing and typesetting industry.
                 Lorem Ipsum has been the industry's standard dummy text</p>

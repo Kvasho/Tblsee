@@ -11,10 +11,6 @@ import Col from 'react-bootstrap/Col';
 import HeaderBlack from '../../Components/HeaderBlack';
 import PageTitle from '../../Components/PageTitle';
 
-// IMAGES
-import Wallpaper from '../../Assets/Images/rooms-wallpaper.png';
-import aboutUsImg from "../../Assets/Images/aboutus.png";
-
 //SCSS
 import "./about-us.scss";
 
@@ -34,6 +30,7 @@ export default class AboutUs extends Component  {
       return "loading"; //TODO: Need Loading State
     }
 
+    const Tbilisee = 'https://core.tbilisee.ge/';
     const {arrayAboutUs} = this.state;
 
   return (
@@ -42,7 +39,7 @@ export default class AboutUs extends Component  {
     <div data-aos="zoom-in" className="about-us">
       <div className="about-us__wr">      
         <PageTitle title="About Us"/>
-        <img src={arrayAboutUs.cover} alt="wallpaper" className="rooms-wallpaper container-own"/>
+        <img src={Tbilisee + arrayAboutUs.cover} alt="wallpaper" className="rooms-wallpaper container-own"/>
         <div className="about-us__info">
          <div className="about-us__first">
             <h2 className="about-us__title">Tbilisee</h2>
@@ -65,11 +62,11 @@ export default class AboutUs extends Component  {
         <div className="about-us__goal">
         <Row xs={1} lg={2}>
           <Col>
-            <img src={arrayAboutUs.goal.goal_image} alt="Our Goal" className="aboutus-goal__img"></img>
+            <img src={Tbilisee + arrayAboutUs.goal.image} alt="Our Goal" className="aboutus-goal__img"></img>
           </Col>
           <Col>
           <div className="aboutus-goal__paragraph">
-              {arrayAboutUs.goal.goal_description_en}
+              <p>{arrayAboutUs.goal.description_en}</p>
                  <div className="about-us__since">
                    <span>since</span>
                    <span>2016</span>

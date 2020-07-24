@@ -41,6 +41,12 @@
     margin-bottom: 11rem;
 }
 
+.luxury-swiper__controller {
+    left: 70% !important;
+    z-index: 10000 !important;
+    bottom: 30% !important;
+}
+
 .luxury-restaurant {
     margin-top: 300px;
     margin-bottom: 30rem;
@@ -99,8 +105,20 @@
     color: gray;
 }
 
+.luxury-swiper__wr .luxury-container {
+    height: 115%;
+}
+
 .luxury-swiper {
     height: 750px;
+
+    & .relative {
+        height: 100% !important;
+    }
+
+    &__wr {
+        height: 100% !important;
+    }
 }
 
 .luxury-style {

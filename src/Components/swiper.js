@@ -41,15 +41,6 @@ import Image from "../Assets/Images/landing-swiper.jpg"
     return (
       <div>
         <Swiper ref={swiperRef} {...params}>
-          {/* <div>
-              <img src={Image} className="swiper-first__img"/>
-          </div>
-          <div>
-              <img src={Image} className="swiper-central__img"/>
-          </div>
-          <div>
-              <img src={Image} className="swiper-third__img"/>
-          </div> */}
           {
             props.rooms.map((room,index) => 
             <div>

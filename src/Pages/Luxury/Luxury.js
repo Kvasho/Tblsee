@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 // PACKAGES
 import { Row,Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 // COMPONENTS
 import HeaderBlack from '../../Components/HeaderBlack';
@@ -25,9 +26,22 @@ import LuxuryRestaurant3 from '../../Assets/Images/luxury-restaurant-3.jpg';
 class Luxury extends Component {
     constructor(props) {
         super(props);
-        this.state = { luxuryCarousel: false };
+        this.state = { 
+          arrayLuxury: undefined
+         };
+      }
+      componentDidMount(){
+        axios.get('https://core.tbilisee.ge/api/allRooms').then(res => {
+          this.setState( {arrayLuxury: res.data} );  
+          console.log(this.state.arrayLuxury)   
+        })
       }
       render() {
+        if(!this.state.arrayLuxury) {
+          return "loading"; //TODO: Need Loading State
+        }
+        const Tbilisee = "https://core.tbilisee.ge/";
+        const {arrayLuxury} = this.state;
         return (
           <>
           <HeaderBlack />
@@ -46,7 +60,6 @@ class Luxury extends Component {
             nextButton       = "Next"
         />
             </section>
-
             <section className="luxury-about">
                 <h2>about room</h2>
                 <p>Contrary to popular belief, Lorem Ipsum is not simply random text. 
@@ -54,36 +67,35 @@ class Luxury extends Component {
                    making it over 2000 years old. Richard McClintock, a Latin professor
                     at Hampden-Sydney College in Virginia, looked up one o</p>
             </section>
- 
-            <section className="luxury-style container-own">  
-              <div></div>
-              <div className="luxury-cell">
-                <img src={LuxuryRestaurant2} style={{width: "100%", height: "100%"}}/>
-              </div>
-              <div className="luxury-cell__txt">
+            
+              {
+                arrayLuxury.map((room,index) => 
+                <section className="luxury-style container-own">
+                <div className="luxury-cell">
+                <img src={Tbilisee + room.style_image} className="full" alt={index}/>
+                <div></div>
+                <div className="luxury-cell__txt">
                 <h2>style</h2>
-                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has 
-                  roots in a piece of classical Latin literature from 45 BC, making it over 2000
-                   years old. Richard McClintock, a Latin professor at Hampden-Sydney College in 
-                   Virginia, looked up one o</p>
+                <p>{room.style_description_en}</p>
+                </div>
               </div>
               <div className="luxury-cell">
-                <img src={LuxuryRestaurant2} style={{width: "100%", height: "70%"}}/>
+                <img src={Tbilisee + room.mood_image_small} alt={index} style={{width: "100%", height: "70%"}}/>
                 <div className="flex">
-                 <h4>560$</h4>
+              <h4>{room.price + "$"}</h4>
                  <h5>per night</h5>
                 </div>               
               </div>
               <div className="luxury-cell__txt">
                 <h2 style={{marginTop: "50px"}}>mood</h2>
-                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
-                  in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-                   Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one o</p>
+                <p>{room.mood_description_en}</p>
               </div>
               <div className="luxury-cell">
-                <img src={LuxuryRestaurant2} style={{width: "80%", height: "100%"}}/>
+                <img src={Tbilisee + room.mood_image_big} alt={index} style={{width: "80%", height: "100%"}}/>
               </div>
-            </section>
+            </section>)
+              }  
+              
             <section className="luxury-credit">
                 <h5>* No credit card required</h5>
                 <Button

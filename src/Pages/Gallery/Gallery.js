@@ -18,20 +18,13 @@ import "./gallery.scss";
 import 'react-medium-image-zoom/dist/styles.css';
 
 
-const images = [
-    {Image},
-    {Image},
-    {Image},
-    {Image}
-]
-
 export default class App extends Component {
   constructor(props) {
       super(props);
       this.state = {
           offset: 0,
           data: [],
-          perPage: 9,
+          perPage: 1,
           currentPage: 0
       };
       this.handlePageClick = this
@@ -40,19 +33,17 @@ export default class App extends Component {
   }
   receivedData() {
       axios
-          .get(`https://jsonplaceholder.typicode.com/photos`)
+          .get(`https://core.tbilisee.ge/api/gallery?group=room&page=1`)
           .then(res => {
               const data = res.data;
               const slice = data.slice(this.state.offset, this.state.offset + this.state.perPage)
-              const postData = slice.map(pd => 
+              const postData = slice.map(image => 
                   <>
-                    <img src={pd.thumbnailUrl} alt=""/>
+                    <img src={image} alt=""/>
                   </>                  
 )
-
               this.setState({
-                  pageCount: Math.ceil(3),
-                 
+                  pageCount: Math.ceil(3),                
                   postData
               })
           });
@@ -74,7 +65,6 @@ export default class App extends Component {
       this.receivedData()
   }
   render() {
-      console.log(this.state.data);
     const { photoIndex, isOpen, data } = this.state;
       return (
         <>
@@ -82,18 +72,18 @@ export default class App extends Component {
           <div className="container-own gallery">
               {isOpen && (
           <Lightbox
-            mainSrc={images[photoIndex]}
-            nextSrc={images[(photoIndex + 1) % images.length]}
-            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+            mainSrc={data[photoIndex]}
+            nextSrc={data[(photoIndex + 1) % data.length]}
+            prevSrc={data[(photoIndex + data.length - 1) % data.length]}
             onCloseRequest={() => this.setState({ isOpen: false })}
             onMovePrevRequest={() =>
               this.setState({
-                photoIndex: (photoIndex + images.length - 1) % images.length,
+                photoIndex: (photoIndex + data.length - 1) % data.length,
               })
             }
             onMoveNextRequest={() =>
               this.setState({
-                photoIndex: (photoIndex + 1) % images.length,
+                photoIndex: (photoIndex + 1) % data.length,
               })
             }
           />

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import 'swiper/swiper.scss';
 import '../Styles/costumiseSwiper.scss';
 import Image from "../Assets/Images/landing-swiper.jpg"
+import "../Styles/common.scss";
 
 
 
@@ -13,7 +14,7 @@ import Image from "../Assets/Images/landing-swiper.jpg"
     const params = {
       pagination: {
         el: '.swiper-pagination',
-        type: 'bullets',
+        type: 'progressbar',
       },
         navigation:      {
             nextEl: ".swiper-button-next",
@@ -39,34 +40,21 @@ import Image from "../Assets/Images/landing-swiper.jpg"
       }
     };
     return (
-      <div>
-        <Swiper ref={swiperRef} {...params}>
-          {/* <div>
-              <img src={Image} className="swiper-first__img"/>
+      <div className="relative">
+        <Swiper ref={swiperRef} {...params} className="luxury-swiper__container">
+          <div>
+              <img src={Image} className="luxury-swiper__img"/>
           </div>
           <div>
-              <img src={Image} className="swiper-central__img"/>
+              <img src={Image} className="luxury-swiper__img"/>
           </div>
           <div>
-              <img src={Image} className="swiper-third__img"/>
-          </div> */}
-          {
-            props.rooms.map((room,index) => 
-            <div>
-            <img src={room.main_image} className="swiper-first__img"/>
-            </div>)
-          }
+              <img src={Image} className="luxury-swiper__img"/>
+          </div>        
         </Swiper>
-        <div className={props.swiperController}>
-            <button onClick={goPrev} className={props.buttonPrevClass}>{props.prevButton} / <span>garden view</span></button>
-                <div>
-                    <h3>Mid-Range</h3>
-                    <div className="flex">
-                        <Link to="/rooms">SEE MORE</Link>
-                        <Link to="/">BOOK NOW</Link>
-                    </div>
-                </div>
-            <button onClick={ goNext } className={props.buttonNextClass}> <span>ciry view /</span> {props.nextButton} </button>
+        <div className="absolute luxury-swiper__controller">
+            <button onClick={goPrev} className="luxury-prev"></button>
+            <button onClick={ goNext } className="luxury-next"></button>
         </div>
       </div>
     );

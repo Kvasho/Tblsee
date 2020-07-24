@@ -10,6 +10,7 @@ import Destination from "../../Components/Destination";
 import PageTitle from '../../Components/PageTitle';
 import Button from "../../Components/Button";
 import Swiper from '../../Components/swiper';
+import LuxurySwiper from '../../Components/LuxurySwiper';
 
 // SCSS
 import "../../Styles/common.scss";
@@ -33,18 +34,18 @@ class Luxury extends Component {
           <div className="container-own luxury">
             <div className="luxury-absolute"/>
             <PageTitle title="luxury"/>
-            {/* <section className="luxury-swiper">
-              <Swiper
-                 containerClass   = "swiper-div"
-                 slidesPerView    = { 1 }
-                 spaceBetween     = { 0 }
-                 buttonNextClass  = "landing-btn__next"
-                 buttonPrevClass  = "landing-btn__prev"
-                 swiperController = "landing-swiper__controller" 
-                 prevButton       = "Prev"
-                 nextButton       = "Next"
-              />
-            </section> */}
+            <section className="luxury-swiper">
+            <LuxurySwiper 
+            containerClass   = "swiper-div"
+            slidesPerView    = "auto"
+            spaceBetween     = { 50 }
+            buttonNextClass  = "landing-btn__next"
+            buttonPrevClass  = "landing-btn__prev"
+            swiperController = "landing-swiper__controller" 
+            prevButton       = "Prev"
+            nextButton       = "Next"
+        />
+            </section>
 
             <section className="luxury-about">
                 <h2>about room</h2>

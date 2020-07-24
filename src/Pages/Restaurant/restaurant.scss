@@ -78,16 +78,20 @@
             font-size: 45px;
             font-weight: bold;
             color: #000000;
+            text-transform: capitalize;
         }
 
         & h5 {
             font-size: 27px;
             color: gray;
+            text-transform: capitalize;
         }
     }
 
     &__image {
         padding-right: 22px;
+        width: 13rem;
+        height: 13rem;
     }
 }
 

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 // PACKAGES
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import axios from 'axios';
 
 // COMPONENTS
 import Header from '../../Components/Header';
@@ -17,26 +18,45 @@ import Desert from "../../Assets/Images/desert.png";
 import Pizza from "../../Assets/Images/pizza.png";
 import Shef from "../../Assets/Images/shef.png";
 
-const Restaurant = () => {
+export default class  Restaurant extends Component {
+  state = {
+    arrayRestaurant: undefined
+  }
+
+  componentDidMount () {
+    axios.get('https://core.tbilisee.ge/api/restaurant').then(res => {
+      this.setState({arrayRestaurant: res.data});
+    })
+  }
+
+  render(){
+    if(!this.state.arrayRestaurant) {
+      return "loading"; //TODO: Need Loading State
+    }
+    const {arrayRestaurant} = this.state;
   return (
     <>
     <Header/>
     <div className="restaurant">
-      <img src={RestaurantWallpaper} alt="restaurant wallpaper" className="restaurant-wallpaper"/>
-      <div className="restaurant-gastronomy container-own">
+      <img src={arrayRestaurant.cover} alt="restaurant wallpaper" className="restaurant-wallpaper"/>
+      {
+        arrayRestaurant.stories.map((item,index) => 
+        <div className="restaurant-gastronomy container-own">
         <Row xs={1} lg={2} className="restaurant-gastronomy__wr width-full">
           <Col>
             <div className="restaurant-block">
-              <h2 className="restaurant-gastronomy__title">our gastronomy</h2>
-              <p className="restaurant-gastronomy__paragraph">Welcome to hotel Tbilisi ,  where the food changes with the season</p>
+              <h2 className="restaurant-gastronomy__title">{item.title_en}</h2>
+              <p className="restaurant-gastronomy__paragraph">{item.description_en}</p>
             </div> 
           </Col>
           <Col>
-            <img src={Gastronomy} alt="gastronomy" className="width-full"/> 
+            <img src={item.image} alt="gastronomy" className="width-full"/> 
           </Col>
         </Row>
-      </div>
-      <div className="restaurant-desert container-own">
+      </div>)
+      }
+      
+      {/* <div className="restaurant-desert container-own">
       <Row xs={1} lg={2} className="restaurant-gastronomy__wr width-full">
         <Col>
           <img src={Desert} alt="desert" className="width-full"/>
@@ -50,69 +70,31 @@ const Restaurant = () => {
          </div>
         </Col>
       </Row>        
-      </div>
+      </div> */}
       <h3 className="restaurant-menu__title">
           Menu
           <span>Menu</span>
       </h3>
       <div className="restaurant-menu container-own">
-        <Row xs={1} md={2} lg={3} className="width-full">
+        {
+          arrayRestaurant.menus.map((item,index) => 
           <Col className="restaurant-menu__cell">
-            <img src={Pizza} alt="Pizza" className="restaurant-menu__image"/>
-              <div>
-                <h4>Pizza</h4>
-                <h5>venezia, italy</h5>
-            </div>
-          </Col>
-          <Col className="restaurant-menu__cell">
-            <img src={Pizza} alt="Pizza" className="restaurant-menu__image"/>
-              <div>
-                <h4>Pizza</h4>
-                <h5>venezia, italy</h5>
-            </div>
-          </Col>
-          <Col className="restaurant-menu__cell">
-            <img src={Pizza} alt="Pizza" className="restaurant-menu__image"/>
-              <div>
-                <h4>Pizza</h4>
-                <h5>venezia, italy</h5>
-            </div>
-          </Col>
-        </Row>
-        {/* <div className="restaurant-menu__cell">
-            <img src={Pizza} alt="Pizza" className="restaurant-menu__image"/>
+          <img src={item.image} alt={item.name} id={index} className="restaurant-menu__image"/>
             <div>
-              <h4>Pizza</h4>
-              <h5>venezia, italy</h5>
-            </div>
-        </div>
-        <div className="restaurant-menu__cell">
-            <img src={Pizza} alt="Pizza" className="restaurant-menu__image"/>
-            <div>
-              <h4>Pizza</h4>
-              <h5>venezia, italy</h5>
-            </div>
-        </div>
-        <div className="restaurant-menu__cell">
-            <img src={Pizza} alt="Pizza" className="restaurant-menu__image"/>
-            <div>
-              <h4>Pizza</h4>
-              <h5>venezia, italy</h5>
-            </div>
-        </div> */}
+              <h4>{item.name_en}</h4>
+              <h5>{item.city_en},{item.country_en}</h5>
+          </div>
+        </Col>)
+        }
       </div>
-      <img src={Shef} alt="shef" className="restaurant-shef__img container-own"/>
-      <h2 className="restaurant-shef">vakhtang chabukiani</h2>
+
+      {/* CHEF SECTION */}
+      <img src={arrayRestaurant.chef.image} alt="shef" className="restaurant-shef__img container-own"/>
+      <h2 className="restaurant-shef">{arrayRestaurant.chef.fullName_en}</h2>
       <h5 className="restaurant-shef__post">shef</h5>
-      <p  className="restaurant-shef__about">Lorem Ipsum is simply dummy 
-      text of the printing and typesetting industry.
-       Lorem Ipsum has been the industry's standard dummy text 
-       ever since the 1500s, when an unknown printer took a 
-      galley of type and scrambled it to make a type specimen book. 
-      It has sur</p>
+      <p  className="restaurant-shef__about">{arrayRestaurant.chef.description_en}</p>
     </div>
     </>
   );
 }
-
-export default Restaurant;
+}

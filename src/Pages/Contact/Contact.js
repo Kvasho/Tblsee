@@ -1,4 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
+
+import AOS from 'aos';
+import "aos/dist/aos.css";
 
 // COMPONENTS
 import PageTitle from '../../Components/PageTitle';
@@ -7,6 +10,7 @@ import HeaderBlack from '../../Components/HeaderBlack';
 import Button from '../../Components/Button';
 import ContactUs from '../../Components/ContactUs';
 
+
 // SCSS
 import "../../Styles/common.scss";
 import "./contact.scss";
@@ -14,13 +18,25 @@ import "./contact.scss";
 // IMAGES
 import HotelRound from '../../Assets/icons/tbilisee-hotel.svg';
 
-const Contact = () => {
+export default class Contact extends Component {
+  state = {
+    
+  }
+  componentDidMount(){
+    AOS.init({
+			duration: 2000
+		});
+  }
+  render(){
   return (
     <>
     <HeaderBlack/>
-    <div className="Contact">
+    <div data-aos="fade-up"
+     data-aos-duration="3000" className="Contact">
         <PageTitle title="Contact Us"/>
-        <div className="contact-form">
+        <div data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500" className="contact-form">
           <img src={HotelRound} alt="Round logo Tbilisee" className="contact-round__logo"/>
         <ContactUs/>
             <h2 className="width-full contact-title">Stay in touch</h2>
@@ -62,6 +78,4 @@ const Contact = () => {
     </div>
     </>
   );
-}
-
-export default Contact;
+}}

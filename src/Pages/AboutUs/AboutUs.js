@@ -1,4 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
+
+// PACKAGES
+import axios from 'axios';
+import AOS from 'aos';
+import "aos/dist/aos.css";
 
 // COMPONENTS
 import Row from 'react-bootstrap/Row';
@@ -13,14 +18,31 @@ import aboutUsImg from "../../Assets/Images/aboutus.png";
 //SCSS
 import "./about-us.scss";
 
-const AboutUs = () => {
+export default class AboutUs extends Component  {
+  state= {
+    arrayAboutUs: undefined
+  }
+
+  componentDidMount() {
+    axios.get('https://core.tbilisee.ge/api/about').then(res => {
+      this.setState( {arrayAboutUs: res.data} );     
+    })
+  }
+
+  render(){
+    if(!this.state.arrayAboutUs) {
+      return "loading"; //TODO: Need Loading State
+    }
+
+    const {arrayAboutUs} = this.state;
+
   return (
     <>
     <HeaderBlack />
-    <div className="about-us m-t-xs-10">
+    <div data-aos="zoom-in" className="about-us">
       <div className="about-us__wr">      
         <PageTitle title="About Us"/>
-        <img src={Wallpaper} alt="wallpaper" className="rooms-wallpaper container-own"/>
+        <img src={arrayAboutUs.cover} alt="wallpaper" className="rooms-wallpaper container-own"/>
         <div className="about-us__info">
          <div className="about-us__first">
             <h2 className="about-us__title">Tbilisee</h2>
@@ -29,43 +51,25 @@ const AboutUs = () => {
           <div className="about-us__second">
             <Row xs={1} lg={2}>
               <Col>
-                <p className="about-us__paragraph">Contrary to popular belief, Lorem Ipsum is not simply 
-                  random text. It has roots in a piece of classical Latin literature 
-                  from 45 BC, making it over 2000 years old. Richard McClintock,
-                  a Latin professor at Hampden-Sydney College in Virginia, looked up one o</p>
+                  <p className="about-us__paragraph">{arrayAboutUs.top_text_left_en}</p>
               </Col>
               <Col>
-              <p className="about-us__paragraph">Contrary to popular belief, Lorem Ipsum is not simply random text. It has 
-                roots in a piece of classical Latin literature from 45 BC, making it over 2000 
-                years old. Richard McClintock, 
-                a Latin professor at Hampden-Sydney College in Virginia, looked up one o</p>
+                  <p className="about-us__paragraph">{arrayAboutUs.top_text_right_en}</p>
               </Col>
             </Row>
           </div>
         </div>
         <h3 className="aboutus-goal__title">
-          Our Goal
-          <span>Goal</span>
+          {arrayAboutUs.goal.goal_title_en}
         </h3>
         <div className="about-us__goal">
         <Row xs={1} lg={2}>
           <Col>
-            <img src={aboutUsImg} alt="Our Goal" className="aboutus-goal__img"></img>
+            <img src={arrayAboutUs.goal.goal_image} alt="Our Goal" className="aboutus-goal__img"></img>
           </Col>
           <Col>
           <div className="aboutus-goal__paragraph">
-              <p>Contrary to popular belief, Lorem Ipsum is not simply random text. 
-                It has roots in a piece of classical Latin literature from 45 BC, making 
-                it over 2000 years old. Richard McClintock,
-                 a Latin professor at Hampden-Sydney College in Virginia, looked up one o</p>
-                 <p>Contrary to popular belief, Lorem Ipsum is not simply random text. 
-                It has roots in a piece of classical Latin literature from 45 BC, making 
-                it over 2000 years old. Richard McClintock,
-                 a Latin professor at Hampden-Sydney College in Virginia, looked up one o</p>
-                 <p>Contrary to popular belief, Lorem Ipsum is not simply random text. 
-                It has roots in a piece of classical Latin literature from 45 BC, making 
-                it over 2000 years old. Richard McClintock,
-                 a Latin professor at Hampden-Sydney College in Virginia, looked up one o</p>
+              {arrayAboutUs.goal.goal_description_en}
                  <div className="about-us__since">
                    <span>since</span>
                    <span>2016</span>
@@ -79,5 +83,4 @@ const AboutUs = () => {
     </>
   );
 }
-
-export default AboutUs;
+}

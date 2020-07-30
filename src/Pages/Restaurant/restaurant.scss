@@ -64,15 +64,14 @@
 }
 
 .restaurant-menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 70px;
+    margin-top: 17rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    row-gap: 10rem;
 
     &__cell {
-        width: 30%;
-        display: flex;
-        margin-top: 100px;
+        display: flex;       
 
         & h4 {
             font-size: 45px;

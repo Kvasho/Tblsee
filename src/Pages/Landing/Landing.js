@@ -4,9 +4,6 @@ import * as coreTbilisee from '../../constants/request';
 
 // PACKAGES
 import {Link} from "react-router-dom";
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Figure from 'react-bootstrap/Figure';
 import AOS from 'aos';
 import "aos/dist/aos.css";
 import axios from 'axios'
@@ -15,6 +12,7 @@ import axios from 'axios'
 import CarouselLanding from '../../Components/CarouselLanding';
 import Header from '../../Components/Header';
 import Swiper from '../../Components/swiper';
+import SwiperMain from "../../Components/swiper-main";
 
 // IMAGES
 import HotelRound from "../../Assets/icons/tbilisee-hotel-round.svg";
@@ -43,12 +41,23 @@ export default class Landing extends Component {
 
     const Tbilisee = 'https://core.tbilisee.ge/';
     const {arrayLanding} = this.state;
+    const half = Math.ceil(arrayLanding.eat_drinks.images.length / 2);
+    const eatsFirstHalf = arrayLanding.eat_drinks.images.splice(0, half)
+    const eatsSecondHalf = arrayLanding.eat_drinks.images.splice(-half)
   return (
     <>
     <Header/>
     <div className="landing">
       <div className="landing-head__swiper">
-       <CarouselLanding doors={arrayLanding}/>
+      <div className="header-title">
+          <h1>{arrayLanding.headerTitle.title}</h1>
+          <Link className="header-title__btn">explore</Link>
+      </div>
+       <CarouselLanding 
+       spaceBetween="-50" 
+       doors={arrayLanding.doors}
+       headerTitle={arrayLanding.headerTitle}
+       />
       </div>       
       <h2  className="exploring-title">{arrayLanding.exploring.title_en}</h2>      
         <section data-aos="fade-up"
@@ -89,40 +98,29 @@ export default class Landing extends Component {
       </section>
       <section data-aos="fade-up"
             data-aos-anchor-placement = "top-center" className="landing-swiper">
-        <Swiper 
-            containerClass   = "swiper-div"
-            slidesPerView    = "auto"
-            spaceBetween     = { 50 }
-            buttonNextClass  = "landing-btn__next"
-            buttonPrevClass  = "landing-btn__prev"
-            swiperController = "landing-swiper__controller" 
-            prevButton       = "Prev"
-            nextButton       = "Next"
-            rooms            =             {arrayLanding.rooms}
-        />
+              <SwiperMain/>
       </section>
       <section  className="landing_eats container-own">
-          <Row xs={1} lg={2} xl={3}>
-            <Col>
-              <h3 className="eats-title">{arrayLanding.eat_drinks.title_en}</h3>
+          <div>
+          <h3 className="eats-title">{arrayLanding.eat_drinks.title_en}</h3>
               <p className="eats-paragraph">{arrayLanding.eat_drinks.description_en}</p>
                  <Link to="/restaurant" className="eats-button">See More</Link>
-            </Col>
-            {
-              arrayLanding.eat_drinks.images.map((image,index) => 
-              <Figure data-aos="fade-up"
-                data-aos-anchor-placement = "top-center">
-                <Figure.Image
-                  width={475}
-                  height={534}
-                  alt="171x180"
-                  src={Tbilisee + image}
-                  className="eats-img"
-                />
-              </Figure>
+          </div>
+          <div className="landing-eats__img">
+          {
+              eatsFirstHalf.map((image,index) => 
+              <img src={Tbilisee + image} alt={index} className="full"/>
               )
             }
-          </Row>
+          
+          </div>
+          <div className="landing-eats__img2">
+            {
+              eatsSecondHalf.map((image,index) => 
+              <img src={Tbilisee + image} alt={index} className="full"/>
+              )
+            }
+          </div>
       </section>
       <section data-aos="fade-up"
             data-aos-anchor-placement = "top-center" className="landing-neighborhood">
@@ -131,10 +129,10 @@ export default class Landing extends Component {
               <p>{arrayLanding.neighborhood.description_en}</p>
                 <Link to="/location" className="neighborhood-more">View More</Link>
           </div>
-            <div>
-            <img src= {Tbilisee +  arrayLanding.neighborhood.big_image } alt="location" style={{ width: "29%", marginRight: "110px" }}/>
-            <img src={Tbilisee + arrayLanding.neighborhood.small_image}  alt="location" style={{ height: "50%", marginTop: "9%", width: "29%" }}/>
-          </div>
+            
+            <img src= {Tbilisee +  arrayLanding.neighborhood.big_image } alt="location" className="full"/>
+            <img src={Tbilisee + arrayLanding.neighborhood.small_image}  alt="location" className="neigborhood-img2"/>
+       
           </section>
     </div>
     </>

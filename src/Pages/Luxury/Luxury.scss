@@ -34,6 +34,28 @@
     text-transform: capitalize;
 }
 
+.swiper-button-prev, .swiper-button-next {
+    display: none!important;
+}
+
+.swiper-container-horizontal > .swiper-pagination-progressbar, .swiper-container-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -50%)
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background: white;
+}
+
+.swiper-container-horizontal > .swiper-pagination-progressbar, .swiper-container-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+    width: 30rem !important;
+}
+
+.luxury .swiper-container {
+    height: 100%;
+}
+
 .luxury-about p {
     font-size: 22px;
     color: gray;
@@ -42,9 +64,9 @@
 }
 
 .luxury-swiper__controller {
-    left: 70% !important;
+    left: 60% !important;
     z-index: 10000 !important;
-    bottom: 30% !important;
+    bottom: 4% !important;
 }
 
 .luxury-restaurant {
@@ -114,6 +136,7 @@
 
     & .relative {
         height: 100% !important;
+        overflow: hidden !important;
     }
 
     &__wr {

@@ -4,12 +4,14 @@ import './index.css';
 import App from './App';
 import  "bootstrap/dist/css/bootstrap.css";
 import * as serviceWorker from './serviceWorker';
-
-window.$coreTbilisee = 'https://core.tbilisee.ge/';
+import {I18nextProvider} from "react-i18next";
+import i18next from "i18next";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <I18nextProvider i18n={i18next}>
+            <App/>
+    </I18nextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

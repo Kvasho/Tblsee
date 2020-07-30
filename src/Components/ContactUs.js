@@ -1,4 +1,6 @@
-import React from "react";
+import React, {Component} from "react";
+
+import axios from 'axios';
 
 // ICONS
 import MapPin from '../Assets/icons/map-pin.svg';
@@ -11,25 +13,40 @@ import Instagram from "../Assets/icons/instagram.svg";
 
 import "../Styles/contactus.scss";
 
-const ContactUs = () => {
+export default class ContactUs extends Component {
+    state = {
+        arrayContacts: undefined
+    }
+
+    componentDidMount(){
+        axios.get('https://core.tbilisee.ge/api/ourContacts').then(res => {
+            this.setState({arrayContacts: res.data})
+        })
+    }
+
+    render(){
+        if(!this.state.arrayContacts) {
+            return "loading"; //TODO: Need Loading State
+          }
+        const {arrayContacts} = this.state;
   return (
     <div className="contactus">
         <h2 className="contactus-title">contact us</h2>
         <div className="contactus-line">
             <img src={MapPin} alt="map pin" className="contactus-line__icon"/>
-            <h3 className="contactus-line__text">agmashenebeli 54</h3>
+            <h3 className="contactus-line__text">{arrayContacts.contacts.address}</h3>
         </div>
         <div className="contactus-line">
             <img src={Phone} alt="map pin" className="contactus-line__icon"/>
-            <h3 className="contactus-line__text">+995 592 45 65 65</h3>
+            <h3 className="contactus-line__text">{arrayContacts.contacts.mobile}</h3>
         </div>
         <div className="contactus-line">
             <img src={Fax} alt="map pin" className="contactus-line__icon"/>
-            <h3 className="contactus-line__text">+995 032 2 33 04 05</h3>
+            <h3 className="contactus-line__text">{arrayContacts.contacts.landline}</h3>
         </div>
         <div className="contactus-line">
             <img src={Mail} alt="map pin" className="contactus-line__icon"/>
-            <h3 className="contactus-line__text">JohnMaloy@tbilisee.ge</h3>
+            <h3 className="contactus-line__text">{arrayContacts.contacts.email}</h3>
         </div>
         <div className="contactus-socials">
             <img alt="facebook"  src={Facebook}/>
@@ -39,5 +56,4 @@ const ContactUs = () => {
     </div>
   );
 }
-
-export default ContactUs;
+}

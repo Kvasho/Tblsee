@@ -32,8 +32,7 @@ class Luxury extends Component {
       }
       componentDidMount(){
         axios.get('https://core.tbilisee.ge/api/allRooms').then(res => {
-          this.setState( {arrayLuxury: res.data} );  
-          console.log(this.state.arrayLuxury)   
+          this.setState( {arrayLuxury: res.data} );    
         })
       }
       render() {
@@ -68,33 +67,33 @@ class Luxury extends Component {
                     at Hampden-Sydney College in Virginia, looked up one o</p>
             </section>
             
-              {
-                arrayLuxury.map((room,index) => 
+              
+               
                 <section className="luxury-style container-own">
                 <div className="luxury-cell">
-                <img src={Tbilisee + room.style_image} className="full" alt={index}/>
+                <img src={Tbilisee + arrayLuxury.style_image} className="full" alt={1}/>
                 <div></div>
                 <div className="luxury-cell__txt">
                 <h2>style</h2>
-                <p>{room.style_description_en}</p>
+                <p>{arrayLuxury.style_description_en}</p>
                 </div>
               </div>
               <div className="luxury-cell">
-                <img src={Tbilisee + room.mood_image_small} alt={index} style={{width: "100%", height: "70%"}}/>
+                <img src={Tbilisee + arrayLuxury.mood_image_small} alt={1} style={{width: "100%", height: "70%"}}/>
                 <div className="flex">
-              <h4>{room.price + "$"}</h4>
+              <h4>{arrayLuxury.price + "$"}</h4>
                  <h5>per night</h5>
                 </div>               
               </div>
               <div className="luxury-cell__txt">
                 <h2 style={{marginTop: "50px"}}>mood</h2>
-                <p>{room.mood_description_en}</p>
+                <p>{arrayLuxury.mood_description_en}</p>
               </div>
               <div className="luxury-cell">
-                <img src={Tbilisee + room.mood_image_big} alt={index} style={{width: "80%", height: "100%"}}/>
+                <img src={Tbilisee + arrayLuxury.mood_image_big} alt={1} style={{width: "80%", height: "100%"}}/>
               </div>
             </section>)
-              }  
+            
               
             <section className="luxury-credit">
                 <h5>* No credit card required</h5>

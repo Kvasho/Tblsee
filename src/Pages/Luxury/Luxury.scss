@@ -144,11 +144,38 @@
     }
 }
 
+.per-night {
+    font-size: 18px;
+    border-bottom: 1px solid #A89562;
+    padding-bottom: 1rem;
+    text-transform: capitalize;
+}
+
 .luxury-style {
     display: grid;
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: 350px 600px;
     margin-bottom: 10rem;
+
+    &__price {
+        font-size: 6.3rem;
+        margin-right: 7rem;
+    }
+
+    & h2 {
+        font-size: 5rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 7rem;
+        color: #000000;
+        text-transform: capitalize;
+    }
+
+    & p {
+        font-size: 2.2rem;
+        color: gray;
+        text-align: center;
+    }
 }
 
 .luxury-credit h5 {
@@ -183,9 +210,28 @@
     background-color: #FDE6A6;
     border: 1px solid #000000;
     text-transform: uppercase;
+
+    &:hover {
+        color: #FDE6A6;
+        background: #000000;
+        border: 1px solid #FDE6A6;
+    }
 }
 
 @media(max-width: 1100px) {
+    .luxury-swiper {
+        height: 400px;
+    }
+
+    .swiper-container-horizontal > .swiper-pagination-progressbar, .swiper-container-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+        left: 30% !important;
+    }
+
+    .luxury-swiper__controller {
+        left: 70%!important;
+        bottom: 0 !important;
+    }
+
     .luxury-credit {
         display: block;
         width: 100%;
@@ -211,7 +257,7 @@
     }
     .luxury-style {
         grid-template-columns: 100%;
-        grid-template-rows: 0 350px 352px 210px 350px 280px;
+        grid-template-rows: 0 250px 160px 210px 150px 200px;
     }
     .luxury-restaurant .row {
         display: block;

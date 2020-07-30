@@ -10,9 +10,7 @@ html {
     font-size: 10px;
 }
 
-a:hover {
-    color: currentColor !important;
-}
+
 
 .btn-outline-primary:hover {
     color: currentColor !important;

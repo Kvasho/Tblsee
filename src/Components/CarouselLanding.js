@@ -9,6 +9,7 @@ import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
+import { Link } from 'react-router-dom';
 
 // install Swiper components
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
@@ -23,8 +24,11 @@ export default (props) => {
       {
         doors.map((door,index) => 
         <SwiperSlide>
+          <Link to="`/rooms/${door.type_en}`">
           <img src={Tbilisee + door.door_image} alt={index}/>
-        </SwiperSlide>)
+          </Link>
+        </SwiperSlide>
+        )
       }
     </Swiper>
   );

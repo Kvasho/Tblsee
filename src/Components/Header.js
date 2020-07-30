@@ -37,7 +37,13 @@ class Header extends Component  {
             <div className="header-wr">
             <div className="flex">
              <img src={ BurgerMenuWhite } className="header-burger_menu" alt="Burger Menu" onClick={this.toggleClass}/>
-              <div className="language-bar__white" >EN</div>
+              <div className="language-bar__white" >
+                EN
+                <div className="languages-bar">
+                  <li>Ru</li>
+                  <li>Ge</li>  
+                </div>
+              </div>
        </div>
        <Link to="/">           
              <img src={LogoWhite} className="header-logo" alt="website logo" onClick={this.whiteHeader}/> 

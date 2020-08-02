@@ -41,12 +41,12 @@ import Image from "../Assets/Images/landing-swiper.jpg"
     return (
       <div>
         <Swiper ref={swiperRef} {...params}>
-          {
+          {/* {
             props.rooms.map((room,index) => 
             <div>
             <img src={room.main_image} className="swiper-first__img"/>
             </div>)
-          }
+          } */}
         </Swiper>
         <div className={props.swiperController}>
             <button onClick={goPrev} className={props.buttonPrevClass}>{props.prevButton} / <span>garden view</span></button>

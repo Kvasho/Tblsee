@@ -6,24 +6,22 @@ import { Link } from 'react-router-dom';
 import 'swiper/swiper.scss';
 import '../Styles/costumiseSwiper.scss';
 import Image from "../Assets/Images/landing-swiper.jpg"
-import "../Styles/common.scss";
 
 
 
   const ManipulatingComponentOutSideSwiper = (props) => {
-    const Tbilisee = "https://core.tbilisee.ge/";
     const params = {
       pagination: {
         el: '.swiper-pagination',
-        type: 'progressbar',
+        type: 'bullets',
       },
         navigation:      {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev"
         },
         centeredSlides: true,
-        spaceBetween:    props.spaceBetween,
-        slidesPerView:   props.slidesPerView,
+        spaceBetween:    50,
+        slidesPerView:   4,
         slidesPerColumn: 1,
         loop:            false,
         speed:           400,
@@ -41,19 +39,25 @@ import "../Styles/common.scss";
       }
     };
     return (
-      <div className="relative luxury-swiper__wr">
-        <Swiper ref={swiperRef} {...params} className="luxury-swiper__container">
+      <div>
+        <Swiper ref={swiperRef} {...params}>
           {
-            props.arrayImg.map((image,index) => 
+            props.rooms.map((room,index) => 
             <div>
-              <img src={Tbilisee + image} className="luxury-swiper__img"/>
-          </div>
-            )
-          }      
+            <img src={room.main_image} className="swiper-first__img"/>
+            </div>)
+          }
         </Swiper>
-        <div className="absolute luxury-swiper__controller">
-            <button onClick={goPrev} className="luxury-prev"></button>
-            <button onClick={ goNext } className="luxury-next"></button>
+        <div className={props.swiperController}>
+            <button onClick={goPrev} className={props.buttonPrevClass}>{props.prevButton} / <span>garden view</span></button>
+                <div>
+                    <h3>Mid-Range</h3>
+                    <div className="flex">
+                        <Link to="/rooms">SEE MORE</Link>
+                        <Link to="/">BOOK NOW</Link>
+                    </div>
+                </div>
+            <button onClick={ goNext } className={props.buttonNextClass}> <span>ciry view /</span> {props.nextButton} </button>
         </div>
       </div>
     );

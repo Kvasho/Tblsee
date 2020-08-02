@@ -36,11 +36,11 @@ const Routers = () => {
 					exact
 					component = { Contact }
 				/>
-                {/* <Route
+                <Route
 					path = "/gallery"
 					exact
 					component = { Gallery }
-				/> */}
+				/>
                 <Route
 					path = "/location"
 					exact

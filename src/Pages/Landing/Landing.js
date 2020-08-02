@@ -20,6 +20,8 @@ import HotelRound from "../../Assets/icons/tbilisee-hotel-round.svg";
 // SCSS
 import "./Landing.scss";
 
+import Masonry from 'react-masonry-css';
+
 
 export default class Landing extends Component {
   state = {
@@ -44,15 +46,23 @@ export default class Landing extends Component {
     const half = Math.ceil(arrayLanding.eat_drinks.images.length / 2);
     const eatsFirstHalf = arrayLanding.eat_drinks.images.splice(0, half)
     const eatsSecondHalf = arrayLanding.eat_drinks.images.splice(-half)
+    const breakpointColumnsObj = {
+      default: 4,
+      1100: 3,
+      700: 2,
+      500: 1
+    };
   return (
     <>
     <Header/>
+
     <div className="landing">
       <div className="landing-head__swiper">
       <div className="header-title">
           <h1>{arrayLanding.headerTitle.title}</h1>
           <Link className="header-title__btn">explore</Link>
       </div>
+
        <CarouselLanding 
        spaceBetween="-50" 
        doors={arrayLanding.doors}
@@ -96,11 +106,22 @@ export default class Landing extends Component {
           <Link to="/gallery" className="landing-gallery__btn absolute">See More</Link>
         </div>
       </section>
-      <section data-aos="fade-up"
+      {/* <section data-aos="fade-up"
             data-aos-anchor-placement = "top-center" className="landing-swiper">
               <SwiperMain/>
-      </section>
-      <section  className="landing_eats container-own">
+      </section> */}
+      {/* <Masonry
+      breakpointCols={breakpointColumnsObj}
+     className="my-masonry-grid"
+      columnClassName="my-masonry-grid_column">
+      {
+              eatsFirstHalf.map((image,index) => 
+              <img src={Tbilisee + image} alt={index} className="full"/>
+              )
+      }
+      </Masonry> */}
+      <section  className="landing_eats container-own" data-aos="fade-up"
+            data-aos-anchor-placement = "top-center">
           <div>
           <h3 className="eats-title">{arrayLanding.eat_drinks.title_en}</h3>
               <p className="eats-paragraph">{arrayLanding.eat_drinks.description_en}</p>

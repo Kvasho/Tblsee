@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 
 // COMPONENTS
 import PageTitle from '../../Components/PageTitle';
-import Destination from '../../Components/Destination';
 import HeaderBlack from '../../Components/HeaderBlack';
 import axios from 'axios';
 import Swiper from '../../Components/swiper';
 
 // SCSS
 import "./Location.scss";
+import DestinationGallery from '../../Components/Destination';
 
 export default class Location extends Component {
   state={
@@ -29,14 +29,13 @@ export default class Location extends Component {
   return (
     <>
     <HeaderBlack />
-    {/* <div className="location">
+    <div className="location">
       <PageTitle title={arrayUrban.title_and_desc.title_en}/>
       <p className="location-paragraph">{arrayUrban.title_and_desc.description_en}</p>
-      <Destination arrayDestination={arrayUrban.packages}/>
+      <DestinationGallery arrayDestination={arrayUrban.packages}/>
       <div className="location-exploring container-own">
       </div>
-      </div> */}
-    <Swiper />
+      </div>
   </>
   );
 }

@@ -1,9 +1,7 @@
 
-import React, { useRef } from 'react';
+import React, { Component } from 'react';
 import Swiper from 'react-id-swiper';
 import { Link } from 'react-router-dom';
-
-import React,{Component} from 'react';
 
 // CSS
 import 'swiper/swiper.scss';

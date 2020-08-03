@@ -17,20 +17,25 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 export default (props) => {
   const Tbilisee = 'https://core.tbilisee.ge/';
   const {doors} = props;
+  console.log(props,"LLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
   return (
     <Swiper
       slidesPerView = {2}  
     >
+       
       {
         doors.map((door,index) => {
-          let type = door.type_en.indexOf(('luxury')) == -1 ? 'mid-range' : 'luxury';    
-         return (          
+          // let type = door.type_en.indexOf(('luxury')) == -1 ? 'mid-range' : 'luxury';    
+         return (        
+           <>  
+          
         <SwiperSlide>
           
-          <Link to={`/rooms/${type}/${index}`}>
+          <Link to="/luxury">
             <img src={Tbilisee + door.door_image} alt={index}/>
             </Link>
         </SwiperSlide>
+        </>
           )
         }
         )

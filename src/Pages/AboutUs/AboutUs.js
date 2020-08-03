@@ -10,6 +10,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import HeaderBlack from '../../Components/HeaderBlack';
 import PageTitle from '../../Components/PageTitle';
+import RoundBlack from '../../Assets/icons/tbilisee-hotel-round.svg'
 
 //SCSS
 import "./about-us.scss";
@@ -41,6 +42,7 @@ export default class AboutUs extends Component  {
         <PageTitle title="About Us"/>
         <img src={Tbilisee + arrayAboutUs.cover} alt="wallpaper" className="rooms-wallpaper container-own"/>
         <div className="about-us__info">
+          <img src={RoundBlack} className="about-us__badge"/>
          <div className="about-us__first">
             <h2 className="about-us__title">Tbilisee</h2>
             <h5 className="about-us__subtitle">Hotel</h5>

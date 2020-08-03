@@ -15,6 +15,7 @@ import Destination from '../../Components/Destination'
 
 import './Luxury.scss'
 import '../../Styles/common.scss'
+import { Link } from 'react-router-dom';
 
 class Luxury extends Component {
     constructor(props) {
@@ -24,9 +25,9 @@ class Luxury extends Component {
          };
       }
       componentDidMount(){
-        const {index}  = this.props.match.params;
-        axios.get('https://core.tbilisee.ge/api/oneRoom/luxury').then(res => {
-          this.setState( {arrayLuxury: res.data[index]} );    
+        axios.get('https://core.tbilisee.ge/api/oneRoom/Luxury').then(res => {
+          this.setState( {arrayLuxury: res.data} );  
+          console.log(this.state.arrayLuxury,"ARRRRRRRRRRAY LUXURY")  
         })               
       }
       render() {
@@ -38,8 +39,9 @@ class Luxury extends Component {
         return (
           <>
           <HeaderBlack />
-          <PageTitle title="Luxury"/>                    
-            <>
+          <PageTitle title="Luxury"/> 
+          {
+            arrayLuxury.map((item,index) => <>
             <div className="container-own luxury">
             <div className="luxury-absolute"/>
             <section className="luxury-swiper">
@@ -52,48 +54,55 @@ class Luxury extends Component {
             swiperController = "landing-swiper__controller" 
             prevButton       = "Prev"
             nextButton       = "Next"
-            arrayImg         = {arrayLuxury.cover_images}
+            arrayImg         = {item.cover_images}
         />
             </section>
             </div>
-            <section className="luxury-about">
-            <h2>about room</h2>
-            <p>{arrayLuxury.description_en}</p>
-            </section> 
+            {/* <section className="luxury-about">
+
+            </section>  */}
             <section className="luxury-style container-own">
               <div></div>
+              <div className="luxury-about">
+                <h2>about room</h2>
+                <p>{item.description_en}</p></div>
+                <div></div>
+                <div></div>
               <div>
-                <img src={Tbilisee + arrayLuxury.style_image} alt={"index"} className="full"/>
+                <img src={Tbilisee + item.style_image} alt={"index"} className="full"/>
               </div>
               <div>
                 <h2>Style</h2>
-                <p>{arrayLuxury.style_description_en}</p>
+                <p>{item.style_description_en}</p>
               </div>
               <div>
-                <img src={Tbilisee + arrayLuxury.mood_image_small} alt={"index"} className="full" style={{height: "60%"}}/>
+                <img src={Tbilisee + item.mood_image_small} alt={"index"} className="full" style={{height: "60%"}}/>
                 <div className="flex" style={{marginTop: "7rem"}}>
-                <h4 className="luxury-style__price">{arrayLuxury.price} $</h4>
+                <h4 className="luxury-style__price">{item.price} $</h4>
                 <h4 className="per-night">per night</h4>
                 </div>
               </div>
               <div>
                 <h2 style={{marginTop: "6rem"}}>Mood</h2>
-                <p>{arrayLuxury.mood_description_en}</p>
+                <p>{item.mood_description_en}</p>
               </div>
               <div>
-                <img src={Tbilisee + arrayLuxury.mood_image_big} className="full"/>
+                <img src={Tbilisee + item.mood_image_big} className="full"/>
               </div>
             </section>
-            </>
+            </>)
+          }                   
+            
             )
           
-          <section className="luxury-credit">
+          <section className="luxury-credit container-own">
                 <h5>* No credit card required</h5>
                 <Button
                   title="book now"
                  className="luxury-credit__btn"
                 />                  
             </section>
+            <Link to='/rooms' className="luxury-view__all">View All Rooms</Link>
           <section className="luxury-restaurant container-own">
               <Row md={1} lg={2}>
                 <Col>

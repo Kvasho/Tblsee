@@ -14,6 +14,22 @@
     padding-left: 34% !important;
 }
 
+@media(max-width: 1000px) {
+    .landing-head__swiper .swiper-slide {
+        padding: 0 !important;
+        margin: 0 10rem !important;
+    }
+
+    .exploring-title {
+        font-size: 70px !important;
+    }
+
+    .exploring p {
+        width: calc(100% - 20rem);
+        margin: auto !important;
+    }
+}
+
 @media(max-width: 2100px){
     .landing-head__swiper {
         margin-bottom: 0;
@@ -22,17 +38,18 @@
 
 .header-title {
     position: absolute;
-    bottom: 30%;
+    bottom: 38%;
     left: 14rem;
     z-index: 1100;
 
     & h1 {
-        font-size: 9rem;
-        font-weight: bold;
-        line-height: 12rem;
-        color: #ffffff;
-        width: 55rem;
-        text-transform: uppercase;
+        font-size: 7rem;
+    font-weight: bold;
+    line-height: 8rem;
+    color: #ffffff;
+    width: 58rem;
+    text-transform: uppercase;
+    margin-bottom: 10rem;
     }
 
     &__btn {
@@ -165,6 +182,7 @@
 
     &__txt {
        text-align: center;
+       padding: 0 0 0 5rem;
     }
 
     & h3 {
@@ -202,6 +220,13 @@
     transition: width .3s
 }
 
+.landing-badge {
+    width: 150px !important;
+    position: absolute;
+    right: 450px;
+    bottom: 100px;
+}
+
 .neighborhood-more:hover:after {
     width: 100%;
     transition: width .3s;
@@ -215,7 +240,7 @@
 
 .landing-head__swiper .swiper-container {
     position: absolute;
-    bottom: -8rem;
+    bottom: -2rem;
     width: 100%;
 }
 
@@ -320,6 +345,12 @@
     margin-bottom: 10rem;
 }
 
+@media(max-width: 1800px){
+    .landing-gallery {
+        grid-template-rows: 700px 400px;
+    }
+}
+
 @media(max-width: 900px) {
     .landing-head__swiper img {
         width: 250px !important;
@@ -344,9 +375,10 @@
 @media(max-width: 1200px) {
     .landing-gallery {
         grid-template-rows: 400px 200px 500px 100px 400px 100px;
-        grid-template-columns: 100%;
+        grid-template-columns: 400px;
         margin-right: 0;
         margin-bottom: 50px;
+        justify-content: center;
     }
 
     .landing-gallery p {
@@ -373,6 +405,7 @@
         display: block;
         margin: auto;
         position: relative;
+        margin-top: 5rem;
     }
 }
 
@@ -382,9 +415,10 @@
         height: 100%;
     }
     .exploring {
-        grid-template-columns: 100%;
+        grid-template-columns: 500px;
         grid-template-rows: 230px 300px 300px;
         grid-gap: 0;
+        justify-content: center;
 
         &-image__half {
             height: 100%;
@@ -413,7 +447,8 @@
     }
 
     .landing-neighborhood {
-        grid-template-columns: 1fr;
+        grid-template-columns: 500px;
+        justify-content: center;
         grid-template-rows: 300px 300px 300px;
     }
 
@@ -449,11 +484,11 @@
     }
     
     .eats-paragraph {
-        font-size: 26px;
-        color: #000000;
-        color: gray;
-        margin-bottom: 120px;
-        width: 80%;
+        font-size: 18px;
+        margin-bottom: 5rem;
+        text-align: center;
+        width: calc(100% - 20rem);
+        margin: auto;
     }
 
     .landing-eats .row {
@@ -491,7 +526,8 @@
 
 @media(max-width: 1000px) {
     .landing_eats {
-        grid-template-columns: 1fr;
+        grid-template-columns: 500px;
+        justify-content: center;
     }
 
     .landing-eats__img2 {

@@ -27,6 +27,12 @@
     }
 }
 
+.about-us__badge {
+    position: absolute;
+    right: -83px;
+    top: -116px;
+}
+
 .about-us__first {
     width: 50%;
     border-bottom: 1px solid #91712B;
@@ -106,9 +112,17 @@
 
 .aboutus-goal__img {
     width: 100%;
+    height: 80rem;
 }
 
 @media(max-width: 1300px) {
+    .about-us__badge {
+        position: absolute;
+        right: -25px;
+        top: -20px;
+        width: 100px;
+    
+    }
     .about-us .page-title {
         margin-top: 15rem;
         margin-bottom: -8.5rem;

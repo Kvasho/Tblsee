@@ -58,9 +58,9 @@
         position: absolute;
         font-size: 145px;
         color: #000000;
-        color: gray;
         left: 50%;
         top: -172%;
+        opacity: 0.1;
     }
 }
 
@@ -120,6 +120,15 @@
 }
 
 @media(max-width: 1300px) {
+    .restaurant-menu {
+        margin-top: 17rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        /* grid-template-rows: 100px; */
+        grid-row-gap: 10rem;
+        /* row-gap: 10rem; */
+        justify-items: center;
+    }
     .restaurant-block {
         width: 100%;
     }

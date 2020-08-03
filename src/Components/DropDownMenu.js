@@ -13,7 +13,7 @@ export default class DropdownMenu extends Component  {
 
     componentDidMount(){
         AOS.init({
-			duration: 1000
+			duration: 500
 		});
     }
     render(){
@@ -26,9 +26,9 @@ export default class DropdownMenu extends Component  {
             <Link to="/aboutus">
                 <li className="dropdown-menu_item" onClick={() => this.props.menuHandler()}>about us</li>
             </Link>
-            {/* <Link to="/gallery">
+            <Link to="/gallery">
                 <li className="dropdown-menu_item" onClick={() => this.props.menuHandler()}>gallery</li>
-            </Link> */}
+            </Link>
             <Link to="/rooms">
                 <li className="dropdown-menu_item" onClick={() => this.props.menuHandler()}>rooms</li>
             </Link>

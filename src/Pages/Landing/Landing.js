@@ -1,12 +1,12 @@
 import React,{Component} from 'react';
 
-import * as coreTbilisee from '../../constants/request';
+import { useTranslation } from 'react-i18next';
 
 // PACKAGES
 import {Link} from "react-router-dom";
 import AOS from 'aos';
 import "aos/dist/aos.css";
-import axios from 'axios'
+import axios from 'axios';
 
 // COMPONENTS
 import CarouselLanding from '../../Components/CarouselLanding';
@@ -15,7 +15,7 @@ import Swiper from '../../Components/swiper';
 import SwiperMain from "../../Components/swiper-main";
 
 // IMAGES
-import HotelRound from "../../Assets/icons/tbilisee-hotel-round.svg";
+import HotelRound from "../../Assets/icons/tbilisee-hotel-round-white.svg";
 
 // SCSS
 import "./Landing.scss";
@@ -30,7 +30,9 @@ export default class Landing extends Component {
 
   componentDidMount(){
     axios.get('https://core.tbilisee.ge/api/mainPage').then(res => {
-      this.setState( {arrayLanding: res.data} );     
+      this.setState( {arrayLanding: res.data} );   
+
+
     })
     AOS.init({
 			duration: 2000
@@ -46,24 +48,22 @@ export default class Landing extends Component {
     const half = Math.ceil(arrayLanding.eat_drinks.images.length / 2);
     const eatsFirstHalf = arrayLanding.eat_drinks.images.splice(0, half)
     const eatsSecondHalf = arrayLanding.eat_drinks.images.splice(-half)
-    const breakpointColumnsObj = {
-      default: 4,
-      1100: 3,
-      700: 2,
-      500: 1
-    };
+
+    // const { t } = useTranslation();
+
   return (
     <>
     <Header/>
-
     <div className="landing">
       <div className="landing-head__swiper">
       <div className="header-title">
-          <h1>{arrayLanding.headerTitle.title}</h1>
-          <Link className="header-title__btn">explore</Link>
+          <h1>{arrayLanding.headerTitle.title_en}</h1>
+          <Link className="header-title__btn" to="/luxury">explore</Link>
       </div>
-
+      
+      <img className="landing-badge" src={HotelRound}/>
        <CarouselLanding 
+       title={arrayLanding.headerTitle.title_en}
        spaceBetween="-50" 
        doors={arrayLanding.doors}
        headerTitle={arrayLanding.headerTitle}
@@ -72,6 +72,7 @@ export default class Landing extends Component {
       <h2  className="exploring-title">{arrayLanding.exploring.title_en}</h2>      
         <section data-aos="fade-up"
             data-aos-anchor-placement = "top-center" className="exploring container-own">
+              <div>
             <div 
             >
               <h3>Tbilisi <span className="white">Hotel</span></h3>
@@ -82,6 +83,7 @@ export default class Landing extends Component {
             </div>
             <div className="relative">
               <img  src={Tbilisee + arrayLanding.exploring.small_image} alt="/" className="exploring-image__half absolute"/>
+            </div>
             </div>
         </section>
       <section data-aos="fade-up"

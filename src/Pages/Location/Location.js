@@ -8,6 +8,7 @@ import axios from 'axios';
 // SCSS
 import "./Location.scss";
 import DestinationGallery from '../../Components/Destination';
+import Destination from '../../Components/Destination'
 
 export default class Location extends Component {
   state={
@@ -25,6 +26,8 @@ export default class Location extends Component {
       return "loading"; //TODO: Need Loading State
     }
     const {arrayUrban} = this.state;
+    const Tbilisee = 'https://core.tbilisee.ge/';
+    console.log(this.state.arrayUrban,"ARRAYDESTINATION")
   return (
     <>
     <HeaderBlack />
@@ -32,22 +35,26 @@ export default class Location extends Component {
       <PageTitle title={arrayUrban.title_and_desc.title_en}/>
       <p className="location-paragraph">{arrayUrban.title_and_desc.description_en}</p>
 
+      <Destination arrayDestination={this.state.arrayUrban.packages}/>)
+      
+
       {
-        arrayUrban.packages.map((item,index) => <Destination arrayDestination={[item,{
-          "image": "public/images/urban/2020-07-29T10:04:26.969Z0_DypQzAMdE9cudggX.jpeg",
-          "title_en": "new test update",
-          "title_ge": "sdfasdfasdfa update",
-          "title_ru": "slkdjfhkladshfkjupdate",
-          "description_en": "sld;kfj ads;lfjh;lasdkfjh ;ladjsf;lkdsaj fl;ajksdf ;ljkasdl;fj update",
-          "description_ge": "khjsdfl ashdkfas dk flaksdfasdhf kljafladsfkjlashdl fkadhsf update",
-          "description_ru": "skjdlhflka sfk jad lkadslfkjhadls kfh lkdsafjhl kadsjhfkl adsjflksdhlfkajd update",
-          "time": "70",
-          "group": "Group 1"
-      }]}/>)
+        arrayUrban.informations.map((info,index) => 
+        <div className="location-exploring container-own">
+        <div className= {index%2==1 ? "location-infos" : "location-infos direction-reverse"}>
+          <div className="relative">
+            <div className={index%2==1 ? "location-absolute location-absolute__reverse" : "location-absolute "}/>
+            <img src={Tbilisee + info.image} alt={info.title_en} className="full"/>
+          </div>
+           <div className="location-infos__txt">
+          <h2>{info.title_en}</h2>
+          <p>{info.description_en}</p>
+          </div>
+        </div>
+      </div>) 
       }
       
-      <div className="location-exploring container-own">
-      </div>
+      
       </div>
   </>
   );

@@ -1,6 +1,7 @@
 // Rooms
 .rooms {
     overflow: hidden;
+    margin-bottom: 50rem;
 
     & .page-title {
         margin-top: 28rem;
@@ -28,6 +29,19 @@
         bottom: 35px;
         left: 15px;
     }
+}
+
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span, 
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
+    opacity: 1 !important;
+}
+
+.pagination>li>a, .pagination>li>span {
+    opacity: 0.25;
 }
 
 .rooms-luxury {
@@ -65,6 +79,21 @@
         line-height: 48px;
         margin-bottom: 25rem;
     }
+}
+
+.rooms-left {
+    left: -50px;
+}
+
+.rooms-background_first {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 1px solid #A89562;
+    position: absolute;
+    right: -50px;
+    top: -50px;
+    z-index: -1;
 }
 
 .align-right {

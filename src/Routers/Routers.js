@@ -13,11 +13,13 @@ import Location from "../Pages/Location/Location";
 import Restaurant from "../Pages/Restaurant/Restaurant";
 import Rooms from "../Pages/Rooms/Rooms";
 import Luxury from "../Pages/Luxury/Luxury";
+import MidRange from "../Pages/MidRange/MidRange";
 
 // COMPONENTS
 import Footer from "../Components/Footer";
 
-const Routers = () => {
+const Routers = (props) => {
+	console.log(props.t,"HEREEEEEEEEEEEEEEEEEEEEE")
 		return (
 			<>
 			<Switch>
@@ -57,9 +59,14 @@ const Routers = () => {
 					component = { Rooms }
 				/>
 				<Route
-					path = "/rooms/luxury/:index"
+					path = "/luxury"
 					exact
 					component = { Luxury }
+				/>
+				<Route
+					path = "/rooms/midrange"
+					exact
+					component = { MidRange }
 				/>
 			</Switch>
 			<Footer/>

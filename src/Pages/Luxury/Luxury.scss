@@ -23,8 +23,7 @@
 }
 
 .luxury-about {
-    padding-left: 60rem;
-    margin-top: 12rem;
+    
 }
 
 .luxury-about h2{
@@ -32,6 +31,15 @@
     font-weight: bold;
     margin-bottom: 6.5rem;
     text-transform: capitalize;
+    text-align: left !important;
+}
+
+.luxury-about p {
+    font-size: 22px;
+    color: gray;
+    width: 60%;
+    margin-bottom: 11rem;
+    text-align: left !important;
 }
 
 .swiper-button-prev, .swiper-button-next {
@@ -56,16 +64,9 @@
     height: 100%;
 }
 
-.luxury-about p {
-    font-size: 22px;
-    color: gray;
-    width: 60%;
-    margin-bottom: 11rem;
-}
-
 .luxury-swiper__controller {
     left: 60% !important;
-    z-index: 10000 !important;
+    z-index: 100 !important;
     bottom: 4% !important;
 }
 
@@ -158,8 +159,9 @@
 .luxury-style {
     display: grid;
     grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 350px 600px;
+    grid-template-rows: 400px 600px;
     margin-bottom: 10rem;
+    margin-top: 13rem;
 
     &__price {
         font-size: 6.3rem;
@@ -190,9 +192,8 @@
 
 .luxury-credit {
     display: flex;
-    width: calc(100% - 100rem);
-    margin: 0 auto 27rem auto;
-    float: right;
+    justify-content: flex-end;
+    margin-right: 10rem;
 }
 
 .luxury-view__all {
@@ -202,7 +203,7 @@
     padding-bottom: 20px;
     display: block;
     width: fit-content;
-    margin: 30rem auto;
+    margin: 10rem auto;
 }
 
 .luxury-credit__btn {
@@ -216,7 +217,7 @@
     text-transform: uppercase;
 
     &:hover {
-        color: #FDE6A6;
+        color: #FDE6A6 !important;
         background: #000000;
         border: 1px solid #FDE6A6;
     }

@@ -6,6 +6,8 @@ import '../../Styles/common.scss'
 import Masonry from 'react-masonry-css'
 import PageTitle from '../../Components/PageTitle';
 import HeaderBlack from '../../Components/HeaderBlack'
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
 export default class Gallery extends Component {
     constructor(props) {
@@ -14,7 +16,9 @@ export default class Gallery extends Component {
             offset: 0,
             data: [],
             perPage: 9,
-            currentPage: 0
+            currentPage: 0,
+            photoIndex: 0,
+            isOpen: false
         };
         this.handlePageClick = this
             .handlePageClick
@@ -66,7 +70,7 @@ export default class Gallery extends Component {
                 </div>
                 <ReactPaginate
                     previousLabel={"prev"}
-                    nextLabel={"next"}
+                    nextLabel={""}
                     breakLabel={"..."}
                     breakClassName={"break-me"}
                     pageCount={this.state.pageCount}

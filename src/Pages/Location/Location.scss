@@ -56,6 +56,11 @@
 .destination-card__image {
     width: 100%;
     height: 80%;
+    cursor: pointer;
+}
+
+.destination-card__image:hover {
+    box-shadow: -20px -121px 0px 0px #fde6a6;
 }
 .locations {
     margin: 0 30px 0 0;
@@ -65,17 +70,12 @@
         display: block;
         width: 100%;
     }
-
-    & img:hover {
-        -webkit-box-shadow: -42px -85px 5px 0px rgba(253,230,166,1);
-        -moz-box-shadow: -42px -85px 5px 0px rgba(253,230,166,1);
-        box-shadow: -42px -85px 5px 0px rgba(253,230,166,1);
-    }
 }
 
 .destination-card h3 {
     font-size: 31px;
     text-transform: capitalize;
+    z-index: 12;
 }
 
 .location-exploring {

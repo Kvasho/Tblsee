@@ -5,7 +5,6 @@ import PageTitle from '../../Components/PageTitle';
 import Destination from '../../Components/Destination';
 import HeaderBlack from '../../Components/HeaderBlack';
 import axios from 'axios';
-import Swiper from '../../Components/swiper';
 
 // SCSS
 import "./Location.scss";
@@ -29,14 +28,27 @@ export default class Location extends Component {
   return (
     <>
     <HeaderBlack />
-    {/* <div className="location">
+    <div className="location">
       <PageTitle title={arrayUrban.title_and_desc.title_en}/>
       <p className="location-paragraph">{arrayUrban.title_and_desc.description_en}</p>
-      <Destination arrayDestination={arrayUrban.packages}/>
+      {
+        arrayUrban.packages.map((item,index) => <Destination arrayDestination={[item,{
+          "image": "public/images/urban/2020-07-29T10:04:26.969Z0_DypQzAMdE9cudggX.jpeg",
+          "title_en": "new test update",
+          "title_ge": "sdfasdfasdfa update",
+          "title_ru": "slkdjfhkladshfkjupdate",
+          "description_en": "sld;kfj ads;lfjh;lasdkfjh ;ladjsf;lkdsaj fl;ajksdf ;ljkasdl;fj update",
+          "description_ge": "khjsdfl ashdkfas dk flaksdfasdhf kljafladsfkjlashdl fkadhsf update",
+          "description_ru": "skjdlhflka sfk jad lkadslfkjhadls kfh lkdsafjhl kadsjhfkl adsjflksdhlfkajd update",
+          "time": "70",
+          "group": "Group 1"
+      }]}/>)
+      }
+      
       <div className="location-exploring container-own">
       </div>
-      </div> */}
-    <Swiper />
+      </div>
+
   </>
   );
 }

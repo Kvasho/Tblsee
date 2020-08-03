@@ -1,41 +1,83 @@
-// import React, { useState, useCallback } from "react";
-// import { render } from "react-dom";
-// import Gallery from "react-photo-gallery";
-// import Carousel, { Modal, ModalGateway } from "react-images";
-// import { photos } from "./photos";
+import React, {Component} from 'react'
+import axios from 'axios'
+import ReactPaginate from 'react-paginate';
+import './gallery.scss';
+import '../../Styles/common.scss'
+import Masonry from 'react-masonry-css'
+import PageTitle from '../../Components/PageTitle';
+import HeaderBlack from '../../Components/HeaderBlack'
 
-// function App() {
-//   const [currentImage, setCurrentImage] = useState(0);
-//   const [viewerIsOpen, setViewerIsOpen] = useState(false);
+export default class Gallery extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            offset: 0,
+            data: [],
+            perPage: 9,
+            currentPage: 0
+        };
+        this.handlePageClick = this
+            .handlePageClick
+            .bind(this);
+    }
+    receivedData() {
+        axios
+            .get(`https://core.tbilisee.ge/api/gallery?group=all`)
+            .then(res => {   
+                let data = res.data.image
+                const slice = data.slice(this.state.offset, this.state.offset + this.state.perPage)
+                const Tbilisee = 'https://core.tbilisee.ge/';
+                const postData = slice.map(pd => <React.Fragment>
+ 
+                    <img className="full" src={Tbilisee + pd} alt=""/>
+                </React.Fragment>)
+                this.setState({
+                    pageCount: Math.ceil(data.length / this.state.perPage),
+                    postData
+                })
+                console.log(this.state.pageCount,"PAGE COUNT")
+            });
+    }
+    handlePageClick = (e) => {
+        const selectedPage = e.selected;
+        const offset = selectedPage * this.state.perPage;
 
-//   const openLightbox = useCallback((event, { photo, index }) => {
-//     setCurrentImage(index);
-//     setViewerIsOpen(true);
-//   }, []);
+        this.setState({
+            currentPage: selectedPage,
+            offset: offset
+        }, () => {
+            this.receivedData()
+        });
 
-//   const closeLightbox = () => {
-//     setCurrentImage(0);
-//     setViewerIsOpen(false);
-//   };
+    };
 
-//   return (
-//     <div>
-//       <Gallery photos={photos} onClick={openLightbox} />
-//       <ModalGateway>
-//         {viewerIsOpen ? (
-//           <Modal onClose={closeLightbox}>
-//             <Carousel
-//               currentIndex={currentImage}
-//               views={photos.map(x => ({
-//                 ...x,
-//                 srcset: x.srcSet,
-//                 caption: x.title
-//               }))}
-//             />
-//           </Modal>
-//         ) : null}
-//       </ModalGateway>
-//     </div>
-//   );
-// }
-// render(<App />, document.getElementById("app"));
+    componentDidMount() {
+        this.receivedData()
+    }
+    render() {
+        console.log(this.state.data.image)
+        const Tbilisee = 'https://core.tbilisee.ge/';
+        return (
+            <div>
+                <HeaderBlack/>
+                <PageTitle title="gallery" style={{marginBottom: "10rem"}}/>
+                <div className="gallery container-own">
+               {this.state.postData}
+                </div>
+                <ReactPaginate
+                    previousLabel={"prev"}
+                    nextLabel={"next"}
+                    breakLabel={"..."}
+                    breakClassName={"break-me"}
+                    pageCount={this.state.pageCount}
+                    marginPagesDisplayed={2}
+                    pageRangeDisplayed={5}
+                    onPageChange={this.handlePageClick}
+                    containerClassName={"pagination"}
+                    subContainerClassName={"pages pagination"}
+                    activeClassName={"active"}/>
+            </div>
+
+        )
+    }
+}

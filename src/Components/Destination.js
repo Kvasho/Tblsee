@@ -1,41 +1,60 @@
-import React from 'react';
+import React,{Component} from 'react';
 
 import "../Pages/Location/Location.scss";
 import "../Styles/common.scss";
 
 import Picture from "../Assets/Images/aboutus.png";
 
-const Destination = (props) => {
-  console.log(props.arrayDestination);
+export default class Destination extends Component {
+  state = {
+    testImages: {
+      "image": "public/images/rooms/2020-05-26T07:40:32.801Z2.jpg",
+      "title_en": "title en edited",
+      "title_ge": "titile ge",
+      "description_en": "desc en",
+      "description_ge": "desc ge",
+      "description_ru": "desc ru"
+  }
+  }
+  componentDidMount () {
+    this.setState({testImages: this.props.arrayDestination[0]})
+    console.log(this.props.arrayDestination[0]);
+  }
+  render () {
+  const Tbilisee = 'https://core.tbilisee.ge/';
+  const toggleImage = (item) => {
+    this.setState({testImages: item})
+  }
   return (
-<div className="destination container-own relative">      
-<div className="destination-background absolute"/>
-      <img src={Picture} className="destination-img full"/>
+<>
+  <>
+  <div className="destination container-own relative"> 
+    <div className="destination-background absolute"/>
+      <img id="destination-main" src={Tbilisee + this.state.testImages.image} className="destination-img full"/>
             <div className="destination-content">
               <div>
-              <h2 className="destination-content__title">TITLE</h2>
-              <p className="destination-content__paragraph" style={{ marginTop: "30px", marginBottom: "30px"}}>Lorem Ipsum is simply dummy 
-                text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text</p>
-              <p className="destination-content__paragraph">90 min trip</p>
+              <h2 className="destination-content__title">{this.state.testImages.title_en}</h2>
+              <p className="destination-content__paragraph" style={{ marginTop: "30px", marginBottom: "30px"}}>{this.state.testImages.description_en}</p>
+              <p className="destination-content__paragraph">{this.state.testImages.time} min trip</p>
               </div>
               <div className="destination-cards">
-                <div className="destination-card">
-                <h3>betlemi str.</h3>
-                  <img src={Picture} className="destination-card__image"/> 
+              {
+                  this.props.arrayDestination.map((item,index) => 
+                  <div className="destination-card">
+                      <h3>{item.title_en}</h3>
+                  <img src={Tbilisee + item.image} className="destination-card__image" onClick={() => toggleImage(item)}/> 
                 </div>
-                <div className="destination-card">
-                <h3>betlemi str.</h3>
-              <img src={Picture} className="destination-card__image"/> 
-                </div>
-                <div className="destination-card">
-                <h3>betlemi str.</h3>
-              <img src={Picture} className="destination-card__image"/> 
-                </div>
+                  )
+              }                               
                 </div>                                                        
             </div>
-    </div>
+            </div>
+  </>
+  )
+    
+</>
+
+   
   );
 }
-
-export default Destination;
+}

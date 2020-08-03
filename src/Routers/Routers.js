@@ -1,4 +1,4 @@
-import React, {Suspense} from "react";
+import React from "react";
 
 // PACKAGES
 import { Route, Switch }    from "react-router-dom";
@@ -57,7 +57,7 @@ const Routers = () => {
 					component = { Rooms }
 				/>
 				<Route
-					path = "/luxury"
+					path = "/rooms/luxury/:index"
 					exact
 					component = { Luxury }
 				/>

@@ -1,28 +1,20 @@
-import React, { Component } from 'react';
-
-// PACKAGES
-import { Row,Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
 import axios from 'axios';
-
-// COMPONENTS
 import HeaderBlack from '../../Components/HeaderBlack';
-import Destination from "../../Components/Destination";
 import PageTitle from '../../Components/PageTitle';
-import Button from "../../Components/Button";
-import Swiper from '../../Components/swiper';
 import LuxurySwiper from '../../Components/LuxurySwiper';
-
-// SCSS
-import "../../Styles/common.scss";
-import './Luxury.scss';
-
+import Button from '../../Components/Button'
+import {Row, Col} from 'react-bootstrap'
 // IMAGES
 import LogoBlack from '../../Assets/icons/logo-black.svg';
 import LuxuryRestaurant1 from '../../Assets/Images/luxury-restaurant-1.jpg';
 import LuxuryRestaurant2 from '../../Assets/Images/luxury-restaurant-2.jpg';
 import LuxuryRestaurant3 from '../../Assets/Images/luxury-restaurant-3.jpg';
 import Rooms from '../Rooms/Rooms';
+import Destination from '../../Components/Destination'
+
+import './Luxury.scss'
+import '../../Styles/common.scss'
 
 class Luxury extends Component {
     constructor(props) {
@@ -32,9 +24,10 @@ class Luxury extends Component {
          };
       }
       componentDidMount(){
+        const {index}  = this.props.match.params;
         axios.get('https://core.tbilisee.ge/api/oneRoom/luxury').then(res => {
-          this.setState( {arrayLuxury: res.data} );    
-        })
+          this.setState( {arrayLuxury: res.data[index]} );    
+        })               
       }
       render() {
         if(!this.state.arrayLuxury) {
@@ -42,14 +35,10 @@ class Luxury extends Component {
         }
         const Tbilisee = "https://core.tbilisee.ge/";
         const {arrayLuxury} = this.state;
-        console.log(arrayLuxury,"sssssssssssssssssssssssssssssssssssssss")
         return (
           <>
           <HeaderBlack />
-          <PageTitle title="Luxury"/>
-          {
-            
-            arrayLuxury.map((item,index) => 
+          <PageTitle title="Luxury"/>                    
             <>
             <div className="container-own luxury">
             <div className="luxury-absolute"/>
@@ -63,41 +52,41 @@ class Luxury extends Component {
             swiperController = "landing-swiper__controller" 
             prevButton       = "Prev"
             nextButton       = "Next"
-            arrayImg         = {item.cover_images}
+            arrayImg         = {arrayLuxury.cover_images}
         />
             </section>
             </div>
             <section className="luxury-about">
             <h2>about room</h2>
-            <p>{item.description_en}</p>
+            <p>{arrayLuxury.description_en}</p>
             </section> 
             <section className="luxury-style container-own">
               <div></div>
               <div>
-                <img src={Tbilisee + item.style_image} alt={index} className="full"/>
+                <img src={Tbilisee + arrayLuxury.style_image} alt={"index"} className="full"/>
               </div>
               <div>
                 <h2>Style</h2>
-                <p>{item.style_description_en}</p>
+                <p>{arrayLuxury.style_description_en}</p>
               </div>
               <div>
-                <img src={Tbilisee + item.mood_image_small} alt={index} className="full" style={{height: "60%"}}/>
+                <img src={Tbilisee + arrayLuxury.mood_image_small} alt={"index"} className="full" style={{height: "60%"}}/>
                 <div className="flex" style={{marginTop: "7rem"}}>
-                <h4 className="luxury-style__price">{item.price} $</h4>
+                <h4 className="luxury-style__price">{arrayLuxury.price} $</h4>
                 <h4 className="per-night">per night</h4>
                 </div>
               </div>
               <div>
                 <h2 style={{marginTop: "6rem"}}>Mood</h2>
-                <p>{item.mood_description_en}</p>
+                <p>{arrayLuxury.mood_description_en}</p>
               </div>
               <div>
-                <img src={Tbilisee + item.mood_image_big} className="full"/>
+                <img src={Tbilisee + arrayLuxury.mood_image_big} className="full"/>
               </div>
             </section>
             </>
             )
-          }
+          
           <section className="luxury-credit">
                 <h5>* No credit card required</h5>
                 <Button

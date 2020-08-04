@@ -11,7 +11,7 @@
 }
 
 .landing-head__swiper .swiper-slide {
-    padding-left: 34% !important;
+    padding-left:40% !important;
 }
 
 @media(max-width: 1000px) {
@@ -47,7 +47,7 @@
     font-weight: bold;
     line-height: 8rem;
     color: #ffffff;
-    width: 58rem;
+    width: 64rem;
     text-transform: uppercase;
     margin-bottom: 10rem;
     }
@@ -70,7 +70,7 @@
 .exploring {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 685px;
+    grid-template-rows: 70vh;
     margin-bottom: 20rem;
     grid-gap: 60px;
 
@@ -118,7 +118,7 @@
 // LANDING GALLERY 
 .landing-gallery {
     display: grid;
-    grid-template-rows: 900px 400px;
+    grid-template-rows: 80vh 40vh;
     grid-template-columns: 3fr 2fr 2fr;
     margin-bottom: 30rem;
     margin-right: 10rem;
@@ -175,7 +175,7 @@
 .landing-neighborhood {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 80rem;
+    grid-template-rows: 80vh;
     margin-top: 30rem;
     margin-bottom: 27rem;
     grid-column-gap: 14rem;
@@ -233,7 +233,7 @@
 }
 
 .landing-head__swiper img {
-    width: 500px;
+    height: 65vh;
     display: block;
     margin: auto;
 }
@@ -449,7 +449,7 @@
     .landing-neighborhood {
         grid-template-columns: 500px;
         justify-content: center;
-        grid-template-rows: 300px 300px 300px;
+        grid-template-rows: 60vh 30vh 30vh;
     }
 
 

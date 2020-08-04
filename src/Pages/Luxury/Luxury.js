@@ -10,8 +10,6 @@ import LogoBlack from '../../Assets/icons/logo-black.svg';
 import LuxuryRestaurant1 from '../../Assets/Images/luxury-restaurant-1.jpg';
 import LuxuryRestaurant2 from '../../Assets/Images/luxury-restaurant-2.jpg';
 import LuxuryRestaurant3 from '../../Assets/Images/luxury-restaurant-3.jpg';
-import Rooms from '../Rooms/Rooms';
-import Destination from '../../Components/Destination'
 
 import './Luxury.scss'
 import '../../Styles/common.scss'
@@ -27,7 +25,6 @@ class Luxury extends Component {
       componentDidMount(){
         axios.get('https://core.tbilisee.ge/api/oneRoom/Luxury').then(res => {
           this.setState( {arrayLuxury: res.data} );  
-          console.log(this.state.arrayLuxury,"ARRRRRRRRRRAY LUXURY")  
         })               
       }
       render() {
@@ -55,6 +52,7 @@ class Luxury extends Component {
             prevButton       = "Prev"
             nextButton       = "Next"
             arrayImg         = {item.cover_images}
+            key              = {index}
         />
             </section>
             </div>

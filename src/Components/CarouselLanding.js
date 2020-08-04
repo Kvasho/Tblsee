@@ -17,7 +17,6 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 export default (props) => {
   const Tbilisee = 'https://core.tbilisee.ge/';
   const {doors} = props;
-  console.log(props,"LLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
   return (
     <Swiper
       slidesPerView = {2}  
@@ -32,7 +31,7 @@ export default (props) => {
         <SwiperSlide>
           
           <Link to="/luxury">
-            <img src={Tbilisee + door.door_image} alt={index}/>
+            <img src={Tbilisee + door.door_image} alt={index} key={index}/>
             </Link>
         </SwiperSlide>
         </>

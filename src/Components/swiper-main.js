@@ -13,8 +13,6 @@ import 'swiper/components/scrollbar/scrollbar.scss';
 // IMAGES 
 import Image1 from '../Assets/Images/gallery-medium.jpg'
 
-import Image2 from '../Assets/Images/gallery-small.jpg';
-
 // install Swiper components
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -26,17 +24,15 @@ export default () => {
       navigation
       pagination={{ clickable: true, el: '.swiper-pagination',type: 'progressbar' }}
       scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
     >
-      <SwiperSlide><img src={Image1}/></SwiperSlide>
-      <SwiperSlide><img src={Image1}/></SwiperSlide>
-      <SwiperSlide><img src={Image1}/></SwiperSlide>
-      <SwiperSlide><img src={Image1}/></SwiperSlide>
-      <SwiperSlide><img src={Image1}/></SwiperSlide>
-      <SwiperSlide><img src={Image1}/></SwiperSlide>
-      <SwiperSlide><img src={Image1}/></SwiperSlide>
-      <SwiperSlide><img src={Image1}/></SwiperSlide>
+      <SwiperSlide><img src={Image1} alt="*"/></SwiperSlide>
+      <SwiperSlide><img src={Image1} alt="*"/></SwiperSlide>
+      <SwiperSlide><img src={Image1} alt="*"/></SwiperSlide>
+      <SwiperSlide><img src={Image1} alt="*"/></SwiperSlide>
+      <SwiperSlide><img src={Image1} alt="*"/></SwiperSlide>
+      <SwiperSlide><img src={Image1} alt="*"/></SwiperSlide>
+      <SwiperSlide><img src={Image1} alt="*"/></SwiperSlide>
+      <SwiperSlide><img src={Image1} alt="*"/></SwiperSlide>
       <div class="swiper-pagination"></div>
     </Swiper>
   );

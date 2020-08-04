@@ -8,6 +8,7 @@ import "../Styles/common.scss"
 //Component
 import Button from './Button';
 import DropdownMenu from "./DropDownMenu";
+import i18next from 'i18next';
 
 //Icons
 import BurgerMenuWhite from "../Assets/icons/white-burger-menu.svg";
@@ -27,8 +28,14 @@ class Header extends Component  {
     this.setState({ burgerMenuOpen: !currentState });
   };
 
+ handleClick = (lang) => {
+    i18next.changeLanguage(lang)
+  }
+
   render(){
     const {burgerMenuOpen} = this.state;
+    let lang = i18next.language
+    const otherLang = ['RU', 'GE'];
     return (     
       <>       
           {
@@ -37,11 +44,14 @@ class Header extends Component  {
             <div className="header-wr">
             <div className="flex">
              <img src={ BurgerMenuWhite } className="header-burger_menu" alt="Burger Menu" onClick={this.toggleClass}/>
-              <div className="language-bar__white" >
-                EN
+              <div className="language-bar__white">
+          <li onClick={() => this.handleClick('en')}>EN</li>
                 <div className="languages-bar">
-                  <li>Ru</li>
-                  <li>Ge</li>  
+                  {/* // TODO CREATE SELECT WITH OPTIONS */}
+                  {
+                    otherLang.map((lang1,index) => <li onClick={() => this.handleClick(lang1)} key={index}>{lang1}</li>) 
+                  }
+                  
                 </div>
               </div>
        </div>

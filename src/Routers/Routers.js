@@ -19,49 +19,48 @@ import MidRange from "../Pages/MidRange/MidRange";
 import Footer from "../Components/Footer";
 
 const Routers = (props) => {
-	console.log(props.t,"HEREEEEEEEEEEEEEEEEEEEEE")
 		return (
 			<>
 			<Switch>
 				<Route
 					path = "/aboutUs"
 					exact
-					component = { AboutUs }
+					component = {() =>  <AboutUs t={props.t} i18n={props.i18n}/> }
 				/>
 				<Route
 					path = "/"
 					exact
-					component = { Landing }
+					component = {() =>  <Landing t={props.t} i18n={props.i18n}/> }
 				/>
                 <Route
 					path = "/contact"
 					exact
-					component = { Contact }
+					component = {() =>  <Contact t={props.t} i18n={props.i18n}/> }
 				/>
                 <Route
 					path = "/gallery"
 					exact
-					component = { Gallery }
+					component = {() =>  <Gallery t={props.t} i18n={props.i18n}/> }
 				/>
                 <Route
 					path = "/location"
 					exact
-					component = { Location }
+					component = {() =>  <Location t={props.t} i18n={props.i18n}/> }
 				/>
                 <Route
 					path = "/restaurant"
 					exact
-					component = { Restaurant }
+					component = {() =>  <Restaurant t={props.t} i18n={props.i18n}/> }
 				/>
                 <Route
 					path = "/rooms"
 					exact
-					component = { Rooms }
+					component = {() =>  <Rooms t={props.t} i18n={props.i18n}/> }
 				/>
 				<Route
 					path = "/luxury"
 					exact
-					component = { Luxury }
+					component = {() =>  <Luxury t={props.t} i18n={props.i18n}/> }
 				/>
 				<Route
 					path = "/rooms/midrange"

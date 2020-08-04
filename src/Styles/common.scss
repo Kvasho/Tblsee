@@ -146,10 +146,34 @@ a {
 
 .language-bar__white:hover .languages-bar{
     display: block;
+    position: absolute;
+}
+
+.language-bar__white li {
+    cursor: pointer;
+}
+
+.header-language__changer {
+    border: none;
+    background: transparent;
+    color: #ffffff;
+}
+
+.language-bar__black:hover .languages-bar {
+    display: block;
+    position: absolute;
+}
+
+.language-bar__black li {
+    cursor: pointer;
 }
 
 .languages-bar {
     display: none;
+}
+
+.languages-bar li {
+    cursor: pointer;
 }
 
 .book-now {
@@ -168,7 +192,7 @@ a {
     height: fit-content;
 }
 
-.language-bar {
+.language-bar__black {
     margin-left: 10rem;
     font-size: 20px;
 }

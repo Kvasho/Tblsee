@@ -12,7 +12,7 @@ import i18next from 'i18next';
 import Routers from "./Routers/Routers";
 
 function App() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   function handleClick(lang) {
     i18next.changeLanguage(lang)
   }
@@ -21,8 +21,8 @@ function App() {
     <BrowserRouter>
     <ScrollIntoView>
         <div className="App"> 
-            <Routers t={t}/> 
-       </div>
+            <Routers t={t} i18n={i18n}/> 
+        </div>
        </ScrollIntoView>
     </BrowserRouter>  
   );

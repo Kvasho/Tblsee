@@ -32,6 +32,7 @@ export default class  Restaurant extends Component {
     }
     const Tbilisee = 'https://core.tbilisee.ge/';
     const {arrayRestaurant} = this.state;
+    const {t, i18n} = this.props;
   return (
     <>
     <Header/>
@@ -41,16 +42,44 @@ export default class  Restaurant extends Component {
         arrayRestaurant.stories.map((item,index) => 
         <div data-aos="fade-up"
         data-aos-anchor-placement = "top-center"
-        className={index%2==1 ? "restaurant-gastronomy container-own" : "restaurant-gastronomy container-own direction-reverse"}>
+        className={index%2===1 ? "restaurant-gastronomy container-own" : "restaurant-gastronomy container-own direction-reverse"}>
         <Row xs={1} lg={2} className="restaurant-gastronomy__wr width-full">
           <Col>
             <div className="restaurant-block">
-              <h2 className="restaurant-gastronomy__title">{item.title_en}</h2>
-              <p className="restaurant-gastronomy__paragraph">{item.description_en}</p>
+              <h2 className="restaurant-gastronomy__title">{(() => {
+                    if (i18n.language === 'GE') {
+                      return (
+                        item.title_ge
+                      )
+                    } else if (i18n.language === 'RU') {
+                      return (
+                        item.title_ru
+                      )
+                    } else {
+                      return (
+                        item.title_en
+                      )
+                    }
+      })()}</h2>
+              <p className="restaurant-gastronomy__paragraph">{(() => {
+                    if (i18n.language === 'GE') {
+                      return (
+                        item.description_ge
+                      )
+                    } else if (i18n.language === 'RU') {
+                      return (
+                        item.description_ru
+                      )
+                    } else {
+                      return (
+                        item.description_en
+                      )
+                    }
+      })()}</p>
             </div> 
           </Col>
           <Col>
-            <img src={Tbilisee + item.image} alt="gastronomy" className="width-full"/> 
+            <img src={Tbilisee + item.image} alt="gastronomy" className="width-full" key={index}/> 
           </Col>
         </Row>
       </div>)
@@ -66,10 +95,38 @@ export default class  Restaurant extends Component {
           <div data-aos="fade-up"
           data-aos-anchor-placement = "top-center"
           className="restaurant-menu__cell">
-          <img src={Tbilisee + item.image} alt={item.name} id={index} className="restaurant-menu__image"/>
+          <img src={Tbilisee + item.image} alt={item.name} id={index} className="restaurant-menu__image" key={index}/>
             <div>
-              <h4>{item.name_en}</h4>
-              <h5>{item.city_en},{item.country_en}</h5>
+              <h4>{(() => {
+                    if (i18n.language === 'GE') {
+                      return (
+                        item.name_ge
+                      )
+                    } else if (i18n.language === 'RU') {
+                      return (
+                        item.name_ru
+                      )
+                    } else {
+                      return (
+                        item.name_en
+                      )
+                    }
+      })()}</h4>
+              <h5>{(() => {
+                    if (i18n.language === 'GE') {
+                      return (
+                        item.city_ge, item.country_ge
+                      )
+                    } else if (i18n.language === 'RU') {
+                      return (
+                        item.city_ru, item.country_ru
+                      )
+                    } else {
+                      return (
+                        item.city_en, item.country_en
+                      )
+                    }
+      })()}</h5>
           </div>
         </div>)
         }
@@ -79,13 +136,39 @@ export default class  Restaurant extends Component {
       <img data-aos="fade-up"
               data-aos-anchor-placement = "top-center"
               src={Tbilisee + arrayRestaurant.chef.image} alt="shef" className="restaurant-shef__img container-own"/>
-      <h2 data-aos="fade-up"
-              data-aos-anchor-placement = "top-center"
-              className="restaurant-shef">{arrayRestaurant.chef.fullName_en}</h2>
-      <h5 data-aos="fade-up"
-              data-aos-anchor-placement = "top-center"
+      <h2 
+              className="restaurant-shef">{(() => {
+                if (i18n.language === 'GE') {
+                  return (
+                    arrayRestaurant.chef.fullName_ge
+                  )
+                } else if (i18n.language === 'RU') {
+                  return (
+                    arrayRestaurant.chef.fullName_ru
+                  )
+                } else {
+                  return (
+                    arrayRestaurant.chef.fullName_en
+                  )
+                }
+  })()}</h2>
+      <h5 
               className="restaurant-shef__post">shef</h5>
-      <p  className="restaurant-shef__about">{arrayRestaurant.chef.description_en}</p>
+      <p  className="restaurant-shef__about">{(() => {
+                if (i18n.language === 'GE') {
+                  return (
+                    arrayRestaurant.chef.description_ge
+                  )
+                } else if (i18n.language === 'RU') {
+                  return (
+                    arrayRestaurant.chef.description_ru
+                  )
+                } else {
+                  return (
+                    arrayRestaurant.chef.description_en
+                  )
+                }
+  })()}</p>
     </div>
     </>
   );

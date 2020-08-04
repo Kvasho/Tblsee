@@ -33,6 +33,7 @@ export default class AboutUs extends Component  {
 
     const Tbilisee = 'https://core.tbilisee.ge/';
     const {arrayAboutUs} = this.state;
+    const {t, i18n} = this.props;
 
   return (
     <>
@@ -50,7 +51,21 @@ export default class AboutUs extends Component  {
           <div className="about-us__second">
             <Row xs={1} lg={2}>
               <Col>
-                  <p className="about-us__paragraph">{arrayAboutUs.top_text_left_en}</p>
+                  <p className="about-us__paragraph">{(() => {
+        if (i18n.language == 'GE') {
+          return (
+            arrayAboutUs.top_text_left_ge
+          )
+        } else if (i18n.language == 'RU') {
+          return (
+            arrayAboutUs.top_text_left_ru
+          )
+        } else {
+          return (
+            arrayAboutUs.top_text_left_en
+          )
+        }
+      })()}</p>
               </Col>
               <Col>
                   <p className="about-us__paragraph">{arrayAboutUs.top_text_right_en}</p>
@@ -58,8 +73,9 @@ export default class AboutUs extends Component  {
             </Row>
           </div>
         </div>
-        <h3 className="aboutus-goal__title">
+        <h3 className="aboutus-goal__title relative">
           {arrayAboutUs.goal.goal_title_en}
+          <div className="absolute goal-absolute">Goal</div>
         </h3>
         <div className="about-us__goal">
         <Row xs={1} lg={2}>

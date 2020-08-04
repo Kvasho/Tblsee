@@ -1,7 +1,5 @@
 import React,{Component} from 'react';
 
-import { useTranslation } from 'react-i18next';
-
 // PACKAGES
 import {Link} from "react-router-dom";
 import AOS from 'aos';
@@ -11,16 +9,13 @@ import axios from 'axios';
 // COMPONENTS
 import CarouselLanding from '../../Components/CarouselLanding';
 import Header from '../../Components/Header';
-import Swiper from '../../Components/swiper';
-import SwiperMain from "../../Components/swiper-main";
+import { useTranslation } from 'react-i18next';
 
 // IMAGES
 import HotelRound from "../../Assets/icons/tbilisee-hotel-round-white.svg";
 
 // SCSS
 import "./Landing.scss";
-
-import Masonry from 'react-masonry-css';
 
 
 export default class Landing extends Component {
@@ -30,9 +25,7 @@ export default class Landing extends Component {
 
   componentDidMount(){
     axios.get('https://core.tbilisee.ge/api/mainPage').then(res => {
-      this.setState( {arrayLanding: res.data} );   
-
-
+      this.setState( {arrayLanding: res.data} ); 
     })
     AOS.init({
 			duration: 2000
@@ -48,6 +41,8 @@ export default class Landing extends Component {
     const half = Math.ceil(arrayLanding.eat_drinks.images.length / 2);
     const eatsFirstHalf = arrayLanding.eat_drinks.images.splice(0, half)
     const eatsSecondHalf = arrayLanding.eat_drinks.images.splice(-half)
+    const {t, i18n} = this.props;
+    
 
     // const { t } = useTranslation();
 
@@ -57,8 +52,22 @@ export default class Landing extends Component {
     <div className="landing">
       <div className="landing-head__swiper">
       <div className="header-title">
-          <h1>{arrayLanding.headerTitle.title_en}</h1>
-          <Link className="header-title__btn" to="/luxury">explore</Link>
+          <h1>{(() => {
+        if (i18n.language === 'GE') {
+          return (
+            arrayLanding.headerTitle.title_ge
+          )
+        } else if (i18n.language === 'RU') {
+          return (
+            arrayLanding.headerTitle.title_ru
+          )
+        } else {
+          return (
+            arrayLanding.headerTitle.title_en
+          )
+        }
+      })()}</h1>
+          <Link className="header-title__btn" to="/luxury">{t('explore')}</Link>
       </div>
       
       <img className="landing-badge" src={HotelRound}/>
@@ -69,14 +78,42 @@ export default class Landing extends Component {
        headerTitle={arrayLanding.headerTitle}
        />
       </div>       
-      <h2  className="exploring-title">{arrayLanding.exploring.title_en}</h2>      
+      <h2  className="exploring-title">{(() => {
+        if (i18n.language === 'GE') {
+          return (
+            arrayLanding.exploring.title_ge
+          )
+        } else if (i18n.language === 'RU') {
+          return (
+            arrayLanding.exploring.title_ru
+          )
+        } else {
+          return (
+            arrayLanding.exploring.title_en
+          )
+        }
+      })()}</h2>      
         <section data-aos="fade-up"
             data-aos-anchor-placement = "top-center" className="exploring container-own">
-              <div>
+              
             <div 
             >
               <h3>Tbilisi <span className="white">Hotel</span></h3>
-              <p>{arrayLanding.exploring.description_en}</p>
+              <p>{(() => {
+        if (i18n.language == 'GE') {
+          return (
+            arrayLanding.exploring.description_ge
+          )
+        } else if (i18n.language === 'RU') {
+          return (
+            arrayLanding.exploring.description_ru
+          )
+        } else {
+          return (
+            arrayLanding.exploring.description_en
+          )
+        }
+      })()}</p>
             </div>
             <div>
               <img  src={Tbilisee + arrayLanding.exploring.big_image} alt="/" className="exploring-image__full"/>
@@ -84,7 +121,7 @@ export default class Landing extends Component {
             <div className="relative">
               <img  src={Tbilisee + arrayLanding.exploring.small_image} alt="/" className="exploring-image__half absolute"/>
             </div>
-            </div>
+           
         </section>
       <section data-aos="fade-up"
             data-aos-anchor-placement = "top-center" className="landing-gallery">
@@ -92,7 +129,21 @@ export default class Landing extends Component {
           <img src={Tbilisee + arrayLanding.gallery.big_image} alt="landing gallery" className="full"/>
         </div>
         <div>
-          <p>{arrayLanding.gallery.description_en}</p>
+          <p>{(() => {
+        if (i18n.language === 'GE') {
+          return (
+            arrayLanding.gallery.description_ge
+          )
+        } else if (i18n.language === 'RU') {
+          return (
+            arrayLanding.gallery.description_ru
+          )
+        } else {
+          return (
+            arrayLanding.gallery.description_en
+          )
+        }
+      })()}</p>
         </div>
         <div className="relative">
           <h3>{arrayLanding.gallery.title_en}</h3>
@@ -105,7 +156,7 @@ export default class Landing extends Component {
           <img src={Tbilisee + arrayLanding.gallery.small_image} alt="*" className="landing-neighborhood__img2"/>
         </div>
         <div className="relative">
-          <Link to="/gallery" className="landing-gallery__btn absolute">See More</Link>
+          <Link to="/gallery" className="landing-gallery__btn absolute">{t('see more')}</Link>
         </div>
       </section>
       {/* <section data-aos="fade-up"
@@ -125,14 +176,42 @@ export default class Landing extends Component {
       <section  className="landing_eats container-own" data-aos="fade-up"
             data-aos-anchor-placement = "top-center">
           <div>
-          <h3 className="eats-title">{arrayLanding.eat_drinks.title_en}</h3>
-              <p className="eats-paragraph">{arrayLanding.eat_drinks.description_en}</p>
+          <h3 className="eats-title">{(() => {
+        if (i18n.language === 'GE') {
+          return (
+            arrayLanding.eat_drinks.title_ge
+          )
+        } else if (i18n.language === 'RU') {
+          return (
+            arrayLanding.eat_drinks.title_ru
+          )
+        } else {
+          return (
+            arrayLanding.eat_drinks.title_en
+          )
+        }
+      })()}</h3>
+              <p className="eats-paragraph">{(() => {
+        if (i18n.language === 'GE') {
+          return (
+            arrayLanding.eat_drinks.description_ge
+          )
+        } else if (i18n.language === 'RU') {
+          return (
+            arrayLanding.eat_drinks.description_ru
+          )
+        } else {
+          return (
+            arrayLanding.eat_drinks.description_en
+          )
+        }
+      })()}</p>
                  <Link to="/restaurant" className="eats-button">See More</Link>
           </div>
           <div className="landing-eats__img">
           {
               eatsFirstHalf.map((image,index) => 
-              <img src={Tbilisee + image} alt={index} className="full"/>
+              <img src={Tbilisee + image} alt={index} className="full" key={index}/>
               )
             }
           
@@ -140,7 +219,7 @@ export default class Landing extends Component {
           <div className="landing-eats__img2">
             {
               eatsSecondHalf.map((image,index) => 
-              <img src={Tbilisee + image} alt={index} className="full"/>
+              <img src={Tbilisee + image} alt={index} className="full" key={index}/>
               )
             }
           </div>
@@ -148,8 +227,36 @@ export default class Landing extends Component {
       <section data-aos="fade-up"
             data-aos-anchor-placement = "top-center" className="landing-neighborhood">
           <div className="landing-neighborhood__txt">   
-              <h3>{arrayLanding.neighborhood.title_en}</h3>
-              <p>{arrayLanding.neighborhood.description_en}</p>
+              <h3>{(() => {
+        if (i18n.language === 'GE') {
+          return (
+            arrayLanding.neighborhood.title_ge
+          )
+        } else if (i18n.language === 'RU') {
+          return (
+            arrayLanding.neighborhood.title_ru
+          )
+        } else {
+          return (
+            arrayLanding.neighborhood.title_en
+          )
+        }
+      })()}</h3>
+              <p>{(() => {
+        if (i18n.language === 'GE') {
+          return (
+            arrayLanding.neighborhood.description_ge
+          )
+        } else if (i18n.language === 'RU') {
+          return (
+            arrayLanding.neighborhood.description_ru
+          )
+        } else {
+          return (
+            arrayLanding.neighborhood.description_en
+          )
+        }
+      })()}</p>
                 <Link to="/location" className="neighborhood-more">View More</Link>
           </div>
             

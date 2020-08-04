@@ -44,7 +44,7 @@ import Image from "../Assets/Images/landing-swiper.jpg"
           {
             props.rooms.map((room,index) => 
             <div>
-            <img src={room.main_image} className="swiper-first__img"/>
+            <img src={room.main_image} className="swiper-first__img" key={index}/>
             </div>)
           }
         </Swiper>

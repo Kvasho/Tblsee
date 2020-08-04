@@ -31,15 +31,14 @@ export default class Gallery extends Component {
                 let data = res.data.image
                 const slice = data.slice(this.state.offset, this.state.offset + this.state.perPage)
                 const Tbilisee = 'https://core.tbilisee.ge/';
-                const postData = slice.map(pd => <React.Fragment>
+                const postData = slice.map((pd,index) => <React.Fragment>
  
-                    <img className="full" src={Tbilisee + pd} alt=""/>
+                    <img className="full" src={Tbilisee + pd} alt="" key={index}/>
                 </React.Fragment>)
                 this.setState({
                     pageCount: Math.ceil(data.length / this.state.perPage),
                     postData
                 })
-                console.log(this.state.pageCount,"PAGE COUNT")
             });
     }
     handlePageClick = (e) => {
@@ -59,7 +58,6 @@ export default class Gallery extends Component {
         this.receivedData()
     }
     render() {
-        console.log(this.state.data.image)
         const Tbilisee = 'https://core.tbilisee.ge/';
         return (
             <div>

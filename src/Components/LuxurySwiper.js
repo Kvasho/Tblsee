@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import Swiper from 'react-id-swiper';
-import { Link } from 'react-router-dom';
 
 // CSS
 import 'swiper/swiper.scss';
@@ -46,7 +45,7 @@ import "../Styles/common.scss";
           {
             props.arrayImg.map((image,index) => 
             <div>
-              <img src={Tbilisee + image} className="luxury-swiper__img"/>
+              <img src={Tbilisee + image} className="luxury-swiper__img" key={index}/>
           </div>
             )
           }      

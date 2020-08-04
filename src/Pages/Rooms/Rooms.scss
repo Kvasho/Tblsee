@@ -81,6 +81,14 @@
     }
 }
 
+.rooms-swiper {
+    height: 50vh;
+}
+
+.rooms-swiper .swiper-container {
+    height: 100% !important;
+}
+
 .rooms-left {
     left: -50px;
 }

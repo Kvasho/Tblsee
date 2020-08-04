@@ -1,7 +1,5 @@
 
 import React, { Component } from 'react';
-import Swiper from 'react-id-swiper';
-import { Link } from 'react-router-dom';
 
 // CSS
 import 'swiper/swiper.scss';
@@ -23,13 +21,13 @@ export default class Destination extends Component {
   }
   componentDidMount () {
     this.setState({testImages: this.props.arrayDestination[0]})
-    console.log(this.props.arrayDestination[0]);
   }
   render () {
   const Tbilisee = 'https://core.tbilisee.ge/';
   const toggleImage = (item) => {
     this.setState({testImages: item})
   }
+  const {t, i18n} = this.props;
   return (
 <>
   <>
@@ -38,15 +36,58 @@ export default class Destination extends Component {
       <img id="destination-main" src={Tbilisee + this.state.testImages.image} className="destination-img full"/>
             <div className="destination-content">
               <div>
-              <h2 className="destination-content__title">{this.state.testImages.title_en}</h2>
-              <p className="destination-content__paragraph" style={{ marginTop: "30px", marginBottom: "30px"}}>{this.state.testImages.description_en}</p>
+              <h2 className="destination-content__title">
+              {(() => {
+                    if (i18n.language === 'GE') {
+                      return (
+                        this.state.testImages.title_ge
+                      )
+                    } else if (i18n.language === 'RU') {
+                      return (
+                        this.state.testImages.title_ru
+                      )
+                    } else {
+                      return (
+                        this.state.testImages.title_en
+                      )
+                    }
+      })()}</h2>
+              <p className="destination-content__paragraph" style={{ marginTop: "30px", marginBottom: "30px"}}>{(() => {
+                    if (i18n.language === 'GE') {
+                      return (
+                        this.state.testImages.description_ge
+                      )
+                    } else if (i18n.language === 'RU') {
+                      return (
+                        this.state.testImages.description_ru
+                      )
+                    } else {
+                      return (
+                        this.state.testImages.description_en
+                      )
+                    }
+      })()}</p>
               <p className="destination-content__paragraph">{this.state.testImages.time} min trip</p>
               </div>
               <div className="destination-cards">
               {
                   this.props.arrayDestination.map((item,index) => 
-                  <div className="destination-card">
-                      <h3>{item.title_en}</h3>
+                  <div className="destination-card" key={index}>
+                      <h3>{(() => {
+                    if (i18n.language === 'GE') {
+                      return (
+                        item.title_ge
+                      )
+                    } else if (i18n.language === 'RU') {
+                      return (
+                        item.title_ru
+                      )
+                    } else {
+                      return (
+                        item.title_en
+                      )
+                    }
+      })()}</h3>
                   <img src={Tbilisee + item.image} className="destination-card__image" onClick={() => toggleImage(item)}/> 
                 </div>
                   )

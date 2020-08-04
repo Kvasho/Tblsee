@@ -112,7 +112,13 @@
 
 .aboutus-goal__img {
     width: 100%;
-    height: 80rem;
+    height: 80vh;
+}
+
+.goal-absolute {
+    opacity: 0.2;
+    right: 0;
+    top: 0;
 }
 
 @media(max-width: 1300px) {

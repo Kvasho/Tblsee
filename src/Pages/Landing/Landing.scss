@@ -14,19 +14,21 @@
     padding-left:40% !important;
 }
 
+@media(max-width: 800px){
+    .landing-head__Swiper img {
+        height: 30vh !important;
+        display: block;
+        margin: auto;
+        width: 22vw !important;
+    }
+}
+
 @media(max-width: 1000px) {
-    .landing-head__swiper .swiper-slide {
-        padding: 0 !important;
-        margin: 0 10rem !important;
-    }
-
-    .exploring-title {
-        font-size: 70px !important;
-    }
-
-    .exploring p {
-        width: calc(100% - 20rem);
-        margin: auto !important;
+    .landing-head__swiper img {
+        height: 39vh!important;
+        display: block;
+        margin: auto;
+        width: 32vw!important;
     }
 }
 
@@ -346,22 +348,24 @@
 }
 
 @media(max-width: 1800px){
+    .landing-head__swiper img {
+        height: 60vh;
+        display: block;
+        margin: auto;
+        width: 20vw;
+    }
     .landing-gallery {
         grid-template-rows: 700px 400px;
     }
 }
 
-@media(max-width: 900px) {
-    .landing-head__swiper img {
-        width: 250px !important;
-    }
-}
-
 @media(max-width: 1500px) {
     .landing-head__swiper img {
-        width: 350px;
+        height: 55vh;
+        display: block;
+        margin: auto;
+        width: 23vw;
     }
-
     .header-title {
         bottom: 50%;
     }
@@ -372,10 +376,32 @@
     }
 }
 
+@media(max-width: 1800px) {
+    .exploring h3 {
+        font-size: 9rem;
+    }
+    .exploring p {
+        font-size: 2rem;
+    }
+    .landing-neighborhood h3 {
+        font-size: 60px;
+        margin-bottom: 5rem;
+    }
+
+    .landing-neighborhood p {
+        font-size: 20px;
+        margin-bottom: 6rem;
+    }
+
+    .neighborhood-more {
+        font-size: 40px;
+    }
+}
+
 @media(max-width: 1200px) {
     .landing-gallery {
         grid-template-rows: 400px 200px 500px 100px 400px 100px;
-        grid-template-columns: 400px;
+        grid-template-columns: 350px;
         margin-right: 0;
         margin-bottom: 50px;
         justify-content: center;
@@ -391,6 +417,7 @@
         margin-bottom: 5rem;
         font-size: 10rem;
         text-align: center;
+        margin-left: 0;
     }
 
     .landing-gallery__btn {
@@ -411,12 +438,16 @@
 
 
 @media(max-width: 1300px) {
+    
+    .landing-neighborhood__txt {
+        padding: 0;
+    }
     .neigborhood-img2 {
         height: 100%;
     }
     .exploring {
-        grid-template-columns: 500px;
-        grid-template-rows: 230px 300px 300px;
+        grid-template-columns: 350px;
+        grid-template-rows: 40vh 30vh 30vh;
         grid-gap: 0;
         justify-content: center;
 
@@ -447,9 +478,9 @@
     }
 
     .landing-neighborhood {
-        grid-template-columns: 500px;
+        grid-template-columns: 350px;
         justify-content: center;
-        grid-template-rows: 60vh 30vh 30vh;
+        grid-template-rows: 80vh 30vh 30vh;
     }
 
 
@@ -525,9 +556,13 @@
 }
 
 @media(max-width: 1000px) {
+    .header-title h1 {
+        width: 43rem;
+    }
     .landing_eats {
-        grid-template-columns: 500px;
+        grid-template-columns: 350px;
         justify-content: center;
+        grid-template-rows: 50vh;
     }
 
     .landing-eats__img2 {

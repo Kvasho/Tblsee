@@ -15,15 +15,17 @@
 }
 
 .header-black {
-    z-index: 0;
+    z-index: 10;
 }
 
 .book-now {
     color: #000000;
+    text-transform: uppercase;
 }
 
 .book-now__white {
     font-size: 15px;
+    text-transform: uppercase;
 }
 
 .book-now__white:hover {

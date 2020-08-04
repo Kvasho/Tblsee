@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 
 // PACKAGES
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import axios from 'axios';
 import AOS from 'aos';
 
@@ -42,9 +40,9 @@ export default class  Restaurant extends Component {
         arrayRestaurant.stories.map((item,index) => 
         <div data-aos="fade-up"
         data-aos-anchor-placement = "top-center"
-        className={index%2===1 ? "restaurant-gastronomy container-own" : "restaurant-gastronomy container-own direction-reverse"}>
-        <Row xs={1} lg={2} className="restaurant-gastronomy__wr width-full">
-          <Col>
+        className={index%2===1 ? "restaurant-gastronomy container-own direction-reverse" : "restaurant-gastronomy container-own "}>
+        <div className="restaurant-gastronomy__wr width-full">
+         
             <div className="restaurant-block">
               <h2 className="restaurant-gastronomy__title">{(() => {
                     if (i18n.language === 'GE') {
@@ -76,12 +74,9 @@ export default class  Restaurant extends Component {
                       )
                     }
       })()}</p>
-            </div> 
-          </Col>
-          <Col>
-            <img src={Tbilisee + item.image} alt="gastronomy" className="width-full" key={index}/> 
-          </Col>
-        </Row>
+            </div>                    
+            <img src={Tbilisee + item.image} alt="gastronomy" className="full" key={index}/> 
+        </div>
       </div>)
       }
       <h3 className="restaurant-menu__title" data-aos="fade-up"

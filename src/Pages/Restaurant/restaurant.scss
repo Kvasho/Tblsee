@@ -11,7 +11,8 @@
     }
 
     &-block {
-        width: 570px;
+        width: 70%;
+        margin: auto;
     }
 
     &-gastronomy {
@@ -44,7 +45,10 @@
 }
 
 .restaurant-gastronomy__wr {
-    margin: auto !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80vh;
+    grid-gap: 160px;
 }
 
 .restaurant-menu__title {
@@ -119,7 +123,40 @@
     }
 }
 
+@media(max-width: 2000px){
+    .restaurant-gastronomy__wr {
+        grid-gap: 50px;
+    }
+
+    .restaurant-gastronomy__title, 
+    .restaurant-desert__title {
+        font-size: 49px;
+        line-height: 60px;
+        letter-spacing: 16px;
+        margin-bottom: 100px;
+        padding-top: 0%;
+    }
+
+    .restaurant-gastronomy__paragraph, 
+    .restaurant-desert__paragraph {
+        font-size: 28px;
+    }
+}
+
 @media(max-width: 1300px) {
+    .restaurant-gastronomy__wr {
+        grid-template-columns: 350px;
+        grid-template-rows: 20vh 40vh;
+        grid-gap: 160px;
+        justify-content: center;
+    }
+    .restaurant-gastronomy__title, 
+    .restaurant-desert__title {
+        letter-spacing: 4px;
+        font-size: 33px;
+        line-height: 48px;
+        margin-bottom: 30px;
+    }
     .restaurant-menu {
         margin-top: 17rem;
         display: grid;
@@ -127,7 +164,7 @@
         /* grid-template-rows: 100px; */
         grid-row-gap: 10rem;
         /* row-gap: 10rem; */
-        justify-items: center;
+        // justify-items: center;
     }
     .restaurant-block {
         width: 100%;

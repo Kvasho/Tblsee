@@ -35,10 +35,11 @@ export default class Landing extends Component {
     if(!this.state.arrayLanding) {
       return "loading"; //TODO: Need Loading State
     }
+    console.log(this.state.arrayLanding,"arrayLANDING")
 
     const Tbilisee = 'https://core.tbilisee.ge/';
     const {arrayLanding} = this.state;
-    const half = Math.ceil(arrayLanding.eat_drinks.images.length / 2);
+    const half = 3;
     const eatsFirstHalf = arrayLanding.eat_drinks.images.splice(0, half)
     const eatsSecondHalf = arrayLanding.eat_drinks.images.splice(-half)
     const {t, i18n} = this.props;

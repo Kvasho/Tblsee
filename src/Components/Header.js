@@ -19,7 +19,8 @@ class Header extends Component  {
   constructor(props) {
 		super(props);
 		this.state = {
-      burgerMenuOpen: true
+      burgerMenuOpen: true,
+      isActive: 'EN'
     };
   }
 
@@ -35,7 +36,11 @@ class Header extends Component  {
   render(){
     const {burgerMenuOpen} = this.state;
     let lang = i18next.language
-    const otherLang = ['RU', 'GE'];
+    const otherLang = ['EN','RU', 'GE'];
+    const index = otherLang.indexOf(lang);
+    if (index > -1) {  
+    otherLang.splice(index, 1);
+    }
     return (     
       <>       
           {
@@ -45,7 +50,7 @@ class Header extends Component  {
             <div className="flex">
              <img src={ BurgerMenuWhite } className="header-burger_menu" alt="Burger Menu" onClick={this.toggleClass}/>
               <div className="language-bar__white">
-          <li onClick={() => this.handleClick('en')}>EN</li>
+          <li onClick={() => this.handleClick('EN')} className="language-first">{lang}</li>
                 <div className="languages-bar">
                   {/* // TODO CREATE SELECT WITH OPTIONS */}
                   {

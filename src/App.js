@@ -24,7 +24,7 @@ function App() {
             <Routers t={t} i18n={i18n}/> 
         </div>
        </ScrollIntoView>
-    </BrowserRouter>  
+    </BrowserRouter> 
   );
 }
 

@@ -224,6 +224,9 @@
 }
 
 @media(max-width: 1100px) {
+    .luxury-about h2 {
+        text-align: center !important;
+    }
     .luxury-swiper {
         height: 400px;
     }
@@ -242,16 +245,37 @@
         width: 100%;
         margin: 0px auto 10rem auto;
     }
+    .luxury-style p {
+        padding: 0 10px;
+    }
+    .luxury-restaurant h4 {
+        font-size: 23px;
+    }
     .luxury-cell__txt h2 {
         margin: 50px 0 0 0 !important;
+    }
+    .luxury-credit h5 {
+        text-align: center;
+    }
+    .luxury-about p {
+        width: 100%;
     }
     .luxury-cell__txt {
         overflow: hidden;
         padding: 20px;
     }
+    .luxury-credit__btn {
+        font-size: 16px;
+        padding: 11px 30px;
+        margin: auto;
+    }
     .luxury-about p {
         margin: 0 auto 20px auto;
         font-size: 16px;
+    }
+    .luxury-swiper__controller {
+        left: 60% !important;
+        bottom: -4px !important;
     }
     .luxury-about {
         padding-left: 0;
@@ -260,9 +284,14 @@
     .luxury-cell__txt p {
         font-size: 16px;
     }
+    .luxury-absolute {
+        display: none;
+    }
     .luxury-style {
-        grid-template-columns: 100%;
-        grid-template-rows: 0 250px 160px 210px 150px 200px;
+        grid-template-columns: 350px;
+        grid-template-rows: auto;
+        justify-content: center;
+        row-gap: 3rem;
     }
     .luxury-restaurant .row {
         display: block;
@@ -284,7 +313,7 @@
     }
 
     .luxury-restaurant__half {
-        display: flex;
+        display: block;
         width: 100%;
 
         & img {

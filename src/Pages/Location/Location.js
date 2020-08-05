@@ -63,8 +63,6 @@ export default class Location extends Component {
       })()}</p>
 
       <Destination arrayDestination={this.state.arrayUrban.packages} t={t} i18n={i18n}/>)
-      
-
       {
         arrayUrban.informations.map((info,index) => 
         <div className="location-exploring container-own">

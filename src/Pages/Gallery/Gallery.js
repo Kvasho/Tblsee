@@ -18,7 +18,7 @@ export default class Gallery extends Component {
             perPage: 9,
             currentPage: 0,
             photoIndex: 0,
-            isOpen: false
+            isOpen: true
         };
         this.handlePageClick = this
             .handlePageClick
@@ -33,7 +33,7 @@ export default class Gallery extends Component {
                 const Tbilisee = 'https://core.tbilisee.ge/';
                 const postData = slice.map((pd,index) => <React.Fragment>
  
-                    <img className="full" src={Tbilisee + pd} alt="" key={index}/>
+                    <img className="full" src={Tbilisee + pd} alt="" key={index} onClick={() => this.setState({ isOpen: true })}/>
                 </React.Fragment>)
                 this.setState({
                     pageCount: Math.ceil(data.length / this.state.perPage),
@@ -62,6 +62,7 @@ export default class Gallery extends Component {
         return (
             <div>
                 <HeaderBlack/>
+                <Lightbox isOpen={this.state.isOpen}/>
                 <PageTitle title="gallery" style={{marginBottom: "10rem"}}/>
                 <div className="gallery container-own">
                {this.state.postData}
@@ -79,7 +80,6 @@ export default class Gallery extends Component {
                     subContainerClassName={"pages pagination"}
                     activeClassName={"active"}/>
             </div>
-
         )
     }
 }

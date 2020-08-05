@@ -38,7 +38,7 @@ class Luxury extends Component {
           <HeaderBlack />
           <PageTitle title="Luxury"/> 
           {
-            arrayLuxury.map((item,index) => <>
+            arrayLuxury.room.map((item,index) => <>
             <div className="container-own luxury">
             <div className="luxury-absolute"/>
             <section className="luxury-swiper">

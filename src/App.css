@@ -10,7 +10,11 @@ html {
     font-size: 10px;
 }
 
-
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'playfair-italic' !important;
+}
 
 .btn-outline-primary:hover {
     color: currentColor !important;
@@ -60,12 +64,29 @@ a:hover {
 }
 
 @font-face {
-    font-family: 'playfair-normal';
+    font-family: 'playfair-italic';
+    src: local('./Assets/Fonts/PlayfairDisplay-Italic.ttf') format('truetype');
+  }
+
+@font-face {
+    font-family: 'playfair-regular';
     src: local('./Assets/Fonts/PlayfairDisplay-Regular.eot');
     src: local('./Assets/Fonts/PlayfairDisplay-Regular.eot?#iefix') format('embedded-opentype'),
         local('./Assets/Fonts/PlayfairDisplay-Regular.woff2') format('woff2'),
         local('./Assets/Fonts/PlayfairDisplay-Regular.woff') format('woff'),
         local('./Assets/Fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'playfair-italic';
+    src: local('./Assets/Fonts/PlayfairDisplay-Italic.eot');
+    src: local('./Assets/Fonts/PlayfairDisplay-Italic.eot?#iefix') format('embedded-opentype'),
+        local('./Assets/Fonts/PlayfairDisplay-Italic.woff2') format('woff2'),
+        local('./Assets/Fonts/PlayfairDisplay-Italic.woff') format('woff'),
+        local('./Assets/Fonts/PlayfairDisplay-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

@@ -27,6 +27,8 @@
     }
 }
 
+
+
 .about-us__badge {
     position: absolute;
     right: -83px;
@@ -62,16 +64,16 @@
 .aboutus-goal__title {
     font-size: 40px;
     color: #000000;
-    text-align: center;
-    margin-top: 450px;
     position: relative;
+    margin: 45rem auto 0 auto;
+    width: fit-content;
 
     & span {
         position: absolute;
         font-size: 145px;
         color: #000000;
         color: gray;
-        left: 46%;
+        left: 20%;
         top: -168%;
     }
 }
@@ -80,7 +82,7 @@
     margin-top: 140px;
     display: grid;
     grid-template-rows: 70vh;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
 }
 
 .aboutus-goal__paragraph {

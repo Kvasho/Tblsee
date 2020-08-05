@@ -49,7 +49,11 @@
     grid-template-rows:60vh;
     grid-template-columns: 1fr 1fr;
     grid-gap: 16rem;
-    margin-top: 17rem;
+    margin-top: 25rem;
+}
+
+.align-right {
+    text-align: right;
 }
 
 .rooms-description {
@@ -145,10 +149,11 @@
     }
     .rooms-luxury {
         display: grid;
-        grid-template-rows: 50vh 50vh;
-        grid-template-columns: 350px;
+        grid-template-rows: 30vh auto;
+        grid-template-columns: 300px;
         justify-content: center;
         grid-gap: 7rem;
+        padding: 20px;
     }
 
     .rooms-description__title {

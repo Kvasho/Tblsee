@@ -68,7 +68,7 @@ const Routers = (props) => {
 					component = { MidRange }
 				/>
 			</Switch>
-			<Footer/>
+			<Footer t={props.t} i18n={props.i18n}/>
 			</>
 		);
 	}

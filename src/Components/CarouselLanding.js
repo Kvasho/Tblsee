@@ -19,7 +19,7 @@ export default (props) => {
   const {doors} = props;
   return (
     <Swiper
-      slidesPerView = {2}  
+      slidesPerView = {1}  
     >
        
       {

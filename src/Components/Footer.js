@@ -20,13 +20,28 @@ export default class Footer extends Component {
       return "loading"; //TODO: Need Loading State
     }
     const {arrayContacts} = this.state;
+    const {t,i18n} = this.props;
   return (
     <footer className="footer ">
       <div className="footer-wr container-own">
 
   <Row xs={1} md={4} >
   <Col><h3 className="footer-cell__title">address</h3>
-          <p className="footer-cell__subtitle">{arrayContacts.contacts.address}</p></Col>
+          <p className="footer-cell__subtitle">{(() => {
+                    if (i18n.language === 'GE') {
+                      return (
+                        arrayContacts.contacts.address_ge
+                      )
+                    } else if (i18n.language === 'RU') {
+                      return (
+                        arrayContacts.contacts.address_ru
+                      )
+                    } else {
+                      return (
+                        arrayContacts.contacts.address_en
+                      )
+                    }
+      })()}</p></Col>
     <Col>
     <h3 className="footer-cell__title">phone</h3>
           <p className="footer-cell__subtitle">

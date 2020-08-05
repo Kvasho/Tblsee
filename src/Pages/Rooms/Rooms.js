@@ -48,13 +48,13 @@ export default class  Rooms extends Component {
         <>
           <div data-aos="fade-up"
               data-aos-anchor-placement = "top-center"
-              className={index%2===1 ? "rooms-luxury container-own" : "rooms-luxury container-own direction-reverse"}>
+              className={index%2===1 ? "rooms-luxury container-own direction-reverse" : "rooms-luxury container-own "}>
           <div className="relative">
-            <div className={index%2===1 ? "rooms-background_first rooms-left" : "rooms-background_first "}/>
+            <div className={index%2===1 ? "rooms-background_first " : "rooms-background_first rooms-left"}/>
             <img src={Tbilisee + room.main_image} alt="Luxury room" className="full"/>
           </div>
           <div>
-      <h5 className={index%2==1 ? "rooms-description__subtitle" : "rooms-description__subtitle align-right"}>room</h5>
+      <h5 className={index%2==1 ? "rooms-description__subtitle align-right" : "rooms-description__subtitle"}>room</h5>
             <h1 className="rooms-description__title">{(() => {
                     if (i18n.language === 'GE') {
                       return (

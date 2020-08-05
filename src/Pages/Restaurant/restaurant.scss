@@ -2,7 +2,7 @@
 
     &-wallpaper {
         width: 100%;
-        height: 100vh;
+        height: 73vh;
     }
 
     &-gastronomy, &-desert {
@@ -40,13 +40,31 @@
     &-shef__img {
         display: block;
         margin-top: 260px;
-        height: 70rem;
+        height: 60vh;
+    }
+}
+
+@media(max-width: 1600px) {
+    .restaurant-shef__img {
+        height: 50vh;
+    }
+}
+
+@media(max-width: 1000px) {
+    .restaurant-shef__img {
+        height: 20vh;
+    }
+}
+
+@media(max-width: 1300px) {
+    .restaurant-wallpaper {
+        height: 40vh;
     }
 }
 
 .restaurant-gastronomy__wr {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 2fr;
     grid-template-rows: 80vh;
     grid-gap: 160px;
 }
@@ -74,6 +92,10 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     row-gap: 10rem;
+    background-image: url('../../Assets/icons/menu-background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
     &__cell {
         display: flex;       

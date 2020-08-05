@@ -15,20 +15,17 @@ export default class Destination extends Component {
 
     this.state = {
       photoIndex: 0,
-      isOpen: false,
+      isOpen: true,
     };
   }
 
+  
+
   render() {
     const { photoIndex, isOpen } = this.state;
-
     return (
       <div>
-        <button type="button" onClick={() => this.setState({ isOpen: true })}>
-          Open Lightbox
-        </button>
-
-        {isOpen && (
+        {isOpen ? (
           <Lightbox
             mainSrc={images[photoIndex]}
             nextSrc={images[(photoIndex + 1) % images.length]}
@@ -45,7 +42,7 @@ export default class Destination extends Component {
               })
             }
           />
-        )}
+        ) : null}
       </div>
     );
   }

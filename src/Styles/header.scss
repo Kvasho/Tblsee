@@ -9,7 +9,7 @@
 .header-wr {
     display: flex;
     justify-content: space-between;
-    width: calc(100% - 140px);
+    width: calc(100% - 280px);
     margin: auto;
     margin: 40px auto;
 }
@@ -25,6 +25,10 @@
 
 .book-now__white {
     font-size: 15px;
+    text-transform: uppercase;
+}
+
+.language-first {
     text-transform: uppercase;
 }
 

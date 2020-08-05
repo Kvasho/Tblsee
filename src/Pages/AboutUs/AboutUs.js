@@ -67,7 +67,21 @@ export default class AboutUs extends Component  {
       })()}</p>
               
               
-                  <p className="about-us__paragraph">{arrayAboutUs.top_text_right_en}</p>
+                  <p className="about-us__paragraph">{(() => {
+        if (i18n.language == 'GE') {
+          return (
+            arrayAboutUs.top_text_right_ge
+          )
+        } else if (i18n.language == 'RU') {
+          return (
+            arrayAboutUs.top_text_right_ru
+          )
+        } else {
+          return (
+            arrayAboutUs.top_text_right_en
+          )
+        }
+      })()}</p>
              
             
           </div>

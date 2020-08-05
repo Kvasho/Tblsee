@@ -13,6 +13,7 @@ import { useTranslation } from 'react-i18next';
 
 // IMAGES
 import HotelRound from "../../Assets/icons/tbilisee-hotel-round-white.svg";
+import GalleryRound from '../../Assets/icons/hotel-badge.svg';
 
 // SCSS
 import "./Landing.scss";
@@ -73,10 +74,10 @@ export default class Landing extends Component {
       
       <img className="landing-badge" src={HotelRound}/>
        <CarouselLanding 
-       title={arrayLanding.headerTitle.title_en}
-       spaceBetween="-50" 
-       doors={arrayLanding.doors}
-       headerTitle={arrayLanding.headerTitle}
+        title={arrayLanding.headerTitle.title_en}
+        spaceBetween="-50" 
+        doors={arrayLanding.doors}
+        headerTitle={arrayLanding.headerTitle}
        />
       </div>       
       <h2  className="exploring-title">{(() => {
@@ -126,8 +127,9 @@ export default class Landing extends Component {
         </section>
       <section data-aos="fade-up"
             data-aos-anchor-placement = "top-center" className="landing-gallery">
+              <div className="landing-gallery__absolute absolute"/>
         <div>
-          <img src={Tbilisee + arrayLanding.gallery.big_image} alt="landing gallery" className="full"/>
+          <img src={Tbilisee + arrayLanding.gallery.big_image} alt="landing gallery" className="full gallery-big__image"/>
         </div>
         <div>
           <p>{(() => {
@@ -147,33 +149,37 @@ export default class Landing extends Component {
       })()}</p>
         </div>
         <div className="relative">
-          <h3>{arrayLanding.gallery.title_en}</h3>
+          <h3>{(() => {
+        if (i18n.language === 'GE') {
+          return (
+            arrayLanding.gallery.title_ge
+          )
+        } else if (i18n.language === 'RU') {
+          return (
+            arrayLanding.gallery.title_ru
+          )
+        } else {
+          return (
+            arrayLanding.gallery.title_en
+          )
+        }
+      })()}</h3>
           <img src={Tbilisee + arrayLanding.gallery.medium_image} alt="Landing Gallery" className="landing-neighborhood__img absolute"/>
         </div>
         <div className="relative">
-          <img src={ HotelRound } alt="badge" className="absolute landing-gallery__round"/>
+        <img className="gallery-badge absolute" src={GalleryRound}/>
         </div>
         <div>
           <img src={Tbilisee + arrayLanding.gallery.small_image} alt="*" className="landing-neighborhood__img2"/>
         </div>
         <div className="relative">
-          <Link to="/gallery" className="landing-gallery__btn absolute">{t('see more')}</Link>
+          <Link to="/gallery" className="landing-gallery__btn absolute">{t('See More')}</Link>
         </div>
       </section>
       {/* <section data-aos="fade-up"
             data-aos-anchor-placement = "top-center" className="landing-swiper">
               <SwiperMain/>
       </section> */}
-      {/* <Masonry
-      breakpointCols={breakpointColumnsObj}
-     className="my-masonry-grid"
-      columnClassName="my-masonry-grid_column">
-      {
-              eatsFirstHalf.map((image,index) => 
-              <img src={Tbilisee + image} alt={index} className="full"/>
-              )
-      }
-      </Masonry> */}
       <section  className="landing_eats container-own" data-aos="fade-up"
             data-aos-anchor-placement = "top-center">
           <div>

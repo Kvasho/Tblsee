@@ -49,8 +49,7 @@ export default class AboutUs extends Component  {
             <h5 className="about-us__subtitle">Hotel</h5>
           </div>
           <div className="about-us__second">
-            <Row xs={1} lg={2}>
-              <Col>
+            
                   <p className="about-us__paragraph">{(() => {
         if (i18n.language == 'GE') {
           return (
@@ -66,23 +65,21 @@ export default class AboutUs extends Component  {
           )
         }
       })()}</p>
-              </Col>
-              <Col>
+              
+              
                   <p className="about-us__paragraph">{arrayAboutUs.top_text_right_en}</p>
-              </Col>
-            </Row>
+             
+            
           </div>
         </div>
         <h3 className="aboutus-goal__title relative">
           {arrayAboutUs.goal.goal_title_en}
-          <div className="absolute goal-absolute">Goal</div>
+          <span className="absolute goal-absolute">Goal</span>
         </h3>
         <div className="about-us__goal">
-        <Row xs={1} lg={2}>
-          <Col>
-            <img src={Tbilisee + arrayAboutUs.goal.image} alt="Our Goal" className="aboutus-goal__img"></img>
-          </Col>
-          <Col>
+       
+            <img src={Tbilisee + arrayAboutUs.goal.image} alt="Our Goal" className="full"></img>
+          
           <div className="aboutus-goal__paragraph">
               <p>{arrayAboutUs.goal.description_en}</p>
                  <div className="about-us__since">
@@ -90,8 +87,7 @@ export default class AboutUs extends Component  {
                    <span>2016</span>
                  </div>
             </div>
-          </Col>
-        </Row>
+         
         </div>
       </div>
     </div>

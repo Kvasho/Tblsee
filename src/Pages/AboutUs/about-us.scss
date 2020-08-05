@@ -78,7 +78,9 @@
 
 .about-us__goal {
     margin-top: 140px;
-    display: flex;
+    display: grid;
+    grid-template-rows: 70vh;
+    grid-template-columns: 1fr 1fr;
 }
 
 .aboutus-goal__paragraph {
@@ -122,6 +124,12 @@
 }
 
 @media(max-width: 1300px) {
+    .aboutus-goal__paragraph p {
+        font-size: 20px;
+        line-height: 30px;
+        color: gray;
+        margin: 40px;
+    }
     .about-us__badge {
         position: absolute;
         right: -25px;
@@ -156,6 +164,16 @@
 }
 
 @media(max-width: 990px) {
+    .about-us__goal {
+        margin-top: 140px;
+        display: grid;
+        grid-template-rows: 40vh;
+        grid-template-columns: 350px;
+        justify-content: center;
+    }
+    .aboutus-goal__paragraph p {
+        line-height: 25px;
+    }
     .about-us {
         margin: auto;
     }

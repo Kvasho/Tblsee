@@ -399,12 +399,16 @@
 }
 
 @media(max-width: 1200px) {
+    .exploring-title {
+        font-size: 65px;
+    }
     .landing-gallery {
         grid-template-rows: 400px 200px 500px 100px 400px 100px;
         grid-template-columns: 350px;
         margin-right: 0;
         margin-bottom: 50px;
         justify-content: center;
+        row-gap: 2rem;
     }
 
     .landing-gallery p {
@@ -460,7 +464,7 @@
             margin: 0;
             font-size: 10rem;
             width: fit-content;
-            margin: auto;
+            margin: 0 auto 2rem auto;
             
             & span {
                 margin-left: 1rem;

@@ -126,6 +126,12 @@ a {
     line-height: 14rem;
 }
 
+@media(max-width: 1600px) {
+    .dropdown-menu_item {
+        line-height: 10rem;
+    }
+}
+
 .dropdown-menu_item:after {
     content: '';
     display: block;

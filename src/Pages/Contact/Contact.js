@@ -44,7 +44,7 @@ export default class Contact extends Component {
     <HeaderBlack/>
     <div data-aos="fade-up"
      data-aos-duration="3000" className="Contact">
-        <PageTitle title="Contact Us"/>
+        <PageTitle title="Contact Us" className="contact-us__mobile"/>
         <div data-aos="fade-down"
           data-aos-easing="linear"
           data-aos-duration="1500" className="contact-form">

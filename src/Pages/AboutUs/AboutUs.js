@@ -39,7 +39,8 @@ export default class AboutUs extends Component  {
     <>
     <HeaderBlack />
     <div data-aos="zoom-in" className="about-us">
-      <div className="about-us__wr">      
+      <div className="about-us__wr">  
+      <div className="about-us__absolute"/>    
         <PageTitle title="About Us"/>
         <img src={Tbilisee + arrayAboutUs.cover} alt="wallpaper" className="rooms-wallpaper container-own"/>
         <div className="about-us__info">

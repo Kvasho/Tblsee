@@ -23,7 +23,8 @@
     &__subtitle {
         font-size: 22px;
         line-height: 30px;
-        color: gray;
+        color: #000000;
+        opacity: 0.6;
     }
 }
 
@@ -51,9 +52,12 @@
 .about-us__second {
     font-size: 22px;
     line-height: 30px;
-    color: gray;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20rem;
+    margin-top: 6rem;
+    color: #000000;
+    opacity: 0.6;
 }
 
 .about-us__paragraph {
@@ -86,13 +90,21 @@
 }
 
 .aboutus-goal__paragraph {
-    margin-top: 30px;
+    font-size: 22px;
+    line-height: 30px;
+    color: #000000;
+    opacity: 0.6;
+    /* margin: 70px; */
+    width: 80%;
+    /* margin: auto; */
+    margin-top: 1rem;
 }
 
 .aboutus-goal__paragraph p {
     font-size: 22px;
     line-height: 30px;
-    color: gray;
+    color: #000000;
+    opacity: 0.6;
     margin: 70px;
 }
 
@@ -104,7 +116,9 @@
 
 .about-us__since {
     display: flex;
-    float: right;
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
 
     & span {
         font-size: 26px;
@@ -125,11 +139,35 @@
     top: 0;
 }
 
+@media(max-width: 800px) {
+    .about-us__second {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0rem;
+        padding: 0 10px;
+    }
+    .about-us__first {
+        margin: auto;
+    }
+
+    .about-us__title,.about-us__subtitle  {
+        text-align: center;
+    }
+}
+
+.about-us__absolute {
+    background-image: url("../../Assets//icons/menu-background.svg");
+    position: absolute;
+    width: 110rem;
+    height: 110rem;
+    right: -50%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+}
+
 @media(max-width: 1300px) {
     .aboutus-goal__paragraph p {
         font-size: 20px;
         line-height: 30px;
-        color: gray;
         margin: 40px;
     }
     .about-us__badge {
@@ -166,12 +204,15 @@
 }
 
 @media(max-width: 990px) {
+    .about-us__since span {
+        font-size: 20px;
+    }
     .about-us__goal {
-        margin-top: 140px;
-        display: grid;
-        grid-template-rows: 40vh;
-        grid-template-columns: 350px;
-        justify-content: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 40vh auto;
+    }
+    .about-us__since {
+        position: relative;
     }
     .aboutus-goal__paragraph p {
         line-height: 25px;

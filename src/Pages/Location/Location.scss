@@ -142,8 +142,8 @@
 
 .location-infos {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 70vh;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 100vh;
 
     & h2 {
         font-size: 99px;

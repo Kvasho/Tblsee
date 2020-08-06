@@ -168,7 +168,7 @@
 @media(max-width: 1300px) {
     .restaurant-gastronomy__wr {
         grid-template-columns: 350px;
-        grid-template-rows: 20vh 40vh;
+        grid-template-rows: auto 40vh;
         grid-gap: 160px;
         justify-content: center;
     }

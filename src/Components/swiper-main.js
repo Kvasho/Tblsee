@@ -16,11 +16,12 @@ import Image1 from '../Assets/Images/gallery-medium.jpg'
 // install Swiper components
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
-export default () => {
+export default (props) => {
+  console.log(props,"PROPS")
   return (
     <Swiper
       spaceBetween={40}
-      slidesPerView={3}
+      slidesPerView={1}
       navigation
       pagination={{ clickable: true, el: '.swiper-pagination',type: 'progressbar' }}
       scrollbar={{ draggable: true }}

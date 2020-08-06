@@ -40,7 +40,7 @@ export default class  Rooms extends Component {
     <HeaderBlack/>
     <div className="rooms container-own">
       <PageTitle title="Rooms"/>
-      <section className="rooms-swiper">
+      <section className="rooms-swiper container-own">
         <Navigation array={arrayRooms} tbilisee={Tbilisee}/>
       </section>
       {

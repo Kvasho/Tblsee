@@ -89,6 +89,9 @@
 }
 
 @media(max-width: 1000px) {
+    .contact-us__mobile {
+        display: none;
+    }
     .contactus-title {
         font-size: 45px;
         margin-bottom: 35px;

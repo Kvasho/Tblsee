@@ -494,11 +494,17 @@
 }
 
 @media(max-width: 1200px) {
+    .neigborhood-img2 {
+        margin-top: 1rem;
+    }
+    .gallery-big__image {
+        padding: 0;
+    }
     .exploring-title {
         font-size: 65px;
     }
     .landing-gallery {
-        grid-template-rows: 400px auto 500px 100px 400px 100px;
+        grid-template-rows: 300px auto 300px 0 200px auto;
         grid-template-columns: 350px;
         margin-right: 0;
         margin-bottom: 50px;
@@ -537,7 +543,17 @@
 
 
 @media(max-width: 1300px) {
-    
+    .landing-neighborhood p {
+        width: 100%;
+        padding: 0 10px;
+    }
+    .landing-gallery p {
+        margin: 0;
+        padding: 0;
+    }
+    .exploring-image__half {
+        padding: 0;
+    }
     .landing-neighborhood__txt {
         padding: 0;
     }
@@ -568,6 +584,7 @@
         }
 
         & p {
+            font-size: 20px;
             margin: 0 0 2rem 0;
             text-align: center;
         }
@@ -648,6 +665,8 @@
         font-size: 30px;
         width: fit-content;
         display: block;
+        margin: auto;
+        position: relative;
     }
 
     .eats-img__section {
@@ -662,7 +681,7 @@
     .landing_eats {
         grid-template-columns: 350px;
         justify-content: center;
-        grid-template-rows: 50vh;
+        grid-template-rows: auto;
     }
 
     .landing-eats__img2 {
@@ -672,14 +691,12 @@
 
 @media(max-width: 2000px) {
     .landing-gallery p {
-        font-size: 22px;
+        font-size: 20px;
         color: #000;
         opacity: .6;
-        margin-top: 60%;
-        margin-left: 30px;
-        margin-right: 30px;
-        padding: 0 8rem;
-        line-height: 30px;
+        margin: 60% 0 0 0;
+        padding: 0 1rem;
+        line-height: 25px;
     }
     
     .gallery-badge {

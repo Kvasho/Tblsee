@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import AOS from 'aos';
 import "aos/dist/aos.css";
 import axios from 'axios';
+import SwiperMain from '../../Components/swiper-main'
 
 // COMPONENTS
 import CarouselLanding from '../../Components/CarouselLanding';
@@ -176,10 +177,10 @@ export default class Landing extends Component {
           <Link to="/gallery" className="landing-gallery__btn absolute">{t('See More')}</Link>
         </div>
       </section>
-      {/* <section data-aos="fade-up"
+      <section data-aos="fade-up"
             data-aos-anchor-placement = "top-center" className="landing-swiper">
-              <SwiperMain/>
-      </section> */}
+              <SwiperMain arrayLandingRooms={arrayLanding.rooms}/>
+      </section>
       <section  className="landing_eats container-own" data-aos="fade-up"
             data-aos-anchor-placement = "top-center">
           <div>

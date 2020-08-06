@@ -7,6 +7,7 @@ import '../Styles/costumiseSwiper.scss';
 import Image from "../Assets/Images/landing-swiper.jpg"
 import '../Pages/Location/Location.scss'
 import '../Styles/common.scss';
+import DestCardsSwiper from '../Components/DestCardsSwiper';
 
 
 
@@ -73,6 +74,7 @@ export default class Destination extends Component {
       <p className="destination-content__paragraph">{this.state.testImages.time} min trip</p>
         </div>
         <div className="dest-cards relative">
+        <div className="dest-absolute"/>
           <div className="dest-cards__wr absolute">
         {
                   this.props.arrayDestination.map((item,index) => 
@@ -99,7 +101,9 @@ export default class Destination extends Component {
               </div>
         </div>
     </div>
-    <div className="dest-absolute"/>
+    <div className="dest-cards__mobile">
+            <DestCardsSwiper i18n={i18n} t={t} toggleImage={toggleImage}arrayDestination={this.props.arrayDestination}/>
+      </div>
   </div>
   {/* <div className="destination container-own relative"> 
     <div className="destination-background absolute"/>
@@ -166,7 +170,7 @@ export default class Destination extends Component {
             </div>
             </div> */}
   </>
-  )
+  
     
 </>
 

@@ -493,6 +493,83 @@
     }
 }
 
+.landing-swiper__absolute {
+    width: 80rem;
+    height: 80rem;
+    border-radius: 50%;
+    background: #F8F7F4;
+    z-index: -1;
+    left: 50%;
+    top: 13%;
+    transform: translate(-50%);
+}
+
+.landing-swiper {
+    height: 57vh !important;
+    margin-bottom: 70rem;
+
+    & .swiper-container {
+        height: 100% !important;
+    }
+
+    & h4 {
+        font-size: 54px;
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+
+    & a {
+        text-transform: uppercase;
+        font-size: 21px;
+    }
+}
+
+.landing-swiper__seemore {
+    display: flex;
+    position: relative;
+}
+
+.landing-swiper__title{
+    font-size: 73px;
+    text-transform: capitalize;
+    margin-bottom: 6rem;
+}
+
+.landing-swiper__seemore:after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 30px;
+    background: #000000;
+    opacity: 0.6;
+    position: absolute;
+    right: -22px;
+    top: 1px;
+}
+
+.landing-rooms__prev, .landing-rooms__next {
+    border: none;
+    background: none;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.landing-rooms__prev:focus {
+    outline: none;
+}
+
+.landing-rooms__next:focus {
+    outline: none;
+}
+
+.landing-rooms__prev span {
+    opacity: 0.6
+}
+
+.landing-rooms__next span {
+    opacity: 0.6;
+}
+
 @media(max-width: 1200px) {
     .neigborhood-img2 {
         margin-top: 1rem;

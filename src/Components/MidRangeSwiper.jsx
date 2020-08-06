@@ -57,6 +57,9 @@ import "../Styles/common.scss";
                
         </Swiper>
         <div className="absolute luxury-swiper__controller">
+            <div className="swiper-pagination swiper-pagination-progressbar">
+                <span className="swiper-pagination-progressbar-fill"></span>
+            </div>
             <button onClick={goPrev} className="luxury-prev"></button>
             <button onClick={ goNext } className="luxury-next"></button>
         </div>

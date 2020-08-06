@@ -1,40 +1,49 @@
-// import Swiper core and required components
-import React from 'react';
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/swiper.scss';
-import 'swiper/components/navigation/navigation.scss';
-import 'swiper/components/pagination/pagination.scss';
-import 'swiper/components/scrollbar/scrollbar.scss';
-
-// IMAGES 
-import Image1 from '../Assets/Images/gallery-medium.jpg'
-
-// install Swiper components
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
-
-export default (props) => {
-  console.log(props,"PROPS")
-  return (
-    <Swiper
-      spaceBetween={40}
-      slidesPerView={1}
-      navigation
-      pagination={{ clickable: true, el: '.swiper-pagination',type: 'progressbar' }}
-      scrollbar={{ draggable: true }}
-    >
-      <SwiperSlide><img src={Image1} alt="*"/></SwiperSlide>
-      <SwiperSlide><img src={Image1} alt="*"/></SwiperSlide>
-      <SwiperSlide><img src={Image1} alt="*"/></SwiperSlide>
-      <SwiperSlide><img src={Image1} alt="*"/></SwiperSlide>
-      <SwiperSlide><img src={Image1} alt="*"/></SwiperSlide>
-      <SwiperSlide><img src={Image1} alt="*"/></SwiperSlide>
-      <SwiperSlide><img src={Image1} alt="*"/></SwiperSlide>
-      <SwiperSlide><img src={Image1} alt="*"/></SwiperSlide>
-      <div class="swiper-pagination"></div>
-    </Swiper>
-  );
-};
+  import React, { useRef } from 'react';
+  import Swiper from 'react-id-swiper';
+import { Link } from 'react-router-dom';
+  const SwiperMain = (props) => {
+    console.log(props.arrayLandingRooms,"111111111111111111111111111")
+    const params = {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+        spaceBetween:    240,
+        slidesPerView:   3,
+        activeSlideKey:  '2'
+    }
+    const Tbilisee = 'https://core.tbilisee.ge/';
+    const swiperRef = useRef(null);
+    const goNext = () => {
+      if (swiperRef.current && swiperRef.current.swiper) {
+        swiperRef.current.swiper.slideNext();
+      }
+    };
+    const goPrev = () => {
+      if (swiperRef.current && swiperRef.current.swiper) {
+        swiperRef.current.swiper.slidePrev();
+      }
+    };
+    return (
+      <>
+      <Swiper ref={swiperRef} {...params} className="landing-swiper__rooms 	swiper-container">
+        {
+          props.arrayLandingRooms.map((item,index) => <div><img src={Tbilisee + item.main_image} key={index} className="full swiper-slide"/></div>)
+        }
+      </Swiper>
+      <div className="landing-swiper__controller">
+      <button onClick={goPrev} className="landing-rooms__prev">prev  <span>/ garden view</span></button>
+      <div>
+        <h4>mid-range</h4>
+        <div className="flex relative">
+          <Link to='/rooms' className="landing-swiper__seemore">see more</Link>
+          <Link>book now</Link>
+        </div>       
+      </div>
+      <button onClick={ goNext } className="landing-rooms__next"><span>city view / </span> next</button>
+  </div>
+  </>
+    )
+  };
+  export default SwiperMain;

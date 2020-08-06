@@ -69,7 +69,7 @@
 
 .destination-card {
     display: grid;
-    grid-template-rows: auto auto;
+    grid-template-rows: 50px auto;
     position: relative;
 }
 
@@ -79,6 +79,7 @@
     cursor: pointer;
     position: absolute;
     bottom: 0;
+    z-index: 11;
 }
 
 .destination-card__image:hover {
@@ -240,7 +241,7 @@
 .dest {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 80vh;
+    grid-template-rows: 90vh;
     grid-gap: 40px;
     margin-bottom: 35rem;
     position: relative;
@@ -262,15 +263,15 @@
     grid-template-columns: 1fr 1fr 1fr;
     bottom: 0;
     height: 100%;
-    grid-gap: 130px;
+    grid-gap: 70px;
 }
 
 .dest-absolute {
     position: absolute;
-    bottom: -130px;
-    right: -143px;
+    left: -85%;
+    top: -30px;
     background: #81BACB;
-    width: 100%;
+    width: 200%;
     height: 58vh;
     opacity: 0.14;
     z-index: -1;
@@ -278,6 +279,72 @@
 
 .destination-img {
     padding-right: 200px;
+}
+
+.dest-swiper__prev {
+    background: url('../../Assets/icons/swiper-arrow-left.svg') !important;
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+}
+
+.dest-swiper__next {
+    background: url('../../Assets/icons/swiper-arrow-right.svg') !important;
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+}
+
+.dest-swiper__controls {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.dest-cards__mobile {
+    display: none;
+
+    & .swiper-container {
+        height: 100%;
+    }
+}
+
+@media(max-width: 1100px) {
+    .destination-card {
+        position: relative !important;
+    }
+    .dest-col {
+        grid-template-rows: auto !important;
+    }
+    .destination-content__title {
+        font-size: 30px !important;
+    }
+    .destination-content__paragraph {
+        font-size: 15px;
+        width: 100%;
+        line-height: 20px;
+        margin: 10px 0 !important;
+    }
+    .dest {
+        grid-template-columns: 350px !important;
+        grid-template-rows: 40vh !important;
+        justify-content: center !important;
+        grid-gap: 5px;
+    }
+    .dest-cards__mobile {
+        display: block;
+    }
+    .destination-img {
+        padding: 0 !important;
+    }
+    .dest {
+        grid-template-columns: 1fr;
+        grid-template-rows: 60vh;
+    }
+
+    .dest-cards {
+        display: none;
+    }
 }
 
 @media(max-width: 2100px) {

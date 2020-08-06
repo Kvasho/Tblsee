@@ -63,7 +63,7 @@ const Routers = (props) => {
 					component = {() =>  <Luxury t={props.t} i18n={props.i18n}/> }
 				/>
 				<Route
-					path = "/rooms/midrange"
+					path = "/midrange"
 					exact
 					component = { MidRange }
 				/>

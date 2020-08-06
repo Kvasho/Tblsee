@@ -178,7 +178,9 @@ export default class Landing extends Component {
         </div>
       </section>
       <section data-aos="fade-up"
-            data-aos-anchor-placement = "top-center" className="landing-swiper">
+            data-aos-anchor-placement = "top-center" className="landing-swiper relative">
+              <div className="landing-swiper__absolute absolute"/>
+              <h2 className="landing-swiper__title container-own">rooms</h2>
               <SwiperMain arrayLandingRooms={arrayLanding.rooms}/>
       </section>
       <section  className="landing_eats container-own" data-aos="fade-up"

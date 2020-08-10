@@ -11,6 +11,8 @@ import SwiperMain from '../../Components/swiper-main'
 import CarouselLanding from '../../Components/CarouselLanding';
 import Header from '../../Components/Header';
 import { useTranslation } from 'react-i18next';
+import LandingRoomsSwiper from '../../Components/LandingRoomsSwiper'
+import Swiper from 'react-id-swiper';
 
 // IMAGES
 import HotelRound from "../../Assets/icons/tbilisee-hotel-round-white.svg";
@@ -45,7 +47,7 @@ export default class Landing extends Component {
     const eatsFirstHalf = arrayLanding.eat_drinks.images.splice(0, half)
     const eatsSecondHalf = arrayLanding.eat_drinks.images.splice(-half)
     const {t, i18n} = this.props;
-    
+    console.log(arrayLanding.rooms[0].main_image,"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
     // const { t } = useTranslation();
 
@@ -55,29 +57,12 @@ export default class Landing extends Component {
     <div className="landing">
       <div className="landing-head__swiper">
       <div className="header-title">
-          <h1>{(() => {
-        if (i18n.language === 'GE') {
-          return (
-            arrayLanding.headerTitle.title_ge
-          )
-        } else if (i18n.language === 'RU') {
-          return (
-            arrayLanding.headerTitle.title_ru
-          )
-        } else {
-          return (
-            arrayLanding.headerTitle.title_en
-          )
-        }
-      })()}</h1>
-          <Link className="header-title__btn" to="/luxury">{t('explore')}</Link>
       </div>
       
       <img className="landing-badge" src={HotelRound}/>
        <CarouselLanding 
-        title={arrayLanding.headerTitle.title_en}
-        spaceBetween="-50" 
-        doors={arrayLanding.doors}
+        title={arrayLanding.headerTitle.title_en} 
+        sliders={arrayLanding.sliders}
         headerTitle={arrayLanding.headerTitle}
        />
       </div>       
@@ -178,10 +163,22 @@ export default class Landing extends Component {
         </div>
       </section>
       <section data-aos="fade-up"
-            data-aos-anchor-placement = "top-center" className="landing-swiper relative">
-              <div className="landing-swiper__absolute absolute"/>
+            data-aos-anchor-placement = "top-center" className="landing-swiper relative container-own">
+              {/* <div className="landing-swiper__absolute absolute"/>
               <h2 className="landing-swiper__title container-own">rooms</h2>
-              <SwiperMain arrayLandingRooms={arrayLanding.rooms}/>
+              <SwiperMain arrayLandingRooms={arrayLanding.rooms}/> */}
+              <h2 className="landing-rooms__title">Rooms</h2>
+              <Swiper>
+              {
+                arrayLanding.rooms.map((room,index) =>     
+                <div>
+                    <Link to="/luxury">
+                        <img src={Tbilisee + room.main_image} alt="restaurant image"/>
+                    </Link>
+                </div>
+                )
+              }
+              </Swiper>
       </section>
       <section  className="landing_eats container-own" data-aos="fade-up"
             data-aos-anchor-placement = "top-center">
@@ -272,9 +269,11 @@ export default class Landing extends Component {
             
             <img src= {Tbilisee +  arrayLanding.neighborhood.big_image } alt="location" className="full"/>
             <img src={Tbilisee + arrayLanding.neighborhood.small_image}  alt="location" className="neigborhood-img2"/>
-       
+            <div className="landing-absolute__bottom"/>
           </section>
+          
     </div>
+    
     </>
   );
 }

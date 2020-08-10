@@ -50,7 +50,7 @@ class Header extends Component  {
             <div className="flex">
              <img src={ BurgerMenuWhite } className="header-burger_menu" alt="Burger Menu" onClick={this.toggleClass}/>
               <div className="language-bar__white">
-          <li onClick={() => this.handleClick('EN')} className="language-first">{lang}</li>
+              <li onClick={() => this.handleClick('EN')} className="language-first">{lang}</li>
                 <div className="languages-bar">
                   {/* // TODO CREATE SELECT WITH OPTIONS */}
                   {

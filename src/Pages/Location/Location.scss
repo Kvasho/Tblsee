@@ -44,6 +44,8 @@
     width: 40%;
     margin: 40px auto;
     text-align: center;
+    color: #310000;
+    opacity: 0.6;
 }
 
 .destination-content {
@@ -53,12 +55,15 @@
 
 .destination-content__title {
     font-size: 86px;
+    color: #310000;
 }
 
 .destination-content__paragraph {
     font-size: 27px;
     width: 80%;
     line-height: 30px;
+    color: #310000;
+    opacity: 0.6;
 }
 
 .destination-cards {
@@ -99,6 +104,7 @@
     font-size: 31px;
     text-transform: capitalize;
     z-index: 12;
+    color: #310000;
 }
 
 .location-exploring {
@@ -148,10 +154,13 @@
 
     & h2 {
         font-size: 99px;
+        color: #310000;
     }
 
     & p {
         font-size: 30px;
+        color: #310000;
+        opacity: 0.6;
     }
 }
 
@@ -303,6 +312,7 @@
 
 .dest-cards__mobile {
     display: none;
+    position: relative;
 
     & .swiper-container {
         height: 100%;

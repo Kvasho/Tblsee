@@ -48,10 +48,10 @@ import { propTypes } from 'react-bootstrap/esm/Image';
           </div>)
       }
       </Swiper>
-      <div className="dest-swiper__controls">
+      {/* <div className="dest-swiper__controls">
         <button onClick={goPrev} className="dest-swiper__prev"/>
         <button onClick={ goNext } className="dest-swiper__next"/>
-      </div>
+      </div> */}
       </>
     )
   };

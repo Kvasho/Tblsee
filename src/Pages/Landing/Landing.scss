@@ -7,21 +7,6 @@
     height: 100vh;
     width: 100%;
     margin-bottom: 10rem;
-    background-image: url('../../Assets/Images/blocks.jpg');
-}
-
-// .landing-head__swiper .swiper-slide {
-//     padding-left: 32%!important;
-//     margin-left: 5% !important;
-// }
-
-@media(max-width: 800px){
-    .landing-head__Swiper img {
-        height: 30vh !important;
-        display: block;
-        margin: auto;
-        width: 22vw !important;
-    }
 }
 
 @media(max-width: 2100px){
@@ -83,7 +68,7 @@
 
     & h3 {
         font-size: 13.3rem;
-        color: #000000;
+        color: #310000;
         display: flex;
         margin-top: 20%;
         margin-left: 49%;
@@ -109,7 +94,8 @@
 
     & p {
         font-size: 2.6rem;
-        color: gray;
+        color: #310000;
+        opacity: 0.6;
         margin-left: 49%;
     }
 
@@ -120,6 +106,7 @@
         margin-bottom: 13rem;
         text-transform: capitalize;
         margin-top: 25rem;
+        color: #310000;
     }
 }
 
@@ -133,7 +120,7 @@
 
     & p {
         font-size: 26px;
-        color: #000000;
+        color: #310000;
         opacity: 0.6;
         margin-top: 60%;
         margin-left: 30px;
@@ -146,6 +133,7 @@
         font-size: 13rem;
         margin-left: 5rem;
         margin-bottom: 16rem;
+        color: #310000;
     }
 }
 
@@ -166,7 +154,7 @@
 
 .landing-gallery__btn {
     font-size: 54px;
-    color: #000000 !important;
+    color: #310000 !important;
     height: fit-content;
     align-self: flex-end;
     bottom: 0;
@@ -179,7 +167,7 @@
     display: block;
     width: 0;
     height: 1px;
-    background: #000000;
+    background: #310000;
     transition: width .3s
 }
 
@@ -208,11 +196,12 @@
         font-size: 84px;
         margin-bottom: 11rem;
         font-weight: bold;
+        color: #310000;
     }
 
     & p {
         font-size: 26px;
-        color: #000000;
+        color: #310000;
         opacity: 0.6;
         margin-bottom: 13rem;
         width: 90%;
@@ -222,7 +211,7 @@
 }
 
 .neighborhood-more {
-    color: #000000;
+    color: #310000;
     font-size: 54px;
     padding-bottom: 20px;
     display: block;
@@ -234,7 +223,7 @@
     transform: translateX(-50%);
 
     &:hover {
-        color: #000000;
+        color: #310000;
     }
 }
 
@@ -252,7 +241,7 @@
     display: block;
     width: 0;
     height: 1px;
-    background: #000000;
+    background: #310000;
     transition: width .3s
 }
 
@@ -264,33 +253,70 @@
     right: 32rem;
 }
 
+.landing-open__btn {
+    font-size: 65px;
+    letter-spacing: 6px;
+    color: #ffffff;
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    &:hover {
+        color: #FDE6A6 !important;
+    }
+}
+
 .neighborhood-more:hover:after {
     width: 100%;
     transition: width .3s;
 }
 
+.landing-absolute__bottom {
+    position: absolute;
+    bottom: -40rem;
+    right: -50px;
+    background: #FAFAFA;
+    width: 50%;
+    height: 250rem;
+    z-index: -1;
+    display: none;
+}
+
 .landing-head__swiper img {
-    height: 800px;
+    height: 100%;
     display: block;
     margin: auto;
-    width: 500px;
+    width: 100%;
+}
+
+.landing-swiper img {
+    width: 100%;
+    height: 100%;
+}
+
+.door-open__btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.landing-rooms__title {
+    font-size: 80px;
+    margin-bottom: 30px;
+    color: #310000;
+    font-weight: bold;
 }
 
 @media(max-width: 2000px) {
     .header-title h1 {
         font-size: 80px;
     }
-    .landing-head__swiper img {
-        height: 700px;
-        width: 400px;
-    }
 }
 
 @media(max-width: 1800px){
-    .landing-head__swiper img {
-        height: 600px;
-        width: 350px;
-    }
     .header-title h1 {
         font-size: 70px;
         line-height: 100px;
@@ -298,10 +324,6 @@
 }
 
 @media(max-width: 1600px){
-    .landing-head__swiper img {
-        height: 500px;
-        width: 320px;
-    }
     .header-title h1 {
         font-size: 65px;
         line-height: 90px;
@@ -309,10 +331,6 @@
 }
 
 @media(max-width: 1400px) {
-    .landing-head__swiper img {
-        height: 450px;
-        width: 300px;
-    }
     .header-title h1 {
         font-size: 50px;
         line-height: 70px;
@@ -320,10 +338,6 @@
 }
 
 @media(max-width: 1200px) {
-    .landing-head__swiper img {
-        height: 400px;
-        width: 270px;
-    }
     .header-title h1 {
         font-size: 45px;
         line-height: 60px;
@@ -338,11 +352,8 @@
     }
     .header-title {
         width: 100%;
-        top: 25rem;
+        top: 15rem;
         left: 0;
-    }
-    .landing-head__swiper img {
-        width: 220px;
     }
     .header-title__btn {
         width: fit-content;
@@ -354,8 +365,9 @@
 
 .landing-head__swiper .swiper-container {
     position: absolute;
-    bottom: -2rem;
+    top: 0;
     width: 100%;
+    height: 100%;
 }
 
 @media(max-width: 600px){
@@ -421,21 +433,21 @@
     font-size: 84px;
     font-weight: bold;
     text-align: right;
-    color: #000000;
+    color: #310000;
     margin-bottom: 12rem;
     width: 80%;
 }
 
 .eats-button {
     font-size: 54px;
-    color: #000000;
+    color: #310000;
     padding-bottom: 2rem;
     width: fit-content;
     position: absolute;
     display: block;
 
     &:hover {
-        color: #000000;
+        color: #310000;
     }
 }
 
@@ -455,7 +467,7 @@
 
 .eats-paragraph {
     font-size: 26px;
-    color: #000000;
+    color: #310000;
     opacity: 0.6;
     margin-bottom: 120px;
     width: 80%;
@@ -540,7 +552,7 @@
     display: block;
     width: 1px;
     height: 30px;
-    background: #000000;
+    background: #310000;
     opacity: 0.6;
     position: absolute;
     right: -22px;
@@ -605,7 +617,7 @@
     .landing-gallery__btn {
         font-size: 35px;
         padding-bottom: 0px;
-        color: #000000 !important;
+        color: #310000 !important;
         height: -moz-fit-content;
         height: fit-content;
         align-self: flex-end;
@@ -668,7 +680,7 @@
     }
 
     .white {
-        color: #000000;
+        color: #310000;
     }
 
     .landing-neighborhood {
@@ -705,7 +717,7 @@
         margin: auto auto 5rem auto;
 
         &:hover {
-            color: #000000 !important;
+            color: #310000 !important;
         }
     }
     

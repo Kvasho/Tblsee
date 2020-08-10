@@ -13,7 +13,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-family: 'playfair-italic' !important;
+    font-family: 'playfair-regular' !important;
 }
 
 .btn-outline-primary:hover {
@@ -57,7 +57,7 @@ a:hover {
     src: local('PlayfairDisplay-Bold.eot?#iefix') format('embedded-opentype'),
         local('./Assets/Fonts/PlayfairDisplay-Bold.woff2') format('woff2'),
         local('./Assets/Fonts/PlayfairDisplay-Bold.woff') format('woff'),
-        local('./Assets/Fonts/PlayfairDisplay-Bold.ttf') format('truetype');
+        url('./Assets/Fonts/PlayfairDisplay-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -65,7 +65,7 @@ a:hover {
 
 @font-face {
     font-family: 'playfair-italic';
-    src: local('./Assets/Fonts/PlayfairDisplay-Italic.ttf') format('truetype');
+    src: url('./Assets/Fonts/PlayfairDisplay-Italic.ttf') format('truetype');
   }
 
 @font-face {
@@ -74,19 +74,7 @@ a:hover {
     src: local('./Assets/Fonts/PlayfairDisplay-Regular.eot?#iefix') format('embedded-opentype'),
         local('./Assets/Fonts/PlayfairDisplay-Regular.woff2') format('woff2'),
         local('./Assets/Fonts/PlayfairDisplay-Regular.woff') format('woff'),
-        local('./Assets/Fonts/PlayfairDisplay-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'playfair-italic';
-    src: local('./Assets/Fonts/PlayfairDisplay-Italic.eot');
-    src: local('./Assets/Fonts/PlayfairDisplay-Italic.eot?#iefix') format('embedded-opentype'),
-        local('./Assets/Fonts/PlayfairDisplay-Italic.woff2') format('woff2'),
-        local('./Assets/Fonts/PlayfairDisplay-Italic.woff') format('woff'),
-        local('./Assets/Fonts/PlayfairDisplay-Italic.ttf') format('truetype');
+        url('./Assets/Fonts/PlayfairDisplay-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

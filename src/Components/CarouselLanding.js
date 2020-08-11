@@ -28,8 +28,7 @@ export default (props) => {
            <>            
         <SwiperSlide>                    
             <Link to="/restaurant" className="landing-open__btn">open</Link>
-            <img src={Tbilisee + slide.image} alt={index} key={index}/>
-            
+            <img src={Tbilisee + slide.image} alt={index} key={index}/>           
         </SwiperSlide>
         </>
           )

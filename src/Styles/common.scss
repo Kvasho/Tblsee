@@ -69,7 +69,7 @@ a {
 
 // WebPage Container
 .container-own {
-    width: calc(100% - 280px) !important;
+    width: 1600px !important;
     margin: auto;
 }
 
@@ -412,8 +412,5 @@ a {
 @media(max-width: 1300px) {
     .footer .col {
         margin-bottom: 1rem;
-    }
-    .language-bar__white {
-        font-size: 15px;
     }
 }

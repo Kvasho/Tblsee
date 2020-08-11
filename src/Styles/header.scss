@@ -35,26 +35,3 @@
 .book-now__white:hover {
     color: #ffffff !important;
 }
-
-@media (max-width: 1200px) {
-    .header-wr {
-        margin: 5px auto;
-        width: calc(100% - 40px);
-    }
-
-    .book-now__white {
-        font-size: 10px;
-    }
-
-    .header-burger_menu {
-        width: 15px;
-    }
-
-    .language-bar {
-        font-size: 15px;
-    }
-
-    .header-logo {
-        width: 75px;
-    }
-}

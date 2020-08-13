@@ -39,7 +39,6 @@ export default class Landing extends Component {
     if(!this.state.arrayLanding) {
       return "loading"; //TODO: Need Loading State
     }
-    console.log(this.state.arrayLanding,"arrayLANDING")
 
     const Tbilisee = 'https://core.tbilisee.ge/';
     const {arrayLanding} = this.state;
@@ -159,10 +158,10 @@ export default class Landing extends Component {
       </section>
       <section data-aos="fade-up"
             data-aos-anchor-placement = "top-center" className="landing-swiper relative container-own">
-              {/* <div className="landing-swiper__absolute absolute"/>
+              <div className="landing-swiper__absolute absolute"/>
               <h2 className="landing-swiper__title container-own">rooms</h2>
-              <SwiperMain arrayLandingRooms={arrayLanding.rooms}/> */}
-              <h2 className="landing-rooms__title">Rooms</h2>
+              <SwiperMain arrayLandingRooms={arrayLanding.rooms}/>
+              {/* <h2 className="landing-rooms__title">Rooms</h2>
               <Swiper>
               {
                 arrayLanding.rooms.map((room,index) =>     
@@ -173,7 +172,7 @@ export default class Landing extends Component {
                 </div>
                 )
               }
-              </Swiper>
+              </Swiper> */}
       </section>
       <section  className="landing_eats container-own" data-aos="fade-up"
             data-aos-anchor-placement = "top-center">

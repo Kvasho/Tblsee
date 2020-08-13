@@ -38,3 +38,15 @@
         display: block;
     }
 }
+
+@media(max-width: 1600px){
+    .landing-swiper__controller {
+        width: calc(100% - 500px);
+    }
+}
+
+@media(max-width: 1350px){
+    .landing-swiper__controller {
+        width: calc(100% - 250px);
+    }
+}

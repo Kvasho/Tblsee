@@ -20,7 +20,8 @@ class Header extends Component  {
 		super(props);
 		this.state = {
       burgerMenuOpen: true,
-      currentLang: 'EN'
+      currentLang: 'EN',
+      languages: ['EN','RU', 'GE']
     };
   }
 
@@ -30,8 +31,8 @@ class Header extends Component  {
   };
 
  handleClick = (lang) => {
-    i18next.changeLanguage(lang)
     this.setState({currentLang: lang})
+    i18next.changeLanguage(lang)
   }
 
   render(){
@@ -51,10 +52,10 @@ class Header extends Component  {
             <div className="flex">
              <img src={ BurgerMenuWhite } className="header-burger_menu" alt="Burger Menu" onClick={this.toggleClass}/>
               <div className="language-bar__white">
-              <li onClick={() => this.handleClick(this.state.currentLang)} className="language-first">{this.state.currentLang}</li>
+              <li className="language-first">{this.state.currentLang}</li>
                 <div className="languages-bar">                 
-                   <li onClick={() => this.handleClick('RU')} key={index}>RU</li>
-                   <li onClick={() => this.handleClick('GE')} key={index}>GE</li>                                 
+                   <li onClick={() => this.handleClick('RU')}>RU</li>
+                   <li onClick={() => this.handleClick('GE')}>GE</li>                                 
                 </div>
               </div>
        </div>

@@ -3,7 +3,6 @@
   import Swiper from 'react-id-swiper';
 import { Link } from 'react-router-dom';
   const SwiperMain = (props) => {
-    console.log(props.arrayLandingRooms,"111111111111111111111111111")
     const params = {
       navigation: {
         nextEl: '.swiper-button-next',
@@ -11,7 +10,7 @@ import { Link } from 'react-router-dom';
       },
         spaceBetween:    240,
         slidesPerView:   3,
-        activeSlideKey:  '2'
+        activeSlideKey:  'key'
     }
     const Tbilisee = 'https://core.tbilisee.ge/';
     const swiperRef = useRef(null);

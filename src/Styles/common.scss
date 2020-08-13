@@ -63,8 +63,30 @@ a {
     left: 550px;
 }
 
+.loading {
+    background: transparent;
+    height: 1000rem;
+    width: 100%;
+}
+
 .space-between {
     justify-content: space-between;
+}
+
+.background-image__cover {
+    background: no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.height-half {
+    height: 50%;
+}
+
+.height {
+    height: 100%;
 }
 
 // WebPage Container
@@ -352,8 +374,17 @@ a {
             font-size: 2.2rem;
             color: $white;
             text-transform: capitalize;
+
+            & a {
+                color: #FFFFFF;
+            }
         }
     }
+}
+
+.background-full {
+    background: no-repeat center center;
+    background-size: 100% 100%;
 }
 
 .pagination > li:first-child > a {

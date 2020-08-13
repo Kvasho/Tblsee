@@ -29,6 +29,7 @@ export default class ContactUs extends Component {
             return "loading"; //TODO: Need Loading State
           }
         const {arrayContacts} = this.state;
+        const Tbilisee = 'https://core.tbilisee.ge/';
   return (
     <div className="contactus">
         <h2 className="contactus-title">contact us</h2>
@@ -38,20 +39,26 @@ export default class ContactUs extends Component {
         </div>
         <div className="contactus-line">
             <img src={Phone} alt="map pin" className="contactus-line__icon"/>
-            <h3 className="contactus-line__text">{arrayContacts.contacts.mobile}</h3>
+            <h3 className="contactus-line__text"><a href={"tel:" + arrayContacts.contacts.mobile}>{arrayContacts.contacts.mobile}</a></h3>
         </div>
         <div className="contactus-line">
             <img src={Fax} alt="map pin" className="contactus-line__icon"/>
-            <h3 className="contactus-line__text">{arrayContacts.contacts.landline}</h3>
+            <h3 className="contactus-line__text"><a href={"tel:" + arrayContacts.contacts.mobile}>{arrayContacts.contacts.landline}</a></h3>
         </div>
         <div className="contactus-line">
             <img src={Mail} alt="map pin" className="contactus-line__icon"/>
             <h3 className="contactus-line__text">{arrayContacts.contacts.email}</h3>
         </div>
         <div className="contactus-socials">
-            <img alt="facebook"  src={Facebook}/>
-            <img alt="instagram" src={Instagram} className="instagram"/>
-            <img alt="twitter"   src={Twitter}/>
+            <a href={this.props.socials[0].link}>
+                <img alt={this.props.socials[0].name}  src={Tbilisee + this.props.socials[0].image}/>
+            </a>
+            <a href={this.props.socials[1].link} style={{margin: "0 25px"}}>
+                <img alt={this.props.socials[1].name}  src={Tbilisee + this.props.socials[1].image}/>
+            </a>
+            <a href={this.props.socials[2].link}>
+                <img alt={this.props.socials[2].name}  src={Tbilisee + this.props.socials[2].image}/>
+            </a>
         </div>
     </div>
   );

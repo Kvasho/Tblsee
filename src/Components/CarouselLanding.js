@@ -3,6 +3,7 @@ import React from 'react';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import '../Styles/common.scss';
 
 // Import Swiper styles
 import 'swiper/swiper.scss';
@@ -33,8 +34,10 @@ export default (props) => {
          return (        
            <>            
         <SwiperSlide>                    
-            <Link to="/restaurant" className="landing-open__btn">open</Link>
-            <img src={Tbilisee + slide.background} alt={index} key={index}/>
+            <Link to={"/" + slide.link} className="landing-open__btn">open</Link>
+            <div className="background-image__cover height" style={{backgroundImage: `url(${Tbilisee + slide.background})`}}>
+              <img className="door" src={Tbilisee + slide.door}/>
+            </div>
         </SwiperSlide>
         </>
           )

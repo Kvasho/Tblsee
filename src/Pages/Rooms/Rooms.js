@@ -51,7 +51,7 @@ export default class  Rooms extends Component {
               className={index%2===1 ? "rooms-luxury direction-reverse" : "rooms-luxury"}>
           <div className="relative">
             <div className={index%2===1 ? "rooms-background_first " : "rooms-background_first rooms-left"}/>
-            <img src={Tbilisee + room.main_image} alt="Luxury room" className="full"/>
+            <div className="background-image__cover height full" style={{backgroundImage: `url(${Tbilisee + room.main_image})`}}/>
           </div>
           <div>
       <h5 className={index%2==1 ? "rooms-description__subtitle align-right" : "rooms-description__subtitle"}>room</h5>

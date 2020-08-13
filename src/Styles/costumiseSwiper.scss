@@ -4,6 +4,10 @@
     width: calc(100% - 500px);
 }
 
+.swiper-wrapper {
+    height: 94% !important;
+}
+
 .landing-btn__next, .landing-btn__prev {
     background: none !important;
     border: none !important;
@@ -13,10 +17,6 @@
 .landing-btn__next:focus, .landing-btn__prev:focus {
     outline: none;
 }
-
-// .landing-btn__next span, .landing-btn__prev span {
-//     opacity: 60%;
-// }
 
 .landing-swiper__controller {
     width: calc(100% - 750px);
@@ -39,14 +39,33 @@
     }
 }
 
-@media(max-width: 1600px){
+@media(max-width: 1650px) {
     .landing-swiper__controller {
-        width: calc(100% - 500px);
+        width: calc(100% - 200px);
     }
 }
 
-@media(max-width: 1350px){
+@media(max-width: 1050px){
     .landing-swiper__controller {
-        width: calc(100% - 250px);
+        width: calc(100% - 50px);
+    }
+
+    .landing-rooms__prev, 
+    .landing-rooms__next {
+        font-size: 16px;
+    }
+
+    .landing-swiper h4 {
+        font-size: 35px;
+    }
+
+    .landing-swiper__controller a {
+        font-size: 12px;
+    }
+
+    .landing-swiper__seemore:after {
+        height: 17px;
+        right: -25px;
+        top: 1px;
     }
 }

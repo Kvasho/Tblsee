@@ -21,7 +21,11 @@ class Header extends Component  {
 		this.state = {
       burgerMenuOpen: true,
       currentLang: 'EN',
+<<<<<<< HEAD
       languages: ['EN','RU', 'GE']
+=======
+      inactiveLang: ['RU', 'GE']
+>>>>>>> fad220f55060c43de023a6bc84c64484450fed00
     };
   }
 
@@ -31,14 +35,17 @@ class Header extends Component  {
   };
 
  handleClick = (lang) => {
+<<<<<<< HEAD
     this.setState({currentLang: lang})
+=======
+>>>>>>> fad220f55060c43de023a6bc84c64484450fed00
     i18next.changeLanguage(lang)
   }
 
   render(){
     const {burgerMenuOpen} = this.state;
     let lang = i18next.language
-    const otherLang = ['EN','RU', 'GE'];
+    const otherLang = ['RU', 'GE'];
     const index = otherLang.indexOf(lang);
     if (index > -1) {  
     otherLang.splice(index, 1);
@@ -52,10 +59,18 @@ class Header extends Component  {
             <div className="flex">
              <img src={ BurgerMenuWhite } className="header-burger_menu" alt="Burger Menu" onClick={this.toggleClass}/>
               <div className="language-bar__white">
+<<<<<<< HEAD
               <li className="language-first">{this.state.currentLang}</li>
                 <div className="languages-bar">                 
                    <li onClick={() => this.handleClick('RU')}>RU</li>
                    <li onClick={() => this.handleClick('GE')}>GE</li>                                 
+=======
+              <li onClick={() => this.handleClick(this.state.currentLang)} className="language-first">{this.state.currentLang}</li>
+                <div className="languages-bar"> 
+                {
+                  otherLang.map((lang,index) => <li onClick={() => this.handleClick(lang)} key={index}>{lang}</li>)
+                }                                                
+>>>>>>> fad220f55060c43de023a6bc84c64484450fed00
                 </div>
               </div>
        </div>

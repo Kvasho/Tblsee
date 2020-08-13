@@ -33,6 +33,7 @@ class Luxury extends Component {
         }
         const Tbilisee = "https://core.tbilisee.ge/";
         const {arrayLuxury} = this.state;
+        const {t, i18n} = this.props;
         return (
           <>
           <HeaderBlack />
@@ -63,27 +64,72 @@ class Luxury extends Component {
               <div></div>
               <div className="luxury-about">
                 <h2>about room</h2>
-                <p>{item.description_en}</p></div>
+                <p>{(() => {
+        if (i18n.language === 'GE') {
+          return (
+            item.description_ge
+          )
+        } else if (i18n.language === 'RU') {
+          return (
+            item.description_ru
+          )
+        } else {
+          return (
+            item.description_en
+          )
+        }
+      })()}</p></div>
                 <div></div>
                 <div></div>
               <div>
-                <img src={Tbilisee + item.style_image} alt={"index"} className="full"/>
+              <div className="background-image__cover height full" style={{backgroundImage: `url(${Tbilisee + item.style_image})`}}></div>
+                {/* <img src={Tbilisee + item.style_image} alt={"index"} className="full"/> */}
               </div>
               <div className="luxury-style__wr">
                 <h2>Style</h2>
-                <p className="elipsis-3">{item.style_description_en}</p>
+                <p className="elipsis-3">{(() => {
+        if (i18n.language === 'GE') {
+          return (
+            item.style_description_ge
+          )
+        } else if (i18n.language === 'RU') {
+          return (
+            item.style_description_ru
+          )
+        } else {
+          return (
+            item.style_description_en
+          )
+        }
+      })()}</p>
               </div>
               <div>
-                <img src={Tbilisee + item.mood_image_small} alt={"index"} className="full" style={{height: "60%"}}/>
+              <div className="background-image__cover height full" style={{backgroundImage: `url(${Tbilisee + item.mood_image_small})`}}></div>
+                {/* <img src={Tbilisee + item.mood_image_small} alt={"index"} className="full" style={{height: "60%"}}/> */}
                 <div className="flex" style={{marginTop: "7rem"}}>
                 </div>
               </div>
               <div className="luxury-mood">
                 <h2 style={{marginTop: "6rem"}}>Mood</h2>
-                <p>{item.mood_description_en}</p>
+                <p>{(() => {
+        if (i18n.language === 'GE') {
+          return (
+            item.mood_description_ge
+          )
+        } else if (i18n.language === 'RU') {
+          return (
+            item.mood_description_ru
+          )
+        } else {
+          return (
+            item.mood_description_en
+          )
+        }
+      })()}</p>
               </div>
               <div>
-                <img src={Tbilisee + item.mood_image_big} className="full mood-image__big"/>
+              <div className="background-image__cover height full mood-image__big" style={{backgroundImage: `url(${Tbilisee + item.mood_image_big})`}}></div>
+                {/* <img src={Tbilisee + item.mood_image_big} className="full mood-image__big"/> */}
               </div>
             </section>
             </>)

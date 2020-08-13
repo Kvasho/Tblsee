@@ -12,7 +12,8 @@ import CarouselLanding from '../../Components/CarouselLanding';
 import Header from '../../Components/Header';
 import { useTranslation } from 'react-i18next';
 import LandingRoomsSwiper from '../../Components/LandingRoomsSwiper'
-import Swiper from 'react-id-swiper';
+import Swiper from 'react-id-swiper'; 
+import { withTranslation } from 'react-i18next';
 
 // IMAGES
 import HotelRound from "../../Assets/icons/tbilisee-hotel-round-white.svg";
@@ -37,7 +38,7 @@ export default class Landing extends Component {
   }
   render(){
     if(!this.state.arrayLanding) {
-      return "loading"; //TODO: Need Loading State
+      return <div className="loading"></div>; //TODO: Need Loading State
     }
 
     const Tbilisee = 'https://core.tbilisee.ge/';
@@ -46,7 +47,6 @@ export default class Landing extends Component {
     const eatsFirstHalf = arrayLanding.eat_drinks.images.splice(0, half)
     const eatsSecondHalf = arrayLanding.eat_drinks.images.splice(-half)
     const {t, i18n} = this.props;
-
   return (
     <>
     <Header/>
@@ -56,8 +56,7 @@ export default class Landing extends Component {
       </div>
       
       <img className="landing-badge" src={HotelRound}/>
-       <CarouselLanding   
-        doors={arrayLanding.doors}      
+       <CarouselLanding        
         sliders={arrayLanding.sliders}        
        />
       </div>       
@@ -80,7 +79,7 @@ export default class Landing extends Component {
             data-aos-anchor-placement = "top-center" className="exploring container-own">
               
             <div className="exploring-one">
-              <h3>Tbilisi <span className="white">Hotel</span></h3>
+              <h3>{t('Tbilisi')} <span className="white">hotel</span></h3>
               <p className="elipsis-7">{(() => {
         if (i18n.language == 'GE') {
           return (
@@ -98,10 +97,11 @@ export default class Landing extends Component {
       })()}</p>
             </div>
             <div className="exploring-two">
-              <img  src={Tbilisee + arrayLanding.exploring.big_image} alt="/" className="exploring-image__full"/>
+              {/* <img  src={Tbilisee + arrayLanding.exploring.big_image} alt="/" className="exploring-image__full"/> */}
+              <div className="background-image__cover height" style={{backgroundImage: `url(${Tbilisee + arrayLanding.exploring.big_image})`}}></div>
             </div>
             <div className="relative exploring-three">
-              <img  src={Tbilisee + arrayLanding.exploring.small_image} alt="/" className="exploring-image__half absolute"/>
+              <div className="background-image__cover height-half" style={{backgroundImage: `url(${Tbilisee + arrayLanding.exploring.small_image})`}}></div>
             </div>
            
         </section>
@@ -109,7 +109,7 @@ export default class Landing extends Component {
             data-aos-anchor-placement = "top-center" className="landing-gallery">
               <div className="landing-gallery__absolute absolute"/>
         <div>
-          <img src={Tbilisee + arrayLanding.gallery.big_image} alt="landing gallery" className="full gallery-big__image"/>
+        <div className="background-image__cover height full gallery-big__image" style={{backgroundImage: `url(${Tbilisee + arrayLanding.gallery.big_image})`}}></div>
         </div>
         <div>
           <p className="elipsis-9">{(() => {
@@ -144,19 +144,22 @@ export default class Landing extends Component {
           )
         }
       })()}</h3>
-          <img src={Tbilisee + arrayLanding.gallery.medium_image} alt="Landing Gallery" className="landing-neighborhood__img absolute"/>
+          <div className="background-image__cover height-half landing-neighborhood__img absolute" style={{backgroundImage: `url(${Tbilisee + arrayLanding.gallery.medium_image})`}}></div>
+          {/* <img src={Tbilisee + arrayLanding.gallery.medium_image} alt="Landing Gallery" className="landing-neighborhood__img absolute"/> */}
         </div>
         <div className="relative">
         <img className="gallery-badge absolute" src={GalleryRound}/>
         </div>
         <div>
-          <img src={Tbilisee + arrayLanding.gallery.small_image} alt="*" className="landing-neighborhood__img2"/>
+        <div className="background-image__cover landing-neighborhood__img2" style={{backgroundImage: `url(${Tbilisee + arrayLanding.gallery.small_image})`}}></div>
+          {/* <img src={Tbilisee + arrayLanding.gallery.small_image} alt="*" className="landing-neighborhood__img2"/> */}
         </div>
         <div className="relative">
           <Link to="/gallery" className="landing-gallery__btn absolute">{t('See More')}</Link>
         </div>
       </section>
       <section data-aos="fade-up"
+<<<<<<< HEAD
             data-aos-anchor-placement = "top-center" className="landing-swiper relative container-own">
               <div className="landing-swiper__absolute absolute"/>
               <h2 className="landing-swiper__title container-own">rooms</h2>
@@ -173,11 +176,17 @@ export default class Landing extends Component {
                 )
               }
               </Swiper> */}
+=======
+            data-aos-anchor-placement = "top-center" className="landing-swiper relative">
+              <div className="landing-swiper__absolute absolute"/>
+              <h2 className="landing-swiper__title container-own">{t('rooms')}</h2>
+              <SwiperMain arrayLandingRooms={arrayLanding.rooms}/>
+>>>>>>> fad220f55060c43de023a6bc84c64484450fed00
       </section>
       <section  className="landing_eats container-own" data-aos="fade-up"
             data-aos-anchor-placement = "top-center">
               <div>
-          <div style={{position: "sticky", top: "0"}}>
+          <div style={{position: "sticky", top: "100px"}}>
           <h3 className="eats-title">{(() => {
         if (i18n.language === 'GE') {
           return (
@@ -208,13 +217,13 @@ export default class Landing extends Component {
           )
         }
       })()}</p>
-                 <Link to="/restaurant" className="eats-button">See More</Link>
+                 <Link to="/restaurant" className="eats-button">{t('test')}</Link>
                  </div>
           </div>
           <div className="landing-eats__img">
           {
-              eatsFirstHalf.map((image,index) => 
-              <img src={Tbilisee + image} alt={index} className="full" key={index}/>
+              eatsFirstHalf.map((image,index) =>
+              <div className="background-image__cover full" style={{backgroundImage: `url(${Tbilisee + image})`}} key={index}></div>
               )
             }
           
@@ -222,7 +231,7 @@ export default class Landing extends Component {
           <div className="landing-eats__img2">
             {
               eatsSecondHalf.map((image,index) => 
-              <img src={Tbilisee + image} alt={index} className="full" key={index}/>
+              <div className="background-image__cover full" style={{backgroundImage: `url(${Tbilisee + image})`}} key={index}></div>
               )
             }
           </div>
@@ -262,9 +271,8 @@ export default class Landing extends Component {
       })()}</p>
                 <Link to="/location" className="neighborhood-more">View More</Link>
           </div>
-            
-            <img src= {Tbilisee +  arrayLanding.neighborhood.big_image } alt="location" className="full"/>
-            <img src={Tbilisee + arrayLanding.neighborhood.small_image}  alt="location" className="neigborhood-img2"/>
+          <div className="background-image__cover full" style={{backgroundImage: `url(${Tbilisee +  arrayLanding.neighborhood.big_image})`}}></div>
+          <div className="background-image__cover height-half neigborhood-img2" style={{backgroundImage: `url(${Tbilisee + arrayLanding.neighborhood.small_image})`}}></div>
             <div className="landing-absolute__bottom"/>
           </section>
           

@@ -48,7 +48,6 @@
 .restaurant-gastronomy__wr {
     display: grid;
     grid-template-columns: 3fr 2fr;
-    grid-template-rows: 80vh;
     grid-gap: 160px;
 }
 
@@ -102,7 +101,18 @@
         padding-right: 22px;
         width: 13rem;
         height: 13rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
     }
+}
+
+.shef-wallpaper {
+    height: 60vh;
+}
+
+.restaurant-wallpaper {
+    height: 60vh;
 }
 
 .restaurant-shef {

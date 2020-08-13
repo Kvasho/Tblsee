@@ -118,11 +118,17 @@
         color: #310000;
         padding-top: 10px;
         text-align: center;
+        width: 13%;
+        margin: auto;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #91712B;
+        margin-bottom: 40px;
     }
 
     &__about {
         font-size: 26px;
         line-height: 46px;
+        margin-bottom: 20rem;
     }
 }
 
@@ -207,9 +213,8 @@
     }
 
     .restaurant-shef__about {
-        font-size: 24px;
-        width: calc(100% - 100px);
-        margin: 20px auto 40px auto;
+        font-size: 20px;
+        line-height: 28px;
     }
 }
 

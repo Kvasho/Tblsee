@@ -20,7 +20,7 @@ class Header extends Component  {
 		super(props);
 		this.state = {
       burgerMenuOpen: true,
-      isActive: 'EN'
+      currentLang: 'EN'
     };
   }
 
@@ -31,6 +31,7 @@ class Header extends Component  {
 
  handleClick = (lang) => {
     i18next.changeLanguage(lang)
+    this.setState({currentLang: lang})
   }
 
   render(){
@@ -50,13 +51,10 @@ class Header extends Component  {
             <div className="flex">
              <img src={ BurgerMenuWhite } className="header-burger_menu" alt="Burger Menu" onClick={this.toggleClass}/>
               <div className="language-bar__white">
-              <li onClick={() => this.handleClick('EN')} className="language-first">{lang}</li>
-                <div className="languages-bar">
-                  {/* // TODO CREATE SELECT WITH OPTIONS */}
-                  {
-                    otherLang.map((lang1,index) => <li onClick={() => this.handleClick(lang1)} key={index}>{lang1}</li>) 
-                  }
-                  
+              <li onClick={() => this.handleClick(this.state.currentLang)} className="language-first">{this.state.currentLang}</li>
+                <div className="languages-bar">                 
+                   <li onClick={() => this.handleClick('RU')} key={index}>RU</li>
+                   <li onClick={() => this.handleClick('GE')} key={index}>GE</li>                                 
                 </div>
               </div>
        </div>

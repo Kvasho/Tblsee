@@ -41,8 +41,7 @@ export default class  Restaurant extends Component {
       </div>
        {
         arrayRestaurant.stories.map((item,index) => 
-        <div data-aos="fade-up"
-        data-aos-anchor-placement = "top-center"
+        <div 
         className={index%2===1 ? "restaurant-gastronomy container-own direction-reverse" : "restaurant-gastronomy container-own "}>
         <div className="restaurant-gastronomy__wr width-full">
          
@@ -152,7 +151,7 @@ export default class  Restaurant extends Component {
   })()}</h2>
       <h5 
               className="restaurant-shef__post">shef</h5>
-      <p  className="restaurant-shef__about">{(() => {
+      <p  className="restaurant-shef__about container-own">{(() => {
                 if (i18n.language === 'GE') {
                   return (
                     arrayRestaurant.chef.description_ge

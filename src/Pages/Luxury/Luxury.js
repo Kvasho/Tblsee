@@ -69,22 +69,21 @@ class Luxury extends Component {
               <div>
                 <img src={Tbilisee + item.style_image} alt={"index"} className="full"/>
               </div>
-              <div>
+              <div className="luxury-style__wr">
                 <h2>Style</h2>
-                <p>{item.style_description_en}</p>
+                <p className="elipsis-3">{item.style_description_en}</p>
               </div>
               <div>
                 <img src={Tbilisee + item.mood_image_small} alt={"index"} className="full" style={{height: "60%"}}/>
                 <div className="flex" style={{marginTop: "7rem"}}>
-                <h4 className="per-night">per night</h4>
                 </div>
               </div>
-              <div>
+              <div className="luxury-mood">
                 <h2 style={{marginTop: "6rem"}}>Mood</h2>
                 <p>{item.mood_description_en}</p>
               </div>
               <div>
-                <img src={Tbilisee + item.mood_image_big} className="full"/>
+                <img src={Tbilisee + item.mood_image_big} className="full mood-image__big"/>
               </div>
             </section>
             </>)
@@ -104,7 +103,7 @@ class Luxury extends Component {
               <Row md={1} lg={2}>
                 <Col>
                 <div>
-                  <img src = { LogoBlack } alt="Logo"/>   
+                  <img src = { LogoBlack } alt="Logo" className="luxury-logo"/>   
                 </div> 
                 </Col>
                 <Col>

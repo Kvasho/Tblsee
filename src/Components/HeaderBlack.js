@@ -20,7 +20,8 @@ class Header extends Component  {
 		super(props);
 		this.state = {
       burgerMenuOpen: true,
-      whiteHeader: false
+      whiteHeader: false,
+      currentLang: 'EN'
     };
   }
 
@@ -51,11 +52,10 @@ class Header extends Component  {
             <div className="flex">
              <img src={ BurgerMenu } className="header-burger_menu" alt="Burger Menu" onClick={this.toggleClass}/>
               <div className="language-bar__black">
-                <li onClick={() => this.handleClick('en')} className="language-first">{lang}</li>
+                <li onClick={() => this.handleClick('en')} className="language-first">{this.state.currentLang}</li>
                 <div className="languages-bar">
-                  {
-                    otherLang.map((lang1,index) => <li onClick={() => this.handleClick(lang1)} key={index}>{lang1}</li>)
-                  }
+                    <li onClick={() => this.handleClick('RU')} key={index}>RU</li>
+                   <li onClick={() => this.handleClick('GE')} key={index}>GE</li>
                 </div>
               </div>
        </div>

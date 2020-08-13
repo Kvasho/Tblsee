@@ -40,7 +40,6 @@ export default class Landing extends Component {
     if(!this.state.arrayLanding) {
       return <div className="loading"></div>; //TODO: Need Loading State
     }
-    console.log(this.state.arrayLanding,"arrayLANDING")
 
     const Tbilisee = 'https://core.tbilisee.ge/';
     const {arrayLanding} = this.state;
@@ -57,8 +56,7 @@ export default class Landing extends Component {
       </div>
       
       <img className="landing-badge" src={HotelRound}/>
-       <CarouselLanding   
-        doors={arrayLanding.doors}      
+       <CarouselLanding        
         sliders={arrayLanding.sliders}        
        />
       </div>       
@@ -81,7 +79,7 @@ export default class Landing extends Component {
             data-aos-anchor-placement = "top-center" className="exploring container-own">
               
             <div className="exploring-one">
-              <h3>Tbilisi <span className="white">hotel</span></h3>
+              <h3>{t('Tbilisi')} <span className="white">hotel</span></h3>
               <p className="elipsis-7">{(() => {
         if (i18n.language == 'GE') {
           return (
@@ -163,7 +161,7 @@ export default class Landing extends Component {
       <section data-aos="fade-up"
             data-aos-anchor-placement = "top-center" className="landing-swiper relative">
               <div className="landing-swiper__absolute absolute"/>
-              <h2 className="landing-swiper__title container-own">rooms</h2>
+              <h2 className="landing-swiper__title container-own">{t('rooms')}</h2>
               <SwiperMain arrayLandingRooms={arrayLanding.rooms}/>
       </section>
       <section  className="landing_eats container-own" data-aos="fade-up"
@@ -200,7 +198,7 @@ export default class Landing extends Component {
           )
         }
       })()}</p>
-                 <Link to="/restaurant" className="eats-button">See More</Link>
+                 <Link to="/restaurant" className="eats-button">{t('test')}</Link>
                  </div>
           </div>
           <div className="landing-eats__img">

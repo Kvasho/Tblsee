@@ -43,7 +43,7 @@ import { propTypes } from 'react-bootstrap/esm/Image';
                       )
                     }
       })()}</h3>
-                  <div id="destination-main" className="background-image__cover destination-card__image" style={{backgroundImage: `url(${Tbilisee + item.image})`}} onClick={() => props.toggleImage(item)}/>
+                  <div id="destination-main" className="background-full destination-card__image" style={{backgroundImage: `url(${Tbilisee + item.image})`}} onClick={() => props.toggleImage(item)}/>
                   {/* <img src={Tbilisee + item.image} className="destination-card__image" onClick={() => props.toggleImage(item)}/>  */}
                 </div>
           </div>)

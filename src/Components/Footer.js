@@ -45,8 +45,8 @@ export default class Footer extends Component {
     <Col>
     <h3 className="footer-cell__title">phone</h3>
           <p className="footer-cell__subtitle">
-            <li>{arrayContacts.contacts.mobile}</li>
-            <li>{arrayContacts.contacts.landline}</li>
+            <li><a href={"tel:" + arrayContacts.contacts.mobile}>{arrayContacts.contacts.mobile}</a></li>
+            <li><a href={"tel:" + arrayContacts.contacts.landline}>{arrayContacts.contacts.landline}</a></li>
           </p>
     </Col>
     <Col>

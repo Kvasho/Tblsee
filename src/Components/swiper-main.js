@@ -3,15 +3,23 @@
   import Swiper from 'react-id-swiper';
 import { Link } from 'react-router-dom';
   const SwiperMain = (props) => {
-    console.log(props.arrayLandingRooms,"111111111111111111111111111")
     const params = {
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
       },
-        spaceBetween:    240,
-        slidesPerView:   3,
-        activeSlideKey:  '2'
+        loop: true,
+        spaceBetween:    0,
+        slidesPerView:   1,
+        activeSlideKey:  '1',
+        breakpoints: {
+          768: {
+            slidesPerView: 1.6,
+            spaceBetween: 200
+          },
+          },
+        centeredSlides: true,
+        
     }
     const Tbilisee = 'https://core.tbilisee.ge/';
     const swiperRef = useRef(null);
@@ -27,10 +35,10 @@ import { Link } from 'react-router-dom';
     };
     return (
       <>
-      <Swiper ref={swiperRef} {...params} className="landing-swiper__rooms 	swiper-container">
+      <Swiper ref={swiperRef} {...params} activeSlideKey='5' className="landing-swiper__rooms 	swiper-container">
         {
           props.arrayLandingRooms.map((item,index) => <div>
-            <div className="background-image__cover full swiper-slide" style={{backgroundImage: `url(${Tbilisee + item.main_image})`}}></div>
+            <div className="background-image__cover full swiper-slide" style={{backgroundImage: `url(${Tbilisee + item.main_image})`}} key='5'></div>
             </div>)
         }
       </Swiper>

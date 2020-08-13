@@ -145,8 +145,17 @@
 
 @media(max-width: 800px) {
     .about-us__second {
+        margin-top: 6rem;
+    }
+    .about-us__absolute {
+        display: none;
+    }
+    .about-us__goal {
+        margin-top: 40px;
+    }
+    .about-us__second {
         grid-template-columns: 1fr;
-        grid-template-rows: 0rem;
+        grid-template-rows: auto;
         padding: 0 10px;
     }
     .about-us__first {
@@ -181,10 +190,6 @@
         width: 100px;
     
     }
-    .about-us .page-title {
-        margin-top: 15rem;
-        margin-bottom: -8.5rem;
-    }
     .about-us__second .col {
         margin-bottom: 0;
     }
@@ -213,7 +218,7 @@
     }
     .about-us__goal {
         grid-template-columns: 300px;
-        grid-template-rows: 300px auto;
+        grid-template-rows: auto;
         justify-content: center;
     }
     .about-us__since {

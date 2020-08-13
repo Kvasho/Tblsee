@@ -39,11 +39,11 @@ export default class ContactUs extends Component {
         </div>
         <div className="contactus-line">
             <img src={Phone} alt="map pin" className="contactus-line__icon"/>
-            <h3 className="contactus-line__text">{arrayContacts.contacts.mobile}</h3>
+            <h3 className="contactus-line__text"><a href={"tel:" + arrayContacts.contacts.mobile}>{arrayContacts.contacts.mobile}</a></h3>
         </div>
         <div className="contactus-line">
             <img src={Fax} alt="map pin" className="contactus-line__icon"/>
-            <h3 className="contactus-line__text">{arrayContacts.contacts.landline}</h3>
+            <h3 className="contactus-line__text"><a href={"tel:" + arrayContacts.contacts.mobile}>{arrayContacts.contacts.landline}</a></h3>
         </div>
         <div className="contactus-line">
             <img src={Mail} alt="map pin" className="contactus-line__icon"/>

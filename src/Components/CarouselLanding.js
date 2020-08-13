@@ -34,8 +34,10 @@ export default (props) => {
          return (        
            <>            
         <SwiperSlide>                    
-            <Link to="/restaurant" className="landing-open__btn">open</Link>
-            <div className="background-image__cover height" style={{backgroundImage: `url(${Tbilisee + slide.background})`}}/>
+            <Link to={"/" + slide.link} className="landing-open__btn">open</Link>
+            <div className="background-image__cover height" style={{backgroundImage: `url(${Tbilisee + slide.background})`}}>
+              <img className="door" src={Tbilisee + slide.door}/>
+            </div>
         </SwiperSlide>
         </>
           )

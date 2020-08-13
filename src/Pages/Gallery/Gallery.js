@@ -34,12 +34,10 @@ export default class Gallery extends Component {
                 this.setState({
                     arrayRooms: arrayRooms
                 })
-                console.log(this.state.arrayRooms,'1290381209381093810923810928310982109')
                 for(let item of this.state.arrayRoomsFirst){
                     let text = 'https://core.tbilisee.ge/'+item;
                     arrayRooms.push(text)
                 }
-                console.log(arrayRooms,' final datas');
                 let data = res.data.image
                 const slice = data.slice(this.state.offset, this.state.offset + this.state.perPage)
                 const Tbilisee = 'https://core.tbilisee.ge/';

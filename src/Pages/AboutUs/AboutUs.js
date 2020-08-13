@@ -9,6 +9,8 @@ import "aos/dist/aos.css";
 import HeaderBlack from '../../Components/HeaderBlack';
 import PageTitle from '../../Components/PageTitle';
 import RoundBlack from '../../Assets/icons/tbilisee-hotel-round.svg'
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
 
 //SCSS
 import "./about-us.scss";
@@ -46,7 +48,7 @@ export default class AboutUs extends Component  {
         <div className="about-us__info">
           <img src={RoundBlack} className="about-us__badge"/>
          <div className="about-us__first">
-            <h2 className="about-us__title">Tbilisee</h2>
+            <h2 className="about-us__title">{t('test')}</h2>
             <h5 className="about-us__subtitle">Hotel</h5>
           </div>
           <div className="about-us__second">            

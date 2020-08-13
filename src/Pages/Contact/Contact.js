@@ -120,12 +120,13 @@ class Contact extends Component {
     </section> */}
     <section className="google-map__container">
     <Map google={this.props.google} zoom={14}>
- 
-      <Marker onClick={this.onMarkerClick}
-          name={'Current location'} />
-        <InfoWindow onClose={this.onInfoWindowClose}>
-        </InfoWindow>
-      </Map>
+ <  Marker onClick={this.onMarkerClick}
+         name={'Current location'} />
+
+ <InfoWindow onClose={this.onInfoWindowClose}>
+     
+ </InfoWindow>
+</Map>
     </section>
 
     
@@ -133,4 +134,6 @@ class Contact extends Component {
   );
 }}
 
-export default Contact;
+export default GoogleApiWrapper({
+  apiKey: ('AIzaSyDiHDNQ2w9BhxLK32eQQHDi5u0LLmLvdSo')
+})(Contact)

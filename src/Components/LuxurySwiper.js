@@ -10,7 +10,6 @@ import "../Styles/common.scss";
 
 
   const ManipulatingComponentOutSideSwiper = (props) => {
-    console.log(props,"llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll")
     const Tbilisee = "https://core.tbilisee.ge/";
     const params = {
       pagination: {

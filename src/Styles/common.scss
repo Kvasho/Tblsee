@@ -374,8 +374,17 @@ a {
             font-size: 2.2rem;
             color: $white;
             text-transform: capitalize;
+
+            & a {
+                color: #FFFFFF;
+            }
         }
     }
+}
+
+.background-full {
+    background: no-repeat center center;
+    background-size: 100% 100%;
 }
 
 .pagination > li:first-child > a {

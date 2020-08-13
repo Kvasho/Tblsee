@@ -20,7 +20,8 @@ class Header extends Component  {
 		super(props);
 		this.state = {
       burgerMenuOpen: true,
-      currentLang: 'EN'
+      currentLang: 'EN',
+      inactiveLang: ['RU', 'GE']
     };
   }
 
@@ -31,13 +32,12 @@ class Header extends Component  {
 
  handleClick = (lang) => {
     i18next.changeLanguage(lang)
-    this.setState({currentLang: lang})
   }
 
   render(){
     const {burgerMenuOpen} = this.state;
     let lang = i18next.language
-    const otherLang = ['EN','RU', 'GE'];
+    const otherLang = ['RU', 'GE'];
     const index = otherLang.indexOf(lang);
     if (index > -1) {  
     otherLang.splice(index, 1);
@@ -52,9 +52,10 @@ class Header extends Component  {
              <img src={ BurgerMenuWhite } className="header-burger_menu" alt="Burger Menu" onClick={this.toggleClass}/>
               <div className="language-bar__white">
               <li onClick={() => this.handleClick(this.state.currentLang)} className="language-first">{this.state.currentLang}</li>
-                <div className="languages-bar">                 
-                   <li onClick={() => this.handleClick('RU')} key={index}>RU</li>
-                   <li onClick={() => this.handleClick('GE')} key={index}>GE</li>                                 
+                <div className="languages-bar"> 
+                {
+                  otherLang.map((lang,index) => <li onClick={() => this.handleClick(lang)} key={index}>{lang}</li>)
+                }                                                
                 </div>
               </div>
        </div>

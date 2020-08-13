@@ -40,7 +40,7 @@ export default class  Rooms extends Component {
     <HeaderBlack/>
     <div className="rooms container-own">
       <PageTitle title="Rooms"/>
-      <section className="rooms-swiper container-own">
+      <section className="rooms-swiper">
         <Navigation array={arrayRooms} tbilisee={Tbilisee}/>
       </section>
       {
@@ -48,7 +48,7 @@ export default class  Rooms extends Component {
         <>
           <div data-aos="fade-up"
               data-aos-anchor-placement = "top-center"
-              className={index%2===1 ? "rooms-luxury container-own direction-reverse" : "rooms-luxury container-own "}>
+              className={index%2===1 ? "rooms-luxury direction-reverse" : "rooms-luxury"}>
           <div className="relative">
             <div className={index%2===1 ? "rooms-background_first " : "rooms-background_first rooms-left"}/>
             <img src={Tbilisee + room.main_image} alt="Luxury room" className="full"/>

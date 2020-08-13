@@ -76,7 +76,6 @@ class Luxury extends Component {
               <div>
                 <img src={Tbilisee + item.mood_image_small} alt={"index"} className="full" style={{height: "60%"}}/>
                 <div className="flex" style={{marginTop: "7rem"}}>
-                <h4 className="luxury-style__price">{item.price} $</h4>
                 <h4 className="per-night">per night</h4>
                 </div>
               </div>

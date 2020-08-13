@@ -35,8 +35,11 @@ export default class  Restaurant extends Component {
     <>
     <Header/>
     <div className="restaurant">
+      <div>
       <img src={Tbilisee + arrayRestaurant.cover} alt="restaurant wallpaper" className="restaurant-wallpaper"/>
-      {
+     
+      </div>
+       {
         arrayRestaurant.stories.map((item,index) => 
         <div data-aos="fade-up"
         data-aos-anchor-placement = "top-center"

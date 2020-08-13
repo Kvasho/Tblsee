@@ -43,13 +43,7 @@
         display: block;
         margin-top: 260px;
     }
-}
 
-@media(max-width: 1300px) {
-    .restaurant-wallpaper {
-        height: 40vh;
-    }
-}
 
 .restaurant-gastronomy__wr {
     display: grid;
@@ -129,9 +123,6 @@
     &__about {
         font-size: 26px;
         line-height: 46px;
-        color: #310000;
-        width: calc(100% - 600px);
-        margin: 60px auto 96px auto;
     }
 }
 
@@ -227,4 +218,5 @@
         letter-spacing: 5px;
         font-size: 30px;
     }
+}
 }

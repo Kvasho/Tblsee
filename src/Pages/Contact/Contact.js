@@ -26,7 +26,8 @@ class Contact extends Component {
     surname : "",
     phone   : 0,
     email   : "",
-    message : ""
+    message : "",
+    sent    : true
   }
   componentDidMount(){
     AOS.init({
@@ -36,7 +37,7 @@ class Contact extends Component {
 
   handleChange = (e) => {
     this.setState({
-        [e.target.name]: e.target.value
+        sent: false
     })
   }
 
@@ -93,11 +94,16 @@ class Contact extends Component {
               placeholder = "Your text here"
               className = "textarea width-full"
             />
-            <Button  
-              onClick={(e) => this.onSubmit(e)}
+            <div className="contact-button__wr">
+              {
+                this.state.sent ? <div></div> : <h3>message sent successfully</h3>
+              }              
+            <button  
+              onClick={() => this.handleChange()}
               className="contact-send__button"
-              title="send"
-            />
+            >Send</button>
+            </div>
+            
         </div>
     </div>
     

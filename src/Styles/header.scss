@@ -1,17 +1,36 @@
 .header {
-    width: 100%;
     height: auto;
-    position: absolute;
-    top: 0;
     z-index: 10;
+    position: absolute;
+    width: 100%;
 }
 
 .header-wr {
     display: flex;
     justify-content: space-between;
-    width: calc(100% - 280px);
-    margin: auto;
-    margin: 40px auto;
+    margin: 40px auto !important;
+}
+
+@media(max-width: 650px) {
+    .header-wr {
+        margin: 20px auto !important;
+    }
+    
+    .header-burger_menu {
+        width: 20px;
+    }
+
+    .language-bar__white {
+        margin-left: 6rem;
+        font-size: 17px;
+    }
+
+    .header-logo {
+        width: 80px;
+    }
+    .book-now__white {
+        font-size: 12px !important;
+    }
 }
 
 .header-black {
@@ -34,27 +53,4 @@
 
 .book-now__white:hover {
     color: #ffffff !important;
-}
-
-@media (max-width: 1200px) {
-    .header-wr {
-        margin: 5px auto;
-        width: calc(100% - 40px);
-    }
-
-    .book-now__white {
-        font-size: 10px;
-    }
-
-    .header-burger_menu {
-        width: 15px;
-    }
-
-    .language-bar {
-        font-size: 15px;
-    }
-
-    .header-logo {
-        width: 75px;
-    }
 }

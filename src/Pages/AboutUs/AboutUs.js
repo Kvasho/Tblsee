@@ -49,9 +49,8 @@ export default class AboutUs extends Component  {
             <h2 className="about-us__title">Tbilisee</h2>
             <h5 className="about-us__subtitle">Hotel</h5>
           </div>
-          <div className="about-us__second">
-            
-                  <p className="about-us__paragraph">{(() => {
+          <div className="about-us__second">            
+          <p className="about-us__paragraph">{(() => {
         if (i18n.language == 'GE') {
           return (
             arrayAboutUs.top_text_left_ge
@@ -65,9 +64,7 @@ export default class AboutUs extends Component  {
             arrayAboutUs.top_text_left_en
           )
         }
-      })()}</p>
-              
-              
+      })()}</p>              
                   <p className="about-us__paragraph">{(() => {
         if (i18n.language == 'GE') {
           return (

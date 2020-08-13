@@ -17,8 +17,14 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 export default (props) => {
   const Tbilisee = 'https://core.tbilisee.ge/';
   const {sliders} = props;
+  const params = {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
+  }
   return (
-    <Swiper
+    <Swiper {...params}
       slidesPerView = {1}  
     >
        
@@ -28,8 +34,7 @@ export default (props) => {
            <>            
         <SwiperSlide>                    
             <Link to="/restaurant" className="landing-open__btn">open</Link>
-            <img src={Tbilisee + slide.image} alt={index} key={index}/>
-            
+            <img src={Tbilisee + slide.background} alt={index} key={index}/>
         </SwiperSlide>
         </>
           )

@@ -47,9 +47,6 @@ export default class Landing extends Component {
     const eatsFirstHalf = arrayLanding.eat_drinks.images.splice(0, half)
     const eatsSecondHalf = arrayLanding.eat_drinks.images.splice(-half)
     const {t, i18n} = this.props;
-    console.log(arrayLanding.rooms[0].main_image,"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-
-    // const { t } = useTranslation();
 
   return (
     <>
@@ -60,10 +57,9 @@ export default class Landing extends Component {
       </div>
       
       <img className="landing-badge" src={HotelRound}/>
-       <CarouselLanding 
-        title={arrayLanding.headerTitle.title_en} 
-        sliders={arrayLanding.sliders}
-        headerTitle={arrayLanding.headerTitle}
+       <CarouselLanding   
+        doors={arrayLanding.doors}      
+        sliders={arrayLanding.sliders}        
        />
       </div>       
       <h2  className="exploring-title">{(() => {
@@ -84,10 +80,9 @@ export default class Landing extends Component {
         <section data-aos="fade-up"
             data-aos-anchor-placement = "top-center" className="exploring container-own">
               
-            <div 
-            >
+            <div className="exploring-one">
               <h3>Tbilisi <span className="white">Hotel</span></h3>
-              <p>{(() => {
+              <p className="elipsis-7">{(() => {
         if (i18n.language == 'GE') {
           return (
             arrayLanding.exploring.description_ge
@@ -103,10 +98,10 @@ export default class Landing extends Component {
         }
       })()}</p>
             </div>
-            <div>
+            <div className="exploring-two">
               <img  src={Tbilisee + arrayLanding.exploring.big_image} alt="/" className="exploring-image__full"/>
             </div>
-            <div className="relative">
+            <div className="relative exploring-three">
               <img  src={Tbilisee + arrayLanding.exploring.small_image} alt="/" className="exploring-image__half absolute"/>
             </div>
            
@@ -118,7 +113,7 @@ export default class Landing extends Component {
           <img src={Tbilisee + arrayLanding.gallery.big_image} alt="landing gallery" className="full gallery-big__image"/>
         </div>
         <div>
-          <p>{(() => {
+          <p className="elipsis-9">{(() => {
         if (i18n.language === 'GE') {
           return (
             arrayLanding.gallery.description_ge
@@ -182,7 +177,8 @@ export default class Landing extends Component {
       </section>
       <section  className="landing_eats container-own" data-aos="fade-up"
             data-aos-anchor-placement = "top-center">
-          <div>
+              <div>
+          <div style={{position: "sticky", top: "0"}}>
           <h3 className="eats-title">{(() => {
         if (i18n.language === 'GE') {
           return (
@@ -198,7 +194,7 @@ export default class Landing extends Component {
           )
         }
       })()}</h3>
-              <p className="eats-paragraph">{(() => {
+              <p className="eats-paragraph elipsis-7">{(() => {
         if (i18n.language === 'GE') {
           return (
             arrayLanding.eat_drinks.description_ge
@@ -214,6 +210,7 @@ export default class Landing extends Component {
         }
       })()}</p>
                  <Link to="/restaurant" className="eats-button">See More</Link>
+                 </div>
           </div>
           <div className="landing-eats__img">
           {
@@ -249,7 +246,7 @@ export default class Landing extends Component {
           )
         }
       })()}</h3>
-              <p>{(() => {
+              <p className="elipsis-7">{(() => {
         if (i18n.language === 'GE') {
           return (
             arrayLanding.neighborhood.description_ge

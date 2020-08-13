@@ -5,6 +5,10 @@
     &__wr {
         position: relative;
         margin-bottom: 550px;
+
+        & .page-title {
+            margin-top: 100px;
+        }
     }
 
     &__info {
@@ -186,7 +190,7 @@
     }
 
     .about-us__info {
-        width: 85%;
+        width: 70%;
         padding: 30px 23px;
     }
 

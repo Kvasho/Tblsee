@@ -85,8 +85,7 @@ export default class  Rooms extends Component {
                       )
                     }
       })()}</p>
-              <div className="flex space-between">
-                <span className="rooms-price">{room.price} $</span>
+              <div className="flex space-between" style={{flexDirection: "row-reverse"}}>
                 <Link 
                   to="/luxury"
                   className="see-more__btn"

@@ -46,7 +46,7 @@ class Header extends Component  {
           {
             burgerMenuOpen ? 
             <header className="header"> 
-            <div className="header-wr">
+            <div className="header-wr container-own">
             <div className="flex">
              <img src={ BurgerMenuWhite } className="header-burger_menu" alt="Burger Menu" onClick={this.toggleClass}/>
               <div className="language-bar__white">

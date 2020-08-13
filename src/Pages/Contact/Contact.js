@@ -17,7 +17,7 @@ import "./contact.scss";
 
 // IMAGES
 import HotelRound from '../../Assets/icons/tbilisee-hotel.svg';
-// import {Map, InfoWindow, Marker, GoogleApiWrapper, MapContainer} from 'google-maps-react';
+import {Map, InfoWindow, Marker, GoogleApiWrapper, MapContainer} from 'google-maps-react';
 
 
 class Contact extends Component {
@@ -104,7 +104,7 @@ class Contact extends Component {
     {/* <section style={{width: "1000px", height: "200px"}}>
     <GoogleMaps />
     </section> */}
-    {/* <section className="google-map__container">
+    <section className="google-map__container">
     <Map google={this.props.google} zoom={14}>
  
       <Marker onClick={this.onMarkerClick}
@@ -113,7 +113,7 @@ class Contact extends Component {
         <InfoWindow onClose={this.onInfoWindowClose}>
         </InfoWindow>
       </Map>
-    </section> */}
+    </section>
 
     
     </>

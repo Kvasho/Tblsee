@@ -18,9 +18,7 @@ export default class DropdownMenu extends Component  {
     }
     render(){
   return (
-    <div data-aos="fade-down"
-    data-aos-easing="linear"
-    data-aos-duration="200" className="dropdown-menu__header">
+    <div className="dropdown-menu__header">
         <img src={CloseButton} className="burger-close" alt="Close Button" onClick={() => this.props.menuHandler()}/>
         <div className="dropdown-menu_wr">
             <Link to="/aboutus">

@@ -42,19 +42,6 @@
     &-shef__img {
         display: block;
         margin-top: 260px;
-        height: 60vh;
-    }
-}
-
-@media(max-width: 1600px) {
-    .restaurant-shef__img {
-        height: 50vh;
-    }
-}
-
-@media(max-width: 1000px) {
-    .restaurant-shef__img {
-        height: 20vh;
     }
 }
 
@@ -140,7 +127,8 @@
     }
 
     &__about {
-        font-size: 42px;
+        font-size: 26px;
+        line-height: 46px;
         color: #310000;
         width: calc(100% - 600px);
         margin: 60px auto 96px auto;

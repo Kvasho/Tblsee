@@ -69,10 +69,72 @@ a {
 
 // WebPage Container
 .container-own {
-    width: calc(100% - 280px) !important;
+    width: 1640px;
     margin: auto;
 }
 
+@media(max-width: 1700px) {
+    .container-own {
+        width: 1500px;
+    }
+}
+
+@media(max-width: 1600px) {
+    .container-own {
+        width: 1400px;
+    }
+}
+
+@media(max-width: 1470px) {
+    .container-own {
+        width: 1270px;
+    }
+}
+
+@media(max-width: 1350px){
+    .container-own {
+        width: 1150px;
+    }
+}
+
+@media(max-width: 1200px){
+    .container-own {
+        width: 1000px;
+    }
+}
+@media(max-width: 1050px) {
+    .container-own {
+        width: 850px;
+    }
+}
+
+@media(max-width: 950px){
+    .container-own {
+        width: 700px;
+    }
+}
+
+@media(max-width: 765px){
+    .container-own {
+        width: 600px;
+    }
+}
+
+@media(max-width: 650px) {
+    .container-own {
+        width: 500px;
+    }
+
+    .book-now {
+        font-size: 11px !important;
+    }
+}
+
+@media(max-width: 540px){
+    .container-own {
+        width: 360px;
+    }
+}
 .burger-close {
     position: absolute;
     left: 15rem; 
@@ -184,7 +246,7 @@ a {
 
 .book-now {
     background-color: transparent;
-    font-size: 1.5rem;
+    font-size: 15px;
     border: 1px solid $black-text;
     height: fit-content;
     padding: 2rem 1rem;
@@ -192,6 +254,7 @@ a {
 }
 
 .book-now__white {
+    font-size: 15px;
     color: #ffffff;
     border: 1px solid #ffffff;
     padding: 2rem 1rem;
@@ -213,12 +276,60 @@ a {
     cursor: pointer;
 }
 
+.elipsis-3 {
+    display: -webkit-box;   
+   -webkit-line-clamp: 3;   
+   -webkit-box-orient: vertical;     
+   overflow: hidden;
+}
+
+.elipsis-4 {
+    display: -webkit-box;   
+   -webkit-line-clamp: 4;   
+   -webkit-box-orient: vertical;     
+   overflow: hidden;
+}
+
+.elipsis-5 {
+    display: -webkit-box;   
+   -webkit-line-clamp: 5;   
+   -webkit-box-orient: vertical;     
+   overflow: hidden;
+}
+
+.elipsis-6 {
+    display: -webkit-box;   
+   -webkit-line-clamp: 6;   
+   -webkit-box-orient: vertical;     
+   overflow: hidden;
+}
+
+.elipsis-7 {
+    display: -webkit-box;   
+   -webkit-line-clamp: 7;   
+   -webkit-box-orient: vertical;     
+   overflow: hidden;
+}
+
+.elipsis-8 {
+    display: -webkit-box;   
+   -webkit-line-clamp: 8;   
+   -webkit-box-orient: vertical;     
+   overflow: hidden;
+}
+
+.elipsis-9 {
+    display: -webkit-box;   
+   -webkit-line-clamp: 9;   
+   -webkit-box-orient: vertical;     
+   overflow: hidden;
+}
+
 // Footer
 .footer {
     width: 100%;
     background: $black-footer;
     &-wr {
-        width: calc(100% - 55rem);
         margin: auto;
         padding: 4rem 0;
     }
@@ -363,10 +474,6 @@ a {
 }
 
 @media(max-width: 1200px){
-    .container-own {
-        width: calc(100% - 50px) !important;
-    }
-
     .rooms-description {
         width: 100%;
     }
@@ -383,10 +490,6 @@ a {
     .page-title {
         font-size: 6rem;
     }
-}
-
-.white {
-    color: #ffffff;
 }
 
 .padding-right {
@@ -412,8 +515,5 @@ a {
 @media(max-width: 1300px) {
     .footer .col {
         margin-bottom: 1rem;
-    }
-    .language-bar__white {
-        font-size: 15px;
     }
 }

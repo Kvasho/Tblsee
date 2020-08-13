@@ -9,6 +9,7 @@ import Header from '../../Components/Header';
 
 // SCSS
 import "./restaurant.scss";
+import "../../Styles/common.scss";
 
 export default class  Restaurant extends Component {
   state = {
@@ -35,16 +36,14 @@ export default class  Restaurant extends Component {
     <>
     <Header/>
     <div className="restaurant">
-      <div>
-      <img src={Tbilisee + arrayRestaurant.cover} alt="restaurant wallpaper" className="restaurant-wallpaper"/>
-     
+      <div className="restaurant-wallpaper">
+        <div className="background-image__cover height" style={{backgroundImage: `url(${Tbilisee + arrayRestaurant.cover})`}}/>             
       </div>
        {
         arrayRestaurant.stories.map((item,index) => 
         <div 
         className={index%2===1 ? "restaurant-gastronomy container-own direction-reverse" : "restaurant-gastronomy container-own "}>
         <div className="restaurant-gastronomy__wr width-full">
-         
             <div className="restaurant-block">
               <h2 className="restaurant-gastronomy__title">{(() => {
                     if (i18n.language === 'GE') {
@@ -76,8 +75,9 @@ export default class  Restaurant extends Component {
                       )
                     }
       })()}</p>
-            </div>                    
-            <img src={Tbilisee + item.image} alt="gastronomy" className="full" key={index}/> 
+            </div>
+            {/* <div className="background-image__cover height full" style={{backgroundImage: `url(${Tbilisee + item.image})`}} key={index}/>     */}
+            <img src={Tbilisee + item.image} alt="gastronomy" className="full" /> 
         </div>
       </div>)
       }
@@ -92,8 +92,8 @@ export default class  Restaurant extends Component {
           <div data-aos="fade-up"
           data-aos-anchor-placement = "top-center"
           className="restaurant-menu__cell">
-          <img src={Tbilisee + item.image} alt={item.name} id={index} className="restaurant-menu__image" key={index}/>
-            <div>
+          <div className="background-image height restaurant-menu__image" alt={item.name} id={index} style={{backgroundImage: `url(${Tbilisee + item.image})`}}/>
+            <div style={{marginLeft: "22px"}}>
               <h4>{(() => {
                     if (i18n.language === 'GE') {
                       return (
@@ -130,9 +130,10 @@ export default class  Restaurant extends Component {
       </div>
 
       {/* CHEF SECTION */}
-      <img data-aos="fade-up"
-              data-aos-anchor-placement = "top-center"
-              src={Tbilisee + arrayRestaurant.chef.image} alt="shef" className="restaurant-shef__img container-own"/>
+      <div className="shef-wallpaper">
+              <div data-aos="fade-up"
+              data-aos-anchor-placement = "top-center" className="background-image__cover height restaurant-shef__img container-own" alt="shef" style={{backgroundImage: `url(${Tbilisee + arrayRestaurant.chef.image})`}}/>
+      </div>
       <h2 
               className="restaurant-shef">{(() => {
                 if (i18n.language === 'GE') {

@@ -63,8 +63,30 @@ a {
     left: 550px;
 }
 
+.loading {
+    background: transparent;
+    height: 1000rem;
+    width: 100%;
+}
+
 .space-between {
     justify-content: space-between;
+}
+
+.background-image__cover {
+    background: no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.height-half {
+    height: 50%;
+}
+
+.height {
+    height: 100%;
 }
 
 // WebPage Container

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import AOS from 'aos';
 import "aos/dist/aos.css";
+import axios from 'axios'
 
 // COMPONENTS
 import PageTitle from '../../Components/PageTitle';
@@ -27,12 +28,16 @@ class Contact extends Component {
     phone   : 0,
     email   : "",
     message : "",
-    sent    : true
+    sent    : true,
+    arrayContact: undefined
   }
   componentDidMount(){
     AOS.init({
 			duration: 2000
-		});
+    });
+    axios.get('https://core.tbilisee.ge/admin/api/social').then(res => {
+      this.setState({arrayContact: res.data})
+    })
   }
 
   handleChange = (e) => {
@@ -42,6 +47,9 @@ class Contact extends Component {
   }
 
   render(){
+    if(!this.state.arrayContact) {
+      return "loading"; //TODO: Need Loading State
+    }
   return (
     <>
     <HeaderBlack/>
@@ -52,7 +60,7 @@ class Contact extends Component {
           data-aos-easing="linear"
           data-aos-duration="1500" className="contact-form">
           <img src={HotelRound} alt="Round logo Tbilisee" className="contact-round__logo"/>
-        <ContactUs/>
+        <ContactUs socials={this.state.arrayContact}/>
             <h2 className="width-full contact-title">Stay in touch</h2>
             <Input 
               name='name'
@@ -115,7 +123,6 @@ class Contact extends Component {
  
       <Marker onClick={this.onMarkerClick}
           name={'Current location'} />
-
         <InfoWindow onClose={this.onInfoWindowClose}>
         </InfoWindow>
       </Map>

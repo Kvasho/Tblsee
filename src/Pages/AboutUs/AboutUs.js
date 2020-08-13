@@ -6,8 +6,6 @@ import AOS from 'aos';
 import "aos/dist/aos.css";
 
 // COMPONENTS
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import HeaderBlack from '../../Components/HeaderBlack';
 import PageTitle from '../../Components/PageTitle';
 import RoundBlack from '../../Assets/icons/tbilisee-hotel-round.svg'
@@ -42,7 +40,9 @@ export default class AboutUs extends Component  {
       <div className="about-us__wr">  
       <div className="about-us__absolute"/>    
         <PageTitle title="About Us"/>
-        <img src={Tbilisee + arrayAboutUs.cover} alt="wallpaper" className="rooms-wallpaper container-own"/>
+        <div style={{height: "50vh"}}>
+          <div className="background-image__cover height rooms-wallpaper container-own" style={{backgroundImage: `url(${Tbilisee + arrayAboutUs.cover})`}}/>
+        </div>        
         <div className="about-us__info">
           <img src={RoundBlack} className="about-us__badge"/>
          <div className="about-us__first">
@@ -85,15 +85,42 @@ export default class AboutUs extends Component  {
           </div>
         </div>
         <h3 className="aboutus-goal__title relative">
-          {arrayAboutUs.goal.goal_title_en}
+        {(() => {
+        if (i18n.language == 'GE') {
+          return (
+            arrayAboutUs.goal.goal_title_ge
+          )
+        } else if (i18n.language == 'RU') {
+          return (
+            arrayAboutUs.goal.goal_title_ru
+          )
+        } else {
+          return (
+            arrayAboutUs.goal.goal_title_en
+          )
+        }
+      })()}
           <span className="absolute goal-absolute">Goal</span>
         </h3>
         <div className="about-us__goal">
-       
-            <img src={Tbilisee + arrayAboutUs.goal.image} alt="Our Goal" className="full"></img>
+        <div className="background-image__cover height rooms-wallpaper container-own full" style={{backgroundImage: `url(${Tbilisee + arrayAboutUs.goal.image})`}}/>
           
           <div className="aboutus-goal__paragraph">
-              <p>{arrayAboutUs.goal.description_en}</p>
+              <p>{(() => {
+        if (i18n.language == 'GE') {
+          return (
+            arrayAboutUs.goal.description_ge
+          )
+        } else if (i18n.language == 'RU') {
+          return (
+            arrayAboutUs.goal.description_ru
+          )
+        } else {
+          return (
+            arrayAboutUs.goal.description_en
+          )
+        }
+      })()}</p>
                  <div className="about-us__since">
                    <span>since</span>
                    <span>2016</span>

@@ -29,7 +29,9 @@ import { Link } from 'react-router-dom';
       <>
       <Swiper ref={swiperRef} {...params} className="landing-swiper__rooms 	swiper-container">
         {
-          props.arrayLandingRooms.map((item,index) => <div><img src={Tbilisee + item.main_image} key={index} className="full swiper-slide"/></div>)
+          props.arrayLandingRooms.map((item,index) => <div>
+            <div className="background-image__cover full swiper-slide" style={{backgroundImage: `url(${Tbilisee + item.main_image})`}}></div>
+            </div>)
         }
       </Swiper>
       <div className="landing-swiper__controller">

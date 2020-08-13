@@ -12,7 +12,9 @@ const Navigation = (props) => {
   return (
     <Swiper {...params}>
         {
-            props.array.map((item,index) => <div><img src={Image} className="full" key={index}/></div>)
+            props.array.map((item,index) => <div>
+              <div className="background-image__cover height full" style={{backgroundImage: `url(${Image})`}}/>
+              <img src={Image} className="full" key={index}/></div>)
         }
       
 

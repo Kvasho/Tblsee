@@ -36,7 +36,8 @@ export default class Destination extends Component {
   <>
   <div className="dest container-own">
     <div>
-      <img id="destination-main" src={Tbilisee + this.state.testImages.image_1000} className="destination-img full"/>
+      <div id="destination-main" className="background-image__cover height" style={{backgroundImage: `url(${Tbilisee + this.state.testImages.image_1000})`}}/>
+      {/* <img  src={Tbilisee + this.state.testImages.image_1000} className="destination-img full"/> */}
     </div>
     <div className="dest-col">
         <div>
@@ -56,7 +57,7 @@ export default class Destination extends Component {
                       )
                     }
       })()}</h2>
-      <p className="destination-content__paragraph" style={{ marginTop: "30px", marginBottom: "30px"}}>{(() => {
+      <p className="destination-content__paragraph elipsis-5" style={{ marginTop: "30px", marginBottom: "30px"}}>{(() => {
                     if (i18n.language === 'GE') {
                       return (
                         this.state.testImages.description_ge
@@ -94,7 +95,8 @@ export default class Destination extends Component {
                       )
                     }
       })()}</h3>
-                  <img src={Tbilisee + item.image} className="destination-card__image" onClick={() => toggleImage(item)}/> 
+                  <div id="destination-main" className="background-image__cover height destination-card__image" style={{backgroundImage: `url(${Tbilisee + item.image})`}} onClick={() => toggleImage(item)}/>
+                  {/* <img src={Tbilisee + item.image} className="destination-card__image" onClick={() => toggleImage(item)}/>  */}
                 </div>
                   )
               }

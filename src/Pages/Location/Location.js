@@ -69,7 +69,8 @@ export default class Location extends Component {
         <div className= {index%2===1 ? "location-infos" : "location-infos direction-reverse"}>
           <div className="relative">
             <div className={index%2===1 ? "location-absolute location-absolute__reverse" : "location-absolute "}/>
-            <img src={Tbilisee + info.image} alt={info.title_en} className="full" key={index}/>
+            {/* <img src={Tbilisee + info.image} alt={info.title_en} className="full" key={index}/> */}
+            <div className="background-image__cover height full" style={{backgroundImage: `url(${Tbilisee + info.image})`}}/>
           </div>
            <div className="location-infos__txt">
           <h2>{(() => {

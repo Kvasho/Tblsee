@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 // CSS
 import 'swiper/swiper.scss';
 import '../Styles/costumiseSwiper.scss';
-import Image from "../Assets/Images/landing-swiper.jpg"
 import '../Pages/Location/Location.scss'
 import '../Styles/common.scss';
 import DestCardsSwiper from '../Components/DestCardsSwiper';
@@ -13,15 +12,9 @@ import DestCardsSwiper from '../Components/DestCardsSwiper';
 
 export default class Destination extends Component {
   state = {
-    testImages: {
-      "image": "public/images/rooms/2020-05-26T07:40:32.801Z2.jpg",
-      "title_en": "title en edited",
-      "title_ge": "titile ge",
-      "description_en": "desc en",
-      "description_ge": "desc ge",
-      "description_ru": "desc ru"
+    testImages: this.props.arrayDestination[0]
   }
-  }
+  
   componentDidMount () {
     this.setState({testImages: this.props.arrayDestination[0]})
   }

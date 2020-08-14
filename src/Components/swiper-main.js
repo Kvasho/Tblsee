@@ -8,6 +8,11 @@ import { Link } from 'react-router-dom';
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
       },
+<<<<<<< HEAD
+        spaceBetween:    240,
+        slidesPerView:   3,
+        activeSlideKey:  'key'
+=======
         loop: true,
         spaceBetween:    0,
         slidesPerView:   1,
@@ -20,6 +25,7 @@ import { Link } from 'react-router-dom';
           },
         centeredSlides: true,
         
+>>>>>>> fad220f55060c43de023a6bc84c64484450fed00
     }
     const Tbilisee = 'https://core.tbilisee.ge/';
     const swiperRef = useRef(null);

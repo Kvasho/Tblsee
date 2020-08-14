@@ -10,7 +10,6 @@ import "../Styles/common.scss";
 
 
   const ManipulatingComponentOutSideSwiper = (props) => {
-    const Tbilisee = "https://core.tbilisee.ge/";
     const params = {
       pagination: {
         el: '.swiper-pagination',
@@ -45,13 +44,13 @@ import "../Styles/common.scss";
           
             
             <div>
-              <img src={Image} className="luxury-swiper__img"/>
+              <img src={Image} className="luxury-swiper__img" alt="midRange"/>
           </div>
           <div>
-              <img src={Image} className="luxury-swiper__img"/>
+              <img src={Image} className="luxury-swiper__img" alt="midRange"/>
           </div>
           <div>
-              <img src={Image} className="luxury-swiper__img"/>
+              <img src={Image} className="luxury-swiper__img" alt="midRange"/>
           </div>
             
                

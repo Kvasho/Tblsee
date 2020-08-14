@@ -11,6 +11,14 @@
     margin: 40px auto !important;
 }
 
+.language-bar__white {
+    display: flex;
+}
+
+.language-bar__black {
+    display: flex;
+}
+
 @media(max-width: 650px) {
     .header-wr {
         margin: 20px auto !important;

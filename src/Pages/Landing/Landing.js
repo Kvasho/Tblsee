@@ -10,10 +10,6 @@ import SwiperMain from '../../Components/swiper-main'
 // COMPONENTS
 import CarouselLanding from '../../Components/CarouselLanding';
 import Header from '../../Components/Header';
-import { useTranslation } from 'react-i18next';
-import LandingRoomsSwiper from '../../Components/LandingRoomsSwiper'
-import Swiper from 'react-id-swiper'; 
-import { withTranslation } from 'react-i18next';
 
 // IMAGES
 import HotelRound from "../../Assets/icons/tbilisee-hotel-round-white.svg";
@@ -49,19 +45,20 @@ export default class Landing extends Component {
     const {t, i18n} = this.props;
   return (
     <>
-    <Header/>
+    <Header t={t}/>
     <div className="landing">
       <div className="landing-head__swiper">
       <div className="header-title">
       </div>
       
-      <img className="landing-badge" src={HotelRound}/>
-       <CarouselLanding        
+      <img className="landing-badge" src={HotelRound} alt="badge"/>
+       <CarouselLanding
+        t={t}        
         sliders={arrayLanding.sliders}        
        />
       </div>       
       <h2  className="exploring-title">{(() => {
-        if (i18n.language === 'GE') {
+        if (i18n.language === 'KA') {
           return (
             arrayLanding.exploring.title_ge
           )
@@ -79,9 +76,9 @@ export default class Landing extends Component {
             data-aos-anchor-placement = "top-center" className="exploring container-own">
               
             <div className="exploring-one">
-              <h3>{t('Tbilisi')} <span className="white">hotel</span></h3>
+              <h3>Tbilise <span className="white">hotel</span></h3>
               <p className="elipsis-7">{(() => {
-        if (i18n.language == 'GE') {
+        if (i18n.language == 'KA') {
           return (
             arrayLanding.exploring.description_ge
           )
@@ -97,13 +94,11 @@ export default class Landing extends Component {
       })()}</p>
             </div>
             <div className="exploring-two">
-              {/* <img  src={Tbilisee + arrayLanding.exploring.big_image} alt="/" className="exploring-image__full"/> */}
-              <div className="background-image__cover height" style={{backgroundImage: `url(${Tbilisee + arrayLanding.exploring.big_image})`}}></div>
+              <div className="background-image__cover height" style={{backgroundImage: `url(${(Tbilisee + arrayLanding.exploring.big_image)})`}}></div>
             </div>
             <div className="relative exploring-three">
               <div className="background-image__cover height-half" style={{backgroundImage: `url(${Tbilisee + arrayLanding.exploring.small_image})`}}></div>
-            </div>
-           
+            </div>           
         </section>
       <section data-aos="fade-up"
             data-aos-anchor-placement = "top-center" className="landing-gallery">
@@ -113,7 +108,7 @@ export default class Landing extends Component {
         </div>
         <div>
           <p className="elipsis-9">{(() => {
-        if (i18n.language === 'GE') {
+        if (i18n.language === 'KA') {
           return (
             arrayLanding.gallery.description_ge
           )
@@ -130,7 +125,7 @@ export default class Landing extends Component {
         </div>
         <div className="relative">
           <h3>{(() => {
-        if (i18n.language === 'GE') {
+        if (i18n.language === 'KA') {
           return (
             arrayLanding.gallery.title_ge
           )
@@ -144,7 +139,7 @@ export default class Landing extends Component {
           )
         }
       })()}</h3>
-          <div className="background-image__cover height-half landing-neighborhood__img absolute" style={{backgroundImage: `url(${Tbilisee + arrayLanding.gallery.medium_image})`}}></div>
+          <div className="background-image__cover height-half landing-neighborhood__img absolute" style={{backgroundImage: `url(${(Tbilisee + arrayLanding.gallery.medium_image_200)})`}}></div>
           {/* <img src={Tbilisee + arrayLanding.gallery.medium_image} alt="Landing Gallery" className="landing-neighborhood__img absolute"/> */}
         </div>
         <div className="relative">
@@ -169,7 +164,7 @@ export default class Landing extends Component {
               <div>
           <div style={{position: "sticky", top: "100px"}}>
           <h3 className="eats-title">{(() => {
-        if (i18n.language === 'GE') {
+        if (i18n.language === 'KA') {
           return (
             arrayLanding.eat_drinks.title_ge
           )
@@ -184,7 +179,7 @@ export default class Landing extends Component {
         }
       })()}</h3>
               <p className="eats-paragraph elipsis-7">{(() => {
-        if (i18n.language === 'GE') {
+        if (i18n.language === 'KA') {
           return (
             arrayLanding.eat_drinks.description_ge
           )
@@ -198,7 +193,7 @@ export default class Landing extends Component {
           )
         }
       })()}</p>
-                 <Link to="/restaurant" className="eats-button">{t('test')}</Link>
+                 <Link to="/restaurant" className="eats-button">{t('See More')}</Link>
                  </div>
           </div>
           <div className="landing-eats__img">
@@ -211,7 +206,7 @@ export default class Landing extends Component {
           </div>
           <div className="landing-eats__img2">
             {
-              eatsSecondHalf.map((image,index) => 
+              eatsFirstHalf.map((image,index) => 
               <div className="background-image__cover full" style={{backgroundImage: `url(${Tbilisee + image})`}} key={index}></div>
               )
             }
@@ -221,7 +216,7 @@ export default class Landing extends Component {
             data-aos-anchor-placement = "top-center" className="landing-neighborhood">
           <div className="landing-neighborhood__txt">   
               <h3>{(() => {
-        if (i18n.language === 'GE') {
+        if (i18n.language === 'KA') {
           return (
             arrayLanding.neighborhood.title_ge
           )
@@ -236,7 +231,7 @@ export default class Landing extends Component {
         }
       })()}</h3>
               <p className="elipsis-7">{(() => {
-        if (i18n.language === 'GE') {
+        if (i18n.language === 'KA') {
           return (
             arrayLanding.neighborhood.description_ge
           )
@@ -250,7 +245,7 @@ export default class Landing extends Component {
           )
         }
       })()}</p>
-                <Link to="/location" className="neighborhood-more">View More</Link>
+                <Link to="/location" className="neighborhood-more">{t('View More')}</Link>
           </div>
           <div className="background-image__cover full" style={{backgroundImage: `url(${Tbilisee +  arrayLanding.neighborhood.big_image})`}}></div>
           <div className="background-image__cover height-half neigborhood-img2" style={{backgroundImage: `url(${Tbilisee + arrayLanding.neighborhood.small_image})`}}></div>

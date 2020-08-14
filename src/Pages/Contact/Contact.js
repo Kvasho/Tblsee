@@ -8,7 +8,6 @@ import axios from 'axios'
 import PageTitle from '../../Components/PageTitle';
 import Input from '../../Components/Input';
 import HeaderBlack from '../../Components/HeaderBlack';
-import Button from '../../Components/Button';
 import ContactUs from '../../Components/ContactUs';
 
 
@@ -18,7 +17,7 @@ import "./contact.scss";
 
 // IMAGES
 import HotelRound from '../../Assets/icons/tbilisee-hotel.svg';
-import {Map, InfoWindow, Marker, GoogleApiWrapper, MapContainer} from 'google-maps-react';
+import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 
 class Contact extends Component {
@@ -47,21 +46,22 @@ class Contact extends Component {
   }
 
   render(){
+    const {t} = this.props;
     if(!this.state.arrayContact) {
       return "loading"; //TODO: Need Loading State
     }
   return (
     <>
-    <HeaderBlack/>
+    <HeaderBlack t={t}/>
     <div data-aos="fade-up"
      data-aos-duration="3000" className="Contact">
-        <PageTitle title="Contact Us" className="contact-us__mobile"/>
+        <PageTitle title={t("Contact Us")} className="contact-us__mobile"/>
         <div data-aos="fade-down"
           data-aos-easing="linear"
           data-aos-duration="1500" className="contact-form">
           <img src={HotelRound} alt="Round logo Tbilisee" className="contact-round__logo"/>
-        <ContactUs socials={this.state.arrayContact}/>
-            <h2 className="width-full contact-title">Stay in touch</h2>
+        <ContactUs t={t} socials={this.state.arrayContact}/>
+            <h2 className="width-full contact-title">{t('Stay in touch')}</h2>
             <Input 
               name='name'
               onChange = {e => this.handleChange(e)}
@@ -109,7 +109,7 @@ class Contact extends Component {
             <button  
               onClick={() => this.handleChange()}
               className="contact-send__button"
-            >Send</button>
+            >{t('Send')}</button>
             </div>
             
         </div>

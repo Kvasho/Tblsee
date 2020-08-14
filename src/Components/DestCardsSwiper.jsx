@@ -1,6 +1,5 @@
   import React, {useRef} from 'react';
   import Swiper from 'react-id-swiper';
-import { propTypes } from 'react-bootstrap/esm/Image';
   const Navigation = (props) => {
     const params = {
       navigation: {
@@ -12,16 +11,6 @@ import { propTypes } from 'react-bootstrap/esm/Image';
     const {i18n} = props;
     const Tbilisee = 'https://core.tbilisee.ge/';
     const swiperRef = useRef(null);
-    const goNext = () => {
-      if (swiperRef.current && swiperRef.current.swiper) {
-        swiperRef.current.swiper.slideNext();
-      }
-    };
-    const goPrev = () => {
-      if (swiperRef.current && swiperRef.current.swiper) {
-        swiperRef.current.swiper.slidePrev();
-      }
-    };
     return (
         <>
       <Swiper ref={swiperRef} {...params}>
@@ -29,7 +18,7 @@ import { propTypes } from 'react-bootstrap/esm/Image';
           props.arrayDestination.map((item,index) => <div>
               <div className="destination-card" key={index}>
                       <h3>{(() => {
-                    if (i18n.language === 'GE') {
+                    if (i18n.language === 'KA') {
                       return (
                         item.title_ge
                       )

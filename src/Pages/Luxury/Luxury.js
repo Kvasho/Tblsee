@@ -36,7 +36,7 @@ class Luxury extends Component {
         const {t, i18n} = this.props;
         return (
           <>
-          <HeaderBlack />
+          <HeaderBlack t={t}/>
           <PageTitle title="Luxury"/> 
           {
             arrayLuxury.room.map((item,index) => <>
@@ -65,7 +65,7 @@ class Luxury extends Component {
               <div className="luxury-about">
                 <h2>about room</h2>
                 <p>{(() => {
-        if (i18n.language === 'GE') {
+        if (i18n.language === 'KA') {
           return (
             item.description_ge
           )
@@ -88,7 +88,7 @@ class Luxury extends Component {
               <div className="luxury-style__wr">
                 <h2>Style</h2>
                 <p className="elipsis-3">{(() => {
-        if (i18n.language === 'GE') {
+        if (i18n.language === 'KA') {
           return (
             item.style_description_ge
           )
@@ -112,7 +112,7 @@ class Luxury extends Component {
               <div className="luxury-mood">
                 <h2 style={{marginTop: "6rem"}}>Mood</h2>
                 <p>{(() => {
-        if (i18n.language === 'GE') {
+        if (i18n.language === 'KA') {
           return (
             item.mood_description_ge
           )

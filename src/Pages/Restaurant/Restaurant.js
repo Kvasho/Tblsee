@@ -34,7 +34,7 @@ export default class  Restaurant extends Component {
     const {t, i18n} = this.props;
   return (
     <>
-    <Header/>
+    <Header t={t}/>
     <div className="restaurant">
       <div className="restaurant-wallpaper">
         <div className="background-image__cover height" style={{backgroundImage: `url(${Tbilisee + arrayRestaurant.cover})`}}/>             
@@ -46,7 +46,7 @@ export default class  Restaurant extends Component {
         <div className="restaurant-gastronomy__wr width-full">
             <div className="restaurant-block">
               <h2 className="restaurant-gastronomy__title">{(() => {
-                    if (i18n.language === 'GE') {
+                    if (i18n.language === 'KA') {
                       return (
                         item.title_ge
                       )
@@ -61,7 +61,7 @@ export default class  Restaurant extends Component {
                     }
       })()}</h2>
               <p className="restaurant-gastronomy__paragraph">{(() => {
-                    if (i18n.language === 'GE') {
+                    if (i18n.language === 'KA') {
                       return (
                         item.description_ge
                       )
@@ -95,7 +95,7 @@ export default class  Restaurant extends Component {
           <div className="background-image height restaurant-menu__image" alt={item.name} id={index} style={{backgroundImage: `url(${Tbilisee + item.image})`}}/>
             <div style={{marginLeft: "22px"}}>
               <h4>{(() => {
-                    if (i18n.language === 'GE') {
+                    if (i18n.language === 'KA') {
                       return (
                         item.name_ge
                       )
@@ -110,7 +110,7 @@ export default class  Restaurant extends Component {
                     }
       })()}</h4>
               <h5>{(() => {
-                    if (i18n.language === 'GE') {
+                    if (i18n.language === 'KA') {
                       return (
                         item.city_ge, item.country_ge
                       )
@@ -136,7 +136,7 @@ export default class  Restaurant extends Component {
       </div>
       <h2 
               className="restaurant-shef">{(() => {
-                if (i18n.language === 'GE') {
+                if (i18n.language === 'KA') {
                   return (
                     arrayRestaurant.chef.fullName_ge
                   )
@@ -153,7 +153,7 @@ export default class  Restaurant extends Component {
       <h5 
               className="restaurant-shef__post">shef</h5>
       <p  className="restaurant-shef__about container-own">{(() => {
-                if (i18n.language === 'GE') {
+                if (i18n.language === 'KA') {
                   return (
                     arrayRestaurant.chef.description_ge
                   )

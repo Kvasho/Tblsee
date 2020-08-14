@@ -36,9 +36,10 @@ class Header extends Component  {
 
 
   render(){
+    const {t} = this.props;
     const {burgerMenuOpen} = this.state;
     let lang = i18next.language
-    const otherLang = ['EN','RU', 'GE'];
+    const otherLang = ['EN','RU', 'KA'];
     const index = otherLang.indexOf(lang);
     if (index > -1) {  
     otherLang.splice(index, 1);
@@ -52,15 +53,13 @@ class Header extends Component  {
             <div className="flex">
              <img src={ BurgerMenu } className="header-burger_menu" alt="Burger Menu" onClick={this.toggleClass}/>
               <div className="language-bar__black">
-                <li onClick={() => this.handleClick('en')} className="language-first">{this.state.currentLang}</li>
-                <div className="languages-bar">
-                    <li onClick={() => this.handleClick('RU')} key={index}>RU</li>
-                   <li onClick={() => this.handleClick('GE')} key={index}>GE</li>
-                </div>
+                <li onClick={() => this.handleClick('EN')} className="language-first">EN</li>
+                <li onClick={() => this.handleClick('RU')} key={index} style={{margin: "0 10px"}}>RU</li>
+                <li onClick={() => this.handleClick('KA')} key={index}>GE</li>
               </div>
        </div>
        <Link to="/">           
-             <img src={Logo} className="header-logo" alt="website logo" onClick={this.whiteHeader}/> 
+             <img src={Logo} style={{marginRight: "100px"}} className="header-logo" alt="website logo" onClick={this.whiteHeader}/> 
        </Link>
        <Button 
          title="book now"
@@ -69,6 +68,7 @@ class Header extends Component  {
      </div> </header>:
             
         <DropdownMenu 
+          t = {t}
           menuHandler  = { this.toggleClass } 
           whiteHeader  = { this.whiteHeader } 
           blackHeader  = { this.blackHeader }/>

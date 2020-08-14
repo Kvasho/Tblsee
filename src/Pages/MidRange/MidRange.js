@@ -31,11 +31,12 @@ class Luxury extends Component {
         if(!this.state.arrayMidrange) {
           return "loading"; //TODO: Need Loading State
         }
+        const {t} = this.props;
         const Tbilisee = "https://core.tbilisee.ge/";
         const {arrayMidrange} = this.state;
         return (
           <>
-          <HeaderBlack />
+          <HeaderBlack t={t}/>
           <PageTitle title="Mid - Range"/> 
           {
             arrayMidrange.room.map((item,index) => <>

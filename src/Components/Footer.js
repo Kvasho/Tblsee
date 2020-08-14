@@ -26,9 +26,9 @@ export default class Footer extends Component {
       <div className="footer-wr container-own">
 
   <Row xs={1} md={4} >
-  <Col><h3 className="footer-cell__title">address</h3>
+  <Col><h3 className="footer-cell__title">{t('address')}</h3>
           <p className="footer-cell__subtitle">{(() => {
-                    if (i18n.language === 'GE') {
+                    if (i18n.language === 'KA') {
                       return (
                         arrayContacts.contacts.address_ge
                       )
@@ -43,23 +43,23 @@ export default class Footer extends Component {
                     }
       })()}</p></Col>
     <Col>
-    <h3 className="footer-cell__title">phone</h3>
+    <h3 className="footer-cell__title">{t('phone')}</h3>
           <p className="footer-cell__subtitle">
             <li><a href={"tel:" + arrayContacts.contacts.mobile}>{arrayContacts.contacts.mobile}</a></li>
             <li><a href={"tel:" + arrayContacts.contacts.landline}>{arrayContacts.contacts.landline}</a></li>
           </p>
     </Col>
     <Col>
-    <h3 className="footer-cell__title">socials</h3>
+    <h3 className="footer-cell__title">{t('socials')}</h3>
           <p className="footer-cell__subtitle">facebook, instagram, linkedin</p></Col>
     <Col>
-      <h3 className="footer-cell__title">made by</h3>
+      <h3 className="footer-cell__title">{t('made by')}</h3>
       <a href="https://www.onesoul.io" className="footer-cell__subtitle onesoul">onesoul.io</a>
     </Col>
   </Row>
 
 </div>
-    </footer>
+</footer>
   );
 }
 }

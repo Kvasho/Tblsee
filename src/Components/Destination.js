@@ -43,7 +43,7 @@ export default class Destination extends Component {
         <div>
         <h2 className="destination-content__title">
               {(() => {
-                    if (i18n.language === 'GE') {
+                    if (i18n.language === 'KA') {
                       return (
                         this.state.testImages.title_ge
                       )
@@ -57,8 +57,8 @@ export default class Destination extends Component {
                       )
                     }
       })()}</h2>
-      <p className="destination-content__paragraph elipsis-5" style={{ marginTop: "30px", marginBottom: "30px"}}>{(() => {
-                    if (i18n.language === 'GE') {
+      <p className="destination-content__paragraph elipsis-3" style={{ marginTop: "30px", marginBottom: "30px"}}>{(() => {
+                    if (i18n.language === 'KA') {
                       return (
                         this.state.testImages.description_ge
                       )
@@ -81,7 +81,7 @@ export default class Destination extends Component {
                   this.props.arrayDestination.map((item,index) => 
                   <div className="destination-card" key={index}>
                       <h3>{(() => {
-                    if (i18n.language === 'GE') {
+                    if (i18n.language === 'KA') {
                       return (
                         item.title_ge
                       )

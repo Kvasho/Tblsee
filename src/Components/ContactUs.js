@@ -28,11 +28,12 @@ export default class ContactUs extends Component {
         if(!this.state.arrayContacts) {
             return "loading"; //TODO: Need Loading State
           }
+          const {t} = this.props;
         const {arrayContacts} = this.state;
         const Tbilisee = 'https://core.tbilisee.ge/';
   return (
     <div className="contactus">
-        <h2 className="contactus-title">contact us</h2>
+        <h2 className="contactus-title">{t('Contact Us')}</h2>
         <div className="contactus-line">
             <img src={MapPin} alt="map pin" className="contactus-line__icon"/>
             <h3 className="contactus-line__text">{arrayContacts.contacts.address}</h3>

@@ -70,34 +70,37 @@ export default class Gallery extends Component {
     componentDidMount() {
         this.receivedData()
     }
+    
     render() {
+        const {t} = this.props;
         const Tbilisee = 'https://core.tbilisee.ge/';
         return (
             <div>
-                <HeaderBlack/>
+                <HeaderBlack t={t}/>
                 
                 <FsLightbox
                     toggler={this.state.toggler}
                     sources={[
-                        "https://core.tbilisee.ge/public/images/gallery/2020-08-03T11:59:22.466Zgallery-1.jpg",
-                        "https://core.tbilisee.ge/public/images/gallery/2020-08-03T11:59:35.165Zgallery-2.jpg",
-                        "https://core.tbilisee.ge/public/images/gallery/2020-08-03T11:59:49.375Zgallery-3.jpg",
-                        "https://core.tbilisee.ge/public/images/gallery/2020-08-03T12:00:05.975Zgallery-1.jpg",
-                        "https://core.tbilisee.ge/public/images/gallery/2020-08-03T12:00:16.297Zgallery-3.jpg",
-                        "https://core.tbilisee.ge/public/images/gallery/2020-08-03T12:00:24.008Zgallery-2.jpg",
-                        "https://core.tbilisee.ge/public/images/gallery/2020-08-03T12:01:14.315Zgallery-2.jpg",
-                        "https://core.tbilisee.ge/public/images/gallery/2020-08-03T12:01:46.302Zgallery-page-2.jpg",
-                        "https://core.tbilisee.ge/public/images/gallery/2020-08-03T12:01:57.371Zgallery-page-3.jpg",
-                        "https://core.tbilisee.ge/public/images/gallery/2020-08-03T12:02:17.190Zgallery-1.jpg",
-                        "https://core.tbilisee.ge/public/images/gallery/2020-08-03T12:02:44.448Zgallery-page-2.jpg",
-                        "https://core.tbilisee.ge/public/images/gallery/2020-08-03T12:02:57.481Zgallery-3.jpg",
-                        "https://core.tbilisee.ge/public/images/gallery/2020-08-03T12:03:07.144Zgallery-1.jpg",
-                        "https://core.tbilisee.ge/public/images/gallery/2020-08-03T12:03:18.870Zgallery-page-3.jpg",
-                        "https://core.tbilisee.ge/public/images/gallery/2020-08-03T12:03:31.662Zgallery-3.jpg",
+                        "https://core.tbilisee.ge/public/images/gallery/2020-08-14T11:24:10.590Zgallery 1.jpg",
+                        "https://core.tbilisee.ge/public/images/gallery/2020-08-14T11:24:18.140Zgallery 2.jpg",
+                        "https://core.tbilisee.ge/public/images/gallery/2020-08-14T11:24:29.123Zgallery 3.jpg",
+                        "https://core.tbilisee.ge/public/images/gallery/2020-08-14T11:24:49.915Zgallery 4.jpg",
+                        "https://core.tbilisee.ge/public/images/gallery/2020-08-14T11:24:58.900Zgallery 5.jpg",
+                        "https://core.tbilisee.ge/public/images/gallery/2020-08-14T11:25:04.979Zgallery 6.jpg",
+                        "https://core.tbilisee.ge/public/images/gallery/2020-08-14T11:25:13.920Zgallery 7.jpg",
+                        "https://core.tbilisee.ge/public/images/gallery/2020-08-14T11:25:21.143Zgallery 8.jpg",
+                        "https://core.tbilisee.ge/public/images/gallery/2020-08-14T11:25:35.780Zgallery 9.jpg",
+                        "https://core.tbilisee.ge/public/images/gallery/2020-08-14T11:25:42.863Zgallery 10.jpg",
+                        "https://core.tbilisee.ge/public/images/gallery/2020-08-14T11:25:49.189Zgallery 11.jpg",
+                        "https://core.tbilisee.ge/public/images/gallery/2020-08-14T11:25:54.996Zgallery 12.jpg",
+                        "https://core.tbilisee.ge/public/images/gallery/2020-08-14T11:26:02.412Zgallery 13.jpg",
+                        "https://core.tbilisee.ge/public/images/gallery/2020-08-14T11:26:08.170Zgallery 6.jpg",
+                        "https://core.tbilisee.ge/public/images/gallery/2020-08-14T11:26:15.032Zgallery 3.jpg",
+                        "https://core.tbilisee.ge/public/images/gallery/2020-08-14T11:26:23.858Zgallery 5.jpg"
                     ]}
 />
                 {/* <Lightbox isOpen={this.state.isOpen}/> */}
-                <PageTitle title="gallery" style={{marginBottom: "10rem"}}/>
+                <PageTitle title={t("gallery")} style={{marginBottom: "10rem"}}/>
                 <div className="gallery container-own" onClick={this.toggler}>
                {this.state.postData}
                 </div>

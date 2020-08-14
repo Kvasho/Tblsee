@@ -65,7 +65,7 @@ const Routers = (props) => {
 				<Route
 					path = "/midrange"
 					exact
-					component = { MidRange }
+					component = {() =>  <MidRange t={props.t} i18n={props.i18n}/> }
 				/>
 			</Switch>
 			<Footer t={props.t} i18n={props.i18n}/>

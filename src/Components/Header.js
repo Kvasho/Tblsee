@@ -31,13 +31,14 @@ class Header extends Component  {
   };
 
  handleClick = (lang) => {
-    i18next.changeLanguage(lang)
+    i18next.changeLanguage(lang);
   }
 
   render(){
+    const {t} = this.props;
     const {burgerMenuOpen} = this.state;
     let lang = i18next.language
-    const otherLang = ['RU', 'GE'];
+    const otherLang = ['RU', 'KA'];
     const index = otherLang.indexOf(lang);
     if (index > -1) {  
     otherLang.splice(index, 1);
@@ -51,16 +52,13 @@ class Header extends Component  {
             <div className="flex">
              <img src={ BurgerMenuWhite } className="header-burger_menu" alt="Burger Menu" onClick={this.toggleClass}/>
               <div className="language-bar__white">
-              <li onClick={() => this.handleClick(this.state.currentLang)} className="language-first">{this.state.currentLang}</li>
-                <div className="languages-bar"> 
-                {
-                  otherLang.map((lang,index) => <li onClick={() => this.handleClick(lang)} key={index}>{lang}</li>)
-                }                                                
-                </div>
-              </div>
+              <li onClick={() => this.handleClick("EN")} className="language-first">{this.state.currentLang}</li>
+              <li onClick={() => this.handleClick("RU")} key={index} style={{margin: "0 10px"}}>RU</li>
+              <li onClick={() => this.handleClick("KA")} key={index}>GE</li>
+                            </div>
        </div>
        <Link to="/">           
-             <img src={LogoWhite} className="header-logo" alt="website logo" onClick={this.whiteHeader}/> 
+             <img src={LogoWhite} style={{marginRight: "100px"}} className="header-logo" alt="website logo" onClick={this.whiteHeader}/> 
        </Link>
        <Button 
          title="book now"
@@ -69,6 +67,7 @@ class Header extends Component  {
      </div> </header>:
             
         <DropdownMenu 
+          t={t}
           menuHandler  = { this.toggleClass } 
           burgerMenuOpen = {burgerMenuOpen}/>
           }     

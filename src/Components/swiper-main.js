@@ -39,13 +39,14 @@ import { Link } from 'react-router-dom';
         {
           props.arrayLandingRooms.map((item,index) => <div>
             <div className="background-image__cover full swiper-slide" style={{backgroundImage: `url(${Tbilisee + item.main_image})`}} key='5'></div>
+            <h4>{item.type_en}</h4>
             </div>)
         }
       </Swiper>
       <div className="landing-swiper__controller">
       <button onClick={goPrev} className="landing-rooms__prev">prev  <span>/ garden view</span></button>
       <div>
-        <h4>mid-range</h4>
+        
         <div className="flex relative">
           <Link to='/rooms' className="landing-swiper__seemore">see more</Link>
           <Link>book now</Link>

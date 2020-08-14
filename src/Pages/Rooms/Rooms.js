@@ -37,9 +37,9 @@ export default class  Rooms extends Component {
   const {t, i18n} = this.props;
   return (
     <>
-    <HeaderBlack/>
+    <HeaderBlack t={t}/>
     <div className="rooms container-own">
-      <PageTitle title="Rooms"/>
+      <PageTitle title={t("Rooms")}/>
       <section className="rooms-swiper">
         <Navigation array={arrayRooms} tbilisee={Tbilisee}/>
       </section>
@@ -54,9 +54,8 @@ export default class  Rooms extends Component {
             <div className="background-image__cover height full" style={{backgroundImage: `url(${Tbilisee + room.main_image})`}}/>
           </div>
           <div>
-      <h5 className={index%2==1 ? "rooms-description__subtitle align-right" : "rooms-description__subtitle"}>room</h5>
             <h1 className="rooms-description__title">{(() => {
-                    if (i18n.language === 'GE') {
+                    if (i18n.language === 'KA') {
                       return (
                         room.type_ge
                       )
@@ -71,7 +70,7 @@ export default class  Rooms extends Component {
                     }
       })()}</h1>
             <p className="rooms-description__paragraph">{(() => {
-                    if (i18n.language === 'GE') {
+                    if (i18n.language === 'KA') {
                       return (
                         room.description_ge
                       )
@@ -89,7 +88,7 @@ export default class  Rooms extends Component {
                 <Link 
                   to="/luxury"
                   className="see-more__btn"
-                  >See more</Link>
+                  >{t('See More')}</Link>
               </div>
           </div>
         </div>

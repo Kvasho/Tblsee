@@ -16,6 +16,7 @@ import { Link } from 'react-router-dom';
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 export default (props) => {
+  const {t} = props;
   const Tbilisee = 'https://core.tbilisee.ge/';
   const {sliders} = props;
   const params = {
@@ -34,9 +35,9 @@ export default (props) => {
          return (        
            <>            
         <SwiperSlide>                    
-            <Link to={"/" + slide.link} className="landing-open__btn">open</Link>
+            <Link to={"/" + slide.link} className="landing-open__btn">{t('open')}</Link>
             <div className="background-image__cover height" style={{backgroundImage: `url(${Tbilisee + slide.background})`}}>
-              <img className="door" src={Tbilisee + slide.door}/>
+              <img className="door" src={Tbilisee + slide.door} alt="Door"/>
             </div>
         </SwiperSlide>
         </>

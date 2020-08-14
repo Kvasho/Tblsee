@@ -29,10 +29,10 @@ export default class Location extends Component {
     const {t, i18n} = this.props;
   return (
     <>
-    <HeaderBlack />
+    <HeaderBlack t={t}/>
     <div className="location">
       <PageTitle title={(() => {
-                    if (i18n.language === 'GE') {
+                    if (i18n.language === 'KA') {
                       return (
                         arrayUrban.title_and_desc.title_ge
                       )
@@ -47,7 +47,7 @@ export default class Location extends Component {
                     }
       })()}/>
       <p className="location-paragraph">{(() => {
-                    if (i18n.language === 'GE') {
+                    if (i18n.language === 'KA') {
                       return (
                         arrayUrban.title_and_desc.description_ge
                       )
@@ -74,7 +74,7 @@ export default class Location extends Component {
           </div>
            <div className="location-infos__txt">
           <h2>{(() => {
-                    if (i18n.language === 'GE') {
+                    if (i18n.language === 'KA') {
                       return (
                         info.title_ge
                       )
@@ -89,7 +89,7 @@ export default class Location extends Component {
                     }
       })()}</h2>
           <p>{(() => {
-                    if (i18n.language === 'GE') {
+                    if (i18n.language === 'KA') {
                       return (
                         info.description_ge
                       )

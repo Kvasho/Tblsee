@@ -8,11 +8,6 @@ import { Link } from 'react-router-dom';
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
       },
-<<<<<<< HEAD
-        spaceBetween:    240,
-        slidesPerView:   3,
-        activeSlideKey:  'key'
-=======
         loop: true,
         spaceBetween:    0,
         slidesPerView:   1,
@@ -25,7 +20,6 @@ import { Link } from 'react-router-dom';
           },
         centeredSlides: true,
         
->>>>>>> fad220f55060c43de023a6bc84c64484450fed00
     }
     const Tbilisee = 'https://core.tbilisee.ge/';
     const swiperRef = useRef(null);
@@ -43,7 +37,8 @@ import { Link } from 'react-router-dom';
       <>
       <Swiper ref={swiperRef} {...params} activeSlideKey='5' className="landing-swiper__rooms 	swiper-container">
         {
-          props.arrayLandingRooms.map((item,index) => <div>
+          props.arrayLandingRooms.map((item,index) => 
+          <div>
             <div className="background-image__cover full swiper-slide" style={{backgroundImage: `url(${Tbilisee + item.main_image})`}} key='5'></div>
             <h4>{item.type_en}</h4>
             </div>)

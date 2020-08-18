@@ -19,6 +19,7 @@ import MidRange from "../Pages/MidRange/MidRange";
 import Footer from "../Components/Footer";
 
 const Routers = (props) => {
+		let routerProps = props;
 		return (
 			<>
 			<Switch>
@@ -58,14 +59,11 @@ const Routers = (props) => {
 					component = {() =>  <Rooms t={props.t} i18n={props.i18n}/> }
 				/>
 				<Route
-					path = "/luxury"
+					path = "/rooms/:type"
 					exact
-					component = {() =>  <Luxury t={props.t} i18n={props.i18n}/> }
-				/>
-				<Route
-					path = "/midrange"
-					exact
-					component = {() =>  <MidRange t={props.t} i18n={props.i18n}/> }
+					component = {(props) =>  
+					<Luxury type={props.match.params.type} t={routerProps.t} i18n={routerProps.i18n}/>
+				}
 				/>
 			</Switch>
 			<Footer t={props.t} i18n={props.i18n}/>

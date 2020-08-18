@@ -86,7 +86,7 @@ export default class  Rooms extends Component {
       })()}</p>
               <div className="flex space-between" style={{flexDirection: "row-reverse"}}>
                 <Link 
-                  to="/luxury"
+                  to={`/rooms/${room.type_en}`}
                   className="see-more__btn"
                   >{t('See More')}</Link>
               </div>

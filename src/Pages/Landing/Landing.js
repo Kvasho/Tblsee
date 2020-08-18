@@ -10,6 +10,8 @@ import SwiperMain from '../../Components/swiper-main'
 // COMPONENTS
 import CarouselLanding from '../../Components/CarouselLanding';
 import Header from '../../Components/Header';
+import ReadMoreAndLess from 'react-read-more-less';
+import ShowMoreText from 'react-show-more-text';
 
 // IMAGES
 import HotelRound from "../../Assets/icons/tbilisee-hotel-round-white.svg";
@@ -39,9 +41,10 @@ export default class Landing extends Component {
 
     const Tbilisee = 'https://core.tbilisee.ge/';
     const {arrayLanding} = this.state;
+    console.log(arrayLanding,"212222222222222222222222222222")
     const half = 3;
-    const eatsFirstHalf = arrayLanding.eat_drinks.images.splice(0, half)
-    const eatsSecondHalf = arrayLanding.eat_drinks.images.splice(-half)
+    const eatsFirstHalf = arrayLanding.eat_drinks.image_500.splice(0, half)
+    const eatsSecondHalf = arrayLanding.eat_drinks.image_500.splice(-half)
     const {t, i18n} = this.props;
   return (
     <>
@@ -77,7 +80,7 @@ export default class Landing extends Component {
               
             <div className="exploring-one">
               <h3>Tbilise <span className="white">hotel</span></h3>
-              <p className="elipsis-7">{(() => {
+<p >{(() => {
         if (i18n.language == 'KA') {
           return (
             arrayLanding.exploring.description_ge
@@ -92,6 +95,7 @@ export default class Landing extends Component {
           )
         }
       })()}</p>
+              
             </div>
             <div className="exploring-two">
               <div className="background-image__cover height" style={{backgroundImage: `url(${(Tbilisee + arrayLanding.exploring.big_image)})`}}></div>
@@ -107,7 +111,7 @@ export default class Landing extends Component {
         <div className="background-image__cover height full gallery-big__image" style={{backgroundImage: `url(${Tbilisee + arrayLanding.gallery.big_image})`}}></div>
         </div>
         <div>
-          <p className="elipsis-9">{(() => {
+<p className="elipsis-9">{(() => {
         if (i18n.language === 'KA') {
           return (
             arrayLanding.gallery.description_ge
@@ -122,6 +126,7 @@ export default class Landing extends Component {
           )
         }
       })()}</p>
+          
         </div>
         <div className="relative">
           <h3>{(() => {
@@ -178,7 +183,7 @@ export default class Landing extends Component {
           )
         }
       })()}</h3>
-              <p className="eats-paragraph elipsis-7">{(() => {
+                <p className="eats-paragraph elipsis-7">{(() => {
         if (i18n.language === 'KA') {
           return (
             arrayLanding.eat_drinks.description_ge
@@ -193,6 +198,7 @@ export default class Landing extends Component {
           )
         }
       })()}</p>
+              
                  <Link to="/restaurant" className="eats-button">{t('See More')}</Link>
                  </div>
           </div>
@@ -206,7 +212,7 @@ export default class Landing extends Component {
           </div>
           <div className="landing-eats__img2">
             {
-              eatsFirstHalf.map((image,index) => 
+              eatsSecondHalf.map((image,index) => 
               <div className="background-image__cover full" style={{backgroundImage: `url(${Tbilisee + image})`}} key={index}></div>
               )
             }

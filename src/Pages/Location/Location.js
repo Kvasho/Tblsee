@@ -11,16 +11,32 @@ import Destination from '../../Components/Destination'
 
 export default class Location extends Component {
   state={
-    arrayUrban: undefined
+    arrayUrban: undefined,
+    result: []
   }
 
   componentDidMount(){
     axios.get('https://core.tbilisee.ge/api/urban').then(res => {
-      this.setState({arrayUrban: res.data})
+      let result = [];
+      for(let i = 0; i < res.data.packages.length; i++) {
+      if(result[res.data.packages[i].group]) {
+      result[res.data.packages[i].group].push(res.data.packages[i])
+    } else {
+      result[res.data.packages[i].group] = [res.data.packages[i]]
+    }
+  }
+      this.setState({
+        arrayUrban: res.data,
+        result : result
+      })
+      console.log(this.state.result.values(),"99999999999999999999999")
     })
   }
 
+  
+
   render(){
+    
     if(!this.state.arrayUrban) {
       return "loading"; //TODO: Need Loading State
     }
@@ -61,8 +77,10 @@ export default class Location extends Component {
                       )
                     }
       })()}</p>
-
-      <Destination arrayDestination={this.state.arrayUrban.packages} t={t} i18n={i18n}/>)
+      {
+        Object.values(this.state.result).map((destination,group) => <Destination arrayDestination={destination} t={t} i18n={i18n}/>)
+      }
+      
       {
         arrayUrban.informations.map((info,index) => 
         <div className="location-exploring container-own">

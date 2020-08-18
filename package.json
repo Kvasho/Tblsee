@@ -31,8 +31,11 @@
     "react-masonry-css": "^1.0.14",
     "react-medium-image-zoom": "^4.3.1",
     "react-paginate": "^6.3.2",
+    "react-read-more-less": "^0.1.6",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-show-more-text": "^1.4.3",
+    "react-truncate": "^2.4.0",
     "swiper": "^6.0.4"
   },
   "scripts": {

@@ -5,6 +5,7 @@ import PageTitle from '../../Components/PageTitle';
 import LuxurySwiper from '../../Components/LuxurySwiper';
 import Button from '../../Components/Button'
 import {Row, Col} from 'react-bootstrap'
+import Destination from '../../Components/Destination';
 // IMAGES
 import LogoBlack from '../../Assets/icons/logo-black.svg';
 import LuxuryRestaurant1 from '../../Assets/Images/luxury-restaurant-1.jpg';
@@ -19,14 +20,22 @@ class Luxury extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-          arrayLuxury: undefined
+          arrayLuxury: undefined,
+          urban: undefined
          };
       }
+
       componentDidMount(){
-        axios.get('https://core.tbilisee.ge/api/oneRoom/Luxury').then(res => {
-          this.setState( {arrayLuxury: res.data} );  
-        })               
+        const { type } = this.props;        
+        axios.get(`https://core.tbilisee.ge/api/oneRoom/${type}`).then(res => {
+          this.setState( {
+            arrayLuxury: res.data.room,
+            urban: res.data.urban
+          } );  
+        })       
+                
       }
+
       render() {
         if(!this.state.arrayLuxury) {
           return "loading"; //TODO: Need Loading State
@@ -37,9 +46,10 @@ class Luxury extends Component {
         return (
           <>
           <HeaderBlack t={t}/>
-          <PageTitle title="Luxury"/> 
+           
           {
-            arrayLuxury.room.map((item,index) => <>
+            arrayLuxury.map((item,index) => <>
+            <PageTitle title={item.type_en}/>
             <div className="container-own luxury">
             <div className="luxury-absolute"/>
             <section className="luxury-swiper">
@@ -132,7 +142,9 @@ class Luxury extends Component {
                 {/* <img src={Tbilisee + item.mood_image_big} className="full mood-image__big"/> */}
               </div>
             </section>
+            <Destination arrayDestination={this.state.urban} t={t} i18n={i18n}/>
             </>)
+            
           }                   
             
             )

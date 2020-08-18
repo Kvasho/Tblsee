@@ -7,16 +7,22 @@ import '../Styles/costumiseSwiper.scss';
 import '../Pages/Location/Location.scss'
 import '../Styles/common.scss';
 import DestCardsSwiper from '../Components/DestCardsSwiper';
+import Truncate from 'react-truncate';
+import ShowMoreText from 'react-show-more-text';
 
 
 
 export default class Destination extends Component {
   state = {
-    testImages: this.props.arrayDestination[0]
+    testImages: this.props.arrayDestination[0],
+    expanded: false,
+    truncated: false
   }
+
   
   componentDidMount () {
     this.setState({testImages: this.props.arrayDestination[0]})
+    
   }
   render () {
   const Tbilisee = 'https://core.tbilisee.ge/';
@@ -27,10 +33,10 @@ export default class Destination extends Component {
   return (
 <>
   <>
+  
   <div className="dest container-own">
     <div>
-      <div id="destination-main" className="background-full height" style={{backgroundImage: `url(${Tbilisee + this.state.testImages.image_1000})`}}/>
-      {/* <img  src={Tbilisee + this.state.testImages.image_1000} className="destination-img full"/> */}
+      <div id="destination-main" className="background-image__cover height" style={{backgroundImage: `url(${Tbilisee + this.state.testImages.image_1000})`}}/>
     </div>
     <div className="dest-col">
         <div>
@@ -50,7 +56,18 @@ export default class Destination extends Component {
                       )
                     }
       })()}</h2>
-      <p className="destination-content__paragraph elipsis-3" style={{ marginTop: "30px", marginBottom: "30px"}}>{(() => {
+      <ShowMoreText
+                /* Default options */
+                lines={4}
+                more='Show more'
+                less='Show less'
+                anchorClass='anchorClass'
+                onClick={this.executeOnClick}
+                expanded={true}
+                anchorClass="anchorClass"
+            >
+                <p className="destination-content__paragraph " style={{ marginTop: "30px", marginBottom: "30px"}}>
+        {(() => {
                     if (i18n.language === 'KA') {
                       return (
                         this.state.testImages.description_ge
@@ -65,6 +82,8 @@ export default class Destination extends Component {
                       )
                     }
       })()}</p>
+            </ShowMoreText>
+      
       <p className="destination-content__paragraph">{this.state.testImages.time} min trip</p>
         </div>
         <div className="dest-cards relative">
@@ -87,12 +106,15 @@ export default class Destination extends Component {
                         item.title_en
                       )
                     }
-      })()}</h3>
+      })()
+      }
+      
+      </h3>
                   <div id="destination-main" className="background-full height destination-card__image" style={{backgroundImage: `url(${Tbilisee + item.image})`}} onClick={() => toggleImage(item)}/>
-                  {/* <img src={Tbilisee + item.image} className="destination-card__image" onClick={() => toggleImage(item)}/>  */}
                 </div>
                   )
               }
+      
               </div>
         </div>
     </div>

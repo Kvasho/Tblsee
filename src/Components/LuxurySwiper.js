@@ -24,7 +24,7 @@ import "../Styles/common.scss";
         spaceBetween:    props.spaceBetween,
         slidesPerView:   props.slidesPerView,
         slidesPerColumn: 1,
-        loop:            false,
+        loop:            true,
         speed:           400,
     };
     const swiperRef = useRef(null);

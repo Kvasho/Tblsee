@@ -1,6 +1,6 @@
 // import Swiper core and required components
-import React from 'react';
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import React, { useRef } from 'react';
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay, EffectFade   } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import '../Styles/common.scss';
@@ -14,6 +14,8 @@ import { Link } from 'react-router-dom';
 
 // install Swiper components
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+SwiperCore.use([Autoplay]);
+SwiperCore.use([EffectFade]);
 
 export default (props) => {
   const {t} = props;
@@ -25,8 +27,24 @@ export default (props) => {
       prevEl: '.swiper-button-prev'
     }
   }
+  const swiperRef = useRef(null);
+    const goNext = () => {
+      if (swiperRef.current && swiperRef.current.swiper) {
+        swiperRef.current.swiper.slideNext();
+      }
+    };
+    const goPrev = () => {
+      if (swiperRef.current && swiperRef.current.swiper) {
+        swiperRef.current.swiper.slidePrev();
+      }
+    };
   return (
-    <Swiper {...params}
+    <>
+    <Swiper autoplay={{
+      delay: 3000,
+      disableOnInteraction: false
+  }}
+  {...params}
       slidesPerView = {1}  
     >
        
@@ -47,5 +65,10 @@ export default (props) => {
       }
 
     </Swiper>
+    <div className="absolute luxury-swiper__controller">
+            <button onClick={goPrev} className="luxury-prev"></button>
+            <button onClick={ goNext } className="luxury-next"></button>
+        </div>
+        </>
   );
 };

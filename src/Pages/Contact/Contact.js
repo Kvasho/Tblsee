@@ -48,7 +48,8 @@ class Contact extends Component {
   render(){
     const {t} = this.props;
     if(!this.state.arrayContact) {
-      return "loading"; //TODO: Need Loading State
+      return <div className="loading" data-aos="fade-up"
+      data-aos-anchor-placement = "top-center"></div>; //TODO: Need Loading State
     }
   return (
     <>

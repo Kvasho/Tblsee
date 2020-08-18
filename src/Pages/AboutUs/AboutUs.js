@@ -25,7 +25,8 @@ export default class AboutUs extends Component  {
 
   render(){
     if(!this.state.arrayAboutUs) {
-      return "loading"; //TODO: Need Loading State
+      return <div className="loading" data-aos="fade-up"
+      data-aos-anchor-placement = "top-center"></div>; //TODO: Need Loading State
     }
 
     const Tbilisee = 'https://core.tbilisee.ge/';

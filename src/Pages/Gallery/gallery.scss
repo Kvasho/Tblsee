@@ -12,6 +12,10 @@
   }
 }
 
+.page-title {
+  margin-top: 0;
+}
+
 .pagination {
     margin: 15px auto;
     display: flex;
@@ -66,8 +70,17 @@
     }
   }
 
-  @media(max-width: 1300px) {
+  @media(max-width: 768px) {
     .gallery {
       grid-template-rows: 200px 200px 200px;
+    }
+    .pagination > li > a, .pagination > li > span {
+      font-size: 30px;
+    }
+  }
+
+  @media(max-width: 500px) {
+    .gallery {
+      grid-template-rows: 100px 100px 100px;
     }
   }

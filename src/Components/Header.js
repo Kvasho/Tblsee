@@ -53,12 +53,12 @@ class Header extends Component  {
              <img src={ BurgerMenuWhite } className="header-burger_menu" alt="Burger Menu" onClick={this.toggleClass}/>
               <div className="language-bar__white">
               <li onClick={() => this.handleClick("EN")} className="language-first">{this.state.currentLang}</li>
-              <li onClick={() => this.handleClick("RU")} key={index} style={{margin: "0 10px"}}>RU</li>
-              <li onClick={() => this.handleClick("KA")} key={index}>GE</li>
+              {/* <li onClick={() => this.handleClick("RU")} key={index} style={{margin: "0 10px"}}>RU</li>
+              <li onClick={() => this.handleClick("KA")} key={index}>GE</li> */}
                             </div>
        </div>
        <Link to="/">           
-             <img src={LogoWhite} style={{marginRight: "100px"}} className="header-logo" alt="website logo" onClick={this.whiteHeader}/> 
+             <img src={LogoWhite} className="header-logo" alt="website logo" onClick={this.whiteHeader}/> 
        </Link>
        <Button 
          title="book now"

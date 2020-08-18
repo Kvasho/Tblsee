@@ -3,6 +3,10 @@
     overflow: hidden;
 }
 
+.luxury .swiper-wrapper {
+    height: 100% !important;
+}
+
 .luxury-absolute {
     position: absolute;
     background: #F8F7F4;
@@ -63,7 +67,7 @@
 .luxury-swiper__controller {
     left: 60% !important;
     z-index: 100 !important;
-    bottom: 4% !important;
+    bottom: 1% !important;
 }
 
 .luxury-restaurant {

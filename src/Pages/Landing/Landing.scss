@@ -1,5 +1,6 @@
 // Landing
 .landing {
+    
 }
 
 .landing-head__swiper {
@@ -17,6 +18,13 @@
 
 .exploring-one >div {
     margin-left: 100px;
+}
+
+@media(max-width: 1400px){
+    .landing-swiper h4 {
+        font-size: 35px !important;
+        bottom: -50px !important;
+    }
 }
 
 @media(max-width: 2100px){
@@ -174,6 +182,15 @@
 }
 
 @media(max-width: 950px) {
+    .exploring-two >div {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 20px;
+    }
+    .exploring-three >div {
+        width: 300px;
+        height: 300px;
+    }
     .exploring h3 span {
         color: #310000;
         text-transform: capitalize;
@@ -304,6 +321,15 @@
 }
 
 @media(max-width: 1000px) {
+    .gallery-badge {
+        display: none;
+    }
+    .landing-neighborhood__img,.landing-neighborhood__img2 {
+        position: relative;
+        width: 300px !important;
+        height: 300px !important;
+        margin-bottom: 20px;
+    }
     .landing-gallery__btn {
         margin: 20px auto 0 auto !important;
         font-size: 40px !important;
@@ -311,15 +337,6 @@
         right: 0 !important;
         display: block !important;
         position: relative !important;
-    }
-    .landing-neighborhood__img2 {
-        display: none;
-    }
-    .gallery-badge {
-        display: none;
-    }
-    .landing-neighborhood__img {
-        display: none;
     }
     .landing-gallery h3 {
         font-size: 60px;

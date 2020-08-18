@@ -9,6 +9,7 @@ import '../Styles/common.scss';
 import DestCardsSwiper from '../Components/DestCardsSwiper';
 import Truncate from 'react-truncate';
 import ShowMoreText from 'react-show-more-text';
+import Collapse from 'react-bootstrap/Collapse'
 
 
 
@@ -36,7 +37,7 @@ export default class Destination extends Component {
   
   <div className="dest container-own">
     <div>
-      <div id="destination-main" className="background-image__cover height" style={{backgroundImage: `url(${Tbilisee + this.state.testImages.image_1000})`}}/>
+      <div id="destination-main" className="background-image__cover height" style={{backgroundImage: `url(${Tbilisee + this.state.testImages.image_500})`}}/>
     </div>
     <div className="dest-col">
         <div>
@@ -56,16 +57,6 @@ export default class Destination extends Component {
                       )
                     }
       })()}</h2>
-      <ShowMoreText
-                /* Default options */
-                lines={4}
-                more='Show more'
-                less='Show less'
-                anchorClass='anchorClass'
-                onClick={this.executeOnClick}
-                expanded={true}
-                anchorClass="anchorClass"
-            >
                 <p className="destination-content__paragraph " style={{ marginTop: "30px", marginBottom: "30px"}}>
         {(() => {
                     if (i18n.language === 'KA') {
@@ -82,7 +73,6 @@ export default class Destination extends Component {
                       )
                     }
       })()}</p>
-            </ShowMoreText>
       
       <p className="destination-content__paragraph">{this.state.testImages.time} min trip</p>
         </div>

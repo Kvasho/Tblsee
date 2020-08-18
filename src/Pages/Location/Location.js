@@ -8,6 +8,7 @@ import axios from 'axios';
 // SCSS
 import "./Location.scss";
 import Destination from '../../Components/Destination'
+import '../../Styles/common.scss'
 
 export default class Location extends Component {
   state={
@@ -29,7 +30,6 @@ export default class Location extends Component {
         arrayUrban: res.data,
         result : result
       })
-      console.log(this.state.result.values(),"99999999999999999999999")
     })
   }
 

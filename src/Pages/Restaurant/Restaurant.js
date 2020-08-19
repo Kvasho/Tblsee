@@ -78,7 +78,8 @@ export default class  Restaurant extends Component {
       })()}</p>
             </div>
             {/* <div className="background-image__cover height full" style={{backgroundImage: `url(${Tbilisee + item.image})`}} key={index}/>     */}
-            <img src={Tbilisee + item.image} alt="gastronomy" className="full" /> 
+            {/* <img src={Tbilisee + item.image} alt="gastronomy" className="full" />  */}
+            <div className="background-image__cover height" alt="gastronomy" style={{backgroundImage: `url(${Tbilisee + item.image})`}}/>
         </div>
       </div>)
       }

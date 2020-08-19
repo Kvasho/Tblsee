@@ -132,3 +132,14 @@ export default class Location extends Component {
   );
 }
 }
+
+const extendCollapsetext = (event, text) => {
+  if (event.target.innerHTML == "→"){
+    event.target.innerHTML = "←"
+    event.target.previousSibling.innerHTML = `${text}`
+  }
+  else {
+    event.target.innerHTML = "→"
+    event.target.previousSibling.innerHTML = `${text.slice(0, 50) + "..."}`
+  }
+}

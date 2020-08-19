@@ -83,6 +83,11 @@
     }
 }
 
+.rooms-kind {
+    font-size: 18px;
+    color: #310000;
+}
+
 .rooms-swiper {
     height: 58vh;
 }
@@ -93,6 +98,14 @@
 
 .rooms-left {
     left: -50px;
+}
+
+.rooms .swiper-button-next {
+    display: none !important;
+}
+
+.rooms .swiper-button-prev {
+    display: none !important;
 }
 
 .rooms-background_first {

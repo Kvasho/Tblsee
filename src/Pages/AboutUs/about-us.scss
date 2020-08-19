@@ -34,6 +34,8 @@
 
 
 
+
+
 .about-us__badge {
     position: absolute;
     right: -83px;
@@ -144,8 +146,12 @@
 }
 
 @media(max-width: 800px) {
+    .about-us__first {
+        width: 100%;
+    }
     .about-us__second {
         margin-top: 6rem;
+        grid-gap: 2rem;
     }
     .about-us__absolute {
         display: none;
@@ -213,6 +219,10 @@
 }
 
 @media(max-width: 990px) {
+    .about-us__goal {
+        grid-template-rows: 300px !important;
+
+    }
     .about-us__since span {
         font-size: 20px;
     }
@@ -255,6 +265,7 @@
     .aboutus-goal__paragraph p {
         font-size: 16px;
         margin: 10px;
+        width: 100%;
     }
 
     .aboutus-goal__title {

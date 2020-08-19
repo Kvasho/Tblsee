@@ -54,6 +54,8 @@ class Header extends Component  {
              <img src={ BurgerMenu } className="header-burger_menu" alt="Burger Menu" onClick={this.toggleClass}/>
               <div className="language-bar__black">
                 <li onClick={() => this.handleClick('EN')} className="language-first">EN</li>
+                <li onClick={() => this.handleClick("RU")} key={index} style={{margin: "0 10px"}}>RU</li>
+              <li onClick={() => this.handleClick("KA")} key={index}>GE</li>
               </div>
        </div>
        <Link to="/">           

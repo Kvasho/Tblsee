@@ -29,7 +29,7 @@ export default class Gallery extends Component {
         axios
             .get(`https://core.tbilisee.ge/api/gallery?group=all`)
             .then(res => {   
-                this.setState({arrayRoomsFirst: res.data.image})
+                this.setState({arrayRoomsFirst: res.data.image_200})
                 let arrayRooms = [];
                 this.setState({
                     arrayRooms: arrayRooms

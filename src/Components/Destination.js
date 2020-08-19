@@ -37,7 +37,7 @@ export default class Destination extends Component {
   
   <div className="dest container-own">
     <div>
-      <div id="destination-main" className="background-image__cover height" style={{backgroundImage: `url(${Tbilisee + this.state.testImages.image_500})`}}/>
+      <div id="destination-main" className="height background-image__cover" style={{backgroundImage: `url(${Tbilisee + this.state.testImages.image_1000})`, backgroundRepeat: "no-repeat" }}/>
     </div>
     <div className="dest-col">
         <div>
@@ -100,7 +100,7 @@ export default class Destination extends Component {
       }
       
       </h3>
-                  <div id="destination-main" className="background-full height destination-card__image" style={{backgroundImage: `url(${Tbilisee + item.image})`}} onClick={() => toggleImage(item)}/>
+                  <div id="destination-main" className="background-image__cover height destination-card__image" style={{backgroundImage: `url(${Tbilisee + item.image})`}} onClick={() => toggleImage(item)}/>
                 </div>
                   )
               }

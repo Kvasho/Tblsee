@@ -1,7 +1,6 @@
 // import Swiper core and required components
-import React, { useRef } from 'react';
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay, EffectFade   } from 'swiper';
-
+import React, { useState, useRef } from 'react';
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import '../Styles/common.scss';
 
@@ -14,8 +13,6 @@ import { Link } from 'react-router-dom';
 
 // install Swiper components
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
-SwiperCore.use([Autoplay]);
-SwiperCore.use([EffectFade]);
 
 export default (props) => {
   const {t} = props;
@@ -25,36 +22,27 @@ export default (props) => {
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
-    }
+    },
+    // renderPrevButton: () => <button className="swiper-button-prev">Prev</button>,
+    // renderNextButton: () => <button className="swiper-button-next">Next</button>
   }
-  const swiperRef = useRef(null);
-    const goNext = () => {
-      if (swiperRef.current && swiperRef.current.swiper) {
-        swiperRef.current.swiper.slideNext();
-      }
-    };
-    const goPrev = () => {
-      if (swiperRef.current && swiperRef.current.swiper) {
-        swiperRef.current.swiper.slidePrev();
-      }
-    };
   return (
-    <>
-    <Swiper autoplay={{
-      delay: 3000,
-      disableOnInteraction: false
-  }}
-  {...params}
+    <Swiper {...params}
       slidesPerView = {1}  
     >
+    <button className="swiper-button-next"></button> 
+    <button className="swiper-button-prev"></button> 
        
       {
         sliders.map((slide,index) => {           
          return (        
-           <>            
-        <SwiperSlide>                    
+           <>      
+           
+        <SwiperSlide>   
+                     
             <Link to={"/" + slide.link} className="landing-open__btn">{t('open')}</Link>
             <div className="background-image__cover height" style={{backgroundImage: `url(${Tbilisee + slide.background})`}}>
+              
               <img className="door" src={Tbilisee + slide.door} alt="Door"/>
             </div>
         </SwiperSlide>
@@ -65,10 +53,5 @@ export default (props) => {
       }
 
     </Swiper>
-    <div className="absolute luxury-swiper__controller">
-            <button onClick={goPrev} className="luxury-prev"></button>
-            <button onClick={ goNext } className="luxury-next"></button>
-        </div>
-        </>
   );
 };

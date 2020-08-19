@@ -4,8 +4,12 @@
     width: calc(100% - 500px);
 }
 
+.landing-head__swiper .swiper-wrapper {
+    height: 100% !important;
+}
+
 .swiper-wrapper {
-    height: 94% !important;
+    height: 96% !important;
 }
 
 .landing-btn__next, .landing-btn__prev {

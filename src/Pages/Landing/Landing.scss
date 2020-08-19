@@ -1,6 +1,50 @@
 // Landing
-.landing {
-    
+.landing-head__swiper .swiper-button-next {
+    color: #ffffff !important;
+    border: none !important;
+    background: transparent !important;
+    right: 5% !important;
+}
+
+.landing-head__swiper .swiper-button-prev {
+    color: #ffffff !important;
+    border: none !important;
+    background: transparent !important;
+    left: 5% !important;
+}
+
+.landing-head__swiper .swiper-button-prev:focus {
+    outline: none !important;
+}
+
+.landing-head__swiper .swiper-button-next:focus {
+    outline: none !important;
+}
+
+@media(max-width: 952px) {
+    .exploring {
+        overflow: hidden;
+    }
+
+    .language-bar__white {
+        display: none;
+    }
+}
+
+@media(max-width: 952px) {
+    .language-bar__black {
+        display: none;
+    }
+}
+
+@media(max-width: 1000px) {
+    .exploring-two, .exploring-three {
+        height: auto !important;
+    }
+}
+
+.exploring-two, .exploring-three {
+    height: 710px;
 }
 
 .landing-head__swiper {
@@ -30,6 +74,12 @@
 @media(max-width: 2100px){
     .landing-head__swiper {
         margin-bottom: 0;
+    }
+}
+
+@media(max-width: 768px){
+    .landing-swiper__absolute {
+        display: none;
     }
 }
 
@@ -86,6 +136,7 @@
     margin-bottom: 30rem;
     position: relative;
     z-index: 1;
+    align-items: flex-start;
 
     &-one {
         width: 26%;
@@ -96,11 +147,11 @@
     }
 
     & h3 {
-        font-size: 133px;
+        font-size: 117px;
         color: #310000;
         display: flex;
         margin-top: 100px;
-        margin-left: 100px;
+        margin-left: 80px;
         margin-bottom: 50px;
 
         & span {
@@ -207,7 +258,7 @@
     }
 
     .exploring h3 {
-        font-size: 60px;
+        font-size: 50px;
         margin-bottom: 20px;
     }
 
@@ -251,7 +302,7 @@
     }
 
     & h3 {
-        font-size: 133px;
+        font-size: 84px;
         margin-left: 50px;
         margin-bottom: 130px;
         color: #310000;
@@ -284,7 +335,7 @@
 
 @media(max-width: 1550px){
     .landing-gallery h3 {
-        font-size: 100px;
+        font-size: 54px;
     }
     .landing-gallery {
         width: 1300px;
@@ -399,7 +450,7 @@
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: 69vh;
     margin-top: 30rem;
-    margin-bottom: 27rem;
+    margin-bottom: 40rem;
     grid-column-gap: 14rem;
 
     &__txt {
@@ -423,7 +474,8 @@
         width: 90%;
         margin: auto;
         text-align: left;
-        margin-bottom: 110px;
+        margin-bottom: 110px !important;
+        line-height: 41px;
     }
 }
 
@@ -460,18 +512,16 @@
 
 .door {
     position: absolute;
-    bottom: -40px;
-    height: 80vh;
+    bottom: 0;
+    height: 76vh;
     left: 50%;
     transform: translateX(-50%);
-    -webkit-box-shadow: -2px 10px 32px -10px rgba(0,0,0,0.5);
-    -moz-box-shadow: -2px 10px 32px -10px rgba(0,0,0,0.5);
-    box-shadow: -2px 10px 32px -10px rgba(0,0,0,0.5);
+    filter: drop-shadow(0 0 20px #333);
 }
 
 @media(max-width: 1500px) {
     .door {
-        height: 75vh;
+        height: 70vh;
     }
 }
 
@@ -547,6 +597,10 @@
     top: 0;
     width: 100%;
     height: 100%;
+}
+
+.landing-swiper .swiper-button-next, .landing-swiper .swiper-button-prev {
+    display: none !important;
 }
 
 @media(max-width: 600px){
@@ -722,9 +776,10 @@
 }
 
 .landing-swiper__title{
-    font-size: 73px;
+    font-size: 84px;
     text-transform: capitalize;
     margin-bottom: 6rem;
+    color: #310000;
 }
 
 .landing-swiper__seemore:after {
@@ -804,7 +859,11 @@
 }
 
 
+
 @media(max-width: 1300px) {
+    .landing-neighborhood p {
+        width: 100% !important;
+    }
     .landing-neighborhood__txt {
         padding: 0;
     }

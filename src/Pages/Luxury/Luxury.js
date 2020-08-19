@@ -51,6 +51,7 @@ class Luxury extends Component {
           {
             arrayLuxury.map((item,index) => <>
             <PageTitle title={item.type_en}/>
+            <h2 className="luxury-kind">{item.kind_en}</h2>
             <div className="container-own luxury">
             <div className="luxury-absolute"/>
             <section className="luxury-swiper">
@@ -92,7 +93,7 @@ class Luxury extends Component {
       })()}</p></div>
                 <div></div>
                 <div></div>
-              <div>
+              <div className="luxury-images">
               <div className="background-image__cover height full" style={{backgroundImage: `url(${Tbilisee + item.style_image})`}}></div>
                 {/* <img src={Tbilisee + item.style_image} alt={"index"} className="full"/> */}
               </div>
@@ -114,7 +115,7 @@ class Luxury extends Component {
         }
       })()}</p>
               </div>
-              <div>
+              <div >
               <div className="background-image__cover height full" style={{backgroundImage: `url(${Tbilisee + item.mood_image_small})`}}></div>
                 {/* <img src={Tbilisee + item.mood_image_small} alt={"index"} className="full" style={{height: "60%"}}/> */}
                 <div className="flex" style={{marginTop: "7rem"}}>
@@ -122,7 +123,7 @@ class Luxury extends Component {
               </div>
               <div className="luxury-mood">
                 <h2 style={{marginTop: "6rem"}}>Mood</h2>
-                <p>{(() => {
+                <p className="elipsis-6">{(() => {
         if (i18n.language === 'KA') {
           return (
             item.mood_description_ge
@@ -138,7 +139,7 @@ class Luxury extends Component {
         }
       })()}</p>
               </div>
-              <div>
+              <div className="luxury-images">
               <div className="background-image__cover height full mood-image__big" style={{backgroundImage: `url(${Tbilisee + item.mood_image_big})`}}></div>
                 {/* <img src={Tbilisee + item.mood_image_big} className="full mood-image__big"/> */}
               </div>

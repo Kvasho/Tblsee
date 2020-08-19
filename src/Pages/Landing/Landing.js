@@ -10,8 +10,6 @@ import SwiperMain from '../../Components/swiper-main'
 // COMPONENTS
 import CarouselLanding from '../../Components/CarouselLanding';
 import Header from '../../Components/Header';
-import ReadMoreAndLess from 'react-read-more-less';
-import ShowMoreText from 'react-show-more-text';
 
 // IMAGES
 import HotelRound from "../../Assets/icons/tbilisee-hotel-round-white.svg";
@@ -19,7 +17,6 @@ import GalleryRound from '../../Assets/icons/hotel-badge.svg';
 
 // SCSS
 import "./Landing.scss";
-import { render } from '@testing-library/react';
 
 
 export default class Landing extends Component {
@@ -60,10 +57,17 @@ export default class Landing extends Component {
         sliders={arrayLanding.sliders}
        />
       </div>       
-      <h2  className="exploring-title">{(() => {
+      <h2  className="exploring-title">Exploring</h2>      
+        <section data-aos="fade-up"
+            data-aos-anchor-placement = "top-center" className="exploring container-own">
+             
+            <div className="exploring-one">
+              {(() => {
         if (i18n.language === 'KA') {
           return (
-            arrayLanding.exploring.title_ge
+            <div>
+              {arrayLanding.exploring.title_ge.slice(0, 8)}
+            </div>
           )
         } else if (i18n.language === 'RU') {
           return (
@@ -71,48 +75,33 @@ export default class Landing extends Component {
           )
         } else {
           return (
-            arrayLanding.exploring.title_en
+              <h3 >
+                {arrayLanding.exploring.title_en.slice(0, 9)}
+                <span className="white">{arrayLanding.exploring.title_en.slice(8)}</span>
+              </h3>
           )
         }
-      })()}</h2>      
-        <section data-aos="fade-up"
-            data-aos-anchor-placement = "top-center" className="exploring container-own">
-              
-            <div className="exploring-one">
-              <h3>Tbilise <span className="white">hotel</span></h3>
+      })()}
 <p >{(() => {
         if (i18n.language == 'KA') {
           return (
             <div>
-              <p style={{margin: "0", padding: "0"}}>{arrayLanding.exploring.description_ge.slice(0, 100) + "..."}</p>
+              <p style={{margin: "0", padding: "0"}}>{arrayLanding.exploring.description_ge.slice(0, 200) + "..."}</p>
               <a style={{"cursor": "pointer"}} onClick={(event) => extendCollapsetext(event, arrayLanding.exploring.description_ge)}>→</a>
             </div>
           )
         } else if (i18n.language === 'RU') {
           return (
             <div>
-              <p style={{margin: "0", padding: "0"}}>{arrayLanding.exploring.description_ru.slice(0, 50) + "..."}</p>
+              <p style={{margin: "0", padding: "0"}}>{arrayLanding.exploring.description_ru.slice(0, 200) + "..."}</p>
               <a style={{"cursor": "pointer"}} onClick={(event) => extendCollapsetext(event, arrayLanding.exploring.description_ru)}>→</a>
             </div>
           )
         } else {
           return (
             <div>
-              <p style={{margin: "0", padding: "0"}}>{arrayLanding.exploring.description_en.slice(0, 50) + "..."}</p>
+              <p style={{margin: "0", padding: "0"}}>{arrayLanding.exploring.description_en.slice(0, 200) + "..."}</p>
               <a style={{"cursor": "pointer"}} onClick={(event) => extendCollapsetext(event, arrayLanding.exploring.description_en)}>→</a>
-              {/* <a onClick={(event) => {
-                console.log("hey")
-                if (event.target.innerHTML == "→"){
-                  event.target.innerHTML = "←"
-                  event.target.previousSibling.innerHTML = `${arrayLanding.exploring.description_en}`
-                }
-                else {
-                  event.target.innerHTML = "→"
-                  event.target.previousSibling.innerHTML = `${arrayLanding.exploring.description_en.slice(0, 50) + "..."}`
-                }
-              }
-                
-                }>→</a> */}
             </div>
           )
         }
@@ -133,11 +122,11 @@ export default class Landing extends Component {
         <div className="background-image__cover height full gallery-big__image" style={{backgroundImage: `url(${Tbilisee + arrayLanding.gallery.big_image})`}}></div>
         </div>
         <div>
-<p className="elipsis-9">{(() => {
+<p>{(() => {
         if (i18n.language === 'KA') {
           return (
             <div>
-              <p style={{margin: "0", padding: "0"}}>{arrayLanding.gallery.description_ge.slice(0, 50) + "..."}</p>
+              <p style={{margin: "0", padding: "0"}}>{arrayLanding.gallery.description_ge}</p>
               <a style={{"cursor": "pointer"}} onClick={(event) => extendCollapsetext(event, arrayLanding.gallery.description_ge)}>→</a>
             </div>
           )
@@ -145,15 +134,15 @@ export default class Landing extends Component {
         } else if (i18n.language === 'RU') {
           return (
             <div>
-              <p style={{margin: "0", padding: "0"}}>{arrayLanding.gallery.description_ru.slice(0, 50) + "..."}</p>
+              <p style={{margin: "0", padding: "0"}}>{arrayLanding.gallery.description_ru}</p>
               <a style={{"cursor": "pointer"}} onClick={(event) => extendCollapsetext(event, arrayLanding.gallery.description_ru)}>→</a>
             </div>
           )
         } else {
           return (
             <div>
-              <p style={{margin: "0", padding: "0"}}>{arrayLanding.gallery.description_en.slice(0, 50) + "..."}</p>
-              <a style={{"cursor": "pointer"}} onClick={(event) => extendCollapsetext(event, arrayLanding.gallery.description_en)}>→</a>
+              <p style={{margin: "0", padding: "0"}}>{arrayLanding.gallery.description_en}</p>
+              {/* <a style={{"cursor": "pointer"}} onClick={(event) => extendCollapsetext(event, arrayLanding.gallery.description_en)}>→</a> */}
             </div>
           )
         }
@@ -215,11 +204,11 @@ export default class Landing extends Component {
           )
         }
       })()}</h3>
-                <p className="eats-paragraph elipsis-7">{(() => {
+                <p className="eats-paragraph">{(() => {
         if (i18n.language === 'KA') {
           return (
             <div>
-              <p style={{margin: "0", padding: "0"}}>{arrayLanding.eat_drinks.description_ge.slice(0, 50) + "..."}</p>
+              <p style={{margin: "0", padding: "0"}}>{arrayLanding.eat_drinks.description_ge.slice(0, 200) + "..."}</p>
               <a style={{"cursor": "pointer"}} onClick={(event) => extendCollapsetext(event, arrayLanding.eat_drinks.description_ge)}>→</a>
             </div>
           )
@@ -227,14 +216,14 @@ export default class Landing extends Component {
         } else if (i18n.language === 'RU') {
           return (
             <div>
-              <p style={{margin: "0", padding: "0"}}>{arrayLanding.eat_drinks.description_ru.slice(0, 50) + "..."}</p>
+              <p style={{margin: "0", padding: "0"}}>{arrayLanding.eat_drinks.description_ru.slice(0, 200) + "..."}</p>
               <a style={{"cursor": "pointer"}} onClick={(event) => extendCollapsetext(event, arrayLanding.eat_drinks.description_ru)}>→</a>
             </div>
           )
         } else {
           return (
             <div>
-              <p style={{margin: "0", padding: "0"}}>{arrayLanding.eat_drinks.description_en.slice(0, 50) + "..."}</p>
+              <p style={{margin: "0", padding: "0"}}>{arrayLanding.eat_drinks.description_en.slice(0, 200) + "..."}</p>
               <a style={{"cursor": "pointer"}} onClick={(event) => extendCollapsetext(event, arrayLanding.eat_drinks.description_en)}>→</a>
             </div>
           )
@@ -278,31 +267,31 @@ export default class Landing extends Component {
           )
         }
       })()}</h3>
-              <p className="elipsis-7">{(() => {
+              <div>{(() => {
         if (i18n.language === 'KA') {
           return (
             <div>
-              <p style={{margin: "0", padding: "0"}}>{arrayLanding.neighborhood.description_ge.slice(0, 50) + "..."}</p>
-              <a style={{"cursor": "pointer"}} onClick={(event) => extendCollapsetext(event, arrayLanding.neighborhood.description_ge)}>→</a>
+              <p style={{margin: "0", padding: "0"}}>{arrayLanding.neighborhood.description_ge}</p>
+              {/* <a style={{"cursor": "pointer"}} onClick={(event) => extendCollapsetext(event, arrayLanding.neighborhood.description_ge)}>→</a> */}
             </div>
           )
             {/* arrayLanding.neighborhood.description_ge */}
         } else if (i18n.language === 'RU') {
           return (
             <div>
-              <p style={{margin: "0", padding: "0"}}>{arrayLanding.neighborhood.description_ru.slice(0, 50) + "..."}</p>
-              <a style={{"cursor": "pointer"}} onClick={(event) => extendCollapsetext(event, arrayLanding.neighborhood.description_ru)}>→</a>
+              <p style={{margin: "0", padding: "0"}}>{arrayLanding.neighborhood.description_ru}</p>
+              {/* <a style={{"cursor": "pointer"}} onClick={(event) => extendCollapsetext(event, arrayLanding.neighborhood.description_ru)}>→</a> */}
             </div>
           )
         } else {
           return (
             <div>
-              <p style={{margin: "0", padding: "0"}}>{arrayLanding.neighborhood.description_en.slice(0, 50) + "..."}</p>
-              <a style={{"cursor": "pointer"}} onClick={(event) => extendCollapsetext(event, arrayLanding.neighborhood.description_en)}>→</a>
+              <p style={{margin: "0", padding: "0"}}>{arrayLanding.neighborhood.description_en}</p>
+              {/* <a style={{"cursor": "pointer"}} onClick={(event) => extendCollapsetext(event, arrayLanding.neighborhood.description_en)}>→</a> */}
             </div>
           )
         }
-      })()}</p>
+      })()}</div>
                 <Link to="/location" className="neighborhood-more">{t('View More')}</Link>
           </div>
           <div className="background-image__cover full" style={{backgroundImage: `url(${Tbilisee +  arrayLanding.neighborhood.big_image})`}}></div>
@@ -324,6 +313,6 @@ const extendCollapsetext = (event, text) => {
   }
   else {
     event.target.innerHTML = "→"
-    event.target.previousSibling.innerHTML = `${text.slice(0, 50) + "..."}`
+    event.target.previousSibling.innerHTML = `${text.slice(0, 200) + "..."}`
   }
 }

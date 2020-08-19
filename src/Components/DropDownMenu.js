@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import CloseButton from "../Assets/icons/x.svg";
 import { slideInLeft } from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
+import i18next from 'i18next';
 
 import AOS from 'aos';
 import "aos/dist/aos.css";
@@ -53,6 +54,8 @@ const styles = {
     }
   }
 
+
+
 export default class DropdownMenu extends Component  {
 
     componentDidMount(){
@@ -60,11 +63,19 @@ export default class DropdownMenu extends Component  {
 			duration: 500
 		});
     }
+    handleClick = (lang) => {
+        i18next.changeLanguage(lang);
+      }
     render(){
         const {t} =this.props;
   return (
     <StyleRoot>
     <div className="dropdown-menu__header" style={styles.slideInLeft}>
+    <div className="language-bar__dropdown">
+              <li onClick={() => this.handleClick("EN")} className="language-first">EN</li>
+              <li onClick={() => this.handleClick("RU")} style={{margin: "0 10px"}}>RU</li>
+              <li onClick={() => this.handleClick("KA")} >GE</li>
+                            </div>
         <img src={CloseButton} className="burger-close" alt="Close Button" onClick={() => this.props.menuHandler()}/>
         <div className="dropdown-menu_wr">
             <Link to="/aboutus" data-aos="fade-right">

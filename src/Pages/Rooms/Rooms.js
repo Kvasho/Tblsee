@@ -52,7 +52,9 @@ export default class  Rooms extends Component {
               className={index%2===1 ? "rooms-luxury direction-reverse" : "rooms-luxury"}>
           <div className="relative">
             <div className={index%2===1 ? "rooms-background_first " : "rooms-background_first rooms-left"}/>
+            <Link to={`/rooms/${room.type_en}`}>
             <div className="background-image__cover height full" style={{backgroundImage: `url(${Tbilisee + room.main_image})`}}/>
+            </Link>
           </div>
           <div>
             <h1 className="rooms-description__title">{(() => {
@@ -85,7 +87,8 @@ export default class  Rooms extends Component {
                       )
                     }
       })()}</p>
-              <div className="flex space-between" style={{flexDirection: "row-reverse"}}>
+              <div className="flex space-between">
+                <h5 className="rooms-kind">{room.kind_en}</h5>
                 <Link 
                   to={`/rooms/${room.type_en}`}
                   className="see-more__btn"

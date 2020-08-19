@@ -5,6 +5,16 @@
     width: 100%;
 }
 
+.header-logo {
+    margin-right: 100px;
+}
+
+@media(max-width: 950px) {
+    .header-logo {
+        margin-right: 0;
+    }
+}
+
 .header-wr {
     display: flex;
     justify-content: space-between;
@@ -19,7 +29,32 @@
     display: flex;
 }
 
+.language-bar__dropdown {
+    font-size: 25px;
+    color: #ffffff;
+    position: absolute;
+    left: 50%;
+    bottom: 25px;
+    transform: translateX(-50%);
+    display: none;
+}
+
+@media(max-width: 1000px) {
+    .language-bar__dropdown {
+        display: flex;
+    }
+}
+
 @media(max-width: 650px) {
+    .language-bar__white {
+        color: #ffffff !important;
+        margin-left: 4rem !important;
+        font-size: 15px !important;
+    }
+    .language-bar__black {
+        margin-left: 4rem !important;
+        font-size: 15px !important;
+    }
     .header-wr {
         margin: 20px auto !important;
     }
@@ -35,6 +70,7 @@
 
     .header-logo {
         width: 80px;
+        margin-left: 46px;
     }
     .book-now__white {
         font-size: 12px !important;

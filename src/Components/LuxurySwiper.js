@@ -24,7 +24,6 @@ import "../Styles/common.scss";
         spaceBetween:    props.spaceBetween,
         slidesPerView:   props.slidesPerView,
         slidesPerColumn: 1,
-        loop:            true,
         speed:           400,
     };
     const swiperRef = useRef(null);
@@ -41,11 +40,11 @@ import "../Styles/common.scss";
     return (
       <div className="relative luxury-swiper__wr">
         <Swiper ref={swiperRef} {...params} className="luxury-swiper__container">
-        <div>
+        
             {
-              props.arrayImg.map((image,index) => <div className="background-image__cover height full" style={{backgroundImage: `url(${Tbilisee + image})`}} key={index}/>)
+              props.arrayImg.map((image,index) =><div> <div className="background-image__cover height full" style={{backgroundImage: `url(${Tbilisee + image})`}}/> </div>)
             }
-            </div>       
+                   
         </Swiper>
         <div className="absolute luxury-swiper__controller">
             <button onClick={goPrev} className="luxury-prev"></button>

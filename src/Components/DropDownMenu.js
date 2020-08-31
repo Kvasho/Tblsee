@@ -81,8 +81,8 @@ export default class DropdownMenu extends Component  {
             <Link to="/aboutus" data-aos="fade-right">
                 <li style={Styles.slideInLeft} className="dropdown-menu_item" onClick={() => this.props.menuHandler()}>{t('about us')}</li>
             </Link>
-            <Link to="/booking" data-aos="fade-right">
-                <li style={Styles.slideInLeft} style={{fontWeight: "bold"}} className="dropdown-menu_item" onClick={() => this.props.menuHandler()}>{t('Book now')}</li>
+            <Link to="/booking">
+                <li style={Styles5.slideInLeft} style={{fontWeight: "bold"}} className="dropdown-menu_item" onClick={() => this.props.menuHandler()}>{t('book now')}</li>
             </Link>
             <Link to="/gallery" data-aos="fade-left">
                 <li style={Styles1.slideInLeft} className="dropdown-menu_item" onClick={() => this.props.menuHandler()}>{t('gallery')}</li>

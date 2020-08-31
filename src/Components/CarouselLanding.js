@@ -41,7 +41,7 @@ export default (props) => {
            <>      
         <SwiperSlide>           
             <div className="background-image__cover height" style={{backgroundImage: `url(${Tbilisee + slide.background})`}}>              
-            {(() => {
+            {/* {(() => {
         if (i18n.language === 'KA') {
           return (
             <iframe  className = "iframe-main"
@@ -58,7 +58,7 @@ export default (props) => {
             src="https://tbilisee.ge/static/media/main.html"></iframe> 
           )
         }
-      })()}                                
+      })()}                                 */}
                 <div>
                 <img className="door" src={Tbilisee + slide.door} alt="Door"/>
                 <Link to={"/" + slide.link}>

@@ -153,7 +153,8 @@ class Luxury extends Component {
           
           <section className="luxury-credit container-own">
                 <h5>* No credit card required</h5>
-                <Button
+                <Link
+                to="/booking"
                   title="book now"
                  className="luxury-credit__btn"
                 />                  

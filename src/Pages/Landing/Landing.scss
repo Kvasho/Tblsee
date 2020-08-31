@@ -69,7 +69,7 @@
     font-style: italic;
     text-transform: uppercase;
     position: absolute;
-    left: 60%;
+    left: 50%;
     top: 67%;
     transform: translate(-50%, -50%);
     z-index: 13;
@@ -93,7 +93,7 @@
     font-size: 52px;
     text-transform: uppercase;
     position: absolute;
-    left: 60%;
+    left: 50%;
     top: 59%;
     transform: translate(-50%, -50%);
     z-index: 120;
@@ -629,7 +629,7 @@
     position: absolute;
     bottom: 0;
     height: 76vh;
-    left: 60%;
+    left: 50%;
     transform: translateX(-50%);
     filter: drop-shadow(0 0 20px #333);
 }

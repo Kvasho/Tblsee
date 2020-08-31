@@ -1,6 +1,6 @@
 // import Swiper core and required components
 import React, { useState, useRef } from 'react';
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y,Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import '../Styles/common.scss';
 
@@ -12,10 +12,10 @@ import 'swiper/components/scrollbar/scrollbar.scss';
 import { Link } from 'react-router-dom';
 
 // install Swiper components
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y,Autoplay]);
 
 export default (props) => {
-  const {t} = props;
+  const {t, i18n} = props;
   const Tbilisee = 'https://core.tbilisee.ge/';
   const {sliders} = props;
   const params = {
@@ -27,7 +27,9 @@ export default (props) => {
     // renderNextButton: () => <button className="swiper-button-next">Next</button>
   }
   return (
-    <Swiper {...params}
+    <Swiper 
+  
+  {...params}
       slidesPerView = {1}  
     >
     <button className="swiper-button-next"></button> 
@@ -37,13 +39,33 @@ export default (props) => {
         sliders.map((slide,index) => {           
          return (        
            <>      
-           
-        <SwiperSlide>   
-                     
-            <Link to={"/" + slide.link} className="landing-open__btn">{t('open')}</Link>
-            <div className="background-image__cover height" style={{backgroundImage: `url(${Tbilisee + slide.background})`}}>
-              
-              <img className="door" src={Tbilisee + slide.door} alt="Door"/>
+        <SwiperSlide>           
+            <div className="background-image__cover height" style={{backgroundImage: `url(${Tbilisee + slide.background})`}}>              
+            {(() => {
+        if (i18n.language === 'KA') {
+          return (
+            <iframe  className = "iframe-main"
+                src="https://tbilisee.ge/static/media/main_ka.html"></iframe> 
+          )
+        } else if (i18n.language === 'RU') {
+          return (
+            <iframe  className = "iframe-main"
+                src="https://tbilisee.ge/static/media/main_ru.html"></iframe> 
+          )
+        } else {
+          return (
+            <iframe  className = "iframe-main"
+            src="https://tbilisee.ge/static/media/main.html"></iframe> 
+          )
+        }
+      })()}                                
+                <div>
+                <img className="door" src={Tbilisee + slide.door} alt="Door"/>
+                <Link to={"/" + slide.link}>
+                <h1 className="landing-main__title">{slide.title}</h1>
+                <h2 className="landing-open__btn">{t('open')}</h2>
+                </Link>
+                </div>             
             </div>
         </SwiperSlide>
         </>

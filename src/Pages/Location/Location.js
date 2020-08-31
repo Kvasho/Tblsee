@@ -46,6 +46,9 @@ export default class Location extends Component {
   return (
     <>
     <HeaderBlack t={t}/>
+    <div className="iframe-wr">
+          <iframe style = {{scrolling: "no"}} className="header-iframe" src="https://tbilisee.ge/static/media/header.html"></iframe>   
+      </div>
     <div className="location">
       <PageTitle title={(() => {
                     if (i18n.language === 'KA') {

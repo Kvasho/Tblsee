@@ -20,9 +20,20 @@ class Header extends Component  {
 		super(props);
 		this.state = {
       burgerMenuOpen: true,
-      currentLang: 'EN',
-      inactiveLang: ['RU', 'GE']
+      currentLang: '',
+      inactiveLang: ['RU', 'GE'],
+      bookNow: false
     };
+  }
+
+  componentWillMount () {
+    localStorage.getItem('currentLang') && this.setState ({
+      currentLang: localStorage.getItem('currentLang')
+    })
+  }
+
+  componentWillUpdate () {
+    // localStorage.setItem('currentLang', 'yke')
   }
 
   toggleClass = () => {
@@ -32,6 +43,11 @@ class Header extends Component  {
 
  handleClick = (lang) => {
     i18next.changeLanguage(lang);
+  }
+
+  handleBooking = () => {
+    const currentState = this.state.bookNow;
+    this.setState({ bookNow: !currentState });
   }
 
   render(){
@@ -52,19 +68,24 @@ class Header extends Component  {
             <div className="flex">
              <img src={ BurgerMenuWhite } className="header-burger_menu" alt="Burger Menu" onClick={this.toggleClass}/>
               <div className="language-bar__white">
-              <li onClick={() => this.handleClick("EN")} className="language-first">{this.state.currentLang}</li>
+              <li onClick={() => this.handleClick("EN")} className="language-first">EN</li>
               <li onClick={() => this.handleClick("RU")} key={index} style={{margin: "0 10px"}}>RU</li>
-              <li onClick={() => this.handleClick("KA")} key={index}>GE</li>
+              <li onClick={() => this.handleClick("KA")} key={index}>KA</li>
                             </div>
        </div>
        <Link to="/">           
              <img src={LogoWhite} className="header-logo" alt="website logo" onClick={this.whiteHeader}/> 
        </Link>
-       <Button 
+       <Link 
+         to="/booking"
          title="book now"
          className="book-now__white"
-       />
-     </div> </header>:
+       >book now</Link>
+     </div> 
+     <div>
+     
+     </div>
+     </header>:
             
         <DropdownMenu 
           t={t}

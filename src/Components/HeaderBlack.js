@@ -61,18 +61,23 @@ class Header extends Component  {
        <Link to="/">           
              <img src={Logo} className="header-logo" alt="website logo" onClick={this.whiteHeader}/> 
        </Link>
-       <Button 
+       <Link 
+          to= "/booking"
          title="book now"
          className="book-now"
-       />
-     </div> </header>:
+       >Book Now</Link>
+     </div>
+     
+      </header>:
+
             
         <DropdownMenu 
           t = {t}
           menuHandler  = { this.toggleClass } 
           whiteHeader  = { this.whiteHeader } 
           blackHeader  = { this.blackHeader }/>
-          }     
+          }  
+             
     </>
   );
 }}

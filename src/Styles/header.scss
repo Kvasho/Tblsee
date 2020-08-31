@@ -77,8 +77,35 @@
     }
 }
 
+.sfl-calendar-container.sfl-calendar-container-2 {
+    width: 100px !important;
+}
+
+.header-iframe {
+    border-style: none;
+    border: none;
+    width: 100%;
+    height: -webkit-fill-available;
+    position: absolute;
+    z-index: 1000;
+    top: 150px;
+}
+
+@media(max-width: 1200px) {
+    .header-iframe {
+        height: 400px;
+    }
+}
+
+@media(max-width: 950px) {
+    .header-iframe {
+        width: 105%;
+    }
+}
+
 .header-black {
     z-index: 10;
+    overflow: hidden;
 }
 
 .book-now {

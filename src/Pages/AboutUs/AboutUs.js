@@ -36,7 +36,12 @@ export default class AboutUs extends Component  {
   return (
     <>
     <HeaderBlack t={t}/>
+    
     <div className="about-us">
+      <div className="iframe-wr">
+          <iframe className="header-iframe" src="https://tbilisee.ge/static/media/header.html"></iframe>   
+      </div>
+    
       <div className="about-us__wr">  
       <div className="about-us__absolute"/>    
         <PageTitle title={t("About Us")}/>

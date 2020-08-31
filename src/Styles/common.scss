@@ -292,6 +292,11 @@ a {
     border: 1px solid #ffffff;
     padding: 2rem 1rem;
     height: fit-content;
+    background: transparent;
+
+    &:focus {
+        outline: none;
+    }
 }
 
 .language-bar__black {

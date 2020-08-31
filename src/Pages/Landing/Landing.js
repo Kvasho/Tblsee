@@ -54,9 +54,29 @@ export default class Landing extends Component {
       <img className="landing-badge" src={HotelRound} alt="badge"/>
        <CarouselLanding
         t={t}        
+        i18n = {i18n}
         sliders={arrayLanding.sliders}
        />
-      </div>       
+      </div>
+      {(() => {
+        if (i18n.language === 'KA') {
+          return (
+            <iframe  className = "iframe-main__mobile"
+                src="https://tbilisee.ge/static/media/main_ka.html"></iframe> 
+          )
+        } else if (i18n.language === 'RU') {
+          return (
+            <iframe  className = "iframe-main__mobile"
+                src="https://tbilisee.ge/static/media/main_ru.html"></iframe> 
+          )
+        } else {
+          return (
+            <iframe  className = "iframe-main__mobile"
+            src="https://tbilisee.ge/static/media/main.html"></iframe> 
+          )
+        }
+      })()} 
+           
       <h2  className="exploring-title">Exploring</h2>      
         <section data-aos="fade-up"
             data-aos-anchor-placement = "top-center" className="exploring container-own">
@@ -66,17 +86,17 @@ export default class Landing extends Component {
         if (i18n.language === 'KA') {
           return (
             <div>
-              {arrayLanding.exploring.title_ge.slice(0, 8)}
+              <h3>{arrayLanding.exploring.title_ge.slice(0, 8)}</h3>
             </div>
           )
         } else if (i18n.language === 'RU') {
           return (
-            arrayLanding.exploring.title_ru
+            <h3>{arrayLanding.exploring.title_ru.slice(0, 8)}</h3>
           )
         } else {
           return (
               <h3 >
-                {arrayLanding.exploring.title_en.slice(0, 9)}
+               {arrayLanding.exploring.title_en.slice(0, 9)}
                 <span className="white">{arrayLanding.exploring.title_en.slice(8)}</span>
               </h3>
           )
@@ -127,7 +147,8 @@ export default class Landing extends Component {
           return (
             <div>
               <p style={{margin: "0", padding: "0"}}>{arrayLanding.gallery.description_ge}</p>
-              <a style={{"cursor": "pointer"}} onClick={(event) => extendCollapsetext(event, arrayLanding.gallery.description_ge)}>→</a>
+              <a style={{"cursor": "pointer"}} onClick={(event) => {extendCollapsetext(event, arrayLanding.gallery.description_ge)
+              document.querySelector(".landing-gallery").style.rowGap = "10rem"}}>→</a>
             </div>
           )
             {/* arrayLanding.gallery.description_ge */}
@@ -135,14 +156,17 @@ export default class Landing extends Component {
           return (
             <div>
               <p style={{margin: "0", padding: "0"}}>{arrayLanding.gallery.description_ru}</p>
-              <a style={{"cursor": "pointer"}} onClick={(event) => extendCollapsetext(event, arrayLanding.gallery.description_ru)}>→</a>
+              <a style={{"cursor": "pointer"}} onClick={(event) => {extendCollapsetext(event, arrayLanding.gallery.description_ru)
+              document.querySelector(".landing-gallery").style.rowgrap = "10rem"}}>→</a>
             </div>
           )
         } else {
           return (
             <div>
               <p style={{margin: "0", padding: "0"}}>{arrayLanding.gallery.description_en}</p>
-              {/* <a style={{"cursor": "pointer"}} onClick={(event) => extendCollapsetext(event, arrayLanding.gallery.description_en)}>→</a> */}
+              <a style={{"cursor": "pointer"}} onClick={(event) => {extendCollapsetext(event, arrayLanding.gallery.description_en)
+              document.querySelector(".landing-gallery").style.rowgrap = "10rem"
+              }}>→</a>
             </div>
           )
         }

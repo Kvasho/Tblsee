@@ -19,7 +19,7 @@ function App() {
         <div className="App"> 
             <Routers t={t} i18n={i18n}/> 
         </div>
-       </ScrollIntoView>
+      </ScrollIntoView>
     </BrowserRouter> 
   );
 }

@@ -39,17 +39,30 @@ class Contact extends Component {
     })
   }
 
-  handleChange = (e) => {
+  componentDidUpdate() {
+    console.log(this.state)
+  }
+
+  handleChange = (event) => {
+    console.log("this doesn't work")
+  }
+
+  handleSubmit = () => {
+    let form = document.querySelectorAll("input")
+    console.log(this.state)
     this.setState({
-        sent: false
+      name: form[0].value,
+      surname: form[1].value,
+      phone: form[2].value,
+      email: form[3].value,
+      message: form[4].value
     })
   }
 
   render(){
     const {t} = this.props;
     if(!this.state.arrayContact) {
-      return <div className="loading" data-aos="fade-up"
-      data-aos-anchor-placement = "top-center"></div>; //TODO: Need Loading State
+      return "loading"; //TODO: Need Loading State
     }
   return (
     <>
@@ -69,6 +82,7 @@ class Contact extends Component {
               type = "text"
               id = "name"
               placeholder = "Name"
+              value="yo"
               className = "contact-input width-half"
             />
             <Input 
@@ -77,6 +91,7 @@ class Contact extends Component {
               type = "text"
               id = "Surname"
               placeholder = "Surname"
+              value={this.state.surname}
               className = "contact-input width-half"
             />
             <Input 
@@ -85,6 +100,7 @@ class Contact extends Component {
               type = "number"
               id = "mobile"
               placeholder = "Phone number"
+              value={this.state.phone}
               className = "contact-input width-full"
             />
             <Input 
@@ -93,6 +109,7 @@ class Contact extends Component {
               type = "email"
               id = "email"
               placeholder = "E-mail"
+              value={this.state.email}
               className = "contact-input width-full"
             />
             <Input 
@@ -101,6 +118,7 @@ class Contact extends Component {
               type = "textarea"
               id = "textarea"
               placeholder = "Your text here"
+              value={this.state.message}
               className = "textarea width-full"
             />
             <div className="contact-button__wr">
@@ -108,7 +126,7 @@ class Contact extends Component {
                 this.state.sent ? <div></div> : <h3>message sent successfully</h3>
               }              
             <button  
-              onClick={() => this.handleChange()}
+              onClick={() => this.handleSubmit()}
               className="contact-send__button"
             >{t('Send')}</button>
             </div>

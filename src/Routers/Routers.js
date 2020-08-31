@@ -3,7 +3,6 @@ import React from "react";
 // PACKAGES
 import { Route, Switch }    from "react-router-dom";
 
-
 // PAGES
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import Contact from "../Pages/Contact/Contact";
@@ -14,6 +13,7 @@ import Restaurant from "../Pages/Restaurant/Restaurant";
 import Rooms from "../Pages/Rooms/Rooms";
 import Luxury from "../Pages/Luxury/Luxury";
 import MidRange from "../Pages/MidRange/MidRange";
+import Booking from '../Pages/booking';
 
 // COMPONENTS
 import Footer from "../Components/Footer";
@@ -27,6 +27,11 @@ const Routers = (props) => {
 					path = "/aboutUs"
 					exact
 					component = {() =>  <AboutUs t={props.t} i18n={props.i18n}/> }
+				/>
+				<Route 
+				path = "/booking"
+				exact
+				component = {() => <Booking t={props.t} i18n={props.i18n}/> }
 				/>
 				<Route
 					path = "/"
@@ -62,7 +67,7 @@ const Routers = (props) => {
 					path = "/rooms/:type"
 					exact
 					component = {(props) =>  
-					<Luxury type={props.match.params.type} t={routerProps.t} i18n={routerProps.i18n}/>
+					<Luxury type={props.match.params.type} t={routerProps.t} i18n={routerProps.i18n} />
 				}
 				/>
 			</Switch>

@@ -157,7 +157,7 @@ class Luxury extends Component {
                 to="/booking"
                   title="book now"
                  className="luxury-credit__btn"
-                />                  
+                >Book Now</Link>                  
             </section>
             <Link to='/rooms' className="luxury-view__all">View All Rooms</Link>
           <section className="luxury-restaurant container-own">

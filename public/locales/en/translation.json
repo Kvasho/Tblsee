@@ -7,7 +7,7 @@
     "gallery" : "gallery",
     "rooms"   : "rooms",
     "restaurant" : "restaurant",
-    "location"  : "location",
+    "sights"  : "sights",
     "contact"  : "contact",
     "room" : "room",
     "Rooms" : "Rooms",
@@ -20,5 +20,7 @@
     "socials" : "socials",
     "made by" : "made by",
     "phone"   : "phone",
-    "book now" : "book now"
+    "book now" : "book now",
+    "Menu" : "Menu",
+    "exploring" : "exploring"
 }

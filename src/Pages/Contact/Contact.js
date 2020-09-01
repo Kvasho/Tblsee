@@ -73,7 +73,7 @@ class Contact extends Component {
         <div data-aos="fade-down"
           data-aos-easing="linear"
           data-aos-duration="1500" className="contact-form">
-          <img src={HotelRound} alt="Round logo Tbilisee" className="contact-round__logo"/>
+          <img src={HotelRound} alt="Round logo Tbilisee" className="contact-round__logo rotate"/>
         <ContactUs t={t} socials={this.state.arrayContact}/>
             <h2 className="width-full contact-title">{t('Stay in touch')}</h2>
             <Input 

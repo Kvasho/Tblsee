@@ -41,28 +41,26 @@ export default (props) => {
            <>      
         <SwiperSlide>           
             <div className="background-image__cover height" style={{backgroundImage: `url(${Tbilisee + slide.background})`}}>              
-            {/* {(() => {
-        if (i18n.language === 'KA') {
-          return (
-            <iframe  className = "iframe-main"
-                src="https://tbilisee.ge/static/media/main_ka.html"></iframe> 
-          )
-        } else if (i18n.language === 'RU') {
-          return (
-            <iframe  className = "iframe-main"
-                src="https://tbilisee.ge/static/media/main_ru.html"></iframe> 
-          )
-        } else {
-          return (
-            <iframe  className = "iframe-main"
-            src="https://tbilisee.ge/static/media/main.html"></iframe> 
-          )
-        }
-      })()}                                 */}
                 <div>
                 <img className="door" src={Tbilisee + slide.door} alt="Door"/>
                 <Link to={"/" + slide.link}>
-                <h1 className="landing-main__title">{slide.title}</h1>
+                <h1 className="landing-main__title">{(() => {
+        if (i18n.language === 'KA') {
+          return (
+            
+               slide.title_ka
+           
+          )
+        } else if (i18n.language === 'RU') {
+          return (
+            slide.title_ru
+          )
+        } else {
+          return (
+            slide.title_en
+          )
+        }
+      })()}</h1>
                 <h2 className="landing-open__btn">{t('open')}</h2>
                 </Link>
                 </div>             

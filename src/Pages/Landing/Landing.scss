@@ -1,4 +1,13 @@
 // Landing
+// Landing
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}
 .landing-head__swiper .swiper-button-next {
     color: #ffffff !important;
     border: none !important;
@@ -26,6 +35,13 @@
 .iframe-main__mobile {
     display: none;
 }
+
+// @media(max-height: 800px){
+//     .landing-main__title {
+//         font-size: 30px;
+//         color: black;
+//     }
+// }
 
 @media(max-width: 1100px) {
     .door {
@@ -105,7 +121,7 @@
 
 @media(max-width: 1500px) {
     .landing-main__title {
-        font-size: 45px;
+        font-size: 40px;
     }
 
     .landing-open__btn {
@@ -114,9 +130,9 @@
 }
 
 
-@media(max-width: 1300px) {
+@media(max-width: 1366px) {
     .landing-main__title {
-        font-size: 42px;
+        font-size: 6vh;
     }
 
     .landing-open__btn {
@@ -128,11 +144,11 @@
 
 @media(max-width: 800px) {
     .landing-open__btn {
-        font-size: 25px;
+        font-size: 18px;
     }
 
     .landing-main__title {
-        font-size: 40px;
+        font-size: 5vh;
     }
 }
 
@@ -643,7 +659,7 @@
 .landing-swiper h4 {
     position: absolute;
     left: 50%;
-    bottom: -100px;
+    bottom: -75px;
     transform: translateX(-50%);
 }
 

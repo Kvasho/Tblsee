@@ -44,6 +44,7 @@ class Header extends Component  {
     if (index > -1) {  
     otherLang.splice(index, 1);
     }
+    console.log(t,"dsadsaioudhjaiuosdiauhdsiaud")
     return (     
       <>       
           {

@@ -47,6 +47,12 @@ const Styles5 = {
         animationName: Radium.keyframes(slideInLeft, 'slideInLeft')
     }
 }
+const Styles6 = {
+    slideInLeft: {
+        animation: 'x 4s',
+        animationName: Radium.keyframes(slideInLeft, 'slideInLeft')
+    }
+}
 const styles = {
     slideInLeft: {
       animation: 'x 0.5s',
@@ -81,23 +87,23 @@ export default class DropdownMenu extends Component  {
             <Link to="/aboutus" data-aos="fade-right">
                 <li style={Styles.slideInLeft} className="dropdown-menu_item" onClick={() => this.props.menuHandler()}>{t('about us')}</li>
             </Link>
+            <Link to="/rooms">
+                <li style={Styles1.slideInLeft} className="dropdown-menu_item" onClick={() => this.props.menuHandler()}>{t('rooms')}</li>
+            </Link>
             <Link to="/booking">
-                <li style={Styles5.slideInLeft} style={{fontWeight: "bold"}} className="dropdown-menu_item" onClick={() => this.props.menuHandler()}>{t('book now')}</li>
+                <li style={Styles2.slideInLeft} className="dropdown-menu_item" onClick={() => this.props.menuHandler()}>{t('book now')}</li>
             </Link>
-            <Link to="/gallery" data-aos="fade-left">
-                <li style={Styles1.slideInLeft} className="dropdown-menu_item" onClick={() => this.props.menuHandler()}>{t('gallery')}</li>
-            </Link>
-            <Link to="/rooms" data-aos="fade-left">
-                <li style={Styles2.slideInLeft} className="dropdown-menu_item" onClick={() => this.props.menuHandler()}>{t('rooms')}</li>
-            </Link>
-            <Link to="/restaurant" data-aos="fade-left">
+            <Link to="/restaurant">
                 <li  style={Styles3.slideInLeft} className="dropdown-menu_item" onClick={() => this.props.menuHandler()}>{t('restaurant')}</li>
             </Link>
-            <Link to="/location" data-aos="fade-left">
-                <li style={Styles4.slideInLeft} className="dropdown-menu_item" onClick={() => this.props.menuHandler()}>{t('location')}</li>
+            <Link to="/location">
+                <li style={Styles4.slideInLeft} className="dropdown-menu_item" onClick={() => this.props.menuHandler()}>{t('sights')}</li>
             </Link>
-            <Link to="/contact" data-aos="fade-left">
-                <li style={Styles5.slideInLeft} className="dropdown-menu_item" onClick={() => this.props.menuHandler()}>{t('contact')}</li>
+            <Link to="/gallery">
+                <li style={Styles5.slideInLeft} className="dropdown-menu_item" onClick={() => this.props.menuHandler()}>{t('gallery')}</li>
+            </Link>            
+            <Link to="/contact">
+                <li style={Styles6.slideInLeft} className="dropdown-menu_item" onClick={() => this.props.menuHandler()}>{t('contact')}</li>
             </Link>
         </div>
     </div>

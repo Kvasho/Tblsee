@@ -137,7 +137,7 @@ export default class  Restaurant extends Component {
               data-aos-anchor-placement = "top-center" className="background-image__cover height restaurant-shef__img container-own" alt="shef" style={{backgroundImage: `url(${Tbilisee + arrayRestaurant.chef.image})`}}/>
       </div>
       <h2 
-              className="restaurant-shef">{(() => {
+              data-aos="fade-up" className="restaurant-shef">{(() => {
                 if (i18n.language === 'KA') {
                   return (
                     arrayRestaurant.chef.fullName_ge
@@ -153,8 +153,8 @@ export default class  Restaurant extends Component {
                 }
   })()}</h2>
       <h5 
-              className="restaurant-shef__post">shef</h5>
-      <p  className="restaurant-shef__about container-own">{(() => {
+              data-aos="fade-up" className="restaurant-shef__post">shef</h5>
+      <p  data-aos="fade-up" className="restaurant-shef__about container-own">{(() => {
                 if (i18n.language === 'KA') {
                   return (
                     arrayRestaurant.chef.description_ge

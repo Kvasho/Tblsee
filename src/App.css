@@ -1,3 +1,11 @@
+@font-face {
+    font-family: playfair;
+    font-style: normal;
+    src: url('./Assets/Fonts/playfairdisplay-regular-webfont.woff') format('woff'),
+    url('./Assets/Fonts/playfairdisplay-regular-webfont.woff2') format('woff2')
+
+  }
+
 li {
     list-style: none;
 }

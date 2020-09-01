@@ -51,7 +51,13 @@ export default class Footer extends Component {
     </Col>
     <Col>
     <h3 className="footer-cell__title">{t('socials')}</h3>
-          <p className="footer-cell__subtitle">facebook, instagram, linkedin</p></Col>
+    <div style={{margin: "auto", width: "fit-content"}}>
+      
+    
+          <a href="https://www.facebook.com" className="footer-cell__subtitle">Facebook</a>
+          <a href="https://www.instagram.com" className="footer-cell__subtitle">Instagram</a>
+          <a href="https://www.linkedin.com" className="footer-cell__subtitle">Linkedin</a>
+          </div></Col>
     <Col>
       <h3 className="footer-cell__title">{t('made by')}</h3>
       <a href="https://www.onesoul.io" className="footer-cell__subtitle onesoul">onesoul.io</a>

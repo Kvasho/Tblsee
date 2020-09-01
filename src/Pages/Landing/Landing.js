@@ -57,27 +57,8 @@ export default class Landing extends Component {
         i18n = {i18n}
         sliders={arrayLanding.sliders}
        />
-      </div>
-      {(() => {
-        if (i18n.language === 'KA') {
-          return (
-            <iframe  className = "iframe-main__mobile"
-                src="https://tbilisee.ge/static/media/main_ka.html"></iframe> 
-          )
-        } else if (i18n.language === 'RU') {
-          return (
-            <iframe  className = "iframe-main__mobile"
-                src="https://tbilisee.ge/static/media/main_ru.html"></iframe> 
-          )
-        } else {
-          return (
-            <iframe  className = "iframe-main__mobile"
-            src="https://tbilisee.ge/static/media/main.html"></iframe> 
-          )
-        }
-      })()} 
-           
-      <h2  className="exploring-title">Exploring</h2>      
+      </div>           
+      <h2  className="exploring-title">{t('exploring')}</h2>      
         <section data-aos="fade-up"
             data-aos-anchor-placement = "top-center" className="exploring container-own">
              
@@ -85,13 +66,19 @@ export default class Landing extends Component {
               {(() => {
         if (i18n.language === 'KA') {
           return (
-            <div>
-              <h3>{arrayLanding.exploring.title_ge.slice(0, 8)}</h3>
-            </div>
+            
+               <h3 >
+               {arrayLanding.exploring.title_ge.slice(0, 9)}
+                <span className="white">{arrayLanding.exploring.title_en.slice(8)}</span>
+              </h3>
+           
           )
         } else if (i18n.language === 'RU') {
           return (
-            <h3>{arrayLanding.exploring.title_ru.slice(0, 8)}</h3>
+            <h3 >
+            {arrayLanding.exploring.title_ru.slice(0, 9)}
+             <span className="white">{arrayLanding.exploring.title_en.slice(8)}</span>
+           </h3>
           )
         } else {
           return (
@@ -146,7 +133,7 @@ export default class Landing extends Component {
         if (i18n.language === 'KA') {
           return (
             <div>
-              <p style={{margin: "0", padding: "0"}}>{arrayLanding.gallery.description_ge}</p>
+              <p style={{margin: "0", padding: "0"}}>{arrayLanding.gallery.description_ge.slice(0, 200)}</p>
               <a style={{"cursor": "pointer"}} onClick={(event) => {extendCollapsetext(event, arrayLanding.gallery.description_ge)
               document.querySelector(".landing-gallery").style.rowGap = "10rem"}}>→</a>
             </div>
@@ -155,7 +142,7 @@ export default class Landing extends Component {
         } else if (i18n.language === 'RU') {
           return (
             <div>
-              <p style={{margin: "0", padding: "0"}}>{arrayLanding.gallery.description_ru}</p>
+              <p style={{margin: "0", padding: "0"}}>{arrayLanding.gallery.description_ru.slice(0, 200)}</p>
               <a style={{"cursor": "pointer"}} onClick={(event) => {extendCollapsetext(event, arrayLanding.gallery.description_ru)
               document.querySelector(".landing-gallery").style.rowgrap = "10rem"}}>→</a>
             </div>
@@ -163,7 +150,7 @@ export default class Landing extends Component {
         } else {
           return (
             <div>
-              <p style={{margin: "0", padding: "0"}}>{arrayLanding.gallery.description_en}</p>
+              <p style={{margin: "0", padding: "0"}}>{arrayLanding.gallery.description_en.slice(0, 200)}</p>
               <a style={{"cursor": "pointer"}} onClick={(event) => {extendCollapsetext(event, arrayLanding.gallery.description_en)
               document.querySelector(".landing-gallery").style.rowgrap = "10rem"
               }}>→</a>
@@ -193,7 +180,7 @@ export default class Landing extends Component {
           {/* <img src={Tbilisee + arrayLanding.gallery.medium_image} alt="Landing Gallery" className="landing-neighborhood__img absolute"/> */}
         </div>
         <div className="relative">
-        <img className="gallery-badge absolute" src={GalleryRound}/>
+        <img className="gallery-badge rotate absolute" src={GalleryRound}/>
         </div>
         <div>
         <div className="background-image__cover landing-neighborhood__img2" style={{backgroundImage: `url(${Tbilisee + arrayLanding.gallery.small_image})`}}></div>

@@ -6,7 +6,7 @@ import i18n from 'i18next';
 const Button = (props) => {
   return (
     <>
-       <HeaderBlack/>
+       <HeaderBlack t={props.t} i18n={props.i18n}/>
        {(() => {
         if (i18n.language === 'KA') {
           return (
